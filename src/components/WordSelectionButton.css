@@ -1,0 +1,17 @@
+/* WordSelectionButton.css */
+
+.text-button {
+    background-color: white; /* Set background color to green */
+    border: 2px solid black; /* Set border to black with 2px width */
+    color: black; /* Set text color to white */
+    padding: 3px 20px; /* Add padding */
+    font-size: 25px; /* Set font size */
+    cursor: pointer; /* Set cursor to pointer on hover */
+    outline: none; /* Remove default focus outline */
+    font-weight: bold;
+  }
+  
+  .text-button:hover {
+    background-color: blue; /* Change background color on hover */
+  }
+  
