@@ -1,16 +1,11 @@
 /* Instruction.css */
 
-.instruction-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
   .instruction-box {
     background-color: #f0f0f0;
     border-radius: 20px;
     padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   
   .instruction-text {
