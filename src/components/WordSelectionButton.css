@@ -3,8 +3,7 @@
 .text-button {
     background-color: white; /* Set background color to green */
     border: 2px solid black; /* Set border to black with 2px width */
-    color: black; /* Set text color to white */
-    padding: 3px 20px; /* Add padding */
+    color: #000000; /* Set text color to white */
     font-size: 25px; /* Set font size */
     cursor: pointer; /* Set cursor to pointer on hover */
     outline: none; /* Remove default focus outline */
@@ -14,4 +13,3 @@
   .text-button:hover {
     background-color: blue; /* Change background color on hover */
   }
-  
