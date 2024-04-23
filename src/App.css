@@ -1,0 +1,19 @@
+body {
+    background-color: gray;
+    margin: 0; 
+    padding: 0; 
+    height: 100vh; 
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center; /* Align horizontally to the center */
+    align-items: center; /* Align vertically to the center */
+    height: 100vh;
+  }
+
+  .start-button-container {
+    position: absolute;
+    left: 60%;
+    bottom: 30%; 
+  }
