@@ -1,22 +1,24 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NextButton from './components/NextButton'; // Import your NextButton component
 import saturn from './saturn.png';
-import './App.css';
+import Home from './Home';
+import DumbPage from './DumbPage';
 
 const App = () => {
   const handleNext = () => {
-    // Handle next button click event
+    
   };
 
   return (
-    <div className="container">
-      <div className="SATURN-png">
-        <img src={saturn} alt="saturn logo" />
-      </div>
-      <div className="start-button-container">
-        <NextButton>START</NextButton>
-      </div>
-    </div>
+    
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/DumbPage" element={<DumbPage />} />
+      </Routes>
+    </Router>
+    
   );
 };
 
