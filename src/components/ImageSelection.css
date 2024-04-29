@@ -1,0 +1,16 @@
+.image-selection {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+   .image-container {
+    /* box-sizing: border-box; */
+    gap: 0px;
+  }
+
+  .image-container img {
+    width: 40%;
+    height: auto;
+    aspect-ratio: 1; /* Ensures images maintain a 1:1 aspect ratio */
+  }
+  
