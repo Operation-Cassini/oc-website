@@ -42,3 +42,4 @@ const Page = ({ content }) => {
 };
 
 export default Page;
+

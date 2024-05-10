@@ -19,3 +19,4 @@ const WordSelectionButton = ({ onClick, children, style, isSelected, index }) =>
 };
 
 export default WordSelectionButton;
+
