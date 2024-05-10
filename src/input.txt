@@ -20,4 +20,10 @@ Prompt: Enter 1399
 Type of Question: Number Pad
 Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 Dimensions: 4x3
+<<<<<<< HEAD
 Correct Answer: 1399
+=======
+Correct Answer: 1399
+
+
+>>>>>>> 0a9e422b8ffa362828426439fba97d64ea4ab370
