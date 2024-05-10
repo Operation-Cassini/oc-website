@@ -1,28 +1,51 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import WordSelectionButton from './WordSelectionButton';
 import './WordSelectionContainer.css';
 
 const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words }) => {
+  // console.log(selectedButtonIndex);
+  const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
+
+  useEffect(() => {
+    // Reset selected button index when new words are received
+    setSelectedButtonIndex(null);
+  });
+
+  const handleButtonClick = (index) => {
+    if (selectedButtonIndex === index) {
+      // Deselect the button if it's already selected
+      setSelectedButtonIndex(null);
+      onClick(null); // Pass null to parent component to signify deselection
+    } else {
+      // Select the clicked button
+      setSelectedButtonIndex(index);
+      onClick(words[index]); // Pass the selected word to the parent component
+    }
+  };
+
   const containerStyle = {
     display: 'grid',
-    gridTemplateColumns: `repeat(${columns}, 1fr)`, // Convert to regular property
-    gridTemplateRows: `repeat(${rows}, auto)`, // Convert to regular property
-    gap: '10px', // Adjust the gap between buttons
+    gridTemplateColumns: `repeat(${columns}, 1fr)`,
+    gridTemplateRows: `repeat(${rows}, auto)`,
+    gap: '10px',
   };
 
   const generateButtons = () => {
     let buttons = [];
-    for (let i = 0; i < rows; i++) {
-      let rowWords = words[i] || []; // Get the words for the current row
+    for (let i = 0; i < rows * columns; i = i + parseInt(columns)) {
       for (let j = 0; j < columns; j++) {
-        let word = rowWords[j] || ''; // Get the word for the current button
+        const index = i + j;
+        let word = words[index];
         buttons.push(
           <WordSelectionButton
-            key={`${i}-${j}`}
-            onClick={onClick}
+            key={index}
+            onClick={() => handleButtonClick(index)}
             style={{
               width: buttonDimensions.width,
-              height: buttonDimensions.height
+              height: buttonDimensions.height,
+              backgroundColor: selectedButtonIndex === index ? 'blue' : 'white',
+              color: selectedButtonIndex === index ? 'white' : 'black',
+              // You can add any additional styles here
             }}
           >
             {word}
@@ -41,3 +64,4 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
 };
 
 export default WordSelectionContainer;
+
