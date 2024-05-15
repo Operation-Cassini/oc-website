@@ -1,0 +1,22 @@
+/* WordSelectionButton.css */
+
+.text-button {
+    background-color: white; /* Set background color to white */
+    border: 2px solid black; /* Set border to black with 2px width */
+    color: #000000; /* Set text color to black */
+    font-size: 16px; /* Set font size */
+    cursor: pointer; /* Set cursor to pointer on hover */
+    outline: none; /* Remove default focus outline */
+    font-weight: bold;
+  }
+  
+  .text-button.clicked,
+  .text-button.selected {
+    background-color: blue; /* Change background color to blue for clicked or selected state */
+  }
+  
+  .text-button:hover {
+    background-color: lightblue; /* Change background color on hover */
+  }
+  
+  

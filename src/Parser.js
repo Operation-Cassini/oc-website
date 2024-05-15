@@ -30,7 +30,7 @@ function ParseInputFile(fileContent) {
       current_page_data[key] = value;
     }
   });
-  console.log(current_page_data);
+  // console.log(current_page_data);
   if (Object.keys(current_page_data).length > 0) {
     const page = { ...current_page_data };
     pages.push(page);

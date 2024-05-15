@@ -2,27 +2,24 @@ import React, { useState, useEffect } from 'react';
 import WordSelectionButton from './WordSelectionButton';
 import './WordSelectionContainer.css';
 
-const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words }) => {
-  // console.log(selectedButtonIndex);
+const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words, pageNumber}) => {
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
-
   useEffect(() => {
-    // Reset selected button index when new words are received
+    // Reset selected button index whenever the component is rendered
     setSelectedButtonIndex(null);
-  });
+  }, [pageNumber]);
 
   const handleButtonClick = (index) => {
     if (selectedButtonIndex === index) {
       // Deselect the button if it's already selected
-      setSelectedButtonIndex(null);
       onClick(null); // Pass null to parent component to signify deselection
+      setSelectedButtonIndex(null);
     } else {
       // Select the clicked button
-      setSelectedButtonIndex(index);
       onClick(words[index]); // Pass the selected word to the parent component
+      setSelectedButtonIndex(index);
     }
   };
-
   const containerStyle = {
     display: 'grid',
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
@@ -64,5 +61,3 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
 };
 
 export default WordSelectionContainer;
-
-
