@@ -1,11 +1,25 @@
+/* WordSelectionContainer.css */
 .word-selection-container {
-  width: 60%;
-  /* display: flex;
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.word-selection-button {
+  box-sizing: border-box;
+  display: flex;
   align-items: center;
-  align-content: center; */
-  margin: 10px;
-  /* grid-template-columns: repeat(var(--columns), auto); /* Dynamic columns */
-  /* grid-template-rows: repeat(var(--rows), auto); /* Dynamic rows */
-  /* gap: 0px; */
+  justify-content: center;
+  height: auto;
+  background-color: blue;
+}
+
+.word {
+  background-color: green;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
