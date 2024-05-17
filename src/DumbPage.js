@@ -108,17 +108,33 @@ const Page = ({ content, correctAnswer, to }) => {
       }
       {content['Type of Question'] === 'Image Selection' &&
         (() => {
+          // {content['Answer Img'] && <img src={content['Answer Img']} alt="Answer Image" />}
           let s = content['File Path'];
           let filePaths = s.substring(1, s.length - 1).split(",");
           filePaths = filePaths.map(str => str.trim());
-          console.log(filePaths);
-          console.log("col: ", content['Dimensions'].split("x")[1]);
+
           return (
-            <ImageSelection 
-              images={filePaths} 
-              rows={content['Dimensions'].split("x")[0]}
-              cols={content['Dimensions'].split("x")[1]}
-            />
+            <div>
+              <img 
+                src={content['Answer Img']} 
+                alt="Answer Image" 
+                style={{
+                  display: 'block',  /* Make the image a block element to apply margin */
+                  margin: 'auto',    /* Center horizontally */
+                  marginTop: 'auto', /* Center vertically */
+                  marginBottom: 'auto',
+                  maxWidth: '100%',  /* Ensure the image fits within the container */
+                  maxHeight: '100%', 
+                  paddingBottom: '20px',
+                }} 
+              />
+              <Instruction text={content['Instruction']} />
+              <ImageSelection 
+                images={filePaths} 
+                rows={content['Dimensions'].split("x")[0]}
+                cols={content['Dimensions'].split("x")[1]}
+              />
+            </div>
           );
         })()
       }
