@@ -7,6 +7,7 @@ import NextButton from './components/NextButton';
 import NumberSelectionContainer from './components/NumberSelectionContainer'
 import MoneyPadContainer from './components/MoneyPadContainer'
 import MultiWordSelectionContainer from './components/MultiWordSelectionContainer';
+import StroopTextBox from './components/StroopTextBox';
 import ImageSelection from './components/ImageSelection';
 
 const Page = ({ content, correctAnswer, to }) => {
@@ -102,6 +103,31 @@ const Page = ({ content, correctAnswer, to }) => {
               words={words}
               pageNumber={content['Page Number']}
             />
+          );
+        })()
+
+      }
+      {content['Type of Question'] === 'STROOP' &&
+        (() => {
+          console.log(content['Word Color']);
+          console.log(content['Word']);
+          let s = content['Word Bank'];
+          let words = s.substring(1, s.length-1).split(",");
+          words = words.map(str => str.trim());
+          console.log("words: ", words);
+          return (
+            <div>
+              <StroopTextBox textColor={content['Word Color']}>{content['Word']}</StroopTextBox>
+              <WordSelectionContainer
+                  rows={content['Dimensions'].split("x")[0]}
+                  columns={content['Dimensions'].split("x")[1]}
+                  buttonDimensions={buttonDimensions}
+                  onClick={handleClick}
+                  words={words}
+                  pageNumber={content['Page Number']}
+              />
+            </div>
+            
           );
         })()
 
