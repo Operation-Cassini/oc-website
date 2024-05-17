@@ -1,0 +1,32 @@
+/* FlashTextBoxes.css */
+
+  .flash-text-box {
+    position: relative;
+  }
+  
+  .blackout-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%; /* Adjust the width to match the text box */
+    height: 100%; /* Adjust the height to match the text box */
+    background-color: rgba(128, 128, 128, 1); /* Adjust the opacity here if needed */
+    z-index: 1;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  .overlay-show {
+    display: block;
+  }
+  
+  .overlay-hide {
+    display: none;
+  }
+  
