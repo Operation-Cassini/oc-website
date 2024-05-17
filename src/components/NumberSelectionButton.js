@@ -11,7 +11,6 @@ const NumberSelectionButton = ({ onClick, children, style, index }) => {
       className={`text-button`}
       onClick={handleClick}
       style={style}
-      // disabled={isSelected} // Disable button if it is already selected
     >
       {children}
     </button>

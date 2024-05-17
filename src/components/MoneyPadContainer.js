@@ -3,18 +3,13 @@ import NumberSelectionButton from './NumberSelectionButton';
 import './MoneyPadContainer.css';
 
 const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, words, pageNumber}) => {
-    console.log("heremoney");
-  // debugger;
-//   const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
   const [selectedNumbers, setSelectedNumbers] = useState('');
 
-  // debugger;
   console.log(pageNumber);
   useEffect(() => {
     // Reset selected button index whenever the component is rendered
     console.log("resetting")
     setSelectedNumbers('');
-    // debugger;
   }, [pageNumber]);
   const handleDelete = () => {
     console.log("here!")
@@ -25,15 +20,6 @@ const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, words, pa
       }
   };
   const handleButtonClick = (index) => {
-    // console.log("clicked a word!")
-    // console.log(selectedNumbers, index)
-    // if (selectedButtonIndex === index) {
-    //   // Deselect the button if it's already selected
-    //   onClick(null); // Pass null to parent component to signify deselection
-    //   setSelectedButtonIndex(null);
-    //   // debugger;
-    // } else {
-    //   console.log(words)
       const selectedNumber = words[index];
       console.log(selectedNumber);
 
@@ -43,14 +29,6 @@ const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, words, pa
         setSelectedNumbers(updatedNumbers);
         onClick(updatedNumbers);
       }
-
-    //   setSelectedNumbers(updatedNumbers);
-    //   console.log("we are setting the button index to be: ", index)
-      // Select the clicked button
-    //   onClick(updatedNumbers); // Pass the selected word to the parent component
-    //   setSelectedNumbers(index);
-      // debugger;
-    // }
   };
   const containerStyle = {
     display: 'grid',
@@ -72,9 +50,6 @@ const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, words, pa
             style={{
               width: buttonDimensions.width,
               height: buttonDimensions.height
-            //   backgroundColor: selectedButtonIndex === index ? 'blue' : 'white',
-            //   color: selectedButtonIndex === index ? 'white' : 'black',
-              // You can add any additional styles here
             }}
           >
             {word}
