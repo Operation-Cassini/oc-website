@@ -1,70 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import './WordSelectionContainer.css';
-import WordSelectionButton from './WordSelectionButton';
+import React from 'react';
+import './ImageSelection.css';
 
-const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words, pageNumber }) => {
-  const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
-  
-  useEffect(() => {
-    // Reset selected button index whenever the component is rendered
-    setSelectedButtonIndex(null);
-  }, [pageNumber]);
-
-  const handleButtonClick = (index) => {
-    if (selectedButtonIndex === index) {
-      // Deselect the button if it's already selected
-      onClick(null); // Pass null to parent component to signify deselection
-      setSelectedButtonIndex(null);
-    } else {
-      // Select the clicked button
-      onClick(words[index]); // Pass the selected word to the parent component
-      setSelectedButtonIndex(index);
-    }
-  };
-
+const ImageSelection = ({ images, rows, cols }) => {
   const containerStyle = {
     display: 'flex',
     flexWrap: 'wrap',
-    gap: '10px',
-    justifyContent: 'flex-start',
+    gap: '10px', // Adjust the gap between images if needed
+    justifyContent: 'space-between',
   };
 
-  const buttonContainerStyle = {
-    flexBasis: `calc((100% / ${columns}) - 10px)`,
-    boxSizing: 'border-box',
-  };
-
-  const generateButtons = () => {
-    let buttons = [];
-    for (let i = 0; i < rows * columns; i++) {
-      let word = words[i] || ''; // Get the word for the current position, empty string if none
-      buttons.push(
+  const generateImages = () => {
+    console.log("generate images");
+    let imageElements = [];
+    console.log(rows);
+    console.log(cols);
+    for (let i = 0; i < rows * cols; i++) {
+      let image = images[i] || ''; // Get the image for the current position, empty string if none
+      console.log("Image file path: ", image);
+      imageElements.push(
         <div
           key={i}
-          className="word-selection-button"
-          style={buttonContainerStyle}
+          className="image-container"
+          style={{
+            flexBasis: `calc(100% / ${cols} - 10px)`, // Adjust the width of each image container
+          }}
         >
-          <WordSelectionButton
-            onClick={() => handleButtonClick(i)}
-            isSelected={selectedButtonIndex === i}
-            style={{
-              width: buttonDimensions.width,
-              height: buttonDimensions.height,
-            }}
-          >
-            {word}
-          </WordSelectionButton>
+          {image && <img src={image} alt={`Selected ${i}`} className="image" />}
         </div>
       );
     }
-    return buttons;
+    return imageElements;
   };
 
   return (
-    <div className="word-selection-container" style={containerStyle}>
-      {generateButtons()}
+    <div className="image-selection" style={containerStyle}>
+      {generateImages()}
     </div>
   );
 };
 
-export default WordSelectionContainer;
+export default ImageSelection;

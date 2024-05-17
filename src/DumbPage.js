@@ -7,6 +7,8 @@ import NextButton from './components/NextButton';
 import NumberSelectionContainer from './components/NumberSelectionContainer'
 import MoneyPadContainer from './components/MoneyPadContainer'
 import MultiWordSelectionContainer from './components/MultiWordSelectionContainer';
+import ImageSelection from './components/ImageSelection';
+
 const Page = ({ content, correctAnswer, to }) => {
   const buttonDimensions = { width: '100px', height: '50px' };
 
@@ -104,6 +106,23 @@ const Page = ({ content, correctAnswer, to }) => {
         })()
 
       }
+      {content['Type of Question'] === 'Image Selection' &&
+        (() => {
+          let s = content['File Path'];
+          let filePaths = s.substring(1, s.length - 1).split(",");
+          filePaths = filePaths.map(str => str.trim());
+          console.log(filePaths);
+          console.log("col: ", content['Dimensions'].split("x")[1]);
+          return (
+            <ImageSelection 
+              images={filePaths} 
+              rows={content['Dimensions'].split("x")[0]}
+              cols={content['Dimensions'].split("x")[1]}
+            />
+          );
+        })()
+      }
+
       <NextButton
           to={to}
           correctAnswer={correctAnswer}

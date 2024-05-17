@@ -2,20 +2,19 @@
 .image-selection {
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
+  gap: 10px; /* Adjust the gap as needed */
+  justify-content: space-between; /* Adjust as needed */
 }
 
 .image-container {
-  box-sizing: border-box; 
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
   display: flex;
   align-items: center;
   justify-content: center;
-  height: auto; 
-  background-color: blue;
+  height: auto; /* Ensures the height adjusts based on the content */
 }
 
 .image {
-  background-color: green;
   width: 100%;
   height: auto; /* Maintains the aspect ratio of the image */
   object-fit: cover; /* Ensures the image covers the container */
