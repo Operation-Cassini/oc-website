@@ -16,7 +16,7 @@ const FlashTextBoxes = ({ texts }) => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1));
         setShowOverlay(true); // Show overlay after 3 seconds
-      }, 500); // Display each text box for 3 seconds
+      }, 1000); // Display each text box for 3 seconds
 
       setTimeout(() => {
         setShowOverlay(false); // Hide overlay after 2 seconds
@@ -24,12 +24,12 @@ const FlashTextBoxes = ({ texts }) => {
           // If it's the last text box in the cycle, increment completed cycles
           setCompletedCycles((prevCycles) => prevCycles + 1);
         }
-      }, 1000); // Display overlay for 2 seconds after text box
+      }, 3000); // Display overlay for 2 seconds after text box
 
       if (completedCycles === totalCycles) {
         clearInterval(interval); // Stop the interval once all cycles are completed
       }
-    }, 1500); // Repeat the cycle every 8 seconds (3 seconds for text box + 5 seconds for overlay)
+    }, 4000); // Repeat the cycle every 8 seconds (3 seconds for text box + 5 seconds for overlay)
 
     return () => clearInterval(interval);
   }, [texts, currentIndex, completedCycles, totalCycles]);

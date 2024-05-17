@@ -15,18 +15,18 @@ import BlackBoarderTextBox from './components/BlackBoarderTextBox';
 
 const DumbPage = () => {
   const characters = ['1', '2', '3', '4', '5'];
-  // const words = ['apple', 'pen', 'orange', 'drink', 'tea'];
+  const words = ['apple', 'pen', 'orange', 'drink', 'tea'];
+  const images = [image1, image2, image3, image4, image5, image6];
+  const handleImageClick = (index) => {
+    console.log('Clicked image index:', index);
+  };
   return (
     <div>
-      {/* <BlackBoarderTextBox>Text</BlackBoarderTextBox> */}
-      {/* <FlashTextBoxes texts={words} /> */}
+      <BlackBoarderTextBox>Text</BlackBoarderTextBox>
+      <FlashTextBoxes texts={words} />
       <ButtonConnector characters={characters} />
-      {/* <ImageSelection
-        images={[image1, image2, image3, image4, image5, image6]}
-        rows={2}
-        cols={3}
-      /> */}
-      {/* <StroopTextBox textColor="red">BLUE</StroopTextBox>  */}
+      <ImageSelection images={images} rows={2} cols={3} onImageClick={handleImageClick} />
+      <StroopTextBox textColor="red">BLUE</StroopTextBox> 
     </div>
   );
 };
