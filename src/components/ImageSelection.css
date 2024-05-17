@@ -1,25 +1,29 @@
-/* ImageSelection.css */
-.image-selection {
+.image-selection-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px; /* Adjust the gap as needed */
-  justify-content: space-between; /* Adjust as needed */
+  justify-content: center;
+}
+
+.image-selection {
+  width: 50%; /* Adjust this to set the desired width of the container */
+  max-width: 800px; /* Optionally, set a max width */
+  margin: 0 auto; /* Center the container */
 }
 
 .image-container {
-  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: auto; /* Ensures the height adjusts based on the content */
+  flex-grow: 1;
+  /* Other styles as needed */
+}
+
+.image-button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 .image {
   width: 100%;
-  height: auto; /* Maintains the aspect ratio of the image */
-  object-fit: cover; /* Ensures the image covers the container */
-  display: block;
-  padding: 0;
-  margin: 0;
-  border: 0; /* Removes any default border */
+  height: auto;
 }
