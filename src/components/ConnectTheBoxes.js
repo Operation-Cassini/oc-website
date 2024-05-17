@@ -23,7 +23,7 @@ const ButtonConnector = ({ characters }) => {
     ctx.strokeStyle = 'black';
     ctx.lineWidth = 2;
 
-    const buttonSize = 50; // Width and height of the button
+    const buttonSize = 50; 
     const halfButtonSize = buttonSize / 2;
 
     for (let i = 0; i < sequence.length - 1; i++) {
@@ -60,6 +60,7 @@ const ButtonConnector = ({ characters }) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            backgroundColor: clickedButtons.includes(index) ? 'green' : (sequence.includes(index) ? 'red' : 'white'),
           }}
           onClick={() => handleClick(index)}
           disabled={clickedButtons.includes(index)}
