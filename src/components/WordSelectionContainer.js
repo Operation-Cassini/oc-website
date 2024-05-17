@@ -3,6 +3,8 @@ import WordSelectionButton from './WordSelectionButton';
 import './WordSelectionContainer.css';
 
 const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words }) => {
+  console.log("right here")
+  console.log(words)
   const containerStyle = {
     display: 'grid',
     gridTemplateColumns: `repeat(${columns}, 1fr)`, // Convert to regular property
@@ -12,10 +14,12 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
 
   const generateButtons = () => {
     let buttons = [];
-    for (let i = 0; i < rows; i++) {
-      let rowWords = words[i] || []; // Get the words for the current row
+    for (let i = 0; i < rows * columns; i = i + parseInt(columns)) {
+      // let rowWords = words[i] || []; // Get the words for the current row
+      // let rowWords = words[i];
       for (let j = 0; j < columns; j++) {
-        let word = rowWords[j] || ''; // Get the word for the current button
+        // let word = rowWords[j] || ''; // Get the word for the current button
+        let word = words[i+j];
         buttons.push(
           <WordSelectionButton
             key={`${i}-${j}`}
