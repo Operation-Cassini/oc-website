@@ -1,29 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import WordSelectionButton from './WordSelectionButton';
-import './WordSelectionContainer.css';
+import './MultiWordSelectionContainer.css';
 
-const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words, pageNumber}) => {
-  const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
+const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words, pageNumber}) => {
+  const [selectedButtonIndices, setSelectedButtonIndices] = useState([]);
+  console.log(pageNumber);
   useEffect(() => {
     // Reset selected button index whenever the component is rendered
     console.log("resetting")
-    setSelectedButtonIndex(null);
+    setSelectedButtonIndices([]);
   }, [pageNumber]);
 
   const handleButtonClick = (index) => {
     console.log("clicked a word!")
-    console.log(selectedButtonIndex, index)
-    if (selectedButtonIndex === index) {
-      // Deselect the button if it's already selected
-      onClick(null); // Pass null to parent component to signify deselection
-      setSelectedButtonIndex(null);
+    const indexIsSelected = selectedButtonIndices.includes(index);
+    let updatedIndices;
+    if (indexIsSelected) {
+        updatedIndices = selectedButtonIndices.filter((i) => i !== index);
+        setSelectedButtonIndices(updatedIndices);
+        onClick(null); // Pass null to parent component to signify deselection
+      // debugger;
     } else {
 
       console.log("we are setting the button index to be: ", index)
-      // Select the clicked button
-      onClick(words[index]); // Pass the selected word to the parent component
-      setSelectedButtonIndex(index);
+      updatedIndices = [...selectedButtonIndices, index];
+    
+      setSelectedButtonIndices(updatedIndices);
     }
+
+    const selectedWords = updatedIndices.map((selectedIndex) => words[selectedIndex]);
+    // Pass the selected words to the parent component
+    
+    onClick(selectedWords);
+    
   };
   const containerStyle = {
     display: 'grid',
@@ -42,7 +51,7 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
           <WordSelectionButton
             key={index}
             onClick={() => handleButtonClick(index)}
-            isSelected = {selectedButtonIndex === index}
+            isSelected = {selectedButtonIndices.includes(index)}
             style={{
               width: buttonDimensions.width,
               height: buttonDimensions.height
@@ -63,4 +72,4 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
   );
 };
 
-export default WordSelectionContainer;
+export default MultiWordSelectionContainer;

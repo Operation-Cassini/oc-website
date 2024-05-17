@@ -15,7 +15,7 @@ const Home = () => {
         <img src={saturn} alt="saturn logo" />
       </div>
       <div className="start-button-container">
-        <NextButton to="/DumbPage">START</NextButton>
+        <NextButton to="/page/0">START</NextButton>
       </div>
     </div>
 

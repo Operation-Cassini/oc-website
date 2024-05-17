@@ -1,0 +1,12 @@
+.word-selection-container {
+    width: 60%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center; */
+    margin: 10px;
+    /* grid-template-columns: repeat(var(--columns), auto); /* Dynamic columns */
+    /* grid-template-rows: repeat(var(--rows), auto); /* Dynamic rows */
+    /* gap: 0px; */
+  }
+  
