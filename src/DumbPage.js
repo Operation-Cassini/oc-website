@@ -104,14 +104,16 @@ const Page = ({ content, correctAnswer, to }) => {
         })()
 
       }
-      <NextButton
-          to={to}
-          correctAnswer={correctAnswer}
-          selectedAnswer={selectedAnswer}
-          pageNumber = {content['Page Number']}
-        >
-          NEXT
-      </NextButton>
+      <div className = "next-flex">
+        <NextButton
+            to={to}
+            correctAnswer={correctAnswer}
+            selectedAnswer={selectedAnswer}
+            pageNumber = {content['Page Number']}
+          >
+            NEXT
+        </NextButton>
+      </div>
     </div>
   );
 };

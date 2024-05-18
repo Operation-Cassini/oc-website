@@ -1,16 +1,17 @@
 .number-selection-container {
-    width: 20%;
+    /* width: 20%; */
     /* display: flex;
     justify-content: center;
     align-items: center;
     align-content: center; */
-    margin: 10px;
+    margin: 0 auto;
     /* grid-template-columns: repeat(var(--columns), auto); /* Dynamic columns */
     /* grid-template-rows: repeat(var(--rows), auto); /* Dynamic rows */
     /* gap: 0px; */
   }
 
   .selected-numbers {
+    /* text-align: center; */
     font-size: 50px;
   }
 
@@ -20,5 +21,6 @@
   }
 
   .number {
-    margin-right: 45px;
+    margin-right: 25px;
+    margin-left: 20px;
   }

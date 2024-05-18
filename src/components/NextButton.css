@@ -9,5 +9,9 @@
   cursor: pointer; /* Set cursor to pointer on hover */
   outline: none; /* Remove default focus outline */
   font-weight: bold;
-  position: fixed; /* Ensure the button is positioned relative to the viewport */
+  /* position: fixed; Ensure the button is positioned relative to the viewport */
+}
+
+.next-flex {
+  text-align: right;
 }

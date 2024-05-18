@@ -57,8 +57,10 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
   };
 
   return (
-    <div className="word-selection-container" style={containerStyle}>
-      {generateButtons()}
+    <div className = "flex-container">
+      <div className="word-selection-container" style={containerStyle}>
+        {generateButtons()}
+      </div>
     </div>
   );
 };

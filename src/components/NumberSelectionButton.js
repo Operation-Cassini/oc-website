@@ -8,7 +8,7 @@ const NumberSelectionButton = ({ onClick, children, style, index }) => {
 
   return (
     <button
-      className={`text-button`}
+      className={`number-button`}
       onClick={handleClick}
       style={style}
     >

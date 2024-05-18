@@ -44,39 +44,41 @@ const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, wo
       for (let j = 0; j < columns; j++) {
         const index = i + j;
         let word = words[index];
-        buttons.push(
-          <NumberSelectionButton
-            key={index}
-            onClick={() => handleButtonClick(index)}
-            style={{
-              width: buttonDimensions.width,
-              height: buttonDimensions.height
-            }}
-          >
-            {word}
-          </NumberSelectionButton>
-        );
+        if (word !== undefined) {
+          buttons.push(
+            <NumberSelectionButton
+              key={index}
+              onClick={() => handleButtonClick(index)}
+              style={{
+                width: buttonDimensions.width,
+                height: buttonDimensions.height
+              }}
+            >
+              {word}
+            </NumberSelectionButton>
+          );
+      }
       }
     }
     return buttons;
   };
 
   return (
-    <div>
-        <div className="number-line">
-            <div className = "selected-numbers">
-                {selectedNumbers.split('').map((number, index) => (
-                <span key={index} className="number">{number}</span>
-                ))}
-            </div>
-            
-            <div className = "underscores">_ _ _ _</div>
+    <div class="flex-container">
+        <div class="number-line">
+          <div class="selected-numbers">
+            {selectedNumbers.split('').map((number, index) => (
+            <span key={index} className="number">{number}</span>
+            ))}
+          </div>
         </div>
-      <div className="number-selection-container" style={containerStyle}>
-        {generateButtons()}
-      </div>
+        <div class="underscores">_ _ _ _</div>
+        <div class="number-selection-container" style={containerStyle}>
+          {generateButtons()}
+        </div>
       <button onClick={handleDelete}>Delete</button>
     </div>
+  
   );
   
 };

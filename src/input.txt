@@ -20,7 +20,7 @@ Application Name: SATURN
 Page Title: Test 3
 Prompt: Enter 1239
 Type of Question: Number Pad
-Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, , 0]
+Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 Dimensions: 4x3
 Correct Answer: 1239
 Page Number: 3
@@ -29,7 +29,7 @@ Application Name: SATURN
 Page Title: Test 4
 Prompt: YOU GO TO THE STORE WITH EXACTLY $100. YOU BUY A DOZEN APPLES FOR $7 AND A TRICYCLE FOR $60. HOW MUCH DID YOU SPEND?
 Type of Question: Money Number Pad
-Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, , 0]
+Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 Dimensions: 4x3
 Correct Answer: 67
 Page Number: 4
@@ -38,7 +38,7 @@ Application Name: SATURN
 Page Title: Test 5
 Prompt: AFTER THAT PURCHASE, HOW MUCH DO YOU HAVE LEFT?
 Type of Question: Money Number Pad
-Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, , 0]
+Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 Dimensions: 4x3
 Correct Answer: 33
 Page Number: 5
@@ -65,7 +65,7 @@ Application Name: SATURN
 Page Title: Test 8
 Prompt: WHEN YOU FIRST SAW THIS NUMBER PAD, YOU HAD TO ENTER A SPECIFIC FOUR-DIGIT NUMBER. ENTER THE SAME NUMBER, AGAIN
 Type of Question: Number Pad
-Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, , 0]
+Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 Dimensions: 4x3
 Correct Answer: 1239
 Page Number: 8
@@ -83,7 +83,7 @@ Application Name: SATURN
 Page Title: Test 10
 Prompt: WHAT YEAR IS IT?
 Type of Question: Number Pad
-Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, , 0]
+Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 Dimensions: 4x3
 Correct Answer: 2024
 Page Number: 10

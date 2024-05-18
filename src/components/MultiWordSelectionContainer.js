@@ -66,8 +66,10 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
   };
 
   return (
-    <div className="word-selection-container" style={containerStyle}>
-      {generateButtons()}
+    <div className = "flex-container">
+      <div className="multi-word-selection-container" style={containerStyle}>
+        {generateButtons()}
+      </div>
     </div>
   );
 };
