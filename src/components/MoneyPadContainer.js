@@ -43,34 +43,36 @@ const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, words, pa
       for (let j = 0; j < columns; j++) {
         const index = i + j;
         let word = words[index];
-        buttons.push(
-          <NumberSelectionButton
-            key={index}
-            onClick={() => handleButtonClick(index)}
-            style={{
-              width: buttonDimensions.width,
-              height: buttonDimensions.height
-            }}
-          >
-            {word}
-          </NumberSelectionButton>
-        );
+        if (word !== undefined) {
+          buttons.push(
+            <NumberSelectionButton
+              key={index}
+              onClick={() => handleButtonClick(index)}
+              style={{
+                width: buttonDimensions.width,
+                height: buttonDimensions.height
+              }}
+            >
+              {word}
+            </NumberSelectionButton>
+          );
+      }
       }
     }
     return buttons;
   };
 
   return (
-    <div>
+    <div className = "flex-container">
         <div className="number-line">
-            <div className = "selected-numbers">$
+          <div className="dollar-sign">$</div>
+            <div className = "selected-numbers">
                 {selectedNumbers.split('').map((number, index) => (
                 <span key={index} className="number-money">{number}</span>
                 ))}
-            </div>
-            
-            <div className = "underscores-money">_ _</div>
+            </div>   
         </div>
+        <div className = "underscores-money">_ _</div>
       <div className="money-selection-container" style={containerStyle}>
         {generateButtons()}
       </div>
