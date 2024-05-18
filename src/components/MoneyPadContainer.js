@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import NumberSelectionButton from './NumberSelectionButton';
+import React, { useEffect, useState } from 'react';
 import './MoneyPadContainer.css';
+import NumberSelectionButton from './NumberSelectionButton';
 
 const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, words, pageNumber}) => {
   const [selectedNumbers, setSelectedNumbers] = useState('');
@@ -71,7 +71,7 @@ const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, words, pa
             
             <div className = "underscores-money">_ _</div>
         </div>
-      <div className="number-selection-container" style={containerStyle}>
+      <div className="money-selection-container" style={containerStyle}>
         {generateButtons()}
       </div>
       <button onClick={handleDelete}>Delete</button>

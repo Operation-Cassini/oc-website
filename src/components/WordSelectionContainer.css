@@ -3,11 +3,8 @@
   display: flex; /* Use flexbox */
   justify-content: center; /* Center items horizontally */
   align-items: center; /* Center items vertically */
-  width: 50%; /* Allow container to adjust its width based on content */
   margin: 0 auto; /* Center container horizontally */
-  flex-wrap: wrap;
-  /* gap: 10px; */
-  /* justify-content: flex-start; */
+  flex-direction: column;
 }
 
 /* Doesn't physically do anything */
