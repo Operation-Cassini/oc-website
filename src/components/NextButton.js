@@ -1,8 +1,9 @@
-import React, { useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import ErrorMessage from './ErrorMessage'; // Import ErrorMessage component
 import './NextButton.css'; // Import CSS file for styling
 
-const NextButton = ({ to, correctAnswer, selectedAnswer, children, pageNumber}) => {
+const NextButton = ({ to, correctAnswer, selectedAnswer, errorMessage, error, setError, pageNumber, children }) => {
   // Function to toggle the position of the next button
   const toggleNextButtonPosition = (pageNumber) => {
     const nextButton = document.querySelector('.next-button');
@@ -47,6 +48,7 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, children, pageNumber}) 
           console.log("Incorrect answer. Navigation prevented.");
           // Prevent default navigation behavior if the answer is incorrect
           event.preventDefault();
+          setError(true);
           // Optionally, you can add logic here to handle incorrect answer actions
         } else {
           console.log("Correct answer!");
@@ -67,11 +69,19 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, children, pageNumber}) 
   };
 
   return (
-    <Link to={to} onClick={handleClick}> {/* Use the "to" prop to specify the route path */}
-      <button className="next-button">
-        {children}
-      </button>
-    </Link>
+    // <Link to={to} onClick={handleClick}> {/* Use the "to" prop to specify the route path */}
+    //   <button className="next-button">
+    //     {children}
+    //   </button>
+    // </Link>
+    <div>
+      {error && <ErrorMessage message={errorMessage} />} {/* Conditionally render error message */}
+      <Link to={to} onClick={handleClick}> {/* Use the "to" prop to specify the route path */}
+        <button type="button" className="next-button">
+          {children}
+        </button>
+      </Link>
+    </div>
   );
 };
 
