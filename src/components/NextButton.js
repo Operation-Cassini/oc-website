@@ -69,7 +69,7 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, errorMessage, error, se
     //     {children}
     //   </button>
     // </Link>
-    <div className="next-button-container">
+    <div>
       {error && <ErrorMessage message={errorMessage} />} {/* Conditionally render error message */}
       <Link to={to} onClick={handleClick}> {/* Use the "to" prop to specify the route path */}
         <button type="button" className="next-button">
