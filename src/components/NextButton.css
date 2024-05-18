@@ -1,4 +1,9 @@
-/* NextButton.css */
+.next-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px; /* Adjust as needed */
+}
 
 .next-button {
   background-color: #39FF14; /* Set background color to green */
@@ -10,4 +15,16 @@
   outline: none; /* Remove default focus outline */
   font-weight: bold;
   position: fixed; /* Ensure the button is positioned relative to the viewport */
+}
+
+.right-position {
+  justify-content: flex-end;
+}
+
+.left-position {
+  justify-content: flex-start;
+}
+
+.error-message {
+  color: red; /* Optionally, you can style the error message */
 }

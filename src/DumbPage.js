@@ -170,7 +170,7 @@ const Page = ({ content, correctAnswer, to }) => {
           to={to}
           correctAnswer={correctAnswer}
           selectedAnswer={selectedAnswer}
-          errorMessage={content['Error Pop Ups']}
+          errorMessage={content['Error Pop Ups'] ? content['Error Pop Ups'] : ""}
           error={error}
           setError={setError}
           pageNumber = {content['Page Number']}

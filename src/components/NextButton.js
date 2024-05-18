@@ -45,12 +45,9 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, errorMessage, error, se
         // Check if both arrays are equal
         const isCorrect = JSON.stringify(sortedCorrectAnswers) === JSON.stringify(sortedSelectedWords);
         if (!isCorrect) {
-          console.log("Incorrect answer. Navigation prevented.");
           // Prevent default navigation behavior if the answer is incorrect
+          console.log("Incorrect answer. Navigation prevented.");
           event.preventDefault();
-          setError(true);
-          console.log("Check");
-          console.log(error);
           // Optionally, you can add logic here to handle incorrect answer actions
         } else {
           console.log("Correct answer!");
@@ -61,6 +58,7 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, errorMessage, error, se
         if (correctAnswer !== selectedAnswer) {
           console.log("Incorrect answer. Navigation prevented.");
           event.preventDefault();
+          setError(true);
         }
         else {
           console.log("Correct answer!");
@@ -76,7 +74,7 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, errorMessage, error, se
     //     {children}
     //   </button>
     // </Link>
-    <div>
+    <div className="next-button-container">
       {error && <ErrorMessage message={errorMessage} />} {/* Conditionally render error message */}
       <Link to={to} onClick={handleClick}> {/* Use the "to" prop to specify the route path */}
         <button type="button" className="next-button">
