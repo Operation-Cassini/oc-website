@@ -48,6 +48,7 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, errorMessage, error, se
           // Prevent default navigation behavior if the answer is incorrect
           console.log("Incorrect answer. Navigation prevented.");
           event.preventDefault();
+          setError(true);
           // Optionally, you can add logic here to handle incorrect answer actions
         } else {
           console.log("Correct answer!");
@@ -58,6 +59,7 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, errorMessage, error, se
         if (correctAnswer !== selectedAnswer) {
           console.log("Incorrect answer. Navigation prevented.");
           event.preventDefault();
+          console.log("Error message popup");
           setError(true);
         }
         else {
