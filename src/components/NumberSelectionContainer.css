@@ -1,24 +1,30 @@
-.number-selection-container {
-    width: 20%;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center; */
-    margin: 10px;
-    /* grid-template-columns: repeat(var(--columns), auto); /* Dynamic columns */
-    /* grid-template-rows: repeat(var(--rows), auto); /* Dynamic rows */
-    /* gap: 0px; */
+  .number-selection-container {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    margin: 0 auto; /* Center container horizontally */
+    background-color: green;
   }
 
   .selected-numbers {
     font-size: 50px;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    margin: 0 auto; /* Center container horizontally */
+    background-color: red;
   }
 
   .underscores {
     margin-top: -100px;
     font-size: 100px;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    margin: 0 auto; /* Center container horizontally */
+    background-color: blue;
   }
 
   .number {
-    margin-right: 45px;
+    margin-right: 35px;
   }

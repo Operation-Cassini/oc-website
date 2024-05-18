@@ -7,7 +7,7 @@ const WordSelectionButton = ({ onClick, children, style, isSelected, index }) =>
   };
   return (
     <button
-      className={`text-button ${isSelected ? 'selected' : ''}`}
+      className={`word-button ${isSelected ? 'selected' : ''}`}
       onClick={handleClick}
       style={style}
     >

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import WordSelectionButton from './WordSelectionButton';
+import React, { useEffect, useState } from 'react';
 import './MultiWordSelectionContainer.css';
+import WordSelectionButton from './WordSelectionButton';
 
 const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words, pageNumber}) => {
   const [selectedButtonIndices, setSelectedButtonIndices] = useState([]);
@@ -66,7 +66,7 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
   };
 
   return (
-    <div className="word-selection-container" style={containerStyle}>
+    <div className="multi-selection-container" style={containerStyle}>
       {generateButtons()}
     </div>
   );

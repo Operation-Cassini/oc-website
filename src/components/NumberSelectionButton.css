@@ -1,8 +1,8 @@
-.text-button {
+.number-button {
     background-color: white; /* Set background color to white */
     border: 2px solid black; /* Set border to black with 2px width */
     color: #000000; /* Set text color to black */
-    font-size: 16px; /* Set font size */
+    font-size: 35px; /* Set font size */
     cursor: pointer; /* Set cursor to pointer on hover */
     outline: none; /* Remove default focus outline */
     font-weight: bold;

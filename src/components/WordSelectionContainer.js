@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import WordSelectionButton from './WordSelectionButton';
 import './WordSelectionContainer.css';
 
@@ -53,9 +53,12 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
   };
 
   return (
-    <div className="word-selection-container" style={containerStyle}>
-      {generateButtons()}
+    <div className="general-container">
+      <div className="word-selection-container" style={containerStyle}>
+        {generateButtons()}
+      </div>
     </div>
+
   );
 };
 
