@@ -7,6 +7,11 @@
     outline: none; /* Remove default focus outline */
     font-weight: bold;
   }
+
+
+  .number-button:nth-child(10) {
+    grid-column: 2 / 3; /* Center the "0" button under the other buttons */
+}
   
   
   

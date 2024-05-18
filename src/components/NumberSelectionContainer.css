@@ -7,6 +7,7 @@
   }
 
   .selected-numbers {
+    /* text-align: center; */
     font-size: 50px;
     display: flex; /* Use flexbox */
     justify-content: center; /* Center items horizontally */
@@ -26,5 +27,6 @@
   }
 
   .number {
-    margin-right: 35px;
+    margin-right: 25px;
+    margin-left: 20px;
   }

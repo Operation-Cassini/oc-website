@@ -6,19 +6,12 @@ import './NextButton.css'; // Import CSS file for styling
 const NextButton = ({ to, correctAnswer, selectedAnswer, errorMessage, error, setError, pageNumber, children }) => {
   // Function to toggle the position of the next button
   const toggleNextButtonPosition = (pageNumber) => {
-    const nextButton = document.querySelector('.next-button');
-    if (nextButton) {
-      // Check if the page number is even or odd
+    const nextButtonContainer = document.querySelector('.next-flex');
+    if (nextButtonContainer) {
       if (pageNumber % 2 === 1) {
-        // Even page number: Position the button in the bottom right corner
-        nextButton.style.bottom = '10px';
-        nextButton.style.right = '10px';
-        nextButton.style.left = ''; // Clear the left style
+        nextButtonContainer.style.marginRight = '100px'; // Move slightly to the left
       } else {
-        // Odd page number: Position the button in the bottom left corner
-        nextButton.style.bottom = '10px';
-        nextButton.style.left = '10px';
-        nextButton.style.right = ''; // Clear the right style
+        nextButtonContainer.style.marginRight = '0px'; // Default position
       }
     }
   };

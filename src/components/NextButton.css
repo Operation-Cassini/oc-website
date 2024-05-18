@@ -14,17 +14,20 @@
   cursor: pointer; /* Set cursor to pointer on hover */
   outline: none; /* Remove default focus outline */
   font-weight: bold;
-  position: fixed; /* Ensure the button is positioned relative to the viewport */
+  /* position: fixed; Ensure the button is positioned relative to the viewport */
 }
 
-.right-position {
+/* .right-position {
   justify-content: flex-end;
 }
 
 .left-position {
   justify-content: flex-start;
-}
+} */
 
 .error-message {
   color: red; /* Optionally, you can style the error message */
+}
+.next-flex {
+  text-align: right;
 }

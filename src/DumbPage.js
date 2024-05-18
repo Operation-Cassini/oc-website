@@ -165,7 +165,7 @@ const Page = ({ content, correctAnswer, to }) => {
           );
         })()
       }
-
+    <div className = "next-flex">
       <NextButton
           to={to}
           correctAnswer={correctAnswer}
@@ -177,6 +177,7 @@ const Page = ({ content, correctAnswer, to }) => {
         >
           NEXT
       </NextButton>
+    </div>
     </div>
   );
 };

@@ -28,3 +28,11 @@
   margin: 0;
   border: 0;
 }
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
