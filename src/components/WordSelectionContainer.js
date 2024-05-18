@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import WordSelectionButton from './WordSelectionButton';
 import './WordSelectionContainer.css';
 
-const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words, pageNumber }) => {
+const WordSelectionContainer = ({ rows, columns, onClick, words }) => {
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
-  useEffect(() => {
-    // Reset selected button index whenever the component is rendered
-    setSelectedButtonIndex(null);
-  }, [pageNumber]);
 
   const handleButtonClick = (index) => {
     if (selectedButtonIndex === index) {
@@ -22,32 +18,31 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
   };
 
   const containerStyle = {
-    display: 'grid',
-    gridTemplateColumns: `repeat(${columns}, auto)`, // Adjusted grid template columns
-    gridTemplateRows: `repeat(${rows}, auto)`,
+    display: 'flex',
+    flexWrap: 'wrap',
     gap: '10px',
+    justifyContent: 'flex-start',
   };
 
   const generateButtons = () => {
     let buttons = [];
-    for (let i = 0; i < rows; i++) {
-      for (let j = 0; j < columns; j++) {
-        const index = i * columns + j;
-        let word = words[index];
-        buttons.push(
-          <WordSelectionButton
-            key={index}
-            onClick={() => handleButtonClick(index)}
-            isSelected={selectedButtonIndex === index}
-            style={{
-              width: buttonDimensions.width,
-              height: buttonDimensions.height,
-            }}
-          >
-            {word}
-          </WordSelectionButton>
-        );
-      }
+    for (let i = 0; i < rows * columns; i++) {
+      let word = words[i] || ''; // Get the word for the current button
+      buttons.push(
+        <WordSelectionButton
+          key={i}
+          index={i}
+          onClick={handleButtonClick}
+          isSelected={selectedButtonIndex === i}
+          style={{
+            width: '100px',
+            height: '50px',
+            flexBasis: `calc(100% / ${columns} - 10px)`, // Adjust the width of each button
+          }}
+        >
+          {word}
+        </WordSelectionButton>
+      );
     }
     return buttons;
   };

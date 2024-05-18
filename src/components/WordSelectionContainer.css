@@ -1,25 +1,10 @@
 /* WordSelectionContainer.css */
+
 .word-selection-container {
+  margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: flex-start;
 }
 
-.word-selection-button {
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: auto;
-  background-color: blue;
-}
-
-.word {
-  background-color: green;
-  width: 100%;
-  height: auto;
-  padding: 0;
-  margin: 0;
-  border: 0;
-}

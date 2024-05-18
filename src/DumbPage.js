@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
 import WordSelectionContainer from './components/WordSelectionContainer';
+import InstructionContainer from './components/InstructionContainer';
 import Instruction from './components/Instruction';
 import NextButton from './components/NextButton';
 import NumberSelectionContainer from './components/NumberSelectionContainer'
@@ -26,12 +27,25 @@ const Page = ({ content, correctAnswer, to }) => {
     <div>
       <h1>Render Page</h1>
       {/* Render page title if it exists */}
-      {content['Page Title'] && <h1>{content['Page Title']}</h1>}
+      {/* {content['Page Title'] && <h1>{content['Page Title']}</h1>} */}
 
       {/* Render paragraph if it exists */}
-      {content['Prompt'] && <Instruction text={content['Prompt']} />}
+      {/* {content['Prompt'] && <Instruction text={content['Prompt']} />} */}
 
-      {/* Render image if it exists */}
+
+      {content['Type of Question'] === 'Instruction' && 
+        (() => {
+          // Extract prompts based on keys
+          const prompts = Object.keys(content)
+            .filter(key => key.startsWith('Prompt'))
+            .map(key => content[key]);
+
+          return (
+            <InstructionContainer instructions={prompts} />
+          );
+        })()
+      }
+
       {content['Type of Question'] === 'Word Selection' && 
         (() => {
           let s = content['Word Bank'];
@@ -39,14 +53,22 @@ const Page = ({ content, correctAnswer, to }) => {
           words = words.map(str => str.trim());
 
           return (
-            <WordSelectionContainer
-                rows={content['Dimensions'].split("x")[0]}
-                columns={content['Dimensions'].split("x")[1]}
-                buttonDimensions={buttonDimensions}
-                onClick={handleClick}
-                words={words}
-                pageNumber={content['Page Number']}
-            />
+            <div>
+              <div>
+                <Instruction text={content['Prompt']} className="instruction-single" />
+            </div>
+            <div>
+                <WordSelectionContainer
+                    rows={content['Dimensions'].split("x")[0]}
+                    columns={content['Dimensions'].split("x")[1]}
+                    onClick={handleClick}
+                    words={words}
+                    pageNumber={content['Page Number']}
+                />
+            </div>
+            </div>
+            
+            
           );
         })()
       }
@@ -57,7 +79,9 @@ const Page = ({ content, correctAnswer, to }) => {
           words = words.map(str => str.trim());
 
           return (
-            <MultiWordSelectionContainer
+            <div>
+              <Instruction text={content['Prompt']} className="instruction-single" />
+              <MultiWordSelectionContainer
                 rows={content['Dimensions'].split("x")[0]}
                 columns={content['Dimensions'].split("x")[1]}
                 buttonDimensions={buttonDimensions}
@@ -65,6 +89,7 @@ const Page = ({ content, correctAnswer, to }) => {
                 words={words}
                 pageNumber={content['Page Number']}
             />
+            </div>
           );
         })()
       }

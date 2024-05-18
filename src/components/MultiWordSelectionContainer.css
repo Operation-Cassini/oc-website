@@ -1,12 +1,10 @@
+/* MultiWordSelectionContainer.css */
+
 .word-selection-container {
-    width: 60%;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center; */
-    margin: 10px;
-    /* grid-template-columns: repeat(var(--columns), auto); /* Dynamic columns */
-    /* grid-template-rows: repeat(var(--rows), auto); /* Dynamic rows */
-    /* gap: 0px; */
-  }
-  
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
