@@ -8,12 +8,14 @@ import NumberSelectionContainer from './components/NumberSelectionContainer'
 const Page = ({ content, correctAnswer, to }) => {
   const buttonDimensions = { width: '100px', height: '50px' };
 
-  const [selectedAnswer, setSelectedAnswer] = React.useState(null);
+  const [selectedAnswer, setSelectedAnswer] = React.useState("-");
+  const [error, setError] = React.useState(false);
 
   // Function to handle clicking on a word
   const handleClick = (word) => {
     // Pass the selected word to the parent component
     setSelectedAnswer(word);
+    setError(false);
   };
   return (
     <div>
@@ -64,6 +66,9 @@ const Page = ({ content, correctAnswer, to }) => {
           to={to}
           correctAnswer={correctAnswer}
           selectedAnswer={selectedAnswer}
+          errorMessage={content['Error Pop Ups']}
+          error={error}
+          setError={setError}
         >
           NEXT
       </NextButton>
