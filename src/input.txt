@@ -1,6 +1,7 @@
 Application Name: SATURN
 Page Title: Test 1
 Prompt: PICK THE WORD THAT STARTS WITH J
+Error Pop Ups: NOT YET!\nTO CONTINUE, YOU HAVE TO PICK THE “J” WORD.\n\nTOUCH IT, AND IT WILL TURN BLUE.
 Type of Question: Word Selection
 Word Bank: [ACID, DIME, FARM, GOLD, JAZZ, KNOT, OVEN, SHOE, TREE, WOLF]
 Dimensions: 5x2
@@ -10,6 +11,7 @@ Page Number: 1
 Application Name: SATURN
 Page Title: Test 2
 Prompt: PICK THE FRUIT WORDS
+Error Pop Ups: NOT YET!\n\nTO CONTINUE, YOU HAVE TO PICK BOTH FRUIT WORDS.; NOT YET!\nTO CONTINUE, YOU CAN +ONLY+ PICK FRUIT WORDS.\n\nTO UN-PICK A WORD, TOUCH IT AGAIN.
 Type of Question: Multi Word Selection
 Word Bank: [BANANA, CHURCH, ORANGE, STAPLE]
 Dimensions: 4x1
@@ -19,6 +21,7 @@ Page Number: 2
 Application Name: SATURN
 Page Title: Test 3
 Prompt: Enter 1239
+Error Pop Ups: NOT YET!\nTO CONTINUE, YOU MUST ENTER THE CORRECT NUMBER.
 Type of Question: Number Pad
 Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 Dimensions: 4x3
