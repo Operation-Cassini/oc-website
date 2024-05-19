@@ -1,25 +1,21 @@
 /* Instruction.css */
 
 .instruction-box {
-  background-color: #f0f0f0;
-  border-radius: 20px;
-  padding: 20px;
-  width: 90%;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 20px; /* Add a margin bottom for the gap */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 15px 90px;
+  box-sizing: border-box;
+  flex-direction: column; /* Stack children vertically */
 }
 
-.instruction-single {
-  background-color: white;
-  border-radius: 20px;
-  padding: 20px;
-  text-align: center;
-  width: 90%;
-  font-size: 30px;
+.instruction-text {
+  text-transform: uppercase;
+  font-size: 40px;
   font-weight: bold;
-  color: black;
-  margin: 0 auto; /* Center the instruction horizontally */
+  color: #000000;
+  text-align: center; /* Center text horizontally */
+  word-wrap: break-word; /* Ensure long words break and wrap to the next line */
 }

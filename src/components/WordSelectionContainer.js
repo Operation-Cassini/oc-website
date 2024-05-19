@@ -48,9 +48,12 @@ const WordSelectionContainer = ({ rows, columns, onClick, words }) => {
   };
 
   return (
-    <div className="word-selection-container" style={containerStyle}>
-      {generateButtons()}
+    <div className="general-container">
+      <div className="word-selection-container" style={containerStyle}>
+        {generateButtons()}
+      </div>
     </div>
+
   );
 };
 

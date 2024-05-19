@@ -1,24 +1,26 @@
 /* WordSelectionButton.css */
-.text-button {
-  font-size: 50px; /* Move font size here */
-  display: flex; /* Flex display to center content */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  text-align: center; /* Ensure text is centered */
-  border: none; /* Remove default button border */
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
-  cursor: pointer; /* Pointer cursor for better UX */
-  box-sizing: border-box; /* Ensures padding and border are included in width and height */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color change */
+.word-button {
+  display: flex;
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+  justify-self: center;
+  text-transform: uppercase;
+  background-color: white;
+  border: 5px solid black;
+  color: #000000;
+  font-size: 35px;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+  padding: 32px 90px;
 }
 
-.text-button.selected {
-  background-color: blue; /* Background color for selected state */
-  color: white; /* Text color for selected state */
+
+.word-button.clicked,
+.word-button.selected {
+  background-color: #85c7ff; /* Change background color to blue for clicked or selected state */
 }
 
-.text-button:not(.selected) {
-  background-color: white; /* Default background color */
-  color: black; /* Default text color */
+.word-button:hover {
+  background-color: #85c7ff; /* Change background color on hover */
 }

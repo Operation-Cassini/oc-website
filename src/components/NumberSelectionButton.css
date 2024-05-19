@@ -1,12 +1,15 @@
-.text-button {
-    background-color: white; /* Set background color to white */
-    border: 2px solid black; /* Set border to black with 2px width */
-    color: #000000; /* Set text color to black */
-    font-size: 16px; /* Set font size */
-    cursor: pointer; /* Set cursor to pointer on hover */
-    outline: none; /* Remove default focus outline */
-    font-weight: bold;
-  }
-  
-  
-  
+.number-button {
+  background-color: white; /* Set background color to white */
+  border: 2px solid black; /* Set border to black with 2px width */
+  color: #000000; /* Set text color to black */
+  font-size: 35px; /* Set font size */
+  cursor: pointer; /* Set cursor to pointer on hover */
+  outline: none; /* Remove default focus outline */
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+
+.number-button:nth-child(10) {
+  grid-column: 2 / 3; /* Center the "0" button under the other buttons */
+}

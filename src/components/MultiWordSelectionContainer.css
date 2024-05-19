@@ -1,10 +1,8 @@
-/* MultiWordSelectionContainer.css */
-
-.word-selection-container {
-  margin-top: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+.multi-selection-container {
+  display: flex; /* Use flexbox */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  width: 50%; /* Allow container to adjust its width based on content */
+  margin: 0 auto; /* Center container horizontally */
 }

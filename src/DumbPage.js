@@ -14,14 +14,15 @@ import ImageSelection from './components/ImageSelection';
 const Page = ({ content, correctAnswer, to }) => {
   const buttonDimensions = { width: '100px', height: '50px' };
 
-  const [selectedAnswer, setSelectedAnswer] = React.useState(null);
+  const [selectedAnswer, setSelectedAnswer] = React.useState("-");
+  const [error, setError] = React.useState(false);
 
   // Function to handle clicking on a word
   const handleClick = (word) => {
     console.log('Selected word:', word);
     // Pass the selected word to the parent component
     setSelectedAnswer(word);
-    console.log("here, we selected", word)
+    setError(false);
   };
   return (
     <div>
@@ -189,15 +190,19 @@ const Page = ({ content, correctAnswer, to }) => {
           );
         })()
       }
-
+    <div className = "next-flex">
       <NextButton
           to={to}
           correctAnswer={correctAnswer}
           selectedAnswer={selectedAnswer}
+          errorMessage={content['Error Pop Ups'] ? content['Error Pop Ups'] : ""}
+          error={error}
+          setError={setError}
           pageNumber = {content['Page Number']}
         >
           NEXT
       </NextButton>
+    </div>
     </div>
   );
 };

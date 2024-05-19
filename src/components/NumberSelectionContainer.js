@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import NumberSelectionButton from './NumberSelectionButton';
 import './NumberSelectionContainer.css';
 
@@ -44,39 +44,41 @@ const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, wo
       for (let j = 0; j < columns; j++) {
         const index = i + j;
         let word = words[index];
-        buttons.push(
-          <NumberSelectionButton
-            key={index}
-            onClick={() => handleButtonClick(index)}
-            style={{
-              width: buttonDimensions.width,
-              height: buttonDimensions.height
-            }}
-          >
-            {word}
-          </NumberSelectionButton>
-        );
+        if (word !== undefined) {
+          buttons.push(
+            <NumberSelectionButton
+              key={index}
+              onClick={() => handleButtonClick(index)}
+              style={{
+                width: buttonDimensions.width,
+                height: buttonDimensions.height
+              }}
+            >
+              {word}
+            </NumberSelectionButton>
+          );
+      }
       }
     }
     return buttons;
   };
 
   return (
-    <div>
-        <div className="number-line">
-            <div className = "selected-numbers">
-                {selectedNumbers.split('').map((number, index) => (
-                <span key={index} className="number">{number}</span>
-                ))}
-            </div>
-            
-            <div className = "underscores">_ _ _ _</div>
+    <div class="general-container">
+      <div class="number-line">
+        <div class="selected-numbers">
+          {selectedNumbers.split('').map((number, index) => (
+          <span key={index} className="number">{number}</span>
+          ))}
         </div>
-      <div className="number-selection-container" style={containerStyle}>
+        <div class="underscores">_ _ _ _</div>
+      </div>
+      
+      <div class="number-selection-container" style={containerStyle}>
         {generateButtons()}
       </div>
-      <button onClick={handleDelete}>Delete</button>
-    </div>
+      <button onClick={handleDelete} className="delete-button">DELETE</button>
+  </div>
   );
   
 };

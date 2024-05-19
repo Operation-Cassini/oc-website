@@ -4,7 +4,7 @@ import Home from './Home';
 import Page from './DumbPage';
 import ParseInputFile from './Parser';
 import text from './input.txt';
-import NextButton from './components/NextButton';
+// import NextButton from './components/NextButton';
 
 const App = () => {
   // State to store parsed page data
