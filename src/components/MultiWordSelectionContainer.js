@@ -18,7 +18,7 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
     if (indexIsSelected) {
         updatedIndices = selectedButtonIndices.filter((i) => i !== index);
         setSelectedButtonIndices(updatedIndices);
-        onClick(null); // Pass null to parent component to signify deselection
+        onClick(["-"]); // Pass null to parent component to signify deselection
       // debugger;
     } else {
 
@@ -66,8 +66,10 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
   };
 
   return (
-    <div className="multi-selection-container" style={containerStyle}>
-      {generateButtons()}
+    <div className = "general-container">
+      <div className="multi-selection-container" style={containerStyle}>
+        {generateButtons()}
+      </div>
     </div>
   );
 };

@@ -16,16 +16,16 @@
   }
 
   .underscores-money {
-    margin-top: -100px;
+    margin-top: -50px;
     font-size: 100px;
   }
 
   .number-money {
-    margin-right: 32px;
-    margin-left: 10px;
+    margin-right: -15px;
+    margin-left: 60px;
   }
 
-  .number-line {
-    display: flex;
-    align-items: center; /* Align items vertically */
-  }
+  /* .number-line { */
+    /* display: flex;
+    align-items: center; Align items vertically */
+  /* } */

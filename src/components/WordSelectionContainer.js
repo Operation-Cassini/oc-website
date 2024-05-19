@@ -12,7 +12,7 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
   const handleButtonClick = (index) => {
     if (selectedButtonIndex === index) {
       // Deselect the button if it's already selected
-      onClick(null); // Pass null to parent component to signify deselection
+      onClick("-"); // Pass null to parent component to signify deselection
       setSelectedButtonIndex(null);
     } else {
       // Select the clicked button
@@ -32,8 +32,9 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
     let buttons = [];
     for (let i = 0; i < rows; i++) {
       for (let j = 0; j < columns; j++) {
-        const index = i * columns + j;
+        const index = i + j*rows;
         let word = words[index];
+        
         buttons.push(
           <WordSelectionButton
             key={index}

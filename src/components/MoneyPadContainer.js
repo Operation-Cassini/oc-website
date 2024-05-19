@@ -17,6 +17,7 @@ const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, words, pa
         const updatedNumbers = selectedNumbers.slice(0, selectedNumbers.length - 1);
         console.log(updatedNumbers);
         setSelectedNumbers(updatedNumbers);
+        onClick(updatedNumbers);
       }
   };
   const handleButtonClick = (index) => {
@@ -63,10 +64,10 @@ const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, words, pa
   };
 
   return (
-    <div className = "flex-container">
+    <div className = "general-container">
         <div className="number-line">
-          <div className="dollar-sign">$</div>
-            <div className = "selected-numbers">
+          {/* <div className="dollar-sign">$</div> */}
+            <div className = "selected-numbers">$
                 {selectedNumbers.split('').map((number, index) => (
                 <span key={index} className="number-money">{number}</span>
                 ))}
@@ -76,7 +77,7 @@ const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, words, pa
       <div className="money-selection-container" style={containerStyle}>
         {generateButtons()}
       </div>
-      <button onClick={handleDelete}>Delete</button>
+      <button className = "delete-button" onClick={handleDelete}>Delete</button>
     </div>
   );
   

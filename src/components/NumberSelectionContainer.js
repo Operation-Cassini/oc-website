@@ -16,8 +16,9 @@ const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, wo
     console.log("here!")
     if (selectedNumbers.length > 0) {
         const updatedNumbers = selectedNumbers.slice(0, selectedNumbers.length - 1);
-        console.log(updatedNumbers);
+        console.log("this is the new number",updatedNumbers);
         setSelectedNumbers(updatedNumbers);
+        onClick(updatedNumbers);
       }
   };
   const handleButtonClick = (index) => {
@@ -64,17 +65,17 @@ const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, wo
   };
 
   return (
-    <div class="general-container">
-      <div class="number-line">
-        <div class="selected-numbers">
+    <div className="general-container">
+      <div className="number-line">
+        <div className="selected-numbers">
           {selectedNumbers.split('').map((number, index) => (
           <span key={index} className="number">{number}</span>
           ))}
         </div>
-        <div class="underscores">_ _ _ _</div>
+        <div className="underscores">_ _ _ _</div>
       </div>
       
-      <div class="number-selection-container" style={containerStyle}>
+      <div className="number-selection-container" style={containerStyle}>
         {generateButtons()}
       </div>
       <button onClick={handleDelete} className="delete-button">DELETE</button>
