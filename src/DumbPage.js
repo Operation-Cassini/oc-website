@@ -1,4 +1,4 @@
-import React from 'react';
+import { default as React, useEffect } from 'react';
 import './App.css';
 import FlashTextBoxes from './components/FlashTextBox';
 import ImageSelection from './components/ImageSelection';
@@ -101,15 +101,14 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
           words = words.map(str => str.trim());
 
           return (
-            <div>
-                <WordSelectionContainer
-                    rows={content['Dimensions'].split("x")[0]}
-                    columns={content['Dimensions'].split("x")[1]}
-                    onClick={handleClick}
-                    words={words}
-                    pageNumber={content['Page Number']}
-                />
-            </div>
+            <WordSelectionContainer
+                rows={content['Dimensions'].split("x")[0]}
+                columns={content['Dimensions'].split("x")[1]}
+                buttonDimensions={buttonDimensions}
+                onClick={handleClick}
+                words={words}
+                pageNumber={content['Page Number']}
+            />
           );
         })()
       }
@@ -120,8 +119,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
           words = words.map(str => str.trim());
 
           return (
-            <div>
-              <MultiWordSelectionContainer
+            <MultiWordSelectionContainer
                 rows={content['Dimensions'].split("x")[0]}
                 columns={content['Dimensions'].split("x")[1]}
                 buttonDimensions={buttonDimensions}
@@ -129,7 +127,6 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
                 words={words}
                 pageNumber={content['Page Number']}
             />
-            </div>
           );
         })()
       }
