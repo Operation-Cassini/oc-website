@@ -18,31 +18,53 @@ const WordSelectionContainer = ({ rows, columns, onClick, words }) => {
   };
 
   const containerStyle = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '10px',
-    justifyContent: 'flex-start',
+    display: 'grid',
+    gridTemplateColumns: `repeat(${columns}, auto)`, // Adjusted grid template columns
+    gridTemplateRows: `repeat(${rows}, auto)`,
+    gap: '5px',
   };
 
   const generateButtons = () => {
     let buttons = [];
     for (let i = 0; i < rows * columns; i++) {
       let word = words[i] || ''; // Get the word for the current button
-      buttons.push(
-        <WordSelectionButton
-          key={i}
-          index={i}
-          onClick={handleButtonClick}
-          isSelected={selectedButtonIndex === i}
-          style={{
-            width: '100px',
-            height: '50px',
-            flexBasis: `calc(100% / ${columns} - 10px)`, // Adjust the width of each button
-          }}
-        >
-          {word}
-        </WordSelectionButton>
-      );
+      if (words.length > 21) {
+        buttons.push(
+          <WordSelectionButton
+            key={i}
+            index={i}
+            onClick={handleButtonClick}
+            isSelected={selectedButtonIndex === i}
+            style={{
+              width: '220px',
+              height: '20px',
+              fontSize: '22px',
+              paddingTop: '12px',
+              paddingBottom: '12px',
+              paddingLeft: '0px',
+              paddingRight: '0px',
+            }}
+          >
+            {word}
+          </WordSelectionButton>
+        );
+      } else {
+        buttons.push(
+          <WordSelectionButton
+            key={i}
+            index={i}
+            onClick={handleButtonClick}
+            isSelected={selectedButtonIndex === i}
+            style={{
+              width: '200px',
+              height: '50px',
+            }}
+          >
+            {word}
+          </WordSelectionButton>
+        );
+      }
+      
     }
     return buttons;
   };

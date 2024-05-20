@@ -60,11 +60,6 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, errorMessage, error, se
   };
 
   return (
-    // <Link to={to} onClick={handleClick}> {/* Use the "to" prop to specify the route path */}
-    //   <button className="next-button">
-    //     {children}
-    //   </button>
-    // </Link>
     <div>
       <div className = "error-flex">
       {error && <ErrorMessage message={errorMessage} />} {/* Conditionally 

@@ -2,6 +2,7 @@
 
   .flash-text-box {
     position: relative;
+    justify-content: center;
   }
   
   .blackout-overlay {
@@ -19,7 +20,8 @@
   }
   
   .show {
-    display: block;
+    display: flex;
+    justify-content: center;
   }
   
   .overlay-show {

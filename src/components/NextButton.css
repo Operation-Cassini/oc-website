@@ -26,3 +26,7 @@
 .next-flex {
   text-align: right;
 }
+
+.error-message {
+  color: red; /* Optionally, you can style the error message */
+}

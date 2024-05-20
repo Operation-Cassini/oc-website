@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import FlashTextBoxes from './components/FlashTextBox';
 import ImageSelection from './components/ImageSelection';
 import Instruction from './components/Instruction';
 import InstructionContainer from './components/InstructionContainer';
@@ -165,8 +166,8 @@ const Page = ({ content, correctAnswer, to }) => {
                   margin: 'auto',    /* Center horizontally */
                   marginTop: 'auto', /* Center vertically */
                   marginBottom: 'auto',
-                  maxWidth: '100%',  /* Ensure the image fits within the container */
-                  maxHeight: '100%', 
+                  maxWidth: '220px',  /* Ensure the image fits within the container */
+                  maxHeight: 'auto', 
                   paddingBottom: '20px',
                 }} 
               />
@@ -178,6 +179,24 @@ const Page = ({ content, correctAnswer, to }) => {
             </div>
           );
         })()
+      }
+      {content['Type of Question'] === 'Flashing Words' &&
+        (() => {
+          console.log("reading");
+          let s = content['Words'];
+          console.log("words: ", s);
+          let words = s.substring(1, s.length-1).split(",");
+          console.log("substring");
+          words = words.map(str => str.trim());
+          console.log("word final: ", words);
+          return (
+            <div>
+              <FlashTextBoxes texts={words}/>
+            </div>
+
+          );
+        })()
+
       }
     <div className = "next-flex">
       <NextButton

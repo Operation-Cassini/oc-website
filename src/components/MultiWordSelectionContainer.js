@@ -27,47 +27,48 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
   const containerStyle = {
     display: 'grid',
     gridTemplateColumns: `repeat(${columns}, auto)`, // Adjusted grid template columns
-    gap: '10px',
+    gap: '5px',
   };
 
   const generateButtons = () => {
     let buttons = [];
     for (let i = 0; i < rows * columns; i++) {
       let word = words[i] || ''; // Get the word for the current button
-      buttons.push(
-        <WordSelectionButton
+      if (words.length > 21) {
+        buttons.push(
+          <WordSelectionButton
             key={i}
             onClick={() => handleButtonClick(i)}
             isSelected={selectedButtonIndices.includes(i)}
             style={{
-              width: '100px',
-              height: '50px',
-              flexBasis: `calc(100% / ${columns} - 10px)`, // Adjust the width of each button
+              width: '220px',
+              height: '20px',
+              fontSize: '22px',
+              paddingTop: '12px',
+              paddingBottom: '12px',
+              paddingLeft: '0px',
+              paddingRight: '0px',
             }}
           >
             {word}
           </WordSelectionButton>
-      );
+        );
+      } else {
+        buttons.push(
+          <WordSelectionButton
+            key={i}
+            onClick={() => handleButtonClick(i)}
+            isSelected={selectedButtonIndices.includes(i)}
+            style={{
+              width: '120px',
+              height: '50px',
+            }}
+          >
+            {word}
+          </WordSelectionButton>
+        );
+      }
     }
-    // for (let i = 0; i < rows; i++) {
-    //   for (let j = 0; j < columns; j++) {
-    //     const index = i * columns + j;
-    //     let word = words[index];
-    //     buttons.push(
-    //       <WordSelectionButton
-    //         key={index}
-    //         onClick={() => handleButtonClick(index)}
-    //         isSelected={selectedButtonIndices.includes(index)}
-    //         style={{
-    //           width: '100px',
-    //           height: '50px',
-    //         }}
-    //       >
-    //         {word}
-    //       </WordSelectionButton>
-    //     );
-    //   }
-    // }
     return buttons;
   };
 

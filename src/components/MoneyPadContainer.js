@@ -62,23 +62,26 @@ const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, words, pa
     return buttons;
   };
 
+
   return (
     <div className = "general-container">
-    <div className="number-line">
-      {/* <div className="dollar-sign">$</div> */}
-        <div className = "selected-numbers">&nbsp;&nbsp;&nbsp;$
-            {selectedNumbers.split('').map((number, index) => (
-            <span key={index} className="number-money">{number}</span>
-            ))}
-        </div>   
-    </div>
-    <div className = "underscores-money">_ _</div>
-  <div className="money-selection-container" style={containerStyle}>
-    {generateButtons()}
+      <div className="number-pad">
+        <div className="number-line">
+          <div className = "selected-numbers">&nbsp;&nbsp;&nbsp;$
+              {selectedNumbers.split('').map((number, index) => (
+              <span key={index} className="number-money">{number}</span>
+              ))}
+          </div>
+          <div className = "underscores-money">_ _</div>
+        </div>
+
+        <div className="money-selection-container" style={containerStyle}>
+          {generateButtons()}
+        </div>
+        <button onClick={handleDelete} className="delete-button">DELETE</button>
+      </div>
   </div>
-  <button class = "delete-button" onClick={handleDelete}>DELETE</button>
-</div>
-);
+  );
 
 };
 

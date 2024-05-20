@@ -1,6 +1,10 @@
 /* StroopTextBox.css */
 
 .text-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
   background-color: white;
   width: 30%;
   height: 50%;

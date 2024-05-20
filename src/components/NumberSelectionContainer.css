@@ -3,25 +3,9 @@
   margin-top: 100px;
 }
 
-/* Hard-coded.... */
-.number-line{
-  margin-left: -250px;
-}
-
-.selected-numbers,
 .underscores {
   position: absolute;
   display: flex;
-  justify-content: center;
-}
-
-.selected-numbers {
-  /* text-align: center; */
-  font-size: 50px;
-  margin-left: -12px;
-}
-
-.underscores {
   margin-top: -50px;
   font-size: 100px;
 }
@@ -30,6 +14,24 @@
   margin-right: 25px;
   margin-left: 18px;
   padding: -100px;
+}
+
+
+.selected-numbers {
+  position: absolute;
+  display: flex;
+  font-size: 50px;
+  margin-left: -12px;
+}
+
+.number-line{
+  margin-left: 37px;
+}
+
+.number-pad {
+  background-color: white;
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .delete-button {
@@ -42,4 +44,5 @@
   font-weight: bold;
   border-radius: 10px;
   padding: 10px 80px;
+  margin-left: 10px;
 }

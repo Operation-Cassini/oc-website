@@ -5,7 +5,7 @@ const ImageSelection = ({ images, rows, cols, onImageClick }) => {
   const containerStyle = {
     display: 'flex',
     flexWrap: 'wrap',
-    gap: '10px', // Adjust the gap between images if needed
+    gap: '5px', // Adjust the gap between images if needed
     justifyContent: 'flex-start', // Align images to the start to prevent extra space at the end
   };
 
@@ -23,7 +23,7 @@ const ImageSelection = ({ images, rows, cols, onImageClick }) => {
           key={i}
           className="image-container"
           style={{
-            flexBasis: `calc((100% / ${cols}) - 10px)`, // Adjust the width of each image container
+            width: '190px', // Adjust the width of each image container
             boxSizing: 'border-box', // Include padding and border in the element's total width and height
           }}
         >
@@ -40,7 +40,7 @@ const ImageSelection = ({ images, rows, cols, onImageClick }) => {
                 height: '100%', // Ensure the button takes full height of the container
               }}
             >
-              <img src={image} alt={`Selected ${i}`} className="image" style={{ width: '100%', height: 'auto' }} />
+              <img src={image} alt={`Selected ${i}`} className="image" />
             </button>
           )}
         </div>
@@ -50,8 +50,12 @@ const ImageSelection = ({ images, rows, cols, onImageClick }) => {
   };
 
   return (
-    <div className="image-selection" style={containerStyle}>
-      {generateImages()}
+    <div className="general-container">
+      <div className="image-selection-container" style={containerStyle}>
+        <div className="image-selection" style={containerStyle}>
+          {generateImages()}
+        </div>
+      </div>
     </div>
   );
 };

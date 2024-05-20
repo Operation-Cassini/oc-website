@@ -15,7 +15,6 @@
   padding: 32px 90px;
 }
 
-
 .word-button.clicked,
 .word-button.selected {
   background-color: #85c7ff; /* Change background color to blue for clicked or selected state */

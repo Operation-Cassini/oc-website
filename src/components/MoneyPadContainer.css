@@ -1,13 +1,12 @@
 .money-selection-container {
-  margin: 10px;
-}
-
-.selected-numbers {
-  /* text-align: center; */
-  font-size: 50px;
+  margin: 10px auto;
+  margin-top: 100px;
 }
 
 .underscores-money {
+  position: absolute;
+  display: flex;
+  margin-left: 70px;
   margin-top: -50px;
   font-size: 100px;
 }

@@ -1,16 +1,17 @@
 .image-selection-container {
   display: flex;
   justify-content: center;
+  width: 40%;
 }
 
 .image-selection {
-  width: 50%; /* Adjust this to set the desired width of the container */
+  width: 100%; /* Adjust this to set the desired width of the container */
   max-width: 800px; /* Optionally, set a max width */
   margin: 0 auto; /* Center the container */
 }
 
 .image-container {
-  flex-grow: 1;
+  margin: auto;
   /* Other styles as needed */
 }
 
@@ -24,6 +25,6 @@
 }
 
 .image {
-  width: 100%;
+  width: auto;
   height: auto;
 }

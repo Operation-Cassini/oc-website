@@ -163,7 +163,7 @@ Page Number: 19
 Prompt: EARLIER, YOU MEMORIZED FIVE WORDS. PICK THOSE WORDS FROM THIS LIST.
 Error Pop Ups: NOT YET!\nYOU HAVE TO PICK FIVE WORDS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!
 Type of Question: Multi Word Selection
-Word Bank: [ACID, ACTOR, APPLE, APRON, ALBUM, ANT, ARCH, ARM, ASH, ATTIC, AUTO, BANANA, BELT, BIKE, BLUE, BOAT, CAKE, CAR, CHURCH, COFFEE, COW, DIME, DOG DOLLAR, DRESS, EAR, EAGLE, EGG, FABRIC, FARM, FLAG, FUSE, GARAGE, GOLD, GREEN, HANDLE, HAT, HONEY, HOUSE, HUT, JAZZ, KNOT, LIE, LEMON, LOG, MAN, MAPLE, MILK, MUG, NICKEL, NOSE, NUT, OAK, OIL, ORANGE, OVEN, OWL, PEAR, PEN, PENCIL, PIG, QUIZ, RED, RIB, ROOM, ROSE, SAIL, SHED, SHOE, SISTER, SKY, STAPLE, STAR, STORE, TABLE, TEA, TEEN, TENNIS, THROAT, THUMB, TICKET, TIE, TOE, TONGUE, TOOTH, TOWN, TRAIN, TREE, TRUCK, TUB, URGE, VAN, WAVE, WEB, WHITE, WOLF, WOMAN, WOOD, YARN, YOGA]
+Word Bank: [ACID, ACTOR, APPLE, APRON, ALBUM, ANT, ARCH, ARM, ASH, ATTIC, AUTO, BANANA, BELT, BIKE, BLUE, BOAT, CAKE, CAR, CHURCH, COFFEE, COW, DIME, DOG, DOLLAR, DRESS, EAR, EAGLE, EGG, FABRIC, FARM, FLAG, FUSE, GARAGE, GOLD, GREEN, HANDLE, HAT, HONEY, HOUSE, HUT, JAZZ, KNOT, LIE, LEMON, LOG, MAN, MAPLE, MILK, MUG, NICKEL, NOSE, NUT, OAK, OIL, ORANGE, OVEN, OWL, PEAR, PEN, PENCIL, PIG, QUIZ, RED, RIB, ROOM, ROSE, SAIL, SHED, SHOE, SISTER, SKY, STAPLE, STAR, STORE, TABLE, TEA, TEEN, TENNIS, THROAT, THUMB, TICKET, TIE, TOE, TONGUE, TOOTH, TOWN, TRAIN, TREE, TRUCK, TUB, URGE, VAN, WAVE, WEB, WHITE, WOLF, WOMAN, WOOD, YARN, YOGA]
 Dimensions: 17x6
 Correct Answer: APPLE, CAR, HOUSE, PEN, TIE
 
@@ -211,12 +211,12 @@ Page Number: 24
 Prompt: WHICH SMALL DRAWINGS MAKE THAT?
 Error Pop Ups: NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!
 Type of Question: Image Selection
-Answer Img: /ImageSelectionFaceJPGs/image-selection-face1.webp
-File Path: [/ImageSelectionFaceJPGs/image-selection-face1.webp, /ImageSelectionFaceJPGs/image-selection-face2.webp, /ImageSelectionFaceJPGs/image-selection-face3.webp, /ImageSelectionFaceJPGs/image-selection-face4.webp, /ImageSelectionFaceJPGs/image-selection-face5.webp, /ImageSelectionFaceJPGs/image-selection-face6.webp]
+Answer Img: /ImageSelectionFaceJPGs/face-answer.webp
+File Path: [/ImageSelectionFaceJPGs/face1.webp, /ImageSelectionFaceJPGs/face2.webp, /ImageSelectionFaceJPGs/face3.webp, /ImageSelectionFaceJPGs/face4.webp, /ImageSelectionFaceJPGs/face5.webp, /ImageSelectionFaceJPGs/face6.webp]
 Dimensions: 2x3
 
 Application Name: SATURN
-Page Title: Drawing 2
+Page Title: Drawing 3
 Page Number: 24
 Prompt: WHICH SMALL DRAWINGS MAKE THAT?
 Error Pop Ups: NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!
@@ -226,12 +226,12 @@ File Path: [/ImageSelectionDiagonalLinesJPGs/diagonal-line1.webp, /ImageSelectio
 Dimensions: 2x3
 
 Application Name: SATURN
-Page Title: Drawing 2
+Page Title: Drawing 4
 Page Number: 24
 Prompt: WHICH SMALL DRAWINGS MAKE THAT?
 Error Pop Ups: NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!
 Type of Question: Image Selection
-Answer Img: /ImageSelectionCubeJPGs/cube1-answer.webp
+Answer Img: /ImageSelectionCubeJPGs/cube-answer.webp
 File Path: [/ImageSelectionCubeJPGs/cube1.webp, /ImageSelectionCubeJPGs/cube2.webp, /ImageSelectionCubeJPGs/cube3.webp, /ImageSelectionCubeJPGs/cube4.webp, /ImageSelectionCubeJPGs/cube5.webp, /ImageSelectionCubeJPGs/cube6.webp]
 Dimensions: 2x3
 
@@ -248,6 +248,160 @@ Page Number: 28
 Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
 Type of Question: STROOP
 Word: HAND
+Word Color: blue
+Word Bank: [GREEN, RED, BLUE]
+Dimensions: 1x3
+Correct Answer: BLUE
+
+Application Name: SATURN
+Page Title: Stroop 2
+Page Number: 29
+Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Type of Question: STROOP
+Word: BOOK
+Word Color: red
+Word Bank: [GREEN, RED, BLUE]
+Dimensions: 1x3
+Correct Answer: RED
+
+Application Name: SATURN
+Page Title: Stroop 3
+Page Number: 30
+Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Type of Question: STROOP
+Word: TABLE
+Word Color: green
+Word Bank: [GREEN, RED, BLUE]
+Dimensions: 1x3
+Correct Answer: GREEN
+
+Application Name: SATURN
+Page Title: Stroop 4
+Page Number: 31
+Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Type of Question: STROOP
+Word: GREEN
+Word Color: blue
+Word Bank: [GREEN, RED, BLUE]
+Dimensions: 1x3
+Correct Answer: BLUE
+
+Application Name: SATURN
+Page Title: Stroop 5
+Page Number: 32
+Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Type of Question: STROOP
+Word: RED
+Word Color: green
+Word Bank: [GREEN, RED, BLUE]
+Dimensions: 1x3
+Correct Answer: GREEN
+
+Application Name: SATURN
+Page Title: Stroop 6
+Page Number: 33
+Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Type of Question: STROOP
+Word: BLUE
+Word Color: red
+Word Bank: [GREEN, RED, BLUE]
+Dimensions: 1x3
+Correct Answer: RED
+
+Application Name: SATURN
+Page Title: Stroop 7
+Page Number: 34
+Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Type of Question: STROOP
+Word: RED
+Word Color: blue
+Word Bank: [GREEN, RED, BLUE]
+Dimensions: 1x3
+Correct Answer: BLUE
+
+Application Name: SATURN
+Page Title: Stroop 8
+Page Number: 35
+Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Type of Question: STROOP
+Word: BLUE
+Word Color: green
+Word Bank: [GREEN, RED, BLUE]
+Dimensions: 1x3
+Correct Answer: GREEN
+
+Application Name: SATURN
+Page Title: Stroop 9
+Page Number: 36
+Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Type of Question: STROOP
+Word: GREEN
+Word Color: red
+Word Bank: [GREEN, RED, BLUE]
+Dimensions: 1x3
+Correct Answer: RED
+
+Application Name: SATURN
+Page Title: Stroop 10
+Page Number: 37
+Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Type of Question: STROOP
+Word: RED
+Word Color: green
+Word Bank: [GREEN, RED, BLUE]
+Dimensions: 1x3
+Correct Answer: GREEN
+
+Application Name: SATURN
+Page Title: Stroop 11
+Page Number: 38
+Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Type of Question: STROOP
+Word: BLUE
+Word Color: red
+Word Bank: [GREEN, RED, BLUE]
+Dimensions: 1x3
+Correct Answer: RED
+
+Application Name: SATURN
+Page Title: Stroop 12
+Page Number: 39
+Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Type of Question: STROOP
+Word: RED
+Word Color: blue
+Word Bank: [GREEN, RED, BLUE]
+Dimensions: 1x3
+Correct Answer: BLUE
+
+Application Name: SATURN
+Page Title: Stroop 13
+Page Number: 40
+Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Type of Question: STROOP
+Word: GREEN
+Word Color: red
+Word Bank: [GREEN, RED, BLUE]
+Dimensions: 1x3
+Correct Answer: RED
+
+Application Name: SATURN
+Page Title: Stroop 14
+Page Number: 41
+Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Type of Question: STROOP
+Word: BLUE
+Word Color: green
+Word Bank: [GREEN, RED, BLUE]
+Dimensions: 1x3
+Correct Answer: GREEN
+
+Application Name: SATURN
+Page Title: Stroop 15
+Page Number: 42
+Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Type of Question: STROOP
+Word: GREEN
 Word Color: blue
 Word Bank: [GREEN, RED, BLUE]
 Dimensions: 1x3
