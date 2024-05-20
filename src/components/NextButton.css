@@ -6,28 +6,23 @@
 }
 
 .next-button {
-  background-color: #39FF14; /* Set background color to green */
-  border: 2px solid black; /* Set border to black with 2px width */
+  background-color: #39FF14; 
+  border: 2px solid black; 
   color: black; /* Set text color to black */
   padding: 3px 8px; /* Add padding */
   font-size: 25px; /* Set font size */
   cursor: pointer; /* Set cursor to pointer on hover */
   outline: none; /* Remove default focus outline */
   font-weight: bold;
-  /* position: fixed; Ensure the button is positioned relative to the viewport */
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
-/* .right-position {
+.error-flex {
+  display: flex;
   justify-content: flex-end;
 }
 
-.left-position {
-  justify-content: flex-start;
-} */
-
-.error-message {
-  color: red; /* Optionally, you can style the error message */
-}
 .next-flex {
   text-align: right;
 }

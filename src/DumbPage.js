@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './App.css';
-import WordSelectionContainer from './components/WordSelectionContainer';
-import InstructionContainer from './components/InstructionContainer';
-import Instruction from './components/Instruction';
-import NextButton from './components/NextButton';
-import NumberSelectionContainer from './components/NumberSelectionContainer'
-import MoneyPadContainer from './components/MoneyPadContainer'
-import MultiWordSelectionContainer from './components/MultiWordSelectionContainer';
-import StroopTextBox from './components/StroopTextBox';
 import ImageSelection from './components/ImageSelection';
+import Instruction from './components/Instruction';
+import InstructionContainer from './components/InstructionContainer';
+import MoneyPadContainer from './components/MoneyPadContainer';
+import MultiWordSelectionContainer from './components/MultiWordSelectionContainer';
+import NextButton from './components/NextButton';
+import NumberSelectionContainer from './components/NumberSelectionContainer';
+import StroopTextBox from './components/StroopTextBox';
+import WordSelectionContainer from './components/WordSelectionContainer';
 
 const Page = ({ content, correctAnswer, to }) => {
   const buttonDimensions = { width: '100px', height: '50px' };
@@ -26,12 +25,12 @@ const Page = ({ content, correctAnswer, to }) => {
   };
   return (
     <div>
-      <h1>Render Page</h1>
+      {/* <h1>Render Page</h1> */}
       {/* Render page title if it exists */}
       {/* {content['Page Title'] && <h1>{content['Page Title']}</h1>} */}
 
       {/* Render paragraph if it exists */}
-      {/* {content['Prompt'] && <Instruction text={content['Prompt']} />} */}
+      {content['Prompt'] && <Instruction text={content['Prompt']} className="instruction-box" />}
 
 
       {content['Type of Question'] === 'Instruction' && 
@@ -55,10 +54,6 @@ const Page = ({ content, correctAnswer, to }) => {
 
           return (
             <div>
-              <div>
-                <Instruction text={content['Prompt']} className="instruction-single" />
-            </div>
-            <div>
                 <WordSelectionContainer
                     rows={content['Dimensions'].split("x")[0]}
                     columns={content['Dimensions'].split("x")[1]}
@@ -67,9 +62,6 @@ const Page = ({ content, correctAnswer, to }) => {
                     pageNumber={content['Page Number']}
                 />
             </div>
-            </div>
-            
-            
           );
         })()
       }
@@ -81,7 +73,6 @@ const Page = ({ content, correctAnswer, to }) => {
 
           return (
             <div>
-              <Instruction text={content['Prompt']} className="instruction-single" />
               <MultiWordSelectionContainer
                 rows={content['Dimensions'].split("x")[0]}
                 columns={content['Dimensions'].split("x")[1]}
@@ -160,7 +151,6 @@ const Page = ({ content, correctAnswer, to }) => {
       }
       {content['Type of Question'] === 'Image Selection' &&
         (() => {
-          // {content['Answer Img'] && <img src={content['Answer Img']} alt="Answer Image" />}
           let s = content['File Path'];
           let filePaths = s.substring(1, s.length - 1).split(",");
           filePaths = filePaths.map(str => str.trim());
@@ -180,7 +170,6 @@ const Page = ({ content, correctAnswer, to }) => {
                   paddingBottom: '20px',
                 }} 
               />
-              <Instruction text={content['Instruction']} />
               <ImageSelection 
                 images={filePaths} 
                 rows={content['Dimensions'].split("x")[0]}

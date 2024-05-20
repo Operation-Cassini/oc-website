@@ -9,9 +9,6 @@
   margin: 15px 90px;
   box-sizing: border-box;
   flex-direction: column; /* Stack children vertically */
-}
-
-.instruction-text {
   text-transform: uppercase;
   font-size: 40px;
   font-weight: bold;

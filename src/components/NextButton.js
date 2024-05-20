@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ErrorMessage from './ErrorMessage'; // Import ErrorMessage component
 import './NextButton.css'; // Import CSS file for styling
@@ -22,30 +22,26 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, errorMessage, error, se
   }, [pageNumber]);
 
   const handleClick = (event) => {
-    // Check if the selected answer matches the correct answer
     console.log("the correct answer is", correctAnswer)
     console.log("you pressed: ", selectedAnswer)
     if (correctAnswer !== undefined) {
       if(correctAnswer.includes(',')) {
         const correctAnswers = correctAnswer.split(',').map(word => word.trim());
         console.log("new correct answer is", correctAnswers);
-          // Sort both arrays to ensure the order doesn't matter
         const sortedCorrectAnswers = correctAnswers.sort();
         const sortedSelectedWords = selectedAnswer.sort();
-
         console.log("sorted correct answer", sortedCorrectAnswers);
         console.log("sorted selected answer", sortedSelectedWords);
-        // Check if both arrays are equal
         const isCorrect = JSON.stringify(sortedCorrectAnswers) === JSON.stringify(sortedSelectedWords);
         if (!isCorrect) {
-          // Prevent default navigation behavior if the answer is incorrect
+
           console.log("Incorrect answer. Navigation prevented.");
           event.preventDefault();
           setError(true);
-          // Optionally, you can add logic here to handle incorrect answer actions
+
         } else {
           console.log("Correct answer!");
-          // Optionally, you can add logic here to handle correct answer actions
+
         }
       }
       else {
@@ -70,7 +66,10 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, errorMessage, error, se
     //   </button>
     // </Link>
     <div>
-      {error && <ErrorMessage message={errorMessage} />} {/* Conditionally render error message */}
+      <div className = "error-flex">
+      {error && <ErrorMessage message={errorMessage} />} {/* Conditionally 
+      render error message */}
+      </div>
       <Link to={to} onClick={handleClick}> {/* Use the "to" prop to specify the route path */}
         <button type="button" className="next-button">
           {children}

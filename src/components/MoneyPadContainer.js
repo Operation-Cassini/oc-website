@@ -63,23 +63,23 @@ const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, words, pa
   };
 
   return (
-    <div className = "flex-container">
-        <div className="number-line">
-          <div className="dollar-sign">$</div>
-            <div className = "selected-numbers">
-                {selectedNumbers.split('').map((number, index) => (
-                <span key={index} className="number-money">{number}</span>
-                ))}
-            </div>   
-        </div>
-        <div className = "underscores-money">_ _</div>
-      <div className="money-selection-container" style={containerStyle}>
-        {generateButtons()}
-      </div>
-      <button onClick={handleDelete}>Delete</button>
+    <div className = "general-container">
+    <div className="number-line">
+      {/* <div className="dollar-sign">$</div> */}
+        <div className = "selected-numbers">&nbsp;&nbsp;&nbsp;$
+            {selectedNumbers.split('').map((number, index) => (
+            <span key={index} className="number-money">{number}</span>
+            ))}
+        </div>   
     </div>
-  );
-  
+    <div className = "underscores-money">_ _</div>
+  <div className="money-selection-container" style={containerStyle}>
+    {generateButtons()}
+  </div>
+  <button class = "delete-button" onClick={handleDelete}>DELETE</button>
+</div>
+);
+
 };
 
 export default MoneyPadContainer;
