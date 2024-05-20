@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ErrorMessage from './ErrorMessage'; // Import ErrorMessage component
 import './NextButton.css'; // Import CSS file for styling
 
-const NextButton = ({ to, correctAnswer, selectedAnswer, errorMessage, error, setError, pageNumber, children }) => {
+const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessage, error, setError, pageNumber, children }) => {
   // Function to toggle the position of the next button
   const toggleNextButtonPosition = (pageNumber) => {
     const nextButtonContainer = document.querySelector('.next-flex');
@@ -22,41 +22,52 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, errorMessage, error, se
   }, [pageNumber]);
 
   const handleClick = (event) => {
-    console.log("the correct answer is", correctAnswer)
-    console.log("you pressed: ", selectedAnswer)
-    if (correctAnswer !== undefined) {
-      if(correctAnswer.includes(',')) {
-        const correctAnswers = correctAnswer.split(',').map(word => word.trim());
-        console.log("new correct answer is", correctAnswers);
-        const sortedCorrectAnswers = correctAnswers.sort();
-        const sortedSelectedWords = selectedAnswer.sort();
-        console.log("sorted correct answer", sortedCorrectAnswers);
-        console.log("sorted selected answer", sortedSelectedWords);
-        const isCorrect = JSON.stringify(sortedCorrectAnswers) === JSON.stringify(sortedSelectedWords);
-        if (!isCorrect) {
+    // Check if the selected answer matches the correct answer
+    // console.log("the correct requirement is", correctRequirement);
+    console.log("the correct answer is", correctAnswer);
+    console.log("you pressed: ", selectedAnswer);
+    console.log("length of correctAnswer is", correctAnswer.length);
+    console.log("length of selected answer is", selectedAnswer.length);
+    if(correctAnswer.includes(',')) {
+      const correctAnswers = correctAnswer.split(',').map(word => word.trim());
+      console.log("new correct answer is", correctAnswers);
+        // Sort both arrays to ensure the order doesn't matter
+      const sortedCorrectAnswers = correctAnswers.sort();
+      const sortedSelectedWords = selectedAnswer.sort();
 
-          console.log("Incorrect answer. Navigation prevented.");
-          event.preventDefault();
-          setError(true);
-
-        } else {
-          console.log("Correct answer!");
-
-        }
-      }
-      else {
-        if (correctAnswer !== selectedAnswer) {
-          console.log("Incorrect answer. Navigation prevented.");
-          event.preventDefault();
-          console.log("Error message popup");
-          setError(true);
+      console.log("sorted correct answer", sortedCorrectAnswers);
+      console.log("sorted selected answer", sortedSelectedWords);
+      // Check if both arrays are equal
+      const isCorrect = JSON.stringify(sortedCorrectAnswers) === JSON.stringify(sortedSelectedWords);
+      if (!isCorrect) {
+        // Prevent default navigation behavior if the answer is incorrect
+        if (realAttempt === true) {
+          console.log("not correct but we move on anyways!");
         }
         else {
-          console.log("Correct answer!");
+          console.log("Incorrect answer. Navigation prevented.");
+          event.preventDefault();
+          setError(true);
         }
+        // Optionally, you can add logic here to handle incorrect answer actions
+      } else {
+        console.log("Correct answer!");
+        // Optionally, you can add logic here to handle correct answer actions
       }
     }
-    // Optionally, you can add logic here to handle any actions when the button is clicked
+    else if(correctAnswer === selectedAnswer) {
+      console.log("Correct answer!");
+    }
+    else {
+      if (realAttempt === true) {
+        console.log("not correct but we move on anyways!");
+      }
+      else {
+        console.log("Incorrect answer. Navigation prevented.");
+        event.preventDefault();
+        setError(true);
+      }
+    }
   };
 
   return (

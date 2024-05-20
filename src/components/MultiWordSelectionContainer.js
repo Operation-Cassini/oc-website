@@ -23,7 +23,6 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
     setSelectedButtonIndices(updatedIndices);
     onClick(updatedIndices.map((i) => words[i])); // Pass updated selection to parent
   };
-
   const containerStyle = {
     display: 'grid',
     gridTemplateColumns: `repeat(${columns}, auto)`, // Adjusted grid template columns
@@ -73,8 +72,10 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
   };
 
   return (
-    <div className="multi-selection-container" style={containerStyle}>
-      {generateButtons()}
+    <div className = "general-container">
+      <div className="multi-selection-container" style={containerStyle}>
+        {generateButtons()}
+      </div>
     </div>
   );
 };

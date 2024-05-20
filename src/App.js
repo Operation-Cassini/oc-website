@@ -12,8 +12,8 @@ const App = () => {
 
 
   // State to store the correct answer for the current page
-  const [correctAnswer, setCorrectAnswer] = React.useState(null);
-
+  const [correctAnswer, setCorrectAnswer] = React.useState("-");
+  const [correctRequirement, setCorrectRequirement] = React.useState("-");
   // Effect to parse input file on component mount
   React.useEffect(() => {
     // Fetch and read the input file
@@ -43,11 +43,12 @@ const App = () => {
       // Fetch the content for the specified page number
       // Update the correct answer state
       setCorrectAnswer(pageContent['Correct Answer']);
+      setCorrectRequirement(pageContent['Correct Requirement'])
     }, [pageNumber]);
 
     return (
       <div>
-        <Page content={pageContent} correctAnswer = {correctAnswer} to={`/page/${nextPageNumber}`} />
+        <Page content={pageContent} correctAnswer = {correctAnswer} correctRequirement = {correctRequirement} to={`/page/${nextPageNumber}`} />
       </div>
     );
   };

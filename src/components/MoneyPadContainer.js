@@ -17,6 +17,7 @@ const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, words, pa
         const updatedNumbers = selectedNumbers.slice(0, selectedNumbers.length - 1);
         console.log(updatedNumbers);
         setSelectedNumbers(updatedNumbers);
+        onClick(updatedNumbers);
       }
   };
   const handleButtonClick = (index) => {

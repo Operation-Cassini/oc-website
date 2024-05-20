@@ -11,16 +11,63 @@ import NumberSelectionContainer from './components/NumberSelectionContainer';
 import StroopTextBox from './components/StroopTextBox';
 import WordSelectionContainer from './components/WordSelectionContainer';
 
-const Page = ({ content, correctAnswer, to }) => {
+const Page = ({ content, correctAnswer, correctRequirement, to }) => {
   const buttonDimensions = { width: '100px', height: '50px' };
 
   const [selectedAnswer, setSelectedAnswer] = React.useState("-");
   const [error, setError] = React.useState(false);
+  const [realAttempt, setRealAttempt] = React.useState(false);
+  useEffect(() => {
+    // Reset selected button index whenever the component is rendered
+    console.log("resetting real attempt");
+    setRealAttempt(false);
+  }, [content['Page Number']]);
 
-  // Function to handle clicking on a word
   const handleClick = (word) => {
     console.log('Selected word:', word);
     // Pass the selected word to the parent component
+    if ((content['Type of Question'] === 'Word Selection') && correctRequirement === '-') {
+      if(word !== "-") {
+        setRealAttempt(true);
+        console.log("realattempt setting to true");
+      }
+      else {
+        setRealAttempt(false);
+        console.log("realattempt setting to false");
+      }
+    }
+    if (content['Type of Question'] === 'Multi Word Selection' && correctRequirement === '-') {
+      const correctAnswers = correctAnswer.split(',').map(word => word.trim());
+      console.log("new correct answer is", correctAnswers);
+        // Sort both arrays to ensure the order doesn't matter
+      const sortedCorrectAnswers = correctAnswers.sort();
+      const sortedSelectedWords = word.sort();
+
+      console.log("sorted correct answer", sortedCorrectAnswers);
+      console.log("sorted selected answer", sortedSelectedWords);
+      // Check if both arrays are equal
+
+      if(word.length === correctAnswers.length) {
+        setRealAttempt(true);
+        console.log("real attempt setting to true");
+      }
+      else {
+        setRealAttempt(false);
+        console.log("real attempt setting to false");
+      }
+    // }
+
+    }
+    if ((content['Type of Question'] === 'Number Pad' || content['Type of Question'] === 'Money Number Pad') && correctRequirement === '-') {
+      if(word.length === correctAnswer.length) {
+        setRealAttempt(true);
+        console.log("real attempt setting to true");
+      }
+      else {
+        setRealAttempt(false);
+        console.log("real attempt setting to false");
+      }
+    }
     setSelectedAnswer(word);
     setError(false);
   };
@@ -203,6 +250,7 @@ const Page = ({ content, correctAnswer, to }) => {
           to={to}
           correctAnswer={correctAnswer}
           selectedAnswer={selectedAnswer}
+          realAttempt={realAttempt}
           errorMessage={content['Error Pop Ups'] ? content['Error Pop Ups'] : ""}
           error={error}
           setError={setError}

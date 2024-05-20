@@ -16,8 +16,9 @@ const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, wo
     console.log("here!")
     if (selectedNumbers.length > 0) {
         const updatedNumbers = selectedNumbers.slice(0, selectedNumbers.length - 1);
-        console.log(updatedNumbers);
+        console.log("this is the new number",updatedNumbers);
         setSelectedNumbers(updatedNumbers);
+        onClick(updatedNumbers);
       }
   };
   const handleButtonClick = (index) => {
