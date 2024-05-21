@@ -1,5 +1,3 @@
-/* InstructionContainer.css */
-
 .instruction-container {
   display: flex;
   flex-direction: column; /* Ensure instruction components stack vertically */

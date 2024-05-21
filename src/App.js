@@ -52,8 +52,8 @@ const App = () => {
 
       // Fetch the content for the specified page number
       // Update the correct answer state
-      setCorrectAnswer(pageContent['Correct Answer']);
-      setCorrectRequirement(pageContent['Correct Requirement'])
+      setCorrectAnswer(pageContent['Correct Answer'][0]['content']);
+      setCorrectRequirement(pageContent['Correct Requirement'][0]['content']);
     }, [pageNumber]);
 
 

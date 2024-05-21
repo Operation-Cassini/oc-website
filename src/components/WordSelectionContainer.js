@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import WordSelectionButton from './WordSelectionButton';
 import './WordSelectionContainer.css';
 
-const WordSelectionContainer = ({ rows, columns, onClick, words }) => {
+const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words, styledWords, pageNumber }) => {
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
 
   const handleButtonClick = (index) => {
@@ -24,12 +24,31 @@ const WordSelectionContainer = ({ rows, columns, onClick, words }) => {
     gap: '5px',
   };
 
+  const styleMap = {
+    underline: { textDecoration: 'underline' },
+    italic: { fontStyle: 'italic' },
+    red: { color: 'red' },
+    green: { color: 'green' },
+    blue: { color: 'blue' }
+  };
   const generateButtons = () => {
     let buttons = [];
     for (let i = 0; i < rows; i++) {
       for (let j = 0; j < columns; j++) {
-        const index = i + j*rows;
+        const index = i + j * rows;
         let word = words[index];
+        let styles = {}; // Initialize an empty style object
+        
+        // Check if the word is styled
+        const styledWord = styledWords.find(item => item.content === word);
+        if (styledWord && styledWord.style) {
+          styledWord.style.forEach(style => {
+            if (styleMap[style]) {
+              styles = { ...styles, ...styleMap[style] };
+            }
+          });
+        }
+
         if (words.length > 21) {
           buttons.push(
             <WordSelectionButton
@@ -44,6 +63,7 @@ const WordSelectionContainer = ({ rows, columns, onClick, words }) => {
                 paddingBottom: '12px',
                 paddingLeft: '0px',
                 paddingRight: '0px',
+                ...styles
               }}
             >
               {word}
@@ -58,6 +78,7 @@ const WordSelectionContainer = ({ rows, columns, onClick, words }) => {
               style={{
                 width: '200px',
                 height: '50px',
+                ...styles
               }}
             >
               {word}
