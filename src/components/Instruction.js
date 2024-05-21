@@ -1,14 +1,13 @@
-// Instruction.js
-
 import React from 'react';
 import './Instruction.css';
 
-const Instruction = ({ text }) => {
+const Instruction = ({ text, className, style }) => {
   return (
-      <div className="instruction-box">
-        <p className="instruction-text">{text}</p>
-      </div>
+    <div className={className} style = {style}>
+      {text}
+    </div>
   );
 };
 
 export default Instruction;
+

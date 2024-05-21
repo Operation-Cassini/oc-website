@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import NumberSelectionButton from './NumberSelectionButton';
 import './NumberSelectionContainer.css';
 
-const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words, pageNumber}) => {
-  console.log("herenumber");
+const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words, styledWords, pageNumber}) => {
   const [selectedNumbers, setSelectedNumbers] = useState('');
 
   console.log(pageNumber);
@@ -38,21 +37,37 @@ const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, wo
     gridTemplateRows: `repeat(${rows}, auto)`,
     gap: '10px',
   };
-
+  const styleMap = {
+    underline: { textDecoration: 'underline' },
+    italic: { fontStyle: 'italic' },
+    red: { color: 'red' },
+    green: { color: 'green' },
+    blue: { color: 'blue' }
+  };
   const generateButtons = () => {
     let buttons = [];
     for (let i = 0; i < rows * columns; i = i + parseInt(columns)) {
       for (let j = 0; j < columns; j++) {
         const index = i + j;
         let word = words[index];
+        let styles = {}; // Initialize an empty style object
         if (word !== undefined) {
+          const styledWord = styledWords.find(item => item.content === word);
+          if (styledWord && styledWord.style) {
+            styledWord.style.forEach(style => {
+              if (styleMap[style]) {
+                styles = { ...styles, ...styleMap[style] };
+              }
+            });
+          }
           buttons.push(
             <NumberSelectionButton
               key={index}
               onClick={() => handleButtonClick(index)}
               style={{
                 width: buttonDimensions.width,
-                height: buttonDimensions.height
+                height: buttonDimensions.height,
+                ...styles // Apply styles here
               }}
             >
               {word}

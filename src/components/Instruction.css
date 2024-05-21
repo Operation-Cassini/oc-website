@@ -1,7 +1,7 @@
 /* Instruction.css */
 
 .instruction-box {
-  display: flex;
+  /* display: flex; */
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
   background-color: #ffffff;
@@ -9,14 +9,10 @@
   margin: 15px 90px;
   box-sizing: border-box;
   flex-direction: column; /* Stack children vertically */
-}
-
-.instruction-text {
   text-transform: uppercase;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: bold;
   color: #000000;
   text-align: center; /* Center text horizontally */
   word-wrap: break-word; /* Ensure long words break and wrap to the next line */
 }
-

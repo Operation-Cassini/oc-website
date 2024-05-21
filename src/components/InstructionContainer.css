@@ -1,9 +1,6 @@
-/* InstructionContainer.css */
-
 .instruction-container {
-    display: flex;
-    flex-direction: column; /* Ensure instruction components stack vertically */
-    align-items: center; /* Center instruction components horizontally */
-    padding-bottom: 30px; /* Add padding to create space between instruction components */
-  }
-  
+  display: flex;
+  flex-direction: column; /* Ensure instruction components stack vertically */
+  align-items: center; /* Center instruction components horizontally */
+  padding-bottom: 30px; /* Add padding to create space between instruction components */
+}

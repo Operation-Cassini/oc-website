@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './MultiWordSelectionContainer.css';
 import WordSelectionButton from './WordSelectionButton';
 
-const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words, pageNumber}) => {
+const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words, styledWords, pageNumber}) => {
   const [selectedButtonIndices, setSelectedButtonIndices] = useState([]);
   console.log(pageNumber);
   useEffect(() => {
@@ -40,13 +40,30 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
     gridTemplateRows: `repeat(${rows}, auto)`,
     gap: '10px',
   };
-
+  const styleMap = {
+    underline: { textDecoration: 'underline' },
+    italic: { fontStyle: 'italic' },
+    red: { color: 'red' },
+    green: { color: 'green' },
+    blue: { color: 'blue' }
+  };
   const generateButtons = () => {
     let buttons = [];
     for (let i = 0; i < rows; i++) {
       for (let j = 0; j < columns; j++) {
         const index = i + j*rows;
         let word = words[index];
+        let styles = {}; // Initialize an empty style object
+        
+        // Check if the word is styled
+        const styledWord = styledWords.find(item => item.content === word);
+        if (styledWord && styledWord.style) {
+          styledWord.style.forEach(style => {
+            if (styleMap[style]) {
+              styles = { ...styles, ...styleMap[style] };
+            }
+          });
+        }
         buttons.push(
           <WordSelectionButton
             key={index}
@@ -54,7 +71,8 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
             isSelected = {selectedButtonIndices.includes(index)}
             style={{
               width: buttonDimensions.width,
-              height: buttonDimensions.height
+              height: buttonDimensions.height,
+              ...styles // Apply styles here
             }}
           >
             {word}

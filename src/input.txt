@@ -1,151 +1,166 @@
 Application Name: SATURN
 Page Title: Test 1
-Prompt: PICK THE WORD THAT STARTS WITH J
+Prompt: +*_PICK_*+ *THE* +WORD+ {THAT} ~STARTS~ WITH J
 Error Pop Ups: NOT YET!\nTO CONTINUE, YOU HAVE TO PICK THE “J” WORD.\n\nTOUCH IT, AND IT WILL TURN BLUE.
 Type of Question: Word Selection
-Word Bank: [ACID, DIME, FARM, GOLD, JAZZ, KNOT, OVEN, SHOE, TREE, WOLF]
+Word Bank: [+_*ACID*_+, {DIME}, *FARM*, +GOLD+, ~JAZZ~, KNOT, OVEN, SHOE, TREE, WOLF]
 Dimensions: 5x2
 Correct Answer: JAZZ
 Correct Requirement: Yes
 Page Number: 1
 
 Application Name: SATURN
-Page Title: Test 2
-Prompt: PICK THE FRUIT WORDS
-Error Pop Ups: NOT YET!\n\nTO CONTINUE, YOU HAVE TO PICK BOTH FRUIT WORDS.; NOT YET!\nTO CONTINUE, YOU CAN +ONLY+ PICK FRUIT WORDS.\n\nTO UN-PICK A WORD, TOUCH IT AGAIN.
-Type of Question: Multi Word Selection
-Word Bank: [BANANA, CHURCH, ORANGE, STAPLE]
-Dimensions: 4x1
-Correct Answer: ORANGE, BANANA
-Correct Requirement: Yes
+Page Title: Instruction 1
 Page Number: 2
+Prompt 1: SOME +_*TASKS*_+ ON _THIS_ TABLET ARE EASY. OTHER TASKS ARE HARD.
+Prompt 2: COMPLETE _THE TASKS_ WITHOUT HELP ~FROM~ OTHER PEOPLE IN THE ROOM.
+Prompt 3: {WHEN YOU ARE READY}, TOUCH THERE TO GO TO _THE_ NEXT PAGE.
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: NOT YET!\nTO CONTINUE, YOU HAVE TO PICK THE “J” WORD.\n\nTOUCH IT, AND IT WILL TURN BLUE.
 
 Application Name: SATURN
-Page Title: Test 3
-Prompt: Enter 1239
-Error Pop Ups: NOT YET!\nTO CONTINUE, YOU MUST ENTER THE CORRECT NUMBER.
-Type of Question: Number Pad
-Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-Dimensions: 4x3
-Correct Answer: 1239
+Page Title: Test 2
+Prompt: +PICK+ THE FRUIT _WORDS_
+Error Pop Ups: NOT YET!\n\nTO CONTINUE, YOU HAVE TO PICK BOTH FRUIT WORDS.; NOT YET!\nTO CONTINUE, YOU CAN +ONLY+ PICK FRUIT WORDS.\n\nTO UN-PICK A WORD, TOUCH IT AGAIN.
+Type of Question: Multi Word Selection
+Word Bank: [BANANA, ~CHURCH~, +ORANGE+, STAPLE]
+Dimensions: 4x1
+Correct Answer: ORANGE, BANANA
 Correct Requirement: Yes
 Page Number: 3
 
 Application Name: SATURN
-Page Title: Test 4
-Prompt: YOU GO TO THE STORE WITH EXACTLY $100. YOU BUY A DOZEN APPLES FOR $7 AND A TRICYCLE FOR $60. HOW MUCH DID YOU SPEND?
-Error Pop Ups: NOT YET!\nYOU HAVE TO ENTER THE DOLLAR AMOUNT.\n\nIF YOU DON’T KNOW, MAKE A GUESS!
-Type of Question: Money Number Pad
-Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+Page Title: Test 3
+Prompt: _Enter 1239_
+Error Pop Ups: NOT YET!\nTO CONTINUE, YOU MUST ENTER THE CORRECT NUMBER.
+Type of Question: Number Pad
+Number Sequence: [+1+, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 Dimensions: 4x3
-Correct Answer: 67
-Correct Requirement: -
+Correct Answer: 1239
+Correct Requirement: Yes
 Page Number: 4
 
 Application Name: SATURN
-Page Title: Test 5
-Prompt: AFTER THAT PURCHASE, HOW MUCH DO YOU HAVE LEFT?
+Page Title: Test 4
+Prompt: _YOU GO TO THE STORE_ WITH EXACTLY $100. ~YOU BUY A DOZEN APPLES FOR $7 AND~ A TRICYCLE FOR $60. HOW MUCH DID YOU SPEND?
 Error Pop Ups: NOT YET!\nYOU HAVE TO ENTER THE DOLLAR AMOUNT.\n\nIF YOU DON’T KNOW, MAKE A GUESS!
 Type of Question: Money Number Pad
-Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+Number Sequence: [1, _2_, +3+, 4, 5, 6, 7, {8}, 9, 0]
 Dimensions: 4x3
-Correct Answer: 33
+Correct Answer: 67
 Correct Requirement: -
 Page Number: 5
 
 Application Name: SATURN
-Page Title: Test 6
-Prompt: EARLIER, WHAT PHRASE DID YOU FIRST READ FROM THIS TABLET?
-Error Pop Ups: NOT YET!\nYOU HAVE TO PICK A STATEMENT\n\nIF YOU DON’T KNOW, MAKE A GUESS!
-Type of Question: Word Selection
-Word Bank: [WAVE GOODBYE, RAISE YOUR ARMS, CLOSE YOUR EYES, GIVE A SALUTE, WIGGLE YOUR TOES, CLAP YOUR HANDS]
-Dimensions: 6x1
-Correct Answer: CLOSE YOUR EYES
+Page Title: Test 5
+Prompt: *AFTER THAT PURCHASE*, _HOW MUCH DO_ YOU HAVE LEFT?
+Error Pop Ups: NOT YET!\nYOU HAVE TO ENTER THE DOLLAR AMOUNT.\n\nIF YOU DON’T KNOW, MAKE A GUESS!
+Type of Question: Money Number Pad
+Number Sequence: [1, +2+, 3, 4, *5*, 6, 7, 8, _9_, 0]
+Dimensions: 4x3
+Correct Answer: 33
 Correct Requirement: -
 Page Number: 6
 
 Application Name: SATURN
-Page Title: Test 7
-Prompt: REMEMBER YOUR FIRST TASK WHEN YOU GOT THIS TABLET? YOU HAD TO PICK A SINGLE WORD STARTING WITH A CERTAIN LETTER. PICK THAT SAME WORD, AGAIN
-Error Pop Ups: NOT YET!\nTO CONTINUE, YOU MUST PICK A WORD.\n\nIF YOU DON’T KNOW, MAKE A GUESS!
+Page Title: Test 6
+Prompt: {EARLIER, WHAT PHRASE DID} YOU FIRST +READ+ FROM THIS TABLET?
+Error Pop Ups: NOT YET!\nYOU HAVE TO PICK A STATEMENT\n\nIF YOU DON’T KNOW, MAKE A GUESS!
 Type of Question: Word Selection
-Word Bank: [ACID, DIME, FARM, GOLD, HAT, JAZZ, KNOT, SHOE, TREE, WOLF]
-Dimensions: 5x2
-Correct Answer: JAZZ
+Word Bank: [WAVE GOODBYE, _RAISE YOUR ARMS_, +CLOSE YOUR EYES+, GIVE A SALUTE, WIGGLE YOUR TOES, CLAP YOUR HANDS]
+Dimensions: 6x1
+Correct Answer: CLOSE YOUR EYES
 Correct Requirement: -
 Page Number: 7
 
 Application Name: SATURN
-Page Title: Test 8
-Prompt: WHEN YOU FIRST SAW THIS NUMBER PAD, YOU HAD TO ENTER A SPECIFIC FOUR-DIGIT NUMBER. ENTER THE SAME NUMBER, AGAIN
-Error Pop Ups: NOT YET!\nTO CONTINUE, YOU MUST ENTER A FOUR-DIGIT NUMBER\n\nIF YOU DON’T KNOW, MAKE A GUESS.
-Type of Question: Number Pad
-Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-Dimensions: 4x3
-Correct Answer: 1239
+Page Title: Test 7
+Prompt: {REMEMBER YOUR FIRST TASK WHEN YOU GOT THIS TABLET? YOU HAD TO PICK A SINGLE WORD STARTING} +WITH A CERTAIN LETTER.+ PICK THAT SAME WORD, AGAIN
+Error Pop Ups: NOT YET!\nTO CONTINUE, YOU MUST PICK A WORD.\n\nIF YOU DON’T KNOW, MAKE A GUESS!
+Type of Question: Word Selection
+Word Bank: [ACID, DIME, +FARM+, GOLD, _HAT_, {JAZZ}, KNOT, SHOE, TREE, WOLF]
+Dimensions: 5x2
+Correct Answer: JAZZ
 Correct Requirement: -
 Page Number: 8
 
 Application Name: SATURN
-Page Title: Test 9
-Prompt: WHAT MONTH IS IT?
-Error Pop Ups: NOT YET!\nYOU HAVE TO PICK A MONTH.\n\nIF YOU DON’T KNOW THE MONTH, MAKE A GUESS!
-Type of Question: Word Selection
-Word Bank: [JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER]
-Dimensions: 6x2
-Correct Answer: MAY
+Page Title: Test 8
+Prompt: {WHEN YOU FIRST SAW THIS NUMBER PAD, YOU HAD TO ENTER A SPECIFIC FOUR-DIGIT NUMBER. ENTER THE SAME NUMBER, AGAIN}
+Error Pop Ups: NOT YET!\nTO CONTINUE, YOU MUST ENTER A FOUR-DIGIT NUMBER\n\nIF YOU DON’T KNOW, MAKE A GUESS.
+Type of Question: Number Pad
+Number Sequence: [+1+, 2, 3, 4, 5, _6_, 7, 8, 9, 0]
+Dimensions: 4x3
+Correct Answer: 1239
 Correct Requirement: -
 Page Number: 9
 
 Application Name: SATURN
-Page Title: Test 10
-Prompt: WHAT YEAR IS IT?
-Error Pop Ups: NOT YET!\nYOU HAVE TO ENTER ALL FOUR DIGITS.\n\nIF YOU DON’T KNOW THE YEAR, MAKE A GUESS!
-Type of Question: Number Pad
-Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-Dimensions: 4x3
-Correct Answer: 2024
+Page Title: Test 9
+Prompt: {WHAT MONTH IS IT?}
+Error Pop Ups: NOT YET!\nYOU HAVE TO PICK A MONTH.\n\nIF YOU DON’T KNOW THE MONTH, MAKE A GUESS!
+Type of Question: Word Selection
+Word Bank: [JANUARY, {FEBRUARY}, _MARCH_, APRIL, +MAY+, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER]
+Dimensions: 6x2
+Correct Answer: MAY
 Correct Requirement: -
 Page Number: 10
 
 Application Name: SATURN
-Page Title: Test 11
-Prompt: WHAT DAY OF THE WEEK IS IT, TODAY?
-Error Pop Ups: NOT YET!\nYOU HAVE TO PICK A DAY.\n\nIF YOU DON’T KNOW THE DAY, MAKE A GUESS!
-Type of Question: Word Selection
-Word Bank: [SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY]
-Dimensions: 7x1
-Correct Answer: FRIDAY
+Page Title: Test 10
+Prompt: *WHAT YEAR* IS IT?
+Error Pop Ups: NOT YET!\nYOU HAVE TO ENTER ALL FOUR DIGITS.\n\nIF YOU DON’T KNOW THE YEAR, MAKE A GUESS!
+Type of Question: Number Pad
+Number Sequence: [_1_, 2, 3, 4, ~5~, 6, 7, ~8~, 9, 0]
+Dimensions: 4x3
+Correct Answer: 2024
 Correct Requirement: -
 Page Number: 11
 
 Application Name: SATURN
-Page Title: Test 12
-Prompt: WHAT STATE ARE WE IN RIGHT NOW?
-Error Pop Ups: NOT YET!\nYOU HAVE TO PICK A STATE.\n\nIF YOU DON’T KNOW THE STATE, MAKE A GUESS!
+Page Title: Test 11
+Prompt: ~WHAT DAY OF THE WEEK~ IS IT, TODAY?
+Error Pop Ups: NOT YET!\nYOU HAVE TO PICK A DAY.\n\nIF YOU DON’T KNOW THE DAY, MAKE A GUESS!
 Type of Question: Word Selection
-Word Bank: [ALABAMA, ALASKA, ARIZONA, ARKANSAS, CALIFORNIA, COLORADO, CONNECTICUT, DELAWARE, FLORIDA, GEORGIA, HAWAII, IDAHO, ILLINOIS, INDIANA, IOWA, KANSAS, KENTUCKY, LOUISIANA, MAINE, MARYLAND, MASSACHUSETTS, MICHIGAN, MINNESOTA, MISSISSIPPI, MISSOURI, MONTANA, NEBRASKA, NEVADA, NEW HAMPSHIRE, NEW JERSEY, NEW MEXICO, NEW YORK, NORTH CAROLINA, NORTH DAKOTA, OHIO, OKLAHOMA, OREGON, PENNSYLVANIA, RHODE ISLAND, SOUTH CAROLINA, SOUTH DAKOTA, TENNESSEE, TEXAS,UTAH, VERMONT, VIRGINIA, WISCONSIN, WYOMING]
-Dimensions: 18x3
-Correct Answer: CALIFORNIA
+Word Bank: [{SUNDAY}, MONDAY, TUESDAY, +WEDNESDAY+, THURSDAY, _FRIDAY_, SATURDAY]
+Dimensions: 7x1
+Correct Answer: FRIDAY
 Correct Requirement: -
 Page Number: 12
 
 Application Name: SATURN
-Page Title: Test 13
-Prompt: EARLIER, YOU MEMORIZED FIVE WORDS. PICK THOSE WORDS FROM THIS LIST.
-Error Pop Ups: NOT YET!\nYOU HAVE TO PICK FIVE WORDS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!
-Type of Question: Multi Word Selection
-Word Bank: [ACID, ACTOR, APPLE, APRON, ALBUM, ANT, ARCH, ARM, ASH, ATTIC, AUTO, BANANA, BELT, BIKE, BLUE, BOAT, CAKE, CAR, CHURCH, COFFEE, COW, DIME, DOG, DOLLAR, DRESS, EAR, EAGLE, EGG, FABRIC, FARM, FLAG, FUSE, GARAGE, GOLD, GREEN, HANDLE, HAT, HONEY, HOUSE, HUT, JAZZ, KNOT, LIE, LEMON, LOG, MAN, MAPLE, MILK, MUG, NICKEL, NOSE, NUT, OAK, OIL, ORANGE, OVEN, OWL, PEAR, PEN, PENCIL, PIG, QUIZ, RED, RIB, ROOM, ROSE, SAIL, SHED, SHOE, SISTER, SKY, STAPLE, STAR, STORE, TABLE, TEA, TEEN, TENNIS, THROAT, THUMB, TICKET, TIE, TOE, TONGUE, TOOTH, TOWN, TRAIN, TREE, TRUCK, TUB, URGE, VAN, WAVE, WEB, WHITE, WOLF, WOMAN, WOOD, YARN, YOGA]
-Dimensions: 17x6
-Correct Answer: APPLE, CAR, HOUSE, PEN, TIE
+Page Title: Test 12
+Prompt: +WHAT STATE ARE+ WE IN RIGHT NOW?
+Error Pop Ups: NOT YET!\nYOU HAVE TO PICK A STATE.\n\nIF YOU DON’T KNOW THE STATE, MAKE A GUESS!
+Type of Question: Word Selection
+Word Bank: [ALABAMA, {ALASKA}, ARIZONA, ARKANSAS, CALIFORNIA, COLORADO, CONNECTICUT, DELAWARE, FLORIDA, GEORGIA, HAWAII, IDAHO, ILLINOIS, INDIANA, IOWA, KANSAS, KENTUCKY, LOUISIANA, MAINE, MARYLAND, MASSACHUSETTS, MICHIGAN, MINNESOTA, MISSISSIPPI, +MISSOURI+, MONTANA, NEBRASKA, NEVADA, NEW HAMPSHIRE, NEW JERSEY, NEW MEXICO, NEW YORK, _NORTH CAROLINA_, NORTH DAKOTA, OHIO, OKLAHOMA, OREGON, PENNSYLVANIA, RHODE ISLAND, SOUTH CAROLINA, SOUTH DAKOTA, TENNESSEE, TEXAS,UTAH, VERMONT, VIRGINIA, WISCONSIN, WYOMING]
+Dimensions: 18x3
+Correct Answer: CALIFORNIA
 Correct Requirement: -
 Page Number: 13
 
 Application Name: SATURN
+Page Title: Test 13
+Prompt: _EARLIER, YOU MEMORIZED FIVE WORDS._ PICK THOSE WORDS FROM THIS LIST.
+Error Pop Ups: NOT YET!\nYOU HAVE TO PICK FIVE WORDS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!
+Type of Question: Multi Word Selection
+Word Bank: [~ACID~, ACTOR, APPLE, APRON, ALBUM, ANT, ARCH, ARM, ASH, ATTIC, AUTO, BANANA, BELT, {BIKE}, BLUE, BOAT, _CAKE_, CAR, CHURCH, COFFEE, COW, DIME, DOG, DOLLAR, DRESS, EAR, EAGLE, EGG, FABRIC, FARM, FLAG, FUSE, GARAGE, GOLD, GREEN, HANDLE, HAT, HONEY, HOUSE, HUT, JAZZ, KNOT, LIE, LEMON, LOG, MAN, MAPLE, MILK, MUG, NICKEL, NOSE, NUT, OAK, OIL, ORANGE, OVEN, OWL, PEAR, PEN, PENCIL, PIG, QUIZ, RED, RIB, ROOM, ROSE, SAIL, SHED, SHOE, SISTER, SKY, STAPLE, STAR, STORE, TABLE, TEA, TEEN, TENNIS, THROAT, THUMB, TICKET, TIE, TOE, TONGUE, TOOTH, TOWN, TRAIN, TREE, TRUCK, TUB, URGE, VAN, WAVE, WEB, WHITE, WOLF, WOMAN, WOOD, YARN, YOGA]
+Dimensions: 17x6
+Correct Answer: APPLE, CAR, HOUSE, PEN, TIE
+Correct Requirement: -
+Page Number: 14
+
+Application Name: SATURN
 Page Title: Test 14
 Prompt: Click the word that starts with a letter G
+Error Pop Ups: random
 Type of Question: Word Selection
 Word Bank: [guitar, hat, brass, book, cloves, table]
 Dimensions: 2x3
 Correct Answer: guitar
-Page Number: 14
+Correct Requirement: -
+Page Number: 15
+
+

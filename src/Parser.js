@@ -12,31 +12,61 @@ import './App.css';
 // import image6 from './ImageSelectionFaceJPGs/image-selection-face2.webp';
 import WordSelectionContainer from './components/WordSelectionContainer';
 
+function parseStyledText(text) {
+  const styledParts = [];
+  const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|([^_*{}+~]+))/g;
+
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match[2]) {
+      const nestedParts = parseStyledText(match[2]);
+      styledParts.push({ style: 'underline', content: nestedParts });
+    } else if (match[3]) {
+      const nestedParts = parseStyledText(match[3]);
+      styledParts.push({ style: 'italic', content: nestedParts });
+    } else if (match[4]) {
+      const nestedParts = parseStyledText(match[4]);
+      styledParts.push({ style: 'red', content: nestedParts });
+    } else if (match[5]) {
+      const nestedParts = parseStyledText(match[5]);
+      styledParts.push({ style: 'green', content: nestedParts });
+    } else if (match[6]) {
+      const nestedParts = parseStyledText(match[6]);
+      styledParts.push({ style: 'blue', content: nestedParts });
+    } else if (match[7]) {
+      styledParts.push({ style: null, content: match[7] });
+    }
+  }
+
+  return styledParts;
+}
 function ParseInputFile(fileContent) {
   const lines = fileContent.split('\n');
   const pages = [];
-  let current_page_data = {};
+  let currentPageData = {};
 
   lines.forEach(line => {
     line = line.trim();
     if (line === "") {
-      if (Object.keys(current_page_data).length > 0) {
-        const page = { ...current_page_data };
-        pages.push(page);
-        current_page_data = {};
+      if (Object.keys(currentPageData).length > 0) {
+        pages.push({ ...currentPageData });
+        currentPageData = {};
       }
     } else {
       const [key, value] = line.split(": ", 2);
-      current_page_data[key] = value;
+      if (key && value) {
+        currentPageData[key] = parseStyledText(value);
+      }
     }
   });
-  // console.log(current_page_data);
-  if (Object.keys(current_page_data).length > 0) {
-    const page = { ...current_page_data };
-    pages.push(page);
+
+  if (Object.keys(currentPageData).length > 0) {
+    pages.push({ ...currentPageData });
   }
 
   return pages;
 }
 
 export default ParseInputFile;
+

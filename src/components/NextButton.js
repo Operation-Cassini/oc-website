@@ -22,21 +22,11 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessa
   }, [pageNumber]);
 
   const handleClick = (event) => {
-    // Check if the selected answer matches the correct answer
-    // console.log("the correct requirement is", correctRequirement);
-    console.log("the correct answer is", correctAnswer);
-    console.log("you pressed: ", selectedAnswer);
-    console.log("length of correctAnswer is", correctAnswer.length);
-    console.log("length of selected answer is", selectedAnswer.length);
     if(correctAnswer.includes(',')) {
       const correctAnswers = correctAnswer.split(',').map(word => word.trim());
-      console.log("new correct answer is", correctAnswers);
         // Sort both arrays to ensure the order doesn't matter
       const sortedCorrectAnswers = correctAnswers.sort();
       const sortedSelectedWords = selectedAnswer.sort();
-
-      console.log("sorted correct answer", sortedCorrectAnswers);
-      console.log("sorted selected answer", sortedSelectedWords);
       // Check if both arrays are equal
       const isCorrect = JSON.stringify(sortedCorrectAnswers) === JSON.stringify(sortedSelectedWords);
       if (!isCorrect) {
