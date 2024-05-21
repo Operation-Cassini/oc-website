@@ -83,13 +83,14 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
 
       {content['Type of Question'] === 'Instruction' && 
         (() => {
+          console.log("the content is", content);
           // Extract prompts based on keys
           const prompts = Object.keys(content)
             .filter(key => key.startsWith('Prompt'))
             .map(key => content[key]);
-
+          console.log("the prompts are", prompts);
           return (
-            <InstructionContainer instructions={prompts} />
+            <InstructionContainer instructions={prompts}/>
           );
         })()
       }

@@ -26,7 +26,6 @@ Dimensions: 5x2
 Correct Answer: JAZZ
 Correct Requirement: Yes
 
-
 Application Name: SATURN
 Page Title: Instruction 3
 Page Number: 4
@@ -458,6 +457,22 @@ Page Number: 43
 Prompt 1: YOU ARE ALMOST DONE!\n\nFOR THE FINAL TASKS, YOU PLAY CONNECT-THE-DOTS.
 Type of Question: Instruction
 Correct Answer: -
+
+Application Name: SATURN
+Page Title: Instruction 10
+Page Number: 44
+Prompt: DRAW LINES FROM ONE DOT TO THE NEXT.\nNUMBERED DOTS GO FROM LOW TO HIGH (1, 2, 3,...)\nDOTS WITH LETTERS GO IN ALPHABETICAL ORDER (A, B, C,...)
+Type of Question: Instruction
+Correct Answer: -
+
+Application Name: SATURN
+Page Title: Instruction 11
+Page Number: 45
+Prompt: THE DOTS LOOK LIKE THIS: `1.png` \n … AND TURN GREEN WHEN YOU TOUCH THEM IN ORDER: `1to2.png`\n … BUT FLICKER RED IF YOU GO OUT OF ORDER: `1to4.png`
+Type of Question: Instruction
+Correct Answer: -
+
+
 
 Application Name: SATURN
 Page Title: Special Instruction 2

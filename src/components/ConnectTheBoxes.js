@@ -1,19 +1,15 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './ConnectTheBox.css';
 
-const ButtonConnector = ({ characters }) => {
-  const [positions, setPositions] = useState([]);
+const ConnectTheBoxes = ({ characters, positions, pageNumber }) => {
   const [sequence, setSequence] = useState([]);
-  const [clickedButtons, setClickedButtons] = useState([]);
+  const [incorrect, setIncorrect] = useState(null); // Track incorrect click
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    const newPositions = characters.map(() => ({
-      x: Math.random() * (window.innerWidth - 100),
-      y: Math.random() * (window.innerHeight - 100),
-    }));
-    setPositions(newPositions);
-  }, [characters]);
+    // Reset the sequence when the page number changes
+    setSequence([]);
+  }, [pageNumber]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -23,7 +19,7 @@ const ButtonConnector = ({ characters }) => {
     ctx.strokeStyle = 'black';
     ctx.lineWidth = 2;
 
-    const buttonSize = 50; 
+    const buttonSize = 50;
     const halfButtonSize = buttonSize / 2;
 
     for (let i = 0; i < sequence.length - 1; i++) {
@@ -37,9 +33,11 @@ const ButtonConnector = ({ characters }) => {
   }, [sequence, positions]);
 
   const handleClick = (index) => {
-    if (!clickedButtons.includes(index)) {
+    if (sequence.length === index) {
       setSequence([...sequence, index]);
-      setClickedButtons([...clickedButtons, index]);
+      setIncorrect(null); // Reset incorrect state if clicked in the correct order
+    } else {
+      setIncorrect(index); // Set incorrect state if clicked out of order
     }
   };
 
@@ -60,10 +58,14 @@ const ButtonConnector = ({ characters }) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: clickedButtons.includes(index) ? 'green' : (sequence.includes(index) ? 'red' : 'white'),
+            backgroundColor: sequence.includes(index)
+              ? 'green'
+              : incorrect === index
+              ? 'red'
+              : 'white',
           }}
           onClick={() => handleClick(index)}
-          disabled={clickedButtons.includes(index)}
+          disabled={sequence.includes(index)}
         >
           {char}
         </button>
@@ -72,4 +74,4 @@ const ButtonConnector = ({ characters }) => {
   );
 };
 
-export default ButtonConnector;
+export default ConnectTheBoxes;

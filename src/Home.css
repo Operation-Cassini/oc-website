@@ -14,6 +14,20 @@ body {
 
   .start-button-container {
     position: absolute;
-    left: 60%;
-    bottom: 30%; 
+    left: 63%;
+    top: 42%;
+  }
+
+  .start-button{
+    background-color: white; /* Set background color to green */
+    border: 2px solid black; 
+    color: black; /* Set text color to black */
+    padding: 20px 20px; /* Add padding */
+    font-size: 40px; /* Set font size */
+    cursor: pointer; /* Set cursor to pointer on hover */
+    outline: none; /* Remove default focus outline */
+    font-weight: bold;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
   }

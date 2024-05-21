@@ -4,14 +4,16 @@ import ErrorMessage from './ErrorMessage'; // Import ErrorMessage component
 import './NextButton.css'; // Import CSS file for styling
 
 const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessage, error, setError, pageNumber, children }) => {
+  console.log("page number is", pageNumber)
   // Function to toggle the position of the next button
   const toggleNextButtonPosition = (pageNumber) => {
     const nextButtonContainer = document.querySelector('.next-flex');
     if (nextButtonContainer) {
+      console.log("here");
       if (pageNumber % 2 === 1) {
         nextButtonContainer.style.marginRight = '100px'; // Move slightly to the left
       } else {
-        nextButtonContainer.style.marginRight = '0px'; // Default position
+        nextButtonContainer.style.marginRight = '200px'; // Default position
       }
     }
   };
@@ -71,12 +73,11 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessa
   };
 
   return (
-    <div>
+    <div className="next-container">
       <div className = "error-flex">
-      {error && <ErrorMessage message={errorMessage} />} {/* Conditionally 
-      render error message */}
+      {error && <ErrorMessage message={errorMessage} />}
       </div>
-      <Link to={to} onClick={handleClick}> {/* Use the "to" prop to specify the route path */}
+      <Link to={to} onClick={handleClick}>
         <button type="button" className="next-button">
           {children}
         </button>

@@ -1,12 +1,12 @@
 /* Instruction.css */
 
 .instruction-box {
-  display: flex;
+  /* display: flex; */
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
   background-color: #ffffff;
   border-radius: 10px;
-  margin: 15px 90px;
+  margin: auto 90px 15px 90px;
   box-sizing: border-box;
   flex-direction: column; /* Stack children vertically */
   text-transform: uppercase;

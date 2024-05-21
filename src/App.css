@@ -12,8 +12,6 @@ body {
     height: 100vh;
   }
 
-  .start-button-container {
-    position: absolute;
-    left: 60%;
-    bottom: 30%; 
+  .top-padding {
+    padding-top: 100px;
   }

@@ -1,7 +1,7 @@
 /* FlashTextBoxes.css */
 
   .flash-text-box {
-    position: relative;
+    transform: translateY(100%);
     justify-content: center;
   }
   

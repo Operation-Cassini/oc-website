@@ -16,11 +16,17 @@
   font-weight: bold;
   margin-top: 10px;
   margin-right: 10px;
+  bottom: 0;
+  position: fixed;
 }
 
 .error-flex {
   display: flex;
   justify-content: flex-end;
+  position: fixed;
+  right: 1%;
+  bottom: 0;
+  z-index: 1;
 }
 
 .next-flex {

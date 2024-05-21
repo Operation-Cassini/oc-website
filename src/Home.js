@@ -1,13 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import NextButton from './components/NextButton'; // Import your NextButton component
-import saturn from './saturn.png';
+import { Link } from 'react-router-dom';
 import './Home.css';
+import saturn from './saturn.png';
 
 const Home = () => {
-  const handleNext = () => {
-    
-  };
 
   return (
     <div className="container">
@@ -15,7 +11,9 @@ const Home = () => {
         <img src={saturn} alt="saturn logo" />
       </div>
       <div className="start-button-container">
-        <NextButton correctAnswer = "-" correctRequirement = "-" selectedAnswer = "-" to="/page/0">START</NextButton>
+        <Link to="/page/0">
+          <button className="start-button">START</button>
+        </Link>
       </div>
     </div>
 
