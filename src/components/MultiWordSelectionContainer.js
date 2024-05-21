@@ -4,28 +4,40 @@ import WordSelectionButton from './WordSelectionButton';
 
 const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words, styledWords, pageNumber}) => {
   const [selectedButtonIndices, setSelectedButtonIndices] = useState([]);
-
+  console.log(pageNumber);
   useEffect(() => {
-    // Reset selected button indices whenever the component is rendered
+    // Reset selected button index whenever the component is rendered
+    console.log("resetting")
     setSelectedButtonIndices([]);
   }, [pageNumber]);
 
   const handleButtonClick = (index) => {
+    console.log("clicked a word!")
     const indexIsSelected = selectedButtonIndices.includes(index);
     let updatedIndices;
-
     if (indexIsSelected) {
-      updatedIndices = selectedButtonIndices.filter((i) => i !== index);
+        updatedIndices = selectedButtonIndices.filter((i) => i !== index);
+        setSelectedButtonIndices(updatedIndices);
+        onClick(["-"]); // Pass null to parent component to signify deselection
+      // debugger;
     } else {
+
+      console.log("we are setting the button index to be: ", index)
       updatedIndices = [...selectedButtonIndices, index];
+    
+      setSelectedButtonIndices(updatedIndices);
     }
 
-    setSelectedButtonIndices(updatedIndices);
-    onClick(updatedIndices.map((i) => words[i])); // Pass updated selection to parent
+    const selectedWords = updatedIndices.map((selectedIndex) => words[selectedIndex]);
+    // Pass the selected words to the parent component
+    
+    onClick(selectedWords);
+    
   };
   const containerStyle = {
     display: 'grid',
-    gridTemplateColumns: `repeat(${columns}, auto)`, // Adjusted grid template columns
+    gridTemplateColumns: `repeat(${columns}, 1fr)`,
+    gridTemplateRows: `repeat(${rows}, auto)`,
     gap: '5px',
   };
   const styleMap = {
@@ -55,9 +67,9 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
         if (words.length > 21) {
           buttons.push(
             <WordSelectionButton
-              key={i}
-              onClick={() => handleButtonClick(i)}
-              isSelected={selectedButtonIndices.includes(i)}
+              key={index}
+              onClick={() => handleButtonClick(index)}
+              isSelected = {selectedButtonIndices.includes(index)}
               style={{
                 width: '220px',
                 height: '20px',
@@ -66,7 +78,7 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
                 paddingBottom: '12px',
                 paddingLeft: '0px',
                 paddingRight: '0px',
-                ...styles // Apply styles here
+                ...styles
               }}
             >
               {word}
@@ -75,31 +87,31 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
         } else {
           buttons.push(
             <WordSelectionButton
-              key={i}
-              onClick={() => handleButtonClick(i)}
-              isSelected={selectedButtonIndices.includes(i)}
+              key={index}
+              onClick={() => handleButtonClick(index)}
+              isSelected = {selectedButtonIndices.includes(index)}
               style={{
-                width: buttonDimensions.width,
-                height: buttonDimensions.height,
-                ...styles // Apply styles here
+                width: '120px',
+                height: '50px',
+                ...styles
               }}
             >
               {word}
             </WordSelectionButton>
-          );
+          )
         }
       }
-      return buttons;
-    };
-
-    return (
-      <div className = "general-container">
-        <div className="multi-selection-container" style={containerStyle}>
-          {generateButtons()}
-        </div>
-      </div>
-    );
+    }
+    return buttons;
   };
+
+  return (
+    <div className = "general-container">
+      <div className="multi-selection-container" style={containerStyle}>
+        {generateButtons()}
+      </div>
+    </div>
+  );
 };
 
 export default MultiWordSelectionContainer;

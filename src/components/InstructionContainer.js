@@ -35,7 +35,6 @@ function renderStyledContent(content) {
 const InstructionContainer = ({ instructions }) => {
   return (
     <>
-      <div className="top-padding"></div>
       <div className="instruction-container">
         {instructions.map((instruction, index) => (
           <div key={index} className="instruction-box">

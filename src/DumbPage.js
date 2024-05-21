@@ -9,6 +9,7 @@ import MoneyPadContainer from './components/MoneyPadContainer';
 import MultiWordSelectionContainer from './components/MultiWordSelectionContainer';
 import NextButton from './components/NextButton';
 import NumberSelectionContainer from './components/NumberSelectionContainer';
+import StroopTextBox from './components/StroopTextBox';
 import WordSelectionContainer from './components/WordSelectionContainer';
 
 const Page = ({ content, correctAnswer, correctRequirement, to }) => {
@@ -146,6 +147,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
     return styles;
   }
   let wordBank = flattenContent(content['Word Bank']);
+  let wordsFlash = flattenContent(content['Words']);
   let numberSequence = flattenContent(content['Number Sequence'])
   return (
     <div>
@@ -163,7 +165,8 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
           .filter(key => key.startsWith('Prompt'))
           .map(key => content[key]);
           return (
-            <InstructionContainer instructions={prompts} />
+            <><div className="top-padding"></div>
+            <InstructionContainer instructions={prompts} /></>
           );
         })()
       }
@@ -273,16 +276,16 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
         })()
 
       }
-      {content['Type of Question'] === 'Image Selection' &&
+      {content['Type of Question'][0]['content'] === 'Image Selection' &&
         (() => {
-          let s = content['File Path'];
+          let s = content['File Path'][0]['content'];
           let filePaths = s.substring(1, s.length - 1).split(",");
           filePaths = filePaths.map(str => str.trim());
 
           return (
             <div>
               <img 
-                src={content['Answer Img']} 
+                src={content['Answer Img'][0]['content']} 
                 alt="Answer Image" 
                 style={{
                   display: 'block',  /* Make the image a block element to apply margin */
@@ -296,39 +299,62 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
               />
               <ImageSelection 
                 images={filePaths} 
-                rows={content['Dimensions'].split("x")[0]}
-                cols={content['Dimensions'].split("x")[1]}
-                pageNumber={content['Page Number']}
+                rows={content['Dimensions'][0]['content'].split("x")[0]}
+                cols={content['Dimensions'][0]['content'].split("x")[1]}
+                pageNumber={content['Page Number'][0]['content']}
               />
             </div>
           );
         })()
       }
-      {content['Type of Question'] === 'Flashing Words' &&
+      {content['Type of Question'][0]['content'] === 'STROOP' &&
         (() => {
-          console.log("reading");
-          let s = content['Words'];
-          console.log("words: ", s);
+          let s = wordBank;
           let words = s.substring(1, s.length-1).split(",");
-          console.log("substring");
           words = words.map(str => str.trim());
-          console.log("word final: ", words);
+          let styledWords = content['Word Bank'].filter(word => word.style);
+          let styledWordsWithStyle = styledWords.map(word => {
+            return {
+              content: flatteningContent(word.content),
+              style: flattenStyles(word)
+            };
+          });
+
           return (
             <div>
-              <FlashTextBoxes texts={words}/>
+              <StroopTextBox text = {renderStyledContent(content['Word'])}></StroopTextBox>
+              <WordSelectionContainer
+                rows={content['Dimensions'][0]['content'].split("x")[0]}
+                columns={content['Dimensions'][0]['content'].split("x")[1]}
+                buttonDimensions={buttonDimensions}
+                onClick={handleClick}
+                words={words}
+                styledWords={styledWordsWithStyle}
+                pageNumber={content['Page Number'][0]['content']}
+              />
             </div>
-
+            
           );
         })()
-
       }
-      {content['Type of Question'] === 'Connect the Box' &&
+      {content['Type of Question'][0]['content'] === 'Flashing Words' &&
         (() => {
-          const s = content['Characters'];
-          const positionsString = content['Position'];
-          console.log("print positions string: ", positionsString);
+          let s = wordsFlash;
+          let words = s.substring(1, s.length-1).split(",");
+          words = words.map(str => str.trim());
+          return (
+              <FlashTextBoxes texts={words}/>
+          );
+        })()
+      }
+      {content['Type of Question'][0]['content'] === 'Connect the Box' &&
+        (() => {
+          const prompts = Object.keys(content)
+          .filter(key => key.startsWith('Prompt'))
+          .map(key => content[key]);
+          const s = content['Characters'][0]['content'];
+          const positionsString = content['Position'][0]['content'];
           let characters = s.substring(1, s.length - 1).split(',').map(str => str.trim());
-          console.log("characters: ", characters);
           let positions = positionsString.substring(1, positionsString.length - 1)
             .split('), (')
             .map(pos => {
@@ -336,12 +362,10 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
               return { x, y };
             });
 
-            console.log("position: ", positions);
           return (
-            <div>
-              <ConnectTheBoxes characters={characters} positions={positions} pageNumber={content['Page Number']}/>
-            </div>
-
+            <><InstructionContainer instructions={prompts} />
+            <ConnectTheBoxes characters={characters} positions={positions} pageNumber={content['Page Number'][0]['content']}/></>
+            
           );
         })()
 

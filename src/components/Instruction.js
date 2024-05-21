@@ -10,4 +10,3 @@ const Instruction = ({ text, className, style }) => {
 };
 
 export default Instruction;
-

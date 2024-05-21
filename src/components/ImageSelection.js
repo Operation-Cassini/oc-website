@@ -33,7 +33,7 @@ const ImageSelection = ({ images, rows, cols, pageNumber }) => {
 
   const generateImages = () => {
     let imageElements = [];
-    for (let i = 0; i < rows * cols; i++) {
+    for (let i = rows * cols - 1; i >= 0; i--) {
       let image = images[i] || ''; // Get the image for the current position, empty string if none
       imageElements.push(
         <div

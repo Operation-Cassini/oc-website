@@ -48,7 +48,6 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
             }
           });
         }
-
         if (words.length > 21) {
           buttons.push(
             <WordSelectionButton

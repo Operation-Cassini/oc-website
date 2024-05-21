@@ -1,16 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import text from './input.txt';
 import './App.css';
-// import StroopTextBox from './components/StroopTextBox';
-// import ImageSelection from './components/ImageSelection';
-// import image1 from './ImageSelectionFaceJPGs/image-selection-face1.webp';
-// import image2 from './ImageSelectionFaceJPGs/image-selection-face2.webp';
-// import image3 from './ImageSelectionFaceJPGs/image-selection-face2.webp';
-// import image4 from './ImageSelectionFaceJPGs/image-selection-face2.webp';
-// import image5 from './ImageSelectionFaceJPGs/image-selection-face2.webp';
-// import image6 from './ImageSelectionFaceJPGs/image-selection-face2.webp';
-import WordSelectionContainer from './components/WordSelectionContainer';
+
 
 function parseStyledText(text) {
   const styledParts = [];

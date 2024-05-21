@@ -63,7 +63,7 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessa
   };
 
   return (
-    <div className="next-container">
+    <div>
       <div className = "error-flex">
       {error && <ErrorMessage message={errorMessage} />}
       </div>
