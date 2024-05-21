@@ -472,11 +472,20 @@ Prompt: THE DOTS LOOK LIKE THIS: `1.png` \n … AND TURN GREEN WHEN YOU TOUCH TH
 Type of Question: Instruction
 Correct Answer: -
 
+Page Title: CONNECT
+Page Number: 46
+Type of Question: Connect the Box
+Characters: [1, 2, 3, 4, 5]
+Prompt 1: CONNECT THE DOTS
+Prompt 2: START AT NUMBER 1, AND GO IN ORDER. KEEP GOING UNTIL YOU REACH THE END.
+Position: [(300, 350), (400, 100), (390, 370), (500, 330), (450, 400)]
+Correct Answer: -
 
-
-Application Name: SATURN
-Page Title: Special Instruction 2
-Page Number: 48
-Prompt 1: YOU’RE DONE WITH THE TESTS!\n\nTHANK YOU FOR YOUR TIME.\n\nTHE PROGRAM WILL RESTART ITSELF IN 10 SECONDS.
-Type of Question: Instruction
+Page Title: CONNECT
+Page Number: 47
+Type of Question: Connect the Box
+Prompt: CONNECT THE DOTS
+Prompt 1: ALTERNATE NUMBERS AND LETTERS. START AT 1, CONNECT IT TO THE FIRST LETTER, A. THEN, CONNECT A TO 2, AND 2 TO THE NEXT LETTER. KEEP GOING UNTIL YOU REACH THE END. 
+Characters: [1, a, 2, b, 3, c, 4, d]
+Position: [(400, 300), (500, 150), (700, 330), (580, 270), (500, 550), (200, 550), (100, 150), (390, 170)]
 Correct Answer: -

@@ -7,7 +7,7 @@
   
   .blackout-overlay {
     position: absolute;
-    top: 0;
+    top: -1%;
     left: 0;
     width: 40%; /* Adjust the width to match the text box */
     height: 100%; /* Adjust the height to match the text box */

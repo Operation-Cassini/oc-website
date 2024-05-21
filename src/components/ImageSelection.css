@@ -14,7 +14,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(173, 216, 230, 0.5); /* Light blue overlay */
+  background:rgba(133, 199, 255, 0.5) ; /* Light blue overlay */
+  
   pointer-events: none;
   z-index: 1; /* Ensure the overlay is on top of the image */
 }
@@ -34,7 +35,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(173, 216, 230, 0.3); /* Light blue hover effect */
+  background: rgba(133, 199, 255, 0.3); /* Light blue hover effect */
   pointer-events: none;
   z-index: 1; /* Ensure the hover overlay is on top of the image */
 }

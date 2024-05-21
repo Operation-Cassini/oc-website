@@ -1,5 +1,6 @@
 import { default as React, useEffect } from 'react';
 import './App.css';
+import ConnectTheBoxes from './components/ConnectTheBoxes';
 import FlashTextBoxes from './components/FlashTextBox';
 import ImageSelection from './components/ImageSelection';
 import Instruction from './components/Instruction';
@@ -220,6 +221,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
                 images={filePaths} 
                 rows={content['Dimensions'].split("x")[0]}
                 cols={content['Dimensions'].split("x")[1]}
+                pageNumber={content['Page Number']}
               />
             </div>
           );
@@ -237,6 +239,30 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
           return (
             <div>
               <FlashTextBoxes texts={words}/>
+            </div>
+
+          );
+        })()
+
+      }
+      {content['Type of Question'] === 'Connect the Box' &&
+        (() => {
+          const s = content['Characters'];
+          const positionsString = content['Position'];
+          console.log("print positions string: ", positionsString);
+          let characters = s.substring(1, s.length - 1).split(',').map(str => str.trim());
+          console.log("characters: ", characters);
+          let positions = positionsString.substring(1, positionsString.length - 1)
+            .split('), (')
+            .map(pos => {
+              const [x, y] = pos.replace(/[()]/g, '').split(',').map(Number);
+              return { x, y };
+            });
+
+            console.log("position: ", positions);
+          return (
+            <div>
+              <ConnectTheBoxes characters={characters} positions={positions} pageNumber={content['Page Number']}/>
             </div>
 
           );
