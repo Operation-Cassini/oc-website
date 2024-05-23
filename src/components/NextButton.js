@@ -1,10 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ErrorMessage from './ErrorMessage'; // Import ErrorMessage component
 import './NextButton.css'; // Import CSS file for styling
 
 const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessage, error, setError, pageNumber, children }) => {
   console.log("page number is", pageNumber)
+  console.log(errorMessage[0].props.children);
+  let selectedAmount = 0;
+  let errorMessageArray = [];
+  if (errorMessage[0].props.children !== "-") {
+    errorMessageArray = errorMessage[0].props.children.split(";");
+    selectedAmount = parseInt(errorMessageArray[0]);
+  }
+  console.log(errorMessageArray);
+
+  const [finalErrorMessage, setFinalErrorMessage] = useState("");
+
   // Function to toggle the position of the next button
   const toggleNextButtonPosition = (pageNumber) => {
     const nextButtonContainer = document.querySelector('.next-flex');
@@ -24,21 +35,31 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessa
   }, [pageNumber]);
 
   const handleClick = (event) => {
-    if(correctAnswer.includes(',')) {
+    console.log("here");
+    if (correctAnswer.includes(',')) {
       const correctAnswers = correctAnswer.split(',').map(word => word.trim());
-        // Sort both arrays to ensure the order doesn't matter
+      // Sort both arrays to ensure the order doesn't matter
       const sortedCorrectAnswers = correctAnswers.sort();
-      const sortedSelectedWords = selectedAnswer.sort();
+      // const sortedSelectedWords = selectedAnswer.sort();
+      let sortedSelectedWords = [];
+      if (selectedAnswer !== "-") {
+        sortedSelectedWords = selectedAnswer.sort();
+      }
       // Check if both arrays are equal
       const isCorrect = JSON.stringify(sortedCorrectAnswers) === JSON.stringify(sortedSelectedWords);
       if (!isCorrect) {
         // Prevent default navigation behavior if the answer is incorrect
         if (realAttempt === true) {
           console.log("not correct but we move on anyways!");
-        }
-        else {
+        } else {
           console.log("Incorrect answer. Navigation prevented.");
           event.preventDefault();
+          console.log(sortedSelectedWords.length + " " + selectedAmount);
+          if (sortedSelectedWords.length >= selectedAmount) {
+            setFinalErrorMessage(errorMessageArray[2]);
+          } else {
+            setFinalErrorMessage(errorMessageArray[1]);
+          }
           setError(true);
         }
         // Optionally, you can add logic here to handle incorrect answer actions
@@ -46,17 +67,15 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessa
         console.log("Correct answer!");
         // Optionally, you can add logic here to handle correct answer actions
       }
-    }
-    else if(correctAnswer === selectedAnswer) {
+    } else if (correctAnswer === selectedAnswer) {
       console.log("Correct answer!");
-    }
-    else {
+    } else {
       if (realAttempt === true) {
         console.log("not correct but we move on anyways!");
-      }
-      else {
+      } else {
         console.log("Incorrect answer. Navigation prevented.");
         event.preventDefault();
+        setFinalErrorMessage(errorMessageArray[0]);
         setError(true);
       }
     }
@@ -64,8 +83,8 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessa
 
   return (
     <div>
-      <div className = "error-flex">
-      {error && <ErrorMessage message={errorMessage} />}
+      <div className="error-flex">
+        {error && <ErrorMessage message={finalErrorMessage} />}
       </div>
       <Link to={to} onClick={handleClick}>
         <button type="button" className="next-button">
