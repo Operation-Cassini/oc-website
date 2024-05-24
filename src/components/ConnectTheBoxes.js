@@ -43,7 +43,7 @@ const ConnectTheBoxes = ({ characters, positions, pageNumber }) => {
 
   return (
     <div className="button-connector">
-      <canvas ref={canvasRef} width={window.innerWidth} height={window.innerHeight} />
+      <canvas ref={canvasRef} width={window.innerWidth * 0.6} height={window.innerHeight * 0.7} />
       {characters.map((char, index) => (
         <button
           key={index}

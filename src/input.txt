@@ -119,12 +119,12 @@ Error Pop Ups: -
 Application Name: SATURN
 Page Title: Action Phrase
 Page Number: 12
-Prompt: EARLIER, WHAT PHRASE DID YOU FIRST READ FROM THIS TABLET?
+Prompt: {REPLACE THIS QUESTION}
 Error Pop Ups: NOT YET!\nYOU HAVE TO PICK A STATEMENT\n\nIF YOU DON’T KNOW, MAKE A GUESS!
 Type of Question: Word Selection
-Word Bank: [{WAVE GOODBYE}, {RAISE YOUR ARMS}, {CLOSE YOUR EYES}, {GIVE A SALUTE}, {WIGGLE YOUR TOES}, {CLAP YOUR HANDS}]
+Word Bank: [{SHAPES}, {SHAPES}, {CORRECT}, {SHAPES}, {SHAPES}, {SHAPES}]
 Dimensions: 6x1
-Correct Answer: {CLOSE YOUR EYES}
+Correct Answer: {CORRECT}
 Correct Requirement: -
 
 Application Name: SATURN
@@ -183,19 +183,8 @@ Correct Answer: FRIDAY
 Correct Requirement: -
 
 Application Name: SATURN
-Page Title: Word Selection
-Page Number: 18
-Prompt: WHAT STATE ARE WE IN RIGHT NOW?
-Error Pop Ups: NOT YET!\nYOU HAVE TO PICK A STATE.\n\nIF YOU DON’T KNOW THE STATE, MAKE A GUESS!
-Type of Question: Word Selection
-Word Bank: [ALABAMA, ALASKA, ARIZONA, ARKANSAS, CALIFORNIA, COLORADO, CONNECTICUT, DELAWARE, FLORIDA, GEORGIA, HAWAII, IDAHO, ILLINOIS, INDIANA, IOWA, KANSAS, KENTUCKY, LOUISIANA, MAINE, MARYLAND, MASSACHUSETTS, MICHIGAN, MINNESOTA, MISSISSIPPI, MISSOURI, MONTANA, NEBRASKA, NEVADA, NEW HAMPSHIRE, NEW JERSEY, NEW MEXICO, NEW YORK, NORTH CAROLINA, NORTH DAKOTA, OHIO, OKLAHOMA, OREGON, PENNSYLVANIA, RHODE ISLAND, SOUTH CAROLINA, SOUTH DAKOTA, TENNESSEE, TEXAS,UTAH, VERMONT, VIRGINIA, WISCONSIN, WYOMING]
-Dimensions: 18x3
-Correct Answer: CALIFORNIA
-Correct Requirement: -
-
-Application Name: SATURN
 Page Title: Pick Five Words
-Page Number: 19
+Page Number: 18
 Prompt: EARLIER, YOU MEMORIZED FIVE WORDS. PICK THOSE WORDS FROM THIS LIST.
 Error Pop Ups: 6;NOT YET!\nYOU HAVE TO PICK FIVE WORDS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!;NOT YET\nYOU CAN +ONLY+ PICK FIVE WORDS.\n\nTO UN-PICK A WORD, TOUCH IT AGAIN.
 Type of Question: Multi Word Selection
@@ -206,7 +195,7 @@ Correct Requirement: -
 
 Application Name: SATURN
 Page Title: Math 1
-Page Number: 20
+Page Number: 19
 Prompt: YOU GO TO THE STORE WITH EXACTLY $100. YOU BUY A DOZEN APPLES FOR $7 AND A TRICYCLE FOR $60.\nHOW MUCH DID YOU SPEND?
 Error Pop Ups: NOT YET!\nYOU HAVE TO ENTER THE DOLLAR AMOUNT.\n\nIF YOU DON’T KNOW, MAKE A GUESS!
 Type of Question: Money Number Pad
@@ -217,7 +206,7 @@ Correct Requirement: -
 
 Application Name: SATURN
 Page Title: Math 2
-Page Number: 21
+Page Number: 20
 Prompt: AFTER THAT PURCHASE, HOW MUCH DO YOU HAVE LEFT?
 Error Pop Ups: NOT YET!\nYOU HAVE TO ENTER THE DOLLAR AMOUNT.\n\nIF YOU DON’T KNOW, MAKE A GUESS!
 Type of Question: Money Number Pad
@@ -228,7 +217,7 @@ Correct Requirement: -
 
 Application Name: SATURN
 Page Title: Instruction 7
-Page Number: 22
+Page Number: 21
 Prompt 1: NEXT, YOU WILL SEE SOME DRAWINGS.
 Prompt 2: PICK THE SMALL DRAWINGS THAT MAKE UP THE BIG DRAWING.
 Prompt 3: drawing here somewhere for example
@@ -239,7 +228,7 @@ Error Pop Ups: -
 
 Application Name: SATURN
 Page Title: Drawing 1
-Page Number: 23
+Page Number: 22
 Prompt: WHICH SMALL DRAWINGS MAKE THAT?
 Error Pop Ups: NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!;NOT YET!\nYOU CAN +ONLY+ PICK TWO DRAWINGS.\n\nTO UN-PICK A DRAWING, TOUCH IT AGAIN.
 Type of Question: Image Selection
@@ -251,7 +240,7 @@ Correct Requirement: -
 
 Application Name: SATURN
 Page Title: Drawing 2
-Page Number: 24
+Page Number: 23
 Prompt: WHICH SMALL DRAWINGS MAKE THAT?
 Error Pop Ups: NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!;NOT YET!\nYOU CAN +ONLY+ PICK TWO DRAWINGS.\n\nTO UN-PICK A DRAWING, TOUCH IT AGAIN.
 Type of Question: Image Selection
@@ -263,7 +252,7 @@ Correct Requirement: -
 
 Application Name: SATURN
 Page Title: Drawing 3
-Page Number: 25
+Page Number: 24
 Prompt: WHICH SMALL DRAWINGS MAKE THAT?
 Error Pop Ups: NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!;NOT YET!\nYOU CAN +ONLY+ PICK TWO DRAWINGS.\n\nTO UN-PICK A DRAWING, TOUCH IT AGAIN.
 Type of Question: Image Selection
@@ -275,7 +264,7 @@ Correct Requirement: -
 
 Application Name: SATURN
 Page Title: Drawing 4
-Page Number: 26
+Page Number: 25
 Prompt: WHICH SMALL DRAWINGS MAKE THAT?
 Error Pop Ups: NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!;NOT YET!\nYOU CAN +ONLY+ PICK TWO DRAWINGS.\n\nTO UN-PICK A DRAWING, TOUCH IT AGAIN.
 Type of Question: Image Selection
@@ -287,7 +276,7 @@ Correct Requirement: -
 
 Application Name: SATURN
 Page Title: Instruction 8
-Page Number: 27
+Page Number: 26
 Prompt 1: NEXT, YOU WILL SEE SOME WORDS.
 Prompt 2: CHOOSE THE ~C~{O}~L~+O+{R} USED TO WRITE EACH WORD.
 Type of Question: Instruction
@@ -297,7 +286,7 @@ Error Pop Ups: -
 
 Application Name: SATURN
 Page Title: Stroop 1
-Page Number: 28
+Page Number: 27
 Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
 Type of Question: STROOP
 Word: ~HAND~
@@ -308,7 +297,7 @@ Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Stroop 2
-Page Number: 29
+Page Number: 28
 Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
 Type of Question: STROOP
 Word: {BOOK}
@@ -319,7 +308,7 @@ Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Stroop 3
-Page Number: 30
+Page Number: 29
 Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
 Type of Question: STROOP
 Word: +TABLE+
@@ -330,7 +319,7 @@ Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Stroop 4
-Page Number: 31
+Page Number: 30
 Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
 Type of Question: STROOP
 Word: ~GREEN~
@@ -341,7 +330,7 @@ Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Stroop 5
-Page Number: 32
+Page Number: 31
 Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
 Type of Question: STROOP
 Word: +RED+
@@ -352,7 +341,7 @@ Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Stroop 6
-Page Number: 33
+Page Number: 32
 Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
 Type of Question: STROOP
 Word: {BLUE}
@@ -363,7 +352,7 @@ Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Stroop 7
-Page Number: 34
+Page Number: 33
 Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
 Type of Question: STROOP
 Word: ~RED~
@@ -374,7 +363,7 @@ Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Stroop 8
-Page Number: 35
+Page Number: 34
 Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
 Type of Question: STROOP
 Word: +BLUE+
@@ -385,7 +374,7 @@ Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Stroop 9
-Page Number: 36
+Page Number: 35
 Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
 Type of Question: STROOP
 Word: {GREEN}
@@ -396,7 +385,7 @@ Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Stroop 10
-Page Number: 37
+Page Number: 36
 Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
 Type of Question: STROOP
 Word: +RED+
@@ -407,7 +396,7 @@ Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Stroop 11
-Page Number: 38
+Page Number: 37
 Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
 Type of Question: STROOP
 Word: {BLUE}
@@ -418,7 +407,7 @@ Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Stroop 12
-Page Number: 39
+Page Number: 38
 Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
 Type of Question: STROOP
 Word: ~RED~
@@ -429,7 +418,7 @@ Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Stroop 13
-Page Number: 40
+Page Number: 39
 Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
 Type of Question: STROOP
 Word: {GREEN}
@@ -440,7 +429,7 @@ Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Stroop 14
-Page Number: 41
+Page Number: 40
 Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
 Type of Question: STROOP
 Word: +BLUE+
@@ -451,7 +440,7 @@ Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Stroop 15
-Page Number: 42
+Page Number: 41
 Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
 Type of Question: STROOP
 Word: ~GREEN~
@@ -462,8 +451,9 @@ Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Instruction 9
-Page Number: 43
-Prompt 1: YOU ARE ALMOST DONE!\n\nFOR THE FINAL TASKS, YOU PLAY CONNECT-THE-DOTS.
+Page Number: 42
+Prompt 1: YOU ARE ALMOST DONE!
+Prompt 2: FOR THE FINAL TASKS, YOU PLAY CONNECT-THE-DOTS.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -471,7 +461,7 @@ Error Pop Ups: -
 
 Application Name: SATURN
 Page Title: Instruction 10
-Page Number: 44
+Page Number: 43
 Prompt 1: DRAW LINES FROM ONE DOT TO THE NEXT.
 Prompt 2: NUMBERED DOTS GO FROM LOW TO HIGH (1, 2, 3,...)
 Prompt 3: DOTS WITH LETTERS GO IN ALPHABETICAL ORDER (A, B, C,...)
@@ -482,7 +472,7 @@ Error Pop Ups: -
 
 Application Name: SATURN
 Page Title: Instruction 11
-Page Number: 45
+Page Number: 44
 Prompt 1: THE DOTS LOOK LIKE THIS:
 Prompt 2: … AND TURN GREEN WHEN YOU TOUCH THEM IN ORDER: 
 Prompt 3: … BUT FLICKER RED IF YOU GO OUT OF ORDER: 
@@ -492,23 +482,23 @@ Correct Requirement: -
 Error Pop Ups: -
 
 Page Title: CONNECT
-Page Number: 46
+Page Number: 45
 Type of Question: Connect the Box
 Characters: [1, 2, 3, 4, 5]
 Prompt 1: CONNECT THE DOTS
 Prompt 2: START AT NUMBER 1, AND GO IN ORDER. KEEP GOING UNTIL YOU REACH THE END.
-Position: [(300, 350), (400, 100), (390, 370), (500, 330), (450, 400)]
+Position: [(450, 290), (640, 100), (750, 300), (600, 250), (680, 400)]
 Correct Answer: -
 Correct Requirement: -
 Error Pop Ups: -
 
 Page Title: CONNECT
-Page Number: 47
+Page Number: 46
 Type of Question: Connect the Box
 Prompt 1: CONNECT THE DOTS
 Prompt 2: {ALTERNATE NUMBERS AND LETTERS.} START AT 1, CONNECT IT TO THE FIRST LETTER, A. THEN, CONNECT A TO 2, AND 2 TO THE NEXT LETTER. KEEP GOING UNTIL YOU REACH THE END. 
 Characters: [1, A, 2, B, 3, C, 4, D]
-Position: [(400, 300), (500, 150), (700, 330), (580, 270), (500, 550), (200, 550), (100, 150), (390, 170)]
+Position: [(600, 270), (800, 150), (900, 270), (780, 240), (830, 400), (430, 400), (330, 150), (570, 170)]
 Correct Answer: -
 Correct Requirement: -
 Error Pop Ups: -

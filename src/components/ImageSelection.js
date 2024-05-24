@@ -24,9 +24,11 @@ const ImageSelection = ({ images, rows, cols, pageNumber }) => {
       if (prevIndices.includes(index)) {
         // If the index is already selected, remove it
         return prevIndices.filter((idx) => idx !== index);
-      } else {
+      } else if (selectedImageIndices.length < 2) {
         // If the index is not selected, add it
         return [...prevIndices, index];
+      } else {
+        return selectedImageIndices;
       }
     });
   };

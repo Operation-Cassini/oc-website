@@ -1,8 +1,12 @@
 /* ButtonConnector.css */
 .button-connector {
     position: relative;
-    width: 100%;
+    width: 80%;
     height: 100%;
+    background-color: white;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border: 3px solid black;
   }
   
   .button-connector button {
@@ -11,8 +15,5 @@
     height: 50px;
     font-size: 18px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   
