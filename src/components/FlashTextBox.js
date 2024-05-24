@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 import BlackBoarderTextBox from './BlackBoarderTextBox';
 import './FlashTextBox.css';
 
-const FlashTextBoxes = ({ texts }) => {
+const FlashTextBoxes = ({ texts, nextPage }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showOverlay, setShowOverlay] = useState(false);
   const [textBoxDimensions, setTextBoxDimensions] = useState({ width: 0, height: 0 });
   const [completedCycles, setCompletedCycles] = useState(0);
   const totalCycles = 1; // Set total cycles to 1 for one full round
+  const nextPageNumber = `/page/${+nextPage}`;
+  const navigate = useNavigate(); // Hook for navigation
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -28,6 +31,7 @@ const FlashTextBoxes = ({ texts }) => {
 
       if (completedCycles === totalCycles) {
         clearInterval(interval); // Stop the interval once all cycles are completed
+        navigate(nextPageNumber); 
       }
     }, 4000); // Repeat the cycle every 8 seconds (3 seconds for text box + 5 seconds for overlay)
 
@@ -67,3 +71,4 @@ const FlashTextBoxes = ({ texts }) => {
 };
 
 export default FlashTextBoxes;
+
