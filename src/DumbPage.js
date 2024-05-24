@@ -376,7 +376,8 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
             correctAnswer={correctAnswer}
             selectedAnswer={selectedAnswer}
             realAttempt={realAttempt}
-            errorMessage={content['Error Pop Ups'][0]['content'] ? content['Error Pop Ups'][0]['content'] : ""}
+            // errorMessage={content['Error Pop Ups'][0]['content'] ? content['Error Pop Ups'][0]['content'] : ""}
+            errorMessage={content['Error Pop Ups'] ? renderStyledContent(content['Error Pop Ups']) : ""}
             error={error}
             setError={setError}
             pageNumber = {content['Page Number'][0]['content']}
