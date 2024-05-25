@@ -1,17 +1,35 @@
 /* WordSelectionContainer.css */
-
 .general-container {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  margin: 0 auto; /* Center container horizontally */
+  flex-direction: column;
+}
+
+/* Doesn't physically do anything */
+.word-selection-button {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  background-color: blue;
+}
+
+.word {
+  background-color: green;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.flex-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px; /* Padding around the container */
-}
+  flex-direction: column;
 
-.word-selection-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-gap: 10px; /* Gap between buttons */
-  justify-content: center; /* Center buttons horizontally */
-  align-items: center; /* Center buttons vertically */
-  border-radius: 10px; /* Rounded corners for the container */
 }

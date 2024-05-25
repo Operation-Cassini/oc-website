@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import WordSelectionButton from './WordSelectionButton';
 import './WordSelectionContainer.css';
 
@@ -17,13 +17,29 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
     }
   };
 
+  // const containerStyle = {
+  //   display: 'grid',
+  //   gridTemplateColumns: `repeat(${columns}, auto)`, 
+  //   gridTemplateRows: `repeat(${rows}, auto)`,
+  //   gap: '5px',
+  // };
+  const longestWord = words.reduce((longest, current) => current.length > longest.length ? current : longest, "");
+  console.log("longest word", longestWord);
+  const longestWordWidth = longestWord.length;
+  console.log("longest word width", longestWordWidth);
+
+  // const containerStyle = {
+  //   display: 'grid',
+  //   gridTemplateColumns: `repeat(auto-fit, minmax(${longestWordWidth}px, 1fr))`,
+  //   gridTemplateRows: `repeat(${rows}, auto)`,
+  //   gap: '5px',
+  // };
+
   const containerStyle = {
     display: 'grid',
-    gridTemplateColumns: `repeat(${columns}, 1fr)`, // Make columns flexible
+    gridTemplateColumns: `repeat(${columns}, 1fr)`,
     gridTemplateRows: `repeat(${rows}, auto)`,
     gap: '5px',
-    width: '100%',
-    height: '100%',
   };
 
   const styleMap = {
@@ -33,15 +49,14 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
     green: { color: 'green' },
     blue: { color: 'blue' }
   };
-
   const generateButtons = () => {
     let buttons = [];
     for (let i = 0; i < rows; i++) {
       for (let j = 0; j < columns; j++) {
-        const index = i * columns + j;
+        const index = i + j * rows;
         let word = words[index];
         let styles = {}; // Initialize an empty style object
-
+        
         // Check if the word is styled
         const styledWord = styledWords.find(item => item.content === word);
         if (styledWord && styledWord.style) {
@@ -51,27 +66,42 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
             }
           });
         }
-
-        // Calculate button dimensions dynamically
-        const width = columns > 1 ? `${60 / columns}vw` : '60vw';
-        const height = rows > 1 ? `${60 / rows}vh` : 'auto';
-        const fontSize = columns > 1 ? 'calc(10px + 1vw)' : 'calc(12px + 2vw)';
-
-        buttons.push(
-          <WordSelectionButton
-            key={index}
-            onClick={() => handleButtonClick(index)}
-            isSelected={selectedButtonIndex === index}
-            style={{
-              width,
-              height,
-              fontSize,
-              ...styles
-            }}
-          >
-            {word}
-          </WordSelectionButton>
-        );
+        if (words.length > 21) {
+          buttons.push(
+            <WordSelectionButton
+              key={index}
+              onClick={() => handleButtonClick(index)}
+              isSelected={selectedButtonIndex === index}
+              style={{
+                width: longestWordWidth * 20 + 'px',
+                height: '20px',
+                fontSize: '22px',
+                paddingTop: '12px',
+                paddingBottom: '12px',
+                paddingLeft: '0px',
+                paddingRight: '0px',
+                ...styles
+              }}
+            >
+              {word}
+            </WordSelectionButton>
+          );
+        } else {
+          buttons.push(
+            <WordSelectionButton
+              key={index}
+              onClick={() => handleButtonClick(index)}
+              isSelected={selectedButtonIndex === index}
+              style={{
+                width: longestWordWidth * 35 + 'px',
+                height: '50px',
+                ...styles
+              }}
+            >
+              {word}
+            </WordSelectionButton>
+          );
+        }
       }
     }
     return buttons;
@@ -83,6 +113,7 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
         {generateButtons()}
       </div>
     </div>
+
   );
 };
 

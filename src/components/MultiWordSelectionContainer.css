@@ -1,24 +1,13 @@
-/* MultiWordSelectionContainer.css */
-
-.general-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .multi-selection-container {
-  display: grid;
-  gap: 2px; /* Smaller gap between grid items */
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
+  display: grid; /* Use grid layout */
+  grid-gap: 5px; /* Space between grid items */
+  justify-content: center; /* Center items horizontally */
+  width: 50%; /* Allow container to take full width of its parent */
 }
 
-.word-selection-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  margin: 0; /* Remove any default margin */
-  padding: 0; /* Remove any default padding */
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+  .multi-selection-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust columns based on screen size */
+  }
 }

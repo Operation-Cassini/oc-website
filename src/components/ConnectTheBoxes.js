@@ -3,19 +3,22 @@ import './ConnectTheBox.css';
 
 const ConnectTheBoxes = ({ characters, positions, pageNumber }) => {
   const [sequence, setSequence] = useState([]);
-  const [incorrect, setIncorrect] = useState(null); // Track incorrect click
+  const [incorrect, setIncorrect] = useState(null);
   const canvasRef = useRef(null);
+  const containerRef = useRef(null);
 
-  useEffect(() => {
-    // Reset the sequence when the page number changes
-    setSequence([]);
-  }, [pageNumber]);
-
-  useEffect(() => {
+  const updateCanvasAndButtons = () => {
+    const container = containerRef.current;
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    if (!container || !canvas) return;
+
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = container.clientWidth;
+    canvas.height = container.clientHeight;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.strokeStyle = 'black';
     ctx.lineWidth = 2;
 
@@ -26,50 +29,87 @@ const ConnectTheBoxes = ({ characters, positions, pageNumber }) => {
       const start = positions[sequence[i]];
       const end = positions[sequence[i + 1]];
       ctx.beginPath();
-      ctx.moveTo(start.x + halfButtonSize, start.y + halfButtonSize);
-      ctx.lineTo(end.x + halfButtonSize, end.y + halfButtonSize);
+      ctx.moveTo(
+        (start.x / 100) * container.clientWidth ,
+        (start.y / 100) * container.clientHeight
+      );
+      ctx.lineTo(
+        (end.x / 100) * container.clientWidth ,
+        (end.y / 100) * container.clientHeight
+      );
       ctx.stroke();
     }
+  };
+
+  useEffect(() => {
+    setSequence([]);
+  }, [pageNumber]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      updateCanvasAndButtons();
+    };
+
+    window.addEventListener('resize', handleResize);
+    updateCanvasAndButtons();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [sequence, positions]);
+
+  useEffect(() => {
+    updateCanvasAndButtons();
   }, [sequence, positions]);
 
   const handleClick = (index) => {
     if (sequence.length === index) {
       setSequence([...sequence, index]);
-      setIncorrect(null); // Reset incorrect state if clicked in the correct order
+      setIncorrect(null);
     } else {
-      setIncorrect(index); // Set incorrect state if clicked out of order
+      setIncorrect(index);
     }
   };
 
   return (
-    <div className="button-connector">
-      <canvas ref={canvasRef} width={window.innerWidth * 0.6} height={window.innerHeight * 0.7} />
-      {characters.map((char, index) => (
-        <button
-          key={index}
-          style={{
-            position: 'absolute',
-            left: positions[index]?.x,
-            top: positions[index]?.y,
-            width: '50px',
-            height: '50px',
-            fontSize: '18px',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: sequence.includes(index)
-              ? 'green'
-              : incorrect === index
-              ? 'red'
-              : 'white',
-          }}
-          onClick={() => handleClick(index)}
-          disabled={sequence.includes(index)}
-        >
-          {char}
-        </button>
-      ))}
+    <div className="outer-container">
+      <div className="centered-container">
+        <div ref={containerRef} className="button-connector">
+          <canvas ref={canvasRef} />
+          {characters.map((char, index) => {
+            const container = containerRef.current;
+            if (!container) return null;
+
+            return (
+              <button
+                key={index}
+                style={{
+                  position: 'absolute',
+                  left: `${positions[index]?.x}%`,
+                  top: `${positions[index]?.y}%`,
+                  width: '50px',
+                  height: '50px',
+                  fontSize: '18px',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: sequence.includes(index)
+                    ? 'green'
+                    : incorrect === index
+                    ? 'red'
+                    : 'white',
+                  transform: 'translate(-50%, -50%)',
+                }}
+                onClick={() => handleClick(index)}
+                disabled={sequence.includes(index)}
+              >
+                {char}
+              </button>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };
