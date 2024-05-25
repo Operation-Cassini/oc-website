@@ -9,17 +9,8 @@ const ImageSelection = ({ images, rows, cols, pageNumber }) => {
     setSelectedImageIndices([]);
   }, [pageNumber]);
 
-  const containerStyle = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '5px', // Adjust the gap between images if needed
-    justifyContent: 'flex-start', // Align images to the start to prevent extra space at the end
-    width: `${cols * 190 + (cols - 1) * 5}px`, // Calculate the width to fit the number of columns and gap
-  };
-
   const handleImageClick = (index) => {
     // Toggle the selection of the clicked image index
-    console.log("image clicked: ", index);
     setSelectedImageIndices((prevIndices) => {
       if (prevIndices.includes(index)) {
         // If the index is already selected, remove it
@@ -33,16 +24,24 @@ const ImageSelection = ({ images, rows, cols, pageNumber }) => {
     });
   };
 
+  // Calculate the width of each image container based on the number of columns and screen size
+  const containerStyle = {
+    display: 'grid',
+    gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
+    gap: '5px', // Adjust the gap between images if needed
+    justifyContent: 'flex-start', // Align images to the start to prevent extra space at the end
+    maxWidth: '100%', // Ensure the container doesn't overflow
+  };
+
   const generateImages = () => {
     let imageElements = [];
-    for (let i = rows * cols - 1; i >= 0; i--) {
+    for (let i = 0; i < rows * cols; i++) {
       let image = images[i] || ''; // Get the image for the current position, empty string if none
       imageElements.push(
         <div
           key={i}
           className={`image-container ${selectedImageIndices.includes(i) ? 'selected' : ''}`}
           style={{
-            width: '190px', // Adjust the width of each image container
             height: 'auto', // Adjust the height of each image container if needed
             boxSizing: 'border-box', // Include padding and border in the element's total width and height
             position: 'relative', // Necessary for the overlay

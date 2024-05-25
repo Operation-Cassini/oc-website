@@ -1,8 +1,8 @@
 /* WordSelectionButton.css */
 .word-button {
   display: flex;
-  justify-content: center; /* Center text horizontally */
-  align-items: center; /* Center text vertically */
+  justify-content: center; 
+  align-items: center; 
   justify-self: center;
   text-transform: uppercase;
   background-color: white;
@@ -17,9 +17,9 @@
 
 .word-button.clicked,
 .word-button.selected {
-  background-color: #85c7ff; /* Change background color to blue for clicked or selected state */
+  background-color: #85c7ff; 
 }
 
 .word-button:hover {
-  background-color: #85c7ff; /* Change background color on hover */
+  background-color: #85c7ff;
 }

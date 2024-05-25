@@ -1,8 +1,24 @@
+/* MultiWordSelectionContainer.css */
+
+.general-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .multi-selection-container {
-  display: flex; /* Use flexbox */
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
-  width: 50%; /* Allow container to adjust its width based on content */
-  margin: 0 auto; /* Center container horizontally */
+  display: grid;
+  gap: 2px; /* Smaller gap between grid items */
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.word-selection-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
 }
