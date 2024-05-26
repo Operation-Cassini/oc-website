@@ -80,5 +80,55 @@ function ParseInputFile(fileContent) {
   return pages;
 }
 
-export default ParseInputFile;
+const ParseMeanSDFile = (input) => {
+  const lines = input.split('\n').filter(line => line.includes('='));
+  const data = {};
+
+  lines.forEach(line => {
+    const [key, value] = line.split(' = ').map(item => item.trim());
+    if (key && value) {
+      const task = key.split('_').slice(1, -1).join('_').toLowerCase();
+      const stat = key.split('_').pop().toLowerCase();
+
+      if (!data[task]) {
+        data[task] = {};
+      }
+
+      data[task][stat] = parseFloat(value);
+    }
+  });
+  console.log("the mean sd data", data);
+  return data;
+};
+
+const ParseSaturnScoringFile = (input) => {
+  const lines = input.split('\n').filter(line => !line.startsWith('#') && line.includes('=')); // Filter lines not starting with '#' and containing '='
+  const data = [];
+
+  let currentPoint = {};
+
+  lines.forEach(line => {
+    const [key, ...valueParts] = line.split('=').map(item => item.trim()); // Split key and value parts
+    const value = valueParts.join('=').trim().replace(/"/g, ''); // Re-join value parts with '=', then remove double quotes
+    if (key && value) {
+      if (key === 'SUM_TOTAL_POINTS') {
+        if (Object.keys(currentPoint).length > 0) {
+          data.push(currentPoint); // Push current point to array
+          currentPoint = {}; // Reset current point
+        }
+        currentPoint.sumTotalPoints = parseInt(value); // Set SUM_TOTAL_POINTS
+      } else {
+        currentPoint[key] = value; // Set other properties
+      }
+    }
+  });
+
+  if (Object.keys(currentPoint).length > 0) {
+    data.push(currentPoint); // Push last point to array
+  }
+  console.log("saturn scoring file is", data);
+  return data;
+};
+
+export { ParseInputFile, ParseMeanSDFile, ParseSaturnScoringFile };
 

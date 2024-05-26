@@ -1,16 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes, useParams } from 'react-router-dom';
 import Page from './DumbPage';
 import End from './End';
 import Home from './Home';
-import ParseInputFile from './Parser';
+import { ParseInputFile, ParseMeanSDFile, ParseSaturnScoringFile } from './Parser';
 import text from './input.txt';
+import meanSDtext from './meanSD.txt';
+import saturnScoringtext from './saturnScoring.txt';
 // import NextButton from './components/NextButton';
 
 const App = () => {
   // State to store parsed page data
   const [pagesData, setPagesData] = React.useState([]);
   const [lastPageNumber, setLastPageNumber] = React.useState(null);
+  const [meanSDData, setMeanSDData] = useState([]);
+  const [saturnScoringData, setSaturnScoringData] = useState([]);
 
   // State to store the correct answer for the current page
   const [correctAnswer, setCorrectAnswer] = React.useState("-");
@@ -31,6 +35,30 @@ const App = () => {
       .catch(error => {
         console.error('Error reading file:', error);
       });
+
+      fetch(meanSDtext)
+      .then(response => response.text())
+      .then(fileContent => {
+        // Parse the input file and set the state with the parsed data
+        const parsedContents = ParseMeanSDFile(fileContent);
+        setMeanSDData(parsedContents);
+        console.log("this is the mean sd file that was parsed", parsedContents);
+      })
+      .catch(error => {
+        console.error('Error reading file:', error);
+      });
+
+      fetch(saturnScoringtext)
+        .then(response => response.text())
+        .then(fileContent => {
+          // Parse the input file and set the state with the parsed data
+          const parsedContents = ParseSaturnScoringFile(fileContent);
+          setSaturnScoringData(parsedContents);
+          console.log("this is the saturning scoring file that was parsed", parsedContents);
+        })
+        .catch(error => {
+          console.error('Error reading file:', error);
+        });
   }, []);
 
   const DynamicPageRenderer = () => {

@@ -2,14 +2,6 @@ import React from 'react';
 import Instruction from './Instruction';
 import './InstructionContainer.css';
 
-const styleMap = {
-  underline: { textDecoration: 'underline' },
-  italic: { fontStyle: 'italic' },
-  red: { color: 'red' },
-  green: { color: 'green' },
-  blue: { color: 'blue' }
-};
-
 function renderStyledContent(content) {
   if (!content || content.length === 0) return null;
 

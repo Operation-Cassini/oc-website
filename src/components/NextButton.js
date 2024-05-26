@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ErrorMessage from './ErrorMessage'; // Import ErrorMessage component
 import './NextButton.css'; // Import CSS file for styling
 
-const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessage, error, setError, pageNumber, children }) => {
+const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttempt, errorMessage, error, setError, pageNumber, children }) => {
   console.log("error message is", errorMessage);
   let selectedAmount = 0;
   // if (errorMessage[0].props.children !== '') {
@@ -39,6 +39,9 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessa
   }, [pageNumber]);
 
   const handleClick = (event) => {
+    if (pageNumber !== undefined) {
+      timeHandler();
+    }
     if (correctAnswer.includes(',')) {
       const correctAnswers = correctAnswer.split(',').map(word => word.trim());
       // Sort both arrays to ensure the order doesn't matter

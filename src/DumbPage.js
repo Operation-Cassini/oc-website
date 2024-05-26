@@ -18,13 +18,26 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
   const [selectedAnswer, setSelectedAnswer] = React.useState("-");
   const [error, setError] = React.useState(false);
   const [realAttempt, setRealAttempt] = React.useState(false);
+
+  const [lastClickTime, setLastClickTime] = React.useState(Date.now());
+
   useEffect(() => {
     // Reset selected button index whenever the component is rendered
     console.log("resetting real attempt");
     setRealAttempt(false);
   }, [content['Page Number']]);
+  
+  const timerHandler = () => {
+    const currentTime = Date.now();
+    if (lastClickTime !== null) {
+      const timeDifference = currentTime - lastClickTime;
+      console.log(`Time between clicks: ${timeDifference} ms`);
+    }
+    setLastClickTime(currentTime);
+  }
 
   const handleClick = (word) => {
+    timerHandler();
     console.log('Selected word:', word);
     // Pass the selected word to the parent component
     if ((content['Type of Question'][0]['content'] === 'Word Selection') && correctRequirement === '-') {
@@ -283,6 +296,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
               columns={content['Dimensions'][0]['content'].split("x")[1]}
               buttonDimensions={buttonDimensions}
               onClick={handleClick}
+              timeHandler={timerHandler}
               words={words}
               styledWords={styledWordsWithStyle}
               pageNumber={content['Page Number'][0]['content']}
@@ -310,6 +324,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
               columns={content['Dimensions'][0]['content'].split("x")[1]}
               buttonDimensions={buttonDimensions}
               onClick={handleClick}
+              timeHandler={timerHandler}
               words={words}
               styledWords={styledWordsWithStyle}
               pageNumber={content['Page Number'][0]['content']}
@@ -426,6 +441,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
               to={to}
               correctAnswer={correctAnswer}
               selectedAnswer={selectedAnswer}
+              timeHandler={timerHandler}
               realAttempt={realAttempt}
               errorMessage={content['Error Pop Ups'] ? renderedErrorMessages : ""}
               error={error}
