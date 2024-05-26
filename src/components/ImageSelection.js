@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import './ImageSelection.css';
 
-const ImageSelection = ({ images, rows, cols, pageNumber }) => {
+const ImageSelection = ({ images, rows, cols, onClick, pageNumber }) => {
   const [selectedImageIndices, setSelectedImageIndices] = useState([]);
 
-  useEffect(() => {
-    // Reset selected image indices when the page number changes
-    setSelectedImageIndices([]);
-  }, [pageNumber]);
+  // useEffect(() => {
+  //   // Reset selected image indices when the page number changes
+  //   setSelectedImageIndices([]);
+  // }, [pageNumber]);
+
+  // useEffect(() => {
+  //   // Call onClick with the updated selectedImageIndices
+  //   console.log("updated selectedImageIndices: ", selectedImageIndices);
+  //   onClick(selectedImageIndices);
+  // }, [selectedImageIndices, onClick]);
 
   const containerStyle = {
     display: 'flex',
@@ -23,9 +29,11 @@ const ImageSelection = ({ images, rows, cols, pageNumber }) => {
     setSelectedImageIndices((prevIndices) => {
       if (prevIndices.includes(index)) {
         // If the index is already selected, remove it
+        onClick(prevIndices.filter((idx) => idx !== index));
         return prevIndices.filter((idx) => idx !== index);
       } else {
         // If the index is not selected, add it
+        onClick([...prevIndices, index]);
         return [...prevIndices, index];
       }
     });

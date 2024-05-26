@@ -42,7 +42,6 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
       console.log("new correct answer is", correctAnswers);
         // Sort both arrays to ensure the order doesn't matter
       // Check if both arrays are equal
-
       if(word.length === correctAnswers.length) {
         setRealAttempt(true);
         console.log("real attempt setting to true");
@@ -198,6 +197,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
       }
       {content['Type of Question'][0]['content'] === 'Multi Word Selection' && 
         (() => {
+          console.log(content['Error Pop Ups']);
           let s = wordBank
           let words = s.substring(1, s.length-1).split(",");
           words = words.map(str => str.trim());
@@ -301,6 +301,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
                 images={filePaths} 
                 rows={content['Dimensions'][0]['content'].split("x")[0]}
                 cols={content['Dimensions'][0]['content'].split("x")[1]}
+                onClick={handleClick}
                 pageNumber={content['Page Number'][0]['content']}
               />
             </div>

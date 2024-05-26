@@ -246,8 +246,8 @@ Type of Question: Image Selection
 Answer Img: /ImageSelectionShapesJPGs/shapes-answer.webp
 File Path: [/ImageSelectionShapesJPGs/shapes1.webp, /ImageSelectionShapesJPGs/shapes2.webp, /ImageSelectionShapesJPGs/shapes3.webp, /ImageSelectionShapesJPGs/shapes4.webp, /ImageSelectionShapesJPGs/shapes5.webp, /ImageSelectionShapesJPGs/shapes6.webp]
 Dimensions: 2x3
-Correct Answer: -
-Correct Requirement: -
+Correct Answer: 2, 4
+Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Drawing 2
@@ -258,8 +258,8 @@ Type of Question: Image Selection
 Answer Img: /ImageSelectionFaceJPGs/face-answer.webp
 File Path: [/ImageSelectionFaceJPGs/face1.webp, /ImageSelectionFaceJPGs/face2.webp, /ImageSelectionFaceJPGs/face3.webp, /ImageSelectionFaceJPGs/face4.webp, /ImageSelectionFaceJPGs/face5.webp, /ImageSelectionFaceJPGs/face6.webp]
 Dimensions: 2x3
-Correct Answer: -
-Correct Requirement: -
+Correct Answer: 0, 4
+Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Drawing 3
@@ -270,8 +270,8 @@ Type of Question: Image Selection
 Answer Img: /ImageSelectionDiagonalLinesJPGs/diagonal-line-answer.webp
 File Path: [/ImageSelectionDiagonalLinesJPGs/diagonal-line1.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line2.webp,/ImageSelectionDiagonalLinesJPGs/diagonal-line3.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line4.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line5.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line6.webp]
 Dimensions: 2x3
-Correct Answer: -
-Correct Requirement: -
+Correct Answer: 0, 3
+Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Drawing 4
@@ -282,8 +282,8 @@ Type of Question: Image Selection
 Answer Img: /ImageSelectionCubeJPGs/cube-answer.webp
 File Path: [/ImageSelectionCubeJPGs/cube1.webp, /ImageSelectionCubeJPGs/cube2.webp, /ImageSelectionCubeJPGs/cube3.webp, /ImageSelectionCubeJPGs/cube4.webp, /ImageSelectionCubeJPGs/cube5.webp, /ImageSelectionCubeJPGs/cube6.webp]
 Dimensions: 2x3
-Correct Answer: -
-Correct Requirement: -
+Correct Answer: 2, 3
+Correct Requirement: Yes
 
 Application Name: SATURN
 Page Title: Instruction 8
