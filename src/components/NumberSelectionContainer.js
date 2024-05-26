@@ -80,18 +80,18 @@ const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, wo
   };
   
   return (
-    <div class="general-container">
-      <div class="number-pad">
-        <div class="number-line">
-          <div class="selected-numbers">
+    <div className="general-container">
+      <div className="number-pad">
+        <div className="number-line">
+          <div className="selected-numbers">
             {selectedNumbers.split('').map((number, index) => (
             <span key={index} className="number">{number}</span>
             ))}
           </div>
-          <div class="underscores">_ _ _ _</div>
+          <div className="underscores">_ _ _ _</div>
         </div>
 
-        <div class="number-selection-container" style={containerStyle}>
+        <div className="number-selection-container" style={containerStyle}>
           {generateButtons()}
         </div>
         <button onClick={handleDelete} className="delete-button">DELETE</button>

@@ -3,17 +3,45 @@ import { Link } from 'react-router-dom';
 import ErrorMessage from './ErrorMessage'; // Import ErrorMessage component
 import './NextButton.css'; // Import CSS file for styling
 
-const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessage, error, setError, pageNumber, children }) => {
-  console.log("page number is", pageNumber)
-  console.log(errorMessage[0].props.children);
-  let selectedAmount = 0;
-  let errorMessageArray = [];
-  if (errorMessage[0].props.children !== "-") {
-    errorMessageArray = errorMessage[0].props.children.split(";");
-    selectedAmount = parseInt(errorMessageArray[0]);
-  }
-  console.log(errorMessageArray);
+function renderStyledContent(content) {
+  console.log("the content is", content);
+  if (!content || content.length === 0) return null;
 
+  return content.map((part, index) => {
+    const styleMap = {
+      underline: { textDecoration: 'underline' },
+      italic: { fontStyle: 'italic' },
+      red: { color: 'red' },
+      green: { color: 'green' },
+      blue: { color: 'blue' }
+    };
+
+    const styles = part.style ? part.style.split(' ').map(s => styleMap[s]).reduce((acc, cur) => ({ ...acc, ...cur }), {}) : {};
+
+    return (
+      <span key={index} style={styles}>
+        {Array.isArray(part.content) ? renderStyledContent(part.content) : part.content}
+      </span>
+    );
+  });
+}
+
+const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessage, error, setError, pageNumber, children }) => {
+  console.log("error message is", errorMessage);
+  let selectedAmount = 0;
+  // if (errorMessage[0].props.children !== '') {
+  //   // errorMessageArray = concatenatedErrorMessages.split(";");
+  //   selectedAmount = parseInt(errorMessageArray.shift()); // Extract and remove the first element
+  // }
+  // errorMessageArray = renderedErrorMessages;
+  if (errorMessage.length > 1) {
+    // errorMessageArray = concatenatedErrorMessages.split(";");
+    selectedAmount = parseInt(errorMessage[0]);
+    console.log("selected amount is", selectedAmount);
+  }
+  // console.log("concatenatedErrorMessage is", concatenatedErrorMessages);
+  // console.log(errorMessageArray);
+  
   const [finalErrorMessage, setFinalErrorMessage] = useState("");
 
   // Function to toggle the position of the next button
@@ -56,9 +84,9 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessa
           event.preventDefault();
           console.log(sortedSelectedWords.length + " " + selectedAmount);
           if (sortedSelectedWords.length >= selectedAmount) {
-            setFinalErrorMessage(errorMessageArray[2]);
+            setFinalErrorMessage(errorMessage[2]);
           } else {
-            setFinalErrorMessage(errorMessageArray[1]);
+            setFinalErrorMessage(errorMessage[1]);
           }
           setError(true);
         }
@@ -75,7 +103,7 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessa
       } else {
         console.log("Incorrect answer. Navigation prevented.");
         event.preventDefault();
-        setFinalErrorMessage(errorMessageArray[0]);
+        setFinalErrorMessage(errorMessage[0]);
         setError(true);
       }
     }

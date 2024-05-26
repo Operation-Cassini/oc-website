@@ -89,6 +89,31 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
       );
     });
   }
+
+  const splitErrorMessages = (errorMessage) => {
+    // Initialize an array to store individual error messages
+    const errorMessages = [];
+    // Initialize a variable to store the current error message
+    let currentErrorMessage = [];
+    errorMessages.push(errorMessage[0].content);
+    // Iterate through each part of the errorMessage
+    errorMessage.forEach((part) => {
+      // Check if the part is a boundary marker
+      if (part.boundary === 'start') {
+        // Start of a new error message, reset the currentErrorMessage array
+        currentErrorMessage = [];
+      } else if (part.boundary === 'end') {
+        // End of the current error message, push it to the errorMessages array
+        errorMessages.push(currentErrorMessage);
+      } else {
+        // Regular error message part, add it to the currentErrorMessage array
+        currentErrorMessage.push(part);
+      }
+    });
+  
+    return errorMessages;
+  };
+
   function flattenContent(content) {
     if (!Array.isArray(content)) {
       return content;
@@ -149,6 +174,23 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
   let wordBank = flattenContent(content['Word Bank']);
   let wordsFlash = flattenContent(content['Words']);
   let numberSequence = flattenContent(content['Number Sequence'])
+
+  let errorMessageArray = splitErrorMessages(content['Error Pop Ups']);
+  const renderedErrorMessages = [];
+  errorMessageArray.forEach((error, index) => {
+    // Skip rendering the first element if it contains the count of elements
+    if (index !== 0) {
+      const renderedError = renderStyledContent(error);
+      renderedErrorMessages.push(renderedError);
+      console.log("Rendered error message:", renderedError);
+    }
+    else {
+      renderedErrorMessages.push(error);
+    }
+  });
+  console.log("the rendered error messages are", renderedErrorMessages);
+  // console.log("error MEssage array!!", errorMessageArray);
+  // console.log("rendered style content of error pop ups", renderStyledContent(content['Error Pop Ups']));
   return (
     <div>
       {/* <h1>Render Page</h1> */}
@@ -384,7 +426,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
               correctAnswer={correctAnswer}
               selectedAnswer={selectedAnswer}
               realAttempt={realAttempt}
-              errorMessage={content['Error Pop Ups'] ? renderStyledContent(content['Error Pop Ups']) : ""}
+              errorMessage={content['Error Pop Ups'] ? renderedErrorMessages : ""}
               error={error}
               setError={setError}
               pageNumber={content['Page Number'][0]['content']}
