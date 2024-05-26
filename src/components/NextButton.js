@@ -48,7 +48,6 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessa
   const toggleNextButtonPosition = (pageNumber) => {
     const nextButtonContainer = document.querySelector('.next-flex');
     if (nextButtonContainer) {
-      console.log("here");
       if (pageNumber % 2 === 1) {
         nextButtonContainer.style.marginRight = '100px'; // Move slightly to the left
       } else {
@@ -63,16 +62,21 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessa
   }, [pageNumber]);
 
   const handleClick = (event) => {
-    console.log("here");
     if (correctAnswer.includes(',')) {
       const correctAnswers = correctAnswer.split(',').map(word => word.trim());
       // Sort both arrays to ensure the order doesn't matter
       const sortedCorrectAnswers = correctAnswers.sort();
       // const sortedSelectedWords = selectedAnswer.sort();
+      console.log("correct answer:");
+      console.log(correctAnswer);
+      console.log(sortedCorrectAnswers);
+
       let sortedSelectedWords = [];
       if (selectedAnswer !== "-") {
-        sortedSelectedWords = selectedAnswer.sort();
+        sortedSelectedWords = selectedAnswer.join().split(',').sort();
       }
+      console.log("selected words:");
+      console.log(sortedSelectedWords);
       // Check if both arrays are equal
       const isCorrect = JSON.stringify(sortedCorrectAnswers) === JSON.stringify(sortedSelectedWords);
       if (!isCorrect) {
@@ -92,10 +96,13 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessa
         }
         // Optionally, you can add logic here to handle incorrect answer actions
       } else {
+        console.log("made it!");
         console.log("Correct answer!");
         // Optionally, you can add logic here to handle correct answer actions
       }
     } else if (correctAnswer === selectedAnswer) {
+      console.log(correctAnswer);
+      console.log(selectedAnswer);
       console.log("Correct answer!");
     } else {
       if (realAttempt === true) {
