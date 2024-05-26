@@ -18,4 +18,3 @@ const NumberSelectionButton = ({ onClick, children, style, index }) => {
 };
 
 export default NumberSelectionButton;
-

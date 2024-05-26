@@ -17,9 +17,27 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
     }
   };
 
+  // const containerStyle = {
+  //   display: 'grid',
+  //   gridTemplateColumns: `repeat(${columns}, auto)`, 
+  //   gridTemplateRows: `repeat(${rows}, auto)`,
+  //   gap: '5px',
+  // };
+  const longestWord = words.reduce((longest, current) => current.length > longest.length ? current : longest, "");
+  console.log("longest word", longestWord);
+  const longestWordWidth = longestWord.length;
+  console.log("longest word width", longestWordWidth);
+
+  // const containerStyle = {
+  //   display: 'grid',
+  //   gridTemplateColumns: `repeat(auto-fit, minmax(${longestWordWidth}px, 1fr))`,
+  //   gridTemplateRows: `repeat(${rows}, auto)`,
+  //   gap: '5px',
+  // };
+
   const containerStyle = {
     display: 'grid',
-    gridTemplateColumns: `repeat(${columns}, auto)`, // Adjusted grid template columns
+    gridTemplateColumns: `repeat(${columns}, 1fr)`,
     gridTemplateRows: `repeat(${rows}, auto)`,
     gap: '5px',
   };
@@ -55,7 +73,7 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
               onClick={() => handleButtonClick(index)}
               isSelected={selectedButtonIndex === index}
               style={{
-                width: '220px',
+                width: longestWordWidth * 20 + 'px',
                 height: '20px',
                 fontSize: '22px',
                 paddingTop: '12px',
@@ -75,7 +93,7 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
               onClick={() => handleButtonClick(index)}
               isSelected={selectedButtonIndex === index}
               style={{
-                width: '200px',
+                width: longestWordWidth * 35 + 'px',
                 height: '50px',
                 ...styles
               }}

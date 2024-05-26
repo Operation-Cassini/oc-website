@@ -343,11 +343,17 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
           let s = wordsFlash;
           let words = s.substring(1, s.length-1).split(",");
           words = words.map(str => str.trim());
+          console.log(content['Page Number'][0]['content']);
           return (
-              <FlashTextBoxes texts={words}/>
+            <div>
+              <FlashTextBoxes texts={words} nextPage={content['Page Number'][0]['content']}/>
+            </div>
+
           );
         })()
+
       }
+
       {content['Type of Question'][0]['content'] === 'Connect the Box' &&
         (() => {
           const prompts = Object.keys(content)
@@ -371,21 +377,24 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
         })()
 
       }
-      <div className = "next-flex">
-        <NextButton
-            to={to}
-            correctAnswer={correctAnswer}
-            selectedAnswer={selectedAnswer}
-            realAttempt={realAttempt}
-            // errorMessage={content['Error Pop Ups'][0]['content'] ? content['Error Pop Ups'][0]['content'] : ""}
-            errorMessage={content['Error Pop Ups'] ? renderStyledContent(content['Error Pop Ups']) : ""}
-            error={error}
-            setError={setError}
-            pageNumber = {content['Page Number'][0]['content']}
-          >
-            NEXT
-        </NextButton>
-      </div>
+      {content['Type of Question'][0]['content'] !== 'Flashing Words' &&
+        (() => (
+          <div className="next-flex">
+            <NextButton
+              to={to}
+              correctAnswer={correctAnswer}
+              selectedAnswer={selectedAnswer}
+              realAttempt={realAttempt}
+              errorMessage={content['Error Pop Ups'] ? renderStyledContent(content['Error Pop Ups']) : ""}
+              error={error}
+              setError={setError}
+              pageNumber={content['Page Number'][0]['content']}
+            >
+              NEXT
+            </NextButton>
+          </div>
+        ))()
+      }
     </div>
   );
 };
