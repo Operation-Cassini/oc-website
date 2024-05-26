@@ -3,29 +3,6 @@ import { Link } from 'react-router-dom';
 import ErrorMessage from './ErrorMessage'; // Import ErrorMessage component
 import './NextButton.css'; // Import CSS file for styling
 
-function renderStyledContent(content) {
-  console.log("the content is", content);
-  if (!content || content.length === 0) return null;
-
-  return content.map((part, index) => {
-    const styleMap = {
-      underline: { textDecoration: 'underline' },
-      italic: { fontStyle: 'italic' },
-      red: { color: 'red' },
-      green: { color: 'green' },
-      blue: { color: 'blue' }
-    };
-
-    const styles = part.style ? part.style.split(' ').map(s => styleMap[s]).reduce((acc, cur) => ({ ...acc, ...cur }), {}) : {};
-
-    return (
-      <span key={index} style={styles}>
-        {Array.isArray(part.content) ? renderStyledContent(part.content) : part.content}
-      </span>
-    );
-  });
-}
-
 const NextButton = ({ to, correctAnswer, selectedAnswer, realAttempt, errorMessage, error, setError, pageNumber, children }) => {
   console.log("error message is", errorMessage);
   let selectedAmount = 0;
