@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './MoneyPadContainer.css';
 import NumberSelectionButton from './NumberSelectionButton';
 
-const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, words, styledWords, pageNumber}) => {
+const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, timeHandler, words, styledWords, pageNumber}) => {
   const [selectedNumbers, setSelectedNumbers] = useState('');
 
   useEffect(() => {
@@ -11,6 +11,7 @@ const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, words, st
     setSelectedNumbers('');
   }, [pageNumber]);
   const handleDelete = () => {
+    timeHandler();
     console.log("here!")
     if (selectedNumbers.length > 0) {
         const updatedNumbers = selectedNumbers.slice(0, selectedNumbers.length - 1);

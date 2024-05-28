@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import NumberSelectionButton from './NumberSelectionButton';
 import './NumberSelectionContainer.css';
 
-const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words, styledWords, pageNumber}) => {
+const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, timeHandler, words, styledWords, pageNumber}) => {
   const [selectedNumbers, setSelectedNumbers] = useState('');
 
   console.log(pageNumber);
@@ -12,6 +12,7 @@ const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, wo
     setSelectedNumbers('');
   }, [pageNumber]);
   const handleDelete = () => {
+    timeHandler();
     console.log("here!")
     if (selectedNumbers.length > 0) {
         const updatedNumbers = selectedNumbers.slice(0, selectedNumbers.length - 1);
@@ -80,18 +81,18 @@ const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, wo
   };
   
   return (
-    <div class="general-container">
-      <div class="number-pad">
-        <div class="number-line">
-          <div class="selected-numbers">
+    <div className="general-container">
+      <div className="number-pad">
+        <div className="number-line">
+          <div className="selected-numbers">
             {selectedNumbers.split('').map((number, index) => (
             <span key={index} className="number">{number}</span>
             ))}
           </div>
-          <div class="underscores">_ _ _ _</div>
+          <div className="underscores">_ _ _ _</div>
         </div>
 
-        <div class="number-selection-container" style={containerStyle}>
+        <div className="number-selection-container" style={containerStyle}>
           {generateButtons()}
         </div>
         <button onClick={handleDelete} className="delete-button">DELETE</button>
