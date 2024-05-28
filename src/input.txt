@@ -230,7 +230,7 @@ Application Name: SATURN
 Page Title: Drawing 1
 Page Number: 22
 Prompt: WHICH SMALL DRAWINGS MAKE THAT?
-Error Pop Ups: NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!;NOT YET!\nYOU CAN +ONLY+ PICK TWO DRAWINGS.\n\nTO UN-PICK A DRAWING, TOUCH IT AGAIN.
+Error Pop Ups: 2;NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!;NOT YET!\nYOU CAN +ONLY+ PICK TWO DRAWINGS.\n\nTO UN-PICK A DRAWING, TOUCH IT AGAIN.
 Type of Question: Image Selection
 Answer Img: /ImageSelectionShapesJPGs/shapes-answer.webp
 File Path: [/ImageSelectionShapesJPGs/shapes1.webp, /ImageSelectionShapesJPGs/shapes2.webp, /ImageSelectionShapesJPGs/shapes3.webp, /ImageSelectionShapesJPGs/shapes4.webp, /ImageSelectionShapesJPGs/shapes5.webp, /ImageSelectionShapesJPGs/shapes6.webp]
