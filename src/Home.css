@@ -5,7 +5,7 @@ body {
     height: 100vh; 
   }
   
-  .container {
+  .saturn-container {
     display: flex;
     justify-content: center; /* Align horizontally to the center */
     align-items: center; /* Align vertically to the center */

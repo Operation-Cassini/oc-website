@@ -487,7 +487,7 @@ Type of Question: Connect the Box
 Characters: [1, 2, 3, 4, 5]
 Prompt 1: CONNECT THE DOTS
 Prompt 2: START AT NUMBER 1, AND GO IN ORDER. KEEP GOING UNTIL YOU REACH THE END.
-Position: [(20, 20), (60, 0), (80, 20), (50, 20), (60, 50)]
+Position: [(20, 30), (60, 10), (80, 30), (50, 30), (60, 60)]
 Correct Answer: -
 Correct Requirement: -
 Error Pop Ups: -
@@ -498,7 +498,7 @@ Type of Question: Connect the Box
 Prompt 1: CONNECT THE DOTS
 Prompt 2: {ALTERNATE NUMBERS AND LETTERS.} START AT 1, CONNECT IT TO THE FIRST LETTER, A. THEN, CONNECT A TO 2, AND 2 TO THE NEXT LETTER. KEEP GOING UNTIL YOU REACH THE END. 
 Characters: [1, A, 2, B, 3, C, 4, D]
-Position: [(50, 40), (70, 0), (100, 40), (70, 20), (80, 50), (20, 40), (10, 5), (50, 0)]
+Position: [(50, 50), (70, 10), (100, 50), (70, 30), (80, 60), (20, 50), (10, 15), (50, 10)]
 Correct Answer: -
 Correct Requirement: -
 Error Pop Ups: -

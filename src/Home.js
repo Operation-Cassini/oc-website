@@ -6,7 +6,7 @@ import saturn from './saturn.png';
 const Home = () => {
 
   return (
-    <div className="container">
+    <div className="saturn-container">
       <div className="SATURN-png">
         <img src={saturn} alt="saturn logo" />
       </div>

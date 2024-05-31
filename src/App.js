@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import { Route, BrowserRouter as Router, Routes, useParams } from 'react-router-dom';
-import Page from './DumbPage';
 import End from './End';
+import Page from './DumbPage';
 import Home from './Home';
 import ParseInputFile from './Parser';
 import text from './input.txt';
-// import NextButton from './components/NextButton';
 
 const App = () => {
   // State to store parsed page data

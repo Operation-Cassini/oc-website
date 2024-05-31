@@ -14,19 +14,23 @@ import WordSelectionContainer from './components/WordSelectionContainer';
 
 const Page = ({ content, correctAnswer, correctRequirement, to }) => {
   const buttonDimensions = { width: '100px', height: '50px' };
-
+  // State variables to manage selected answer, error state, and real attempt state
   const [selectedAnswer, setSelectedAnswer] = React.useState("-");
   const [error, setError] = React.useState(false);
   const [realAttempt, setRealAttempt] = React.useState(false);
+
+  // Effect to reset real attampt state whenever the page content changes
   useEffect(() => {
     // Reset selected button index whenever the component is rendered
     console.log("resetting real attempt");
     setRealAttempt(false);
   }, [content['Page Number']]);
 
+  // Handler for button click events
   const handleClick = (word) => {
     console.log('Selected word:', word);
-    // Pass the selected word to the parent component
+
+    // Specific logic for 'Word Selection' question type
     if ((content['Type of Question'][0]['content'] === 'Word Selection') && correctRequirement === '-') {
       if(word !== "-") {
         setRealAttempt(true);
@@ -37,12 +41,11 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
         console.log("realattempt setting to false");
       }
     }
+    // Specific logic for 'Multi Word Selection' question type
     if (content['Type of Question'][0]['content'] === 'Multi Word Selection' && correctRequirement === '-') {
       const correctAnswers = correctAnswer.split(',').map(word => word.trim());
       console.log("new correct answer is", correctAnswers);
-        // Sort both arrays to ensure the order doesn't matter
-      // Check if both arrays are equal
-
+    
       if(word.length === correctAnswers.length) {
         setRealAttempt(true);
         console.log("real attempt setting to true");
@@ -51,9 +54,8 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
         setRealAttempt(false);
         console.log("real attempt setting to false");
       }
-    // }
-
     }
+    //Specific logic for 'Number Pad' and 'Money Number Pad' question types
     if ((content['Type of Question'][0]['content'] === 'Number Pad' || content['Type of Question'][0]['content'] === 'Money Number Pad') && correctRequirement === '-') {
       if(word.length === correctAnswer.length) {
         setRealAttempt(true);
@@ -64,10 +66,12 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
         console.log("real attempt setting to false");
       }
     }
+    // Update selected answer and reset error state
     setSelectedAnswer(word);
     setError(false);
   };
 
+  // function to render styled content based on provided styles
   function renderStyledContent(content) {
     if (!content || content.length === 0) return null;
   
@@ -89,6 +93,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
       );
     });
   }
+  // Funciton to flatten nested content arrays into a single string
   function flattenContent(content) {
     if (!Array.isArray(content)) {
       return content;
@@ -101,8 +106,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
       return part.content;
     }).join('');
   }
-
-
+  // Another function to flatten nested content arrays, keeping original structure
   function flatteningContent(content) {
     // Check if content is an array
     if (Array.isArray(content)) {
@@ -128,6 +132,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
       return content;
     }
   }
+  // Function to extract and flatten styles from content
   function flattenStyles(word) {
     let styles = [];
   
@@ -146,15 +151,14 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
   
     return styles;
   }
+
+  // Flatten word bank, words for flashing, and number sequence for easier manipulation
   let wordBank = flattenContent(content['Word Bank']);
   let wordsFlash = flattenContent(content['Words']);
   let numberSequence = flattenContent(content['Number Sequence'])
   return (
     <div>
-      {/* <h1>Render Page</h1> */}
-      {/* Render page title if it exists */}
-      {/* {renderStyledContent(content['Page Title']) && <h1>{renderStyledContent(content['Page Title'])}</h1>} */}
-
+      
       {/* Render paragraph if it exists */}
       {renderStyledContent(content['Prompt']) && <Instruction text={renderStyledContent(content['Prompt'])} className = "instruction-box" />}
 
@@ -170,7 +174,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
           );
         })()
       }
-
+      {/* Render word selection container for 'Word Selection' question type */}
       {content['Type of Question'][0]['content'] === 'Word Selection' && 
         (() => {
           let s = wordBank
@@ -196,6 +200,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
           );
         })()
       }
+      {/* Render multi-word selection container for 'Multi Word Selection' question type */}
       {content['Type of Question'][0]['content'] === 'Multi Word Selection' && 
         (() => {
           let s = wordBank
@@ -222,6 +227,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
           );
         })()
       }
+      {/* Render number selection container for 'Number Pad' question type */}
       {content['Type of Question'][0]['content'] === 'Number Pad' &&
         (() => {
           let s = numberSequence
@@ -249,6 +255,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
         })()
 
       }
+      {/* Render money pad container for 'Money Number Pad' question type */}
       {content['Type of Question'][0]['content'] === 'Money Number Pad' &&
         (() => {
           let s = numberSequence

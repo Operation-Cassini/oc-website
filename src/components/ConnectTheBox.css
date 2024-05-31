@@ -3,14 +3,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
 }
 
 .centered-container {
   position: relative;
-  width: 80vw; /* Adjust width and height as needed */
-  height: 80vh;
+  width: 70vw; /* Adjust width and height as needed */
+  height: 70vh;
 }
 
 .button-connector {
