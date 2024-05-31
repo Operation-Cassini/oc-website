@@ -56,7 +56,7 @@ const FlashTextBoxes = ({ texts, nextPage }) => {
       {texts.map((text, index) => (
         <div key={index} className="flash-text-box">
           <div className={index === currentIndex ? 'show' : 'hide'}>
-            <BlackBoarderTextBox id="text-box">{text}</BlackBoarderTextBox>
+            <BlackBoarderTextBox id="box">{text}</BlackBoarderTextBox>
           </div>
           {index === currentIndex && showOverlay && (
             <div
