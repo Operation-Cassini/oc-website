@@ -219,49 +219,49 @@ Application Name: SATURN
 Page Title: Drawing 1
 Page Number: 21
 Prompt: WHICH SMALL DRAWINGS MAKE THAT?
-Error Pop Ups: NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!;NOT YET!\nYOU CAN +ONLY+ PICK TWO DRAWINGS.\n\nTO UN-PICK A DRAWING, TOUCH IT AGAIN.
+Error Pop Ups: 2;NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!;NOT YET!\nYOU CAN +ONLY+ PICK TWO DRAWINGS.\n\nTO UN-PICK A DRAWING, TOUCH IT AGAIN.
 Type of Question: Image Selection
 Answer Img: /ImageSelectionShapesJPGs/shapes-answer.webp
 File Path: [/ImageSelectionShapesJPGs/shapes1.webp, /ImageSelectionShapesJPGs/shapes2.webp, /ImageSelectionShapesJPGs/shapes3.webp, /ImageSelectionShapesJPGs/shapes4.webp, /ImageSelectionShapesJPGs/shapes5.webp, /ImageSelectionShapesJPGs/shapes6.webp]
 Dimensions: 2x3
 Correct Answer: 2, 4
-Correct Requirement: Yes
+Correct Requirement: -
 
 Application Name: SATURN
 Page Title: Drawing 2
 Page Number: 22
 Prompt: WHICH SMALL DRAWINGS MAKE THAT?
-Error Pop Ups: NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!;NOT YET!\nYOU CAN +ONLY+ PICK TWO DRAWINGS.\n\nTO UN-PICK A DRAWING, TOUCH IT AGAIN.
+Error Pop Ups: 2;NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!;NOT YET!\nYOU CAN +ONLY+ PICK TWO DRAWINGS.\n\nTO UN-PICK A DRAWING, TOUCH IT AGAIN.
 Type of Question: Image Selection
 Answer Img: /ImageSelectionFaceJPGs/face-answer.webp
 File Path: [/ImageSelectionFaceJPGs/face1.webp, /ImageSelectionFaceJPGs/face2.webp, /ImageSelectionFaceJPGs/face3.webp, /ImageSelectionFaceJPGs/face4.webp, /ImageSelectionFaceJPGs/face5.webp, /ImageSelectionFaceJPGs/face6.webp]
 Dimensions: 2x3
 Correct Answer: 0, 4
-Correct Requirement: Yes
+Correct Requirement: -
 
 Application Name: SATURN
 Page Title: Drawing 3
 Page Number: 23
 Prompt: WHICH SMALL DRAWINGS MAKE THAT?
-Error Pop Ups: NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!;NOT YET!\nYOU CAN +ONLY+ PICK TWO DRAWINGS.\n\nTO UN-PICK A DRAWING, TOUCH IT AGAIN.
+Error Pop Ups: 2;NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!;NOT YET!\nYOU CAN +ONLY+ PICK TWO DRAWINGS.\n\nTO UN-PICK A DRAWING, TOUCH IT AGAIN.
 Type of Question: Image Selection
 Answer Img: /ImageSelectionDiagonalLinesJPGs/diagonal-line-answer.webp
 File Path: [/ImageSelectionDiagonalLinesJPGs/diagonal-line1.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line2.webp,/ImageSelectionDiagonalLinesJPGs/diagonal-line3.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line4.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line5.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line6.webp]
 Dimensions: 2x3
 Correct Answer: 0, 3
-Correct Requirement: Yes
+Correct Requirement: -
 
 Application Name: SATURN
 Page Title: Drawing 4
 Page Number: 24
 Prompt: WHICH SMALL DRAWINGS MAKE THAT?
-Error Pop Ups: NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!;NOT YET!\nYOU CAN +ONLY+ PICK TWO DRAWINGS.\n\nTO UN-PICK A DRAWING, TOUCH IT AGAIN.
+Error Pop Ups: 2;NOT YET!\nYOU HAVE TO PICK TWO DRAWINGS.\n\nIF YOU DON’T KNOW, MAKE A GUESS!;NOT YET!\nYOU CAN +ONLY+ PICK TWO DRAWINGS.\n\nTO UN-PICK A DRAWING, TOUCH IT AGAIN.
 Type of Question: Image Selection
 Answer Img: /ImageSelectionCubeJPGs/cube-answer.webp
 File Path: [/ImageSelectionCubeJPGs/cube1.webp, /ImageSelectionCubeJPGs/cube2.webp, /ImageSelectionCubeJPGs/cube3.webp, /ImageSelectionCubeJPGs/cube4.webp, /ImageSelectionCubeJPGs/cube5.webp, /ImageSelectionCubeJPGs/cube6.webp]
 Dimensions: 2x3
 Correct Answer: 2, 3
-Correct Requirement: Yes
+Correct Requirement: -
 
 Application Name: SATURN
 Page Title: Instruction 8

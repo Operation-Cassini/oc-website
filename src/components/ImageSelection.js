@@ -23,13 +23,16 @@ const ImageSelection = ({ images, rows, cols, onClick, pageNumber }) => {
         // If the index is already selected, remove it
         onClick(prevIndices.filter((idx) => idx !== index));
         return prevIndices.filter((idx) => idx !== index);
-      } else if (selectedImageIndices.length < 2) {
+      } 
+      else {
         // If the index is not selected, add it
         onClick([...prevIndices, index]);
         return [...prevIndices, index];
-      } else {
-        return selectedImageIndices;
-      }
+      } 
+      // else {
+      //   onClick([selectedImageIndices]);
+      //   return selectedImageIndices;
+      // }
     });
   };
 

@@ -1,15 +1,16 @@
 /* StroopTextBox.css */
-.text-box {
+.stroop-text-box {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto 10px auto;
+  border: 5px solid black; /* Set border to black with 2px width */
   background-color: white;
   width: 30%;
   height: 50%;
   padding: 3vw; /* Use viewport width for padding */
   font-size: 5vw; /* Use viewport width for font size */
-  cursor: pointer;
+  cursor: default;
   font-weight: bold;
   text-align: center;
   border-radius: 10px;

@@ -94,6 +94,11 @@ const ConnectTheBoxes = ({ characters, positions, pageNumber }) => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  color: sequence.includes(index)
+                  ? 'white'
+                  : incorrect === index
+                  ? 'black'
+                  : 'black',
                   backgroundColor: sequence.includes(index)
                     ? 'green'
                     : incorrect === index

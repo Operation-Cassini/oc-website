@@ -5,7 +5,7 @@ const StroopTextBox = ({ children, text}) => {
   return (
     <>
       <div className="top-padding"></div>
-      <div className="text-box">
+      <div className="stroop-text-box">
         {text}
         {children}
       </div>

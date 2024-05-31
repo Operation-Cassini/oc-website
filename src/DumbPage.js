@@ -50,7 +50,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
         console.log("realattempt setting to false");
       }
     }
-    if (content['Type of Question'][0]['content'] === 'Multi Word Selection' && correctRequirement === '-') {
+    if ((content['Type of Question'][0]['content'] === 'Multi Word Selection' || content['Type of Question'][0]['content'] === 'Image Selection') && correctRequirement === '-') {
       const correctAnswers = correctAnswer.split(',').map(word => word.trim());
       console.log("new correct answer is", correctAnswers);
         // Sort both arrays to ensure the order doesn't matter
