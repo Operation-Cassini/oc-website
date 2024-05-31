@@ -16,6 +16,7 @@ const ImageSelection = ({ images, rows, cols, onClick, pageNumber }) => {
   // }, [selectedImageIndices, onClick]);
 
   const handleImageClick = (index) => {
+    console.log("clicked on index", index);
     // Toggle the selection of the clicked image index
     setSelectedImageIndices((prevIndices) => {
       if (prevIndices.includes(index)) {

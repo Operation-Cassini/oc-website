@@ -3,7 +3,16 @@ import './App.css';
 
 function parseStyledText(text) {
   const styledParts = [];
-  const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|([^_*{}+~;]+))/g;
+  // const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|([^_*{}+~;]+))/g;
+  // const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|([^_*{}+~;]+)|([_*{}+~]))/g;
+  // const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|-([^-]+)-|([^_*{}+~;-]+)|([_*{}+~;-]))/g;
+  // const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|`([^`]+)`|([^_*{}+~;`]+)|([_*{}+~;`]))/g;
+  // const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|`([^`]+)`|@([^@]+)@|([^_*{}+~;`@]+)|([_*{}+~;`@]))/g;
+  // const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|`([^`]+)`|@([^@]+)@|(\\n)|([^_*{}+~;`@\\n]+)|([_*{}+~;`@\\n]))/g;
+  // const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|`([^`]+)`|@([^@]+)@|(\\n)|([^_*{}+~;`@\\n]+)|([_*{}+~;`@\\n]))/g;
+  const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|`([^`]+)`|@([^@]+)@|([^_*{}+~;`@]+)|([_*{}+~;`@]))/g;
+  // const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|`([^`]+)`|(\^([^_^]+)\^)|([^_*{}+~;^]+)|([_*{}+~;^]))/g;
+
 
   // Check if the text contains a semicolon
   if (text.includes(';')) {
@@ -45,7 +54,15 @@ function parseStyledText(text) {
         const nestedParts = parseStyledText(match[6]);
         styledParts.push({ style: 'blue', content: nestedParts });
       } else if (match[7]) {
-        styledParts.push({ style: null, content: match[7] });
+        const nestedParts = parseStyledText(match[7]);
+        styledParts.push({ style: 'blueHighlight', content: nestedParts });
+      } else if (match[8]) {
+        const nestedParts = parseStyledText(match[8]);
+        styledParts.push({ style: 'fadingBlueHighlight', content: nestedParts });
+      } else if (match[9]) {
+        styledParts.push({ style: null, content: match[9] });
+      } else if (match[10]) {
+        styledParts.push({ style: null, content: match[10] });
       }
     }
   }
@@ -132,3 +149,17 @@ const ParseSaturnScoringFile = (input) => {
 
 export { ParseInputFile, ParseMeanSDFile, ParseSaturnScoringFile };
 
+
+
+
+
+// Application Name: SATURN
+// Page Title: Action Phrase
+// Page Number: 12
+// Prompt: CLICK ON THE CIRCLE.
+// Error Pop Ups: NOT YET!\nYOU HAVE TO PICK A STATEMENT\n\nIF YOU DON’T KNOW, MAKE A GUESS!
+// Type of Question: Image Selection
+// File Path: [/ImageSelectionShapesJPGs/rectangle.png, /ImageSelectionShapesJPGs/circle.png, /ImageSelectionShapesJPGs/hexagon.png, /ImageSelectionShapesJPGs/triangle.png]
+// Dimensions: 1x4
+// Correct Answer: 1
+// Correct Requirement: -

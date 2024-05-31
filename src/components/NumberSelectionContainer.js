@@ -43,7 +43,11 @@ const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, ti
     italic: { fontStyle: 'italic' },
     red: { color: 'red' },
     green: { color: 'green' },
-    blue: { color: 'blue' }
+    blue: { color: 'blue' },
+    blueHighlight: { backgroundColor: '#85c7ff'},
+    fadingBlueHighlight: {
+      background: 'linear-gradient(to right, #0000ff, #0077ff, #00ccff, #66ffff)',
+    }
   };
   const generateButtons = () => {
     let buttons = [];

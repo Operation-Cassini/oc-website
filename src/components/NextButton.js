@@ -39,6 +39,8 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttemp
   }, [pageNumber]);
 
   const handleClick = (event) => {
+    console.log("selected answer is", selectedAnswer);
+    console.log("correct answer is", correctAnswer);
     if (pageNumber !== undefined) {
       timeHandler();
     }

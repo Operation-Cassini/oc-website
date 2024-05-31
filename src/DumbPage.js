@@ -81,6 +81,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
   };
 
   function renderStyledContent(content) {
+    console.log("the content is", content);
     if (!content || content.length === 0) return null;
   
     return content.map((part, index) => {
@@ -89,11 +90,32 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
         italic: { fontStyle: 'italic' },
         red: { color: 'red' },
         green: { color: 'green' },
-        blue: { color: 'blue' }
+        blue: { color: 'blue' },
+        blueHighlight: { backgroundColor: '#85c7ff'},
+        fadingBlueHighlight: {
+          background: 'linear-gradient(to right, #0000ff, #0077ff, #00ccff, #66ffff)',
+        }
       };
   
       const styles = part.style ? part.style.split(' ').map(s => styleMap[s]).reduce((acc, cur) => ({ ...acc, ...cur }), {}) : {};
-  
+      console.log("part.content is", part.content);
+      if (part.content.includes("\\n")) {
+        console.log("lol")
+        // Split content by "\n" and render each line separately
+        const lines = part.content.split("\\n").map((line, lineIndex) => {
+          console.log("line is", line);
+          return (
+          <React.Fragment key={lineIndex}>
+            <span style={styles}>
+              {line}
+            </span>
+            {/* Add <br /> except for the last line */}
+            {lineIndex !== part.content.split("\\n").length - 1 && <br />}
+          </React.Fragment>
+        );
+      });
+        return lines;
+      }
       return (
         <span key={index} style={styles}>
           {Array.isArray(part.content) ? renderStyledContent(part.content) : part.content}
@@ -107,7 +129,9 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
     const errorMessages = [];
     // Initialize a variable to store the current error message
     let currentErrorMessage = [];
-    errorMessages.push(errorMessage[0].content);
+    if(errorMessage.length > 1) {
+      errorMessages.push(errorMessage[0].content);
+    }
     // Iterate through each part of the errorMessage
     errorMessage.forEach((part) => {
       // Check if the part is a boundary marker
@@ -119,9 +143,14 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
         errorMessages.push(currentErrorMessage);
       } else {
         // Regular error message part, add it to the currentErrorMessage array
+        console.log("mmmmm")
         currentErrorMessage.push(part);
       }
     });
+
+    if (currentErrorMessage.length !== 0) {
+      errorMessages.push(currentErrorMessage);
+    }
   
     return errorMessages;
   };
@@ -186,8 +215,9 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
   let wordBank = flattenContent(content['Word Bank']);
   let wordsFlash = flattenContent(content['Words']);
   let numberSequence = flattenContent(content['Number Sequence'])
-
+  console.log("content[error pop ups] is", content['Error Pop Ups']);
   let errorMessageArray = splitErrorMessages(content['Error Pop Ups']);
+  console.log("error message array is", errorMessageArray);
   const renderedErrorMessages = [];
   errorMessageArray.forEach((error, index) => {
     // Skip rendering the first element if it contains the count of elements
@@ -195,6 +225,9 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
       const renderedError = renderStyledContent(error);
       renderedErrorMessages.push(renderedError);
       console.log("Rendered error message:", renderedError);
+    }
+    else if (errorMessageArray.length === 1){
+      renderedErrorMessages.push(renderStyledContent(error));
     }
     else {
       renderedErrorMessages.push(error);
@@ -341,19 +374,21 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
 
           return (
             <div>
-              <img 
-                src={content['Answer Img'][0]['content']} 
-                alt="Answer Image" 
-                style={{
-                  display: 'block',  /* Make the image a block element to apply margin */
-                  margin: 'auto',    /* Center horizontally */
-                  marginTop: 'auto', /* Center vertically */
-                  marginBottom: 'auto',
-                  maxWidth: '220px',  /* Ensure the image fits within the container */
-                  maxHeight: 'auto', 
-                  paddingBottom: '20px',
-                }} 
-              />
+              {content['Answer Img'] && content['Answer Img'][0]['content'] && (
+                <img 
+                  src={content['Answer Img'][0]['content']} 
+                  alt="Answer Image" 
+                  style={{
+                    display: 'block',  /* Make the image a block element to apply margin */
+                    margin: 'auto',    /* Center horizontally */
+                    marginTop: 'auto', /* Center vertically */
+                    marginBottom: 'auto',
+                    maxWidth: '220px',  /* Ensure the image fits within the container */
+                    maxHeight: 'auto', 
+                    paddingBottom: '20px',
+                  }} 
+                />
+              )}
               <ImageSelection 
                 images={filePaths} 
                 rows={content['Dimensions'][0]['content'].split("x")[0]}
