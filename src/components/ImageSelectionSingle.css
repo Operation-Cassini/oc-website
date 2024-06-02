@@ -1,0 +1,41 @@
+.image-container {
+    position: relative;
+  }
+  
+  .image-button {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .image-container.selected::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(133, 199, 255, 0.5) ; /* Light blue overlay */
+    
+    pointer-events: none;
+    z-index: 1; /* Ensure the overlay is on top of the image */
+  }
+  
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 0; /* Ensure the image is below the overlay */
+  }
+  
+  .image-button:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(133, 199, 255, 0.3); /* Light blue hover effect */
+    pointer-events: none;
+    z-index: 1; /* Ensure the hover overlay is on top of the image */
+  }

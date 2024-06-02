@@ -82,7 +82,7 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttemp
         console.log("Correct answer!");
         // Optionally, you can add logic here to handle correct answer actions
       }
-    } else if (correctAnswer === selectedAnswer) {
+    } else if (selectedAnswer.toString() === correctAnswer.toString()) {
       console.log(correctAnswer);
       console.log(selectedAnswer);
       console.log("Correct answer!");

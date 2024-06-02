@@ -3,6 +3,7 @@ import './App.css';
 import ConnectTheBoxes from './components/ConnectTheBoxes';
 import FlashTextBoxes from './components/FlashTextBox';
 import ImageSelection from './components/ImageSelection';
+import ImageSelectionSingle from './components/ImageSelectionSingle'
 import Instruction from './components/Instruction';
 import InstructionContainer from './components/InstructionContainer';
 import MoneyPadContainer from './components/MoneyPadContainer';
@@ -50,7 +51,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
         console.log("realattempt setting to false");
       }
     }
-    if ((content['Type of Question'][0]['content'] === 'Multi Word Selection' || content['Type of Question'][0]['content'] === 'Image Selection') && correctRequirement === '-') {
+    if ((content['Type of Question'][0]['content'] === 'Multi Word Selection' || content['Type of Question'][0]['content'] === 'Image Selection' || content['Type of Question'][0]['content'] === 'Image Selection Single') && correctRequirement === '-') {
       const correctAnswers = correctAnswer.split(',').map(word => word.trim());
       console.log("new correct answer is", correctAnswers);
         // Sort both arrays to ensure the order doesn't matter
@@ -100,7 +101,6 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
       const styles = part.style ? part.style.split(' ').map(s => styleMap[s]).reduce((acc, cur) => ({ ...acc, ...cur }), {}) : {};
       console.log("part.content is", part.content);
       if (part.content.includes("\\n")) {
-        console.log("lol")
         // Split content by "\n" and render each line separately
         const lines = part.content.split("\\n").map((line, lineIndex) => {
           console.log("line is", line);
@@ -143,7 +143,6 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
         errorMessages.push(currentErrorMessage);
       } else {
         // Regular error message part, add it to the currentErrorMessage array
-        console.log("mmmmm")
         currentErrorMessage.push(part);
       }
     });
@@ -390,6 +389,40 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
                 />
               )}
               <ImageSelection 
+                images={filePaths} 
+                rows={content['Dimensions'][0]['content'].split("x")[0]}
+                cols={content['Dimensions'][0]['content'].split("x")[1]}
+                onClick={handleClick}
+                pageNumber={content['Page Number'][0]['content']}
+              />
+            </div>
+          );
+        })()
+      }
+      {content['Type of Question'][0]['content'] === 'Image Selection Single' &&
+        (() => {
+          let s = content['File Path'][0]['content'];
+          let filePaths = s.substring(1, s.length - 1).split(",");
+          filePaths = filePaths.map(str => str.trim());
+
+          return (
+            <div>
+              {content['Answer Img'] && content['Answer Img'][0]['content'] && (
+                <img 
+                  src={content['Answer Img'][0]['content']} 
+                  alt="Answer Image" 
+                  style={{
+                    display: 'block',  /* Make the image a block element to apply margin */
+                    margin: 'auto',    /* Center horizontally */
+                    marginTop: 'auto', /* Center vertically */
+                    marginBottom: 'auto',
+                    maxWidth: '220px',  /* Ensure the image fits within the container */
+                    maxHeight: 'auto', 
+                    paddingBottom: '20px',
+                  }} 
+                />
+              )}
+              <ImageSelectionSingle 
                 images={filePaths} 
                 rows={content['Dimensions'][0]['content'].split("x")[0]}
                 cols={content['Dimensions'][0]['content'].split("x")[1]}

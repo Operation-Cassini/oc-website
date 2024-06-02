@@ -148,18 +148,3 @@ const ParseSaturnScoringFile = (input) => {
 };
 
 export { ParseInputFile, ParseMeanSDFile, ParseSaturnScoringFile };
-
-
-
-
-
-// Application Name: SATURN
-// Page Title: Action Phrase
-// Page Number: 12
-// Prompt: CLICK ON THE CIRCLE.
-// Error Pop Ups: NOT YET!\nYOU HAVE TO PICK A STATEMENT\n\nIF YOU DON’T KNOW, MAKE A GUESS!
-// Type of Question: Image Selection
-// File Path: [/ImageSelectionShapesJPGs/rectangle.png, /ImageSelectionShapesJPGs/circle.png, /ImageSelectionShapesJPGs/hexagon.png, /ImageSelectionShapesJPGs/triangle.png]
-// Dimensions: 1x4
-// Correct Answer: 1
-// Correct Requirement: -

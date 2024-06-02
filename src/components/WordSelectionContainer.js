@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import WordSelectionButton from './WordSelectionButton';
 import './WordSelectionContainer.css';
 
 const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words, styledWords, pageNumber }) => {
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
+  useEffect(() => {
+    // Reset selected button index whenever the component is rendered
+    console.log("resetting")
+    setSelectedButtonIndex(null);
+  }, [pageNumber]);
 
   const handleButtonClick = (index) => {
     if (selectedButtonIndex === index) {
