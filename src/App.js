@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes, useParams, Navigate, useNavigate } from 'react-router-dom';
 
 import Page from './DumbPage';
@@ -10,10 +10,13 @@ import meanSDtext from './meanSD.txt';
 import saturnScoringtext from './saturnScoring.txt';
 
 import Screen1 from './Screen1';
+import BlackBoarderTextBox from './components/BlackBoarderTextBox';
+
 
 // import TimerRedirect from './TimerRedirect'
 import NextButton from './components/NextButton';
-const TimerRedirect = ( { onTimerFinish }) => {
+
+const TimerRedirect = ({ onTimerFinish }) => {
   const [timeLeft, setTimeLeft] = useState(6000);
   const [redirected, setRedirected] = useState(false);
   const navigate = useNavigate();
@@ -54,21 +57,22 @@ const TimerRedirect = ( { onTimerFinish }) => {
 
 const App = () => {
   // State to store parsed page data
-  const [pagesData, setPagesData] = React.useState([]);
-  const [lastPageNumber, setLastPageNumber] = React.useState(null);
+  const [pagesData, setPagesData] = useState([]);
+  const [lastPageNumber, setLastPageNumber] = useState(null);
   const [meanSDData, setMeanSDData] = useState([]);
   const [saturnScoringData, setSaturnScoringData] = useState([]);
 
   // State to store the correct answer for the current page
-  const [correctAnswer, setCorrectAnswer] = React.useState("-");
-  const [correctRequirement, setCorrectRequirement] = React.useState("-");
+  const [correctAnswer, setCorrectAnswer] = useState("-");
+  const [correctRequirement, setCorrectRequirement] = useState("-");
 
   const [timerFinished, setTimerFinished] = useState(false); // State to track if timer is finished
   const handleTimerFinish = () => {
     setTimerFinished(true);
   };
-  // Effect to parse input file on component mount
-  React.useEffect(() => {
+
+  // Function to fetch and parse data
+  const fetchData = () => {
     // Fetch and read the input file
     fetch(text)
       .then(response => response.text())
@@ -84,7 +88,7 @@ const App = () => {
         console.error('Error reading file:', error);
       });
 
-      fetch(meanSDtext)
+    fetch(meanSDtext)
       .then(response => response.text())
       .then(fileContent => {
         // Parse the input file and set the state with the parsed data
@@ -96,23 +100,32 @@ const App = () => {
         console.error('Error reading file:', error);
       });
 
-      fetch(saturnScoringtext)
-        .then(response => response.text())
-        .then(fileContent => {
-          // Parse the input file and set the state with the parsed data
-          const parsedContents = ParseSaturnScoringFile(fileContent);
-          setSaturnScoringData(parsedContents);
-          console.log("this is the saturning scoring file that was parsed", parsedContents);
-        })
-        .catch(error => {
-          console.error('Error reading file:', error);
-        });
+    fetch(saturnScoringtext)
+      .then(response => response.text())
+      .then(fileContent => {
+        // Parse the input file and set the state with the parsed data
+        const parsedContents = ParseSaturnScoringFile(fileContent);
+        setSaturnScoringData(parsedContents);
+        console.log("this is the saturning scoring file that was parsed", parsedContents);
+      })
+      .catch(error => {
+        console.error('Error reading file:', error);
+      });
+  };
+
+  // Effect to parse input file on component mount
+  useEffect(() => {
+    const initialLoadDone = localStorage.getItem('initialLoadDone');
+    if (!initialLoadDone || performance.navigation.type === 1) { // Detect page reload
+      fetchData();
+      localStorage.setItem('initialLoadDone', 'true');
+    }
   }, []);
 
   const DynamicPageRenderer = () => {
     // Extract the page number from the route parameters
     const { pageNumber } = useParams();
-    const [willGenerateLastPage, setWillGenerateLastPage] = React.useState(false);
+    const [willGenerateLastPage, setWillGenerateLastPage] = useState(false);
 
     // Assuming pagesData is available here
     // Fetch the content for the specified page number
@@ -126,20 +139,25 @@ const App = () => {
         setWillGenerateLastPage(false);
       }
 
-      // Fetch the content for the specified page number
-      // Update the correct answer state
-      setCorrectAnswer(pageContent['Correct Answer'][0]['content']);
-      setCorrectRequirement(pageContent['Correct Requirement'][0]['content']);
-    }, [pageNumber]);
+      if (pageContent) {
+        setCorrectAnswer(pageContent['Correct Answer'][0]['content']);
+        setCorrectRequirement(pageContent['Correct Requirement'][0]['content']);
+      }
+    }, [pageNumber, pageContent, lastPageNumber]);
 
+    // Check if pageContent is defined
+    if (!pageContent) {
+      return <BlackBoarderTextBox>Loading...</BlackBoarderTextBox>;
+    }
 
     return (
       <div>
         <Page 
           content={pageContent} 
-          correctAnswer = {correctAnswer} 
-          correctRequirement = {correctRequirement} 
-          to={willGenerateLastPage ? '/last' : `/page/${nextPageNumber}`} />
+          correctAnswer={correctAnswer} 
+          correctRequirement={correctRequirement} 
+          to={willGenerateLastPage ? '/last' : `/page/${nextPageNumber}`} 
+        />
       </div>
     );
   };
@@ -148,15 +166,11 @@ const App = () => {
     <Router>
       <TimerRedirect onTimerFinish={handleTimerFinish} />
       <Routes>
-        {/* Route for the home page */}
         <Route path="/" element={<Home />} />  
         <Route path="/page/:pageNumber" element={<DynamicPageRenderer />} />
         <Route path="/last" element={<End />} />
-        {/* <Route path="/screen1" element={<Screen1 />} /> */}
-        {timerFinished && <Route path="/screen1" element={<Screen1 />} />} {/* Render Screen1 only if timer is finished */}
-        {!timerFinished && <Route path="/screen1" element={<Navigate to="/" />} />} 
-
-
+        {timerFinished && <Route path="/screen1" element={<Screen1 />} />}
+        {!timerFinished && <Route path="/screen1" element={<Navigate to="/" />} />}
       </Routes>
     </Router>
   );

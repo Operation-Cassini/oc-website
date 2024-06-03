@@ -1,9 +1,9 @@
 Application Name: SATURN
 Page Title: Instruction 1
 Page Number: 1
-Prompt 1: SOME TASKS ON THIS TABLET ARE EASY. OTHER TASKS ARE HARD.
+Prompt 1: SOME TASKS ARE EASY, WHILE OTHER TASKS ARE HARD.
 Prompt 2: COMPLETE THE TASKS WITHOUT HELP FROM OTHER PEOPLE IN THE ROOM.
-Prompt 3: WHEN YOU ARE READY, TOUCH THERE TO GO TO THE NEXT PAGE.
+Prompt 3: WHEN YOU ARE READY, CLICK NEXT TO GO TO THE NEXT PAGE.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -13,17 +13,16 @@ Application Name: SATURN
 Page Title: Instruction 2
 Page Number: 2
 Prompt 1: SOMETIMES, YOU PICK A WORD FROM A LIST.
-Prompt 2: TO PICK A WORD, TOUCH IT. IT WILL TURN `BLUE`.
+Prompt 2: TO PICK A WORD, CLICK IT. IT WILL TURN `BLUE`.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
 Error Pop Ups: -
 
-
 Application Name: SATURN
 Page Title: Action Phrase
 Page Number: 3
-Prompt: CLICK ON THE CIRCLE.
+Prompt: SELECT THE CIRCLE.
 Error Pop Ups: NOT YET! \n TO CONTINUE, YOU HAVE TO PICK THE CIRCLE.\n\nTOUCH IT, AND IT WILL TURN BLUE.
 Type of Question: Image Selection Single
 File Path: [/ImageSelectionShapesJPGs/rectangle.png, /ImageSelectionShapesJPGs/circle.png, /ImageSelectionShapesJPGs/hexagon.png, /ImageSelectionShapesJPGs/triangle.png]
@@ -46,8 +45,8 @@ Application Name: SATURN
 Page Title: Instruction 3
 Page Number: 5
 Prompt 1: SOMETIMES, YOU PICK MANY WORDS.
-Prompt 2: TO PICK A WORD, TOUCH IT, IT WILL TURN BLUE.
-Prompt 3: _TIP_- IF YOU CHANGE YOUR MIND, TOUCH THE WORD AGAIN. THIS WILL @UN-P@ICK THE WORD.
+Prompt 2: TO PICK A WORD, CLICK IT, IT WILL TURN BLUE.
+Prompt 3: _TIP_- IF YOU CHANGE YOUR MIND, CLICK THE WORD AGAIN. THIS WILL @UN-PI@CK THE WORD.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -489,9 +488,9 @@ Characters: [1, 2, 3, 4, 5]
 Prompt 1: CONNECT THE DOTS
 Prompt 2: START AT NUMBER 1, AND GO IN ORDER. KEEP GOING UNTIL YOU REACH THE END.
 Position: [(20, 20), (60, 0), (80, 20), (50, 20), (60, 50)]
-Correct Answer: -
-Correct Requirement: -
-Error Pop Ups: -
+Correct Answer: 5
+Correct Requirement: Yes
+Error Pop Ups: NOT YET!\n\nYOU HAVE TO CONNECT ALL OF THE DOTS.
 
 Page Title: CONNECT
 Page Number: 46
@@ -500,6 +499,6 @@ Prompt 1: CONNECT THE DOTS
 Prompt 2: {ALTERNATE NUMBERS AND LETTERS.} START AT 1, CONNECT IT TO THE FIRST LETTER, A. THEN, CONNECT A TO 2, AND 2 TO THE NEXT LETTER. KEEP GOING UNTIL YOU REACH THE END. 
 Characters: [1, A, 2, B, 3, C, 4, D]
 Position: [(50, 40), (70, 0), (100, 40), (70, 20), (80, 50), (20, 40), (10, 5), (50, 0)]
-Correct Answer: -
-Correct Requirement: -
-Error Pop Ups: -
+Correct Answer: 8
+Correct Requirement: Yes
+Error Pop Ups: NOT YET!\n\nYOU HAVE TO CONNECT ALL OF THE DOTS.

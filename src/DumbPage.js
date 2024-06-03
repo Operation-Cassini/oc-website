@@ -77,6 +77,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
         console.log("real attempt setting to false");
       }
     }
+    
     setSelectedAnswer(word);
     setError(false);
   };
@@ -94,7 +95,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
         blue: { color: 'blue' },
         blueHighlight: { backgroundColor: '#85c7ff'},
         fadingBlueHighlight: {
-          background: 'linear-gradient(to right, #0000ff, #0077ff, #00ccff, #66ffff)',
+          background: 'linear-gradient(to right, #85c7ff, #ffffff)',
         }
       };
   
@@ -496,7 +497,12 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
 
           return (
             <><InstructionContainer instructions={prompts} />
-            <ConnectTheBoxes characters={characters} positions={positions} pageNumber={content['Page Number'][0]['content']}/></>
+            <ConnectTheBoxes 
+              characters={characters}
+              positions={positions}
+              onClick={handleClick}
+              pageNumber={content['Page Number'][0]['content']}
+            /></>
             
           );
         })()

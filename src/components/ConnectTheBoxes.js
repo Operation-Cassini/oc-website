@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './ConnectTheBox.css';
 
-const ConnectTheBoxes = ({ characters, positions, pageNumber }) => {
+const ConnectTheBoxes = ({ characters, positions, onClick, pageNumber }) => {
   const [sequence, setSequence] = useState([]);
   const [incorrect, setIncorrect] = useState(null);
+  const [numCorrect, setNumCorrect] = useState(0);
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
 
@@ -66,9 +67,12 @@ const ConnectTheBoxes = ({ characters, positions, pageNumber }) => {
     if (sequence.length === index) {
       setSequence([...sequence, index]);
       setIncorrect(null);
+      onClick(numCorrect + 1);
+      setNumCorrect(numCorrect + 1);
     } else {
       setIncorrect(index);
     }
+    console.log("num correct: " + numCorrect);
   };
 
   return (
