@@ -20,6 +20,7 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttemp
   // console.log(errorMessageArray);
   
   const [finalErrorMessage, setFinalErrorMessage] = useState("");
+  const [errorAttempts, setErrorAttempts] = useState(0);
 
   // Function to toggle the position of the next button
   const toggleNextButtonPosition = (pageNumber) => {
@@ -39,8 +40,8 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttemp
   }, [pageNumber]);
 
   const handleClick = (event) => {
-    console.log("selected answer is", selectedAnswer);
-    console.log("correct answer is", correctAnswer);
+    // console.log("selected answer is", selectedAnswer);
+    // console.log("correct answer is", correctAnswer);
     if (pageNumber !== undefined) {
       timeHandler();
     }
@@ -49,16 +50,16 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttemp
       // Sort both arrays to ensure the order doesn't matter
       const sortedCorrectAnswers = correctAnswers.sort();
       // const sortedSelectedWords = selectedAnswer.sort();
-      console.log("correct answer:");
-      console.log(correctAnswer);
-      console.log(sortedCorrectAnswers);
+      // console.log("correct answer:");
+      // console.log(correctAnswer);
+      // console.log(sortedCorrectAnswers);
 
       let sortedSelectedWords = [];
       if (selectedAnswer !== "-") {
         sortedSelectedWords = selectedAnswer.join().split(',').sort();
       }
-      console.log("selected words:");
-      console.log(sortedSelectedWords);
+      // console.log("selected words:");
+      // console.log(sortedSelectedWords);
       // Check if both arrays are equal
       const isCorrect = JSON.stringify(sortedCorrectAnswers) === JSON.stringify(sortedSelectedWords);
       if (!isCorrect) {
@@ -91,9 +92,20 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttemp
         console.log("not correct but we move on anyways!");
       } else {
         console.log("Incorrect answer. Navigation prevented.");
+        // For stroop test
         event.preventDefault();
-        setFinalErrorMessage(errorMessage[0]);
-        setError(true);
+        if (errorMessage.length > 1) {
+          if (errorAttempts >= selectedAmount) {
+            setFinalErrorMessage(errorMessage[2]);
+          } else {
+            setFinalErrorMessage(errorMessage[1]);
+          }
+          setErrorAttempts(errorAttempts + 1);
+          setError(true);
+        } else {
+          setFinalErrorMessage(errorMessage[0]);
+          setError(true);
+        }        
       }
     }
   };

@@ -30,7 +30,7 @@ const TimerRedirect = ({ onTimerFinish }) => {
             setRedirected(true);
             return 0; // Return 0 without navigating here
           } else {
-            console.log("Redirecting in", prevTimeLeft, "seconds");
+            // console.log("Redirecting in", prevTimeLeft, "seconds");
             return prevTimeLeft - 1;
           }
         });
@@ -116,7 +116,7 @@ const App = () => {
   // Effect to parse input file on component mount
   useEffect(() => {
     const initialLoadDone = localStorage.getItem('initialLoadDone');
-    if (!initialLoadDone || performance.navigation.type === 1) { // Detect page reload
+    if (!initialLoadDone || performance.getEntriesByType("navigation")[0].type === "reload") { // Detect page reload
       fetchData();
       localStorage.setItem('initialLoadDone', 'true');
     }

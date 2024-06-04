@@ -287,7 +287,7 @@ Error Pop Ups: -
 Application Name: SATURN
 Page Title: Stroop 1
 Page Number: 27
-Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
 Type of Question: STROOP
 Word: ~HAND~
 Word Bank: [GREEN, RED, BLUE]
@@ -298,7 +298,7 @@ Correct Requirement: Yes
 Application Name: SATURN
 Page Title: Stroop 2
 Page Number: 28
-Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
 Type of Question: STROOP
 Word: {BOOK}
 Word Bank: [GREEN, RED, BLUE]
@@ -309,7 +309,7 @@ Correct Requirement: Yes
 Application Name: SATURN
 Page Title: Stroop 3
 Page Number: 29
-Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
 Type of Question: STROOP
 Word: +TABLE+
 Word Bank: [GREEN, RED, BLUE]
@@ -320,7 +320,7 @@ Correct Requirement: Yes
 Application Name: SATURN
 Page Title: Stroop 4
 Page Number: 30
-Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
 Type of Question: STROOP
 Word: ~GREEN~
 Word Bank: [GREEN, RED, BLUE]
@@ -331,7 +331,7 @@ Correct Requirement: Yes
 Application Name: SATURN
 Page Title: Stroop 5
 Page Number: 31
-Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
 Type of Question: STROOP
 Word: +RED+
 Word Bank: [GREEN, RED, BLUE]
@@ -342,7 +342,7 @@ Correct Requirement: Yes
 Application Name: SATURN
 Page Title: Stroop 6
 Page Number: 32
-Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
 Type of Question: STROOP
 Word: {BLUE}
 Word Bank: [GREEN, RED, BLUE]
@@ -353,7 +353,7 @@ Correct Requirement: Yes
 Application Name: SATURN
 Page Title: Stroop 7
 Page Number: 33
-Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
 Type of Question: STROOP
 Word: ~RED~
 Word Bank: [GREEN, RED, BLUE]
@@ -364,7 +364,7 @@ Correct Requirement: Yes
 Application Name: SATURN
 Page Title: Stroop 8
 Page Number: 34
-Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
 Type of Question: STROOP
 Word: +BLUE+
 Word Bank: [GREEN, RED, BLUE]
@@ -375,7 +375,7 @@ Correct Requirement: Yes
 Application Name: SATURN
 Page Title: Stroop 9
 Page Number: 35
-Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
 Type of Question: STROOP
 Word: {GREEN}
 Word Bank: [GREEN, RED, BLUE]
@@ -386,7 +386,7 @@ Correct Requirement: Yes
 Application Name: SATURN
 Page Title: Stroop 10
 Page Number: 36
-Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
 Type of Question: STROOP
 Word: +RED+
 Word Bank: [GREEN, RED, BLUE]
@@ -397,7 +397,7 @@ Correct Requirement: Yes
 Application Name: SATURN
 Page Title: Stroop 11
 Page Number: 37
-Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
 Type of Question: STROOP
 Word: {BLUE}
 Word Bank: [GREEN, RED, BLUE]
@@ -408,7 +408,7 @@ Correct Requirement: Yes
 Application Name: SATURN
 Page Title: Stroop 12
 Page Number: 38
-Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
 Type of Question: STROOP
 Word: ~RED~
 Word Bank: [GREEN, RED, BLUE]
@@ -419,7 +419,7 @@ Correct Requirement: Yes
 Application Name: SATURN
 Page Title: Stroop 13
 Page Number: 39
-Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
 Type of Question: STROOP
 Word: {GREEN}
 Word Bank: [GREEN, RED, BLUE]
@@ -430,7 +430,7 @@ Correct Requirement: Yes
 Application Name: SATURN
 Page Title: Stroop 14
 Page Number: 40
-Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
 Type of Question: STROOP
 Word: +BLUE+
 Word Bank: [GREEN, RED, BLUE]
@@ -441,7 +441,7 @@ Correct Requirement: Yes
 Application Name: SATURN
 Page Title: Stroop 15
 Page Number: 41
-Error Pop Ups: NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD. (arrow)
+Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
 Type of Question: STROOP
 Word: ~GREEN~
 Word Bank: [GREEN, RED, BLUE]

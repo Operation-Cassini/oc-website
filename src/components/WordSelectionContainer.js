@@ -29,9 +29,9 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
   //   gap: '5px',
   // };
   const longestWord = words.reduce((longest, current) => current.length > longest.length ? current : longest, "");
-  console.log("longest word", longestWord);
+  // console.log("longest word", longestWord);
   const longestWordWidth = longestWord.length;
-  console.log("longest word width", longestWordWidth);
+  // console.log("longest word width", longestWordWidth);
 
   // const containerStyle = {
   //   display: 'grid',
