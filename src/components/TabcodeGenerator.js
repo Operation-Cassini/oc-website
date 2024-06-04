@@ -1,5 +1,6 @@
 import React from 'react';
 import './TabcodeGenerator.css';
+import Instruction from './Instruction';
 
 const TabcodeGenerator = () => {
   const generateRandomNumber = () => {
@@ -10,9 +11,15 @@ const TabcodeGenerator = () => {
   const randomNumber = generateRandomNumber();
 
   return (
-    <div className="random-number-container">
-      <p className="random-number">{randomNumber}</p>
+    <div>
+      <Instruction 
+      text={"Save this number"}
+      className = "instruction-box"/>
+      <div className="random-number-container">
+        <p className="random-number">{randomNumber}</p>
+      </div>
     </div>
+
   );
 };
 

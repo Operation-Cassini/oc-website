@@ -15,6 +15,7 @@ import BlackBoarderTextBox from './components/BlackBoarderTextBox';
 
 // import TimerRedirect from './TimerRedirect'
 import NextButton from './components/NextButton';
+import TabcodeGenerator from './components/TabcodeGenerator';
 
 const TimerRedirect = ({ onTimerFinish }) => {
   const [timeLeft, setTimeLeft] = useState(6000);
@@ -166,7 +167,7 @@ const App = () => {
     <Router>
       <TimerRedirect onTimerFinish={handleTimerFinish} />
       <Routes>
-        <Route path="/" element={<Home />} />  
+        <Route path="/" element={<Home />} />
         <Route path="/page/:pageNumber" element={<DynamicPageRenderer />} />
         <Route path="/last" element={<End />} />
         {timerFinished && <Route path="/screen1" element={<Screen1 />} />}

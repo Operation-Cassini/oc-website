@@ -22,7 +22,7 @@ Error Pop Ups: -
 Application Name: SATURN
 Page Title: Action Phrase
 Page Number: 3
-Prompt: SELECT THE CIRCLE.
+Prompt: PICK THE CIRCLE.
 Error Pop Ups: NOT YET! \n TO CONTINUE, YOU HAVE TO PICK THE CIRCLE.\n\nTOUCH IT, AND IT WILL TURN BLUE.
 Type of Question: Image Selection Single
 File Path: [/ImageSelectionShapesJPGs/rectangle.png, /ImageSelectionShapesJPGs/circle.png, /ImageSelectionShapesJPGs/hexagon.png, /ImageSelectionShapesJPGs/triangle.png]
