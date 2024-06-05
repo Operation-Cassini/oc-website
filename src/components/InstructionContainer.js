@@ -15,7 +15,7 @@ function renderStyledContent(content) {
       blue: { color: 'blue' },
       blueHighlight: { backgroundColor: '#85c7ff'},
       fadingBlueHighlight: {
-        background: 'linear-gradient(to right, #0000ff, #0077ff, #00ccff, #66ffff)',
+        background: 'linear-gradient(to right, #85c7ff, #AEDAFF, #C8E6FF, #FFFFFF)',
       }
     };
 

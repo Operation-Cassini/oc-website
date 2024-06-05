@@ -25,8 +25,8 @@ Page Number: 3
 Prompt: PICK THE CIRCLE.
 Error Pop Ups: NOT YET! \n TO CONTINUE, YOU HAVE TO PICK THE CIRCLE.\n\nTOUCH IT, AND IT WILL TURN BLUE.
 Type of Question: Image Selection Single
-File Path: [/ImageSelectionShapesJPGs/rectangle.png, /ImageSelectionShapesJPGs/circle.png, /ImageSelectionShapesJPGs/hexagon.png, /ImageSelectionShapesJPGs/triangle.png]
-Dimensions: 1x4
+File Path: [/ImageSelectionShapesJPGs/rectangle.png, /ImageSelectionShapesJPGs/circle.png]
+Dimensions: 1x2
 Correct Answer: 1
 Correct Requirement: Yes
 
@@ -157,7 +157,7 @@ Error Pop Ups: NOT YET!\nYOU HAVE TO PICK A MONTH.\n\nIF YOU DON’T KNOW THE MO
 Type of Question: Word Selection
 Word Bank: [JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER]
 Dimensions: 6x2
-Correct Answer: MAY
+Correct Answer: JUNE
 Correct Requirement: -
 
 Application Name: SATURN
@@ -179,7 +179,7 @@ Error Pop Ups: NOT YET!\nYOU HAVE TO PICK A DAY.\n\nIF YOU DON’T KNOW THE DAY,
 Type of Question: Word Selection
 Word Bank: [SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY]
 Dimensions: 7x1
-Correct Answer: FRIDAY
+Correct Answer: TUESDAY
 Correct Requirement: -
 
 Application Name: SATURN
