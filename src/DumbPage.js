@@ -15,7 +15,6 @@ import WordSelectionContainer from './components/WordSelectionContainer';
 
 const Page = ({ content, correctAnswer, correctRequirement, to }) => {
   const buttonDimensions = { width: '100px', height: '50px' };
-
   const [selectedAnswer, setSelectedAnswer] = React.useState("-");
   const [error, setError] = React.useState(false);
   const [realAttempt, setRealAttempt] = React.useState(false);
@@ -53,7 +52,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
     }
     if ((content['Type of Question'][0]['content'] === 'Multi Word Selection' || content['Type of Question'][0]['content'] === 'Image Selection' || content['Type of Question'][0]['content'] === 'Image Selection Single') && correctRequirement === '-') {
       const correctAnswers = correctAnswer.split(',').map(word => word.trim());
-      console.log("new correct answer is", correctAnswers);
+      // console.log("new correct answer is", correctAnswers);
         // Sort both arrays to ensure the order doesn't matter
       // Check if both arrays are equal
       if(word.length === correctAnswers.length) {
@@ -83,7 +82,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
   };
 
   function renderStyledContent(content) {
-    console.log("the content is", content);
+    // console.log("the content is", content);
     if (!content || content.length === 0) return null;
   
     return content.map((part, index) => {
@@ -100,11 +99,11 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
       };
   
       const styles = part.style ? part.style.split(' ').map(s => styleMap[s]).reduce((acc, cur) => ({ ...acc, ...cur }), {}) : {};
-      console.log("part.content is", part.content);
+      // console.log("part.content is", part.content);
       if (part.content.includes("\\n")) {
         // Split content by "\n" and render each line separately
         const lines = part.content.split("\\n").map((line, lineIndex) => {
-          console.log("line is", line);
+          // console.log("line is", line);
           return (
           <React.Fragment key={lineIndex}>
             <span style={styles}>
@@ -215,16 +214,16 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
   let wordBank = flattenContent(content['Word Bank']);
   let wordsFlash = flattenContent(content['Words']);
   let numberSequence = flattenContent(content['Number Sequence'])
-  console.log("content[error pop ups] is", content['Error Pop Ups']);
+  // console.log("content[error pop ups] is", content['Error Pop Ups']);
   let errorMessageArray = splitErrorMessages(content['Error Pop Ups']);
-  console.log("error message array is", errorMessageArray);
+  // console.log("error message array is", errorMessageArray);
   const renderedErrorMessages = [];
   errorMessageArray.forEach((error, index) => {
     // Skip rendering the first element if it contains the count of elements
     if (index !== 0) {
       const renderedError = renderStyledContent(error);
       renderedErrorMessages.push(renderedError);
-      console.log("Rendered error message:", renderedError);
+      // console.log("Rendered error message:", renderedError);
     }
     else if (errorMessageArray.length === 1){
       renderedErrorMessages.push(renderStyledContent(error));
@@ -233,7 +232,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
       renderedErrorMessages.push(error);
     }
   });
-  console.log("the rendered error messages are", renderedErrorMessages);
+  // console.log("the rendered error messages are", renderedErrorMessages);
   // console.log("error MEssage array!!", errorMessageArray);
   // console.log("rendered style content of error pop ups", renderStyledContent(content['Error Pop Ups']));
   return (
@@ -285,7 +284,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
       }
       {content['Type of Question'][0]['content'] === 'Multi Word Selection' && 
         (() => {
-          console.log(content['Error Pop Ups']);
+          // console.log(content['Error Pop Ups']);
           let s = wordBank
           let words = s.substring(1, s.length-1).split(",");
           words = words.map(str => str.trim());
@@ -469,7 +468,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
           let s = wordsFlash;
           let words = s.substring(1, s.length-1).split(",");
           words = words.map(str => str.trim());
-          console.log(content['Page Number'][0]['content']);
+          // console.log(content['Page Number'][0]['content']);
           return (
             <div>
               <FlashTextBoxes texts={words} nextPage={content['Page Number'][0]['content']}/>

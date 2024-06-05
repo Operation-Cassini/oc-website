@@ -4,7 +4,7 @@ import WordSelectionButton from './WordSelectionButton';
 
 const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, words, styledWords, pageNumber}) => {
   const [selectedButtonIndices, setSelectedButtonIndices] = useState([]);
-  console.log(pageNumber);
+  // console.log(pageNumber);
   useEffect(() => {
     // Reset selected button index whenever the component is rendered
     console.log("resetting")
@@ -22,7 +22,7 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
       // debugger;
     } else {
 
-      console.log("we are setting the button index to be: ", index)
+      // console.log("we are setting the button index to be: ", index)
       updatedIndices = [...selectedButtonIndices, index];
     
       setSelectedButtonIndices(updatedIndices);
@@ -58,7 +58,7 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
         const index = i + j*rows;
         // if (index >= words.length) break; // Prevent out of bounds access
         let word = words[index];
-        console.log("index is", index);
+        // console.log("index is", index);
         let styles = {}; // Initialize an empty style object
         
         // Check if the word is styled

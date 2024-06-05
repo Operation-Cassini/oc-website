@@ -3,7 +3,7 @@ import Instruction from './Instruction';
 import './InstructionContainer.css';
 
 function renderStyledContent(content) {
-  console.log("the content is", content);
+  // console.log("the content is", content);
   if (!content || content.length === 0) return null;
 
   return content.map((part, index) => {
@@ -21,10 +21,10 @@ function renderStyledContent(content) {
 
     const styles = part.style ? part.style.split(' ').map(s => styleMap[s]).reduce((acc, cur) => ({ ...acc, ...cur }), {}) : {};
     if (part.content.includes("\\n")) {
-      console.log("lol")
+      // console.log("lol")
       // Split content by "\n" and render each line separately
       const lines = part.content.split("\\n").map((line, lineIndex) => {
-        console.log("line is", line);
+        // console.log("line is", line);
         return (
         <React.Fragment key={lineIndex}>
           <span style={styles}>
