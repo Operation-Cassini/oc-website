@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Route, BrowserRouter as Router, Routes, useParams, Navigate, useNavigate } from 'react-router-dom';
 
 import Page from './DumbPage';
@@ -56,12 +56,26 @@ const TimerRedirect = ({ onTimerFinish }) => {
   return null;
 };
 
+const usePrevious = value => {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current = value;
+  }, [value]); // Only update the ref when the value changes
+  console.log("right here, ref.current is", ref.current, value);
+  if (ref.current === undefined) {
+    return value - 1;
+  }
+  return ref.current;
+};
+
+
 const App = () => {
   // State to store parsed page data
   const [pagesData, setPagesData] = useState([]);
   const [lastPageNumber, setLastPageNumber] = useState(null);
   const [meanSDData, setMeanSDData] = useState([]);
   const [saturnScoringData, setSaturnScoringData] = useState([]);
+  // const previousPageNumber = usePrevious(null);
 
   // State to store the correct answer for the current page
   const [correctAnswer, setCorrectAnswer] = useState("-");
@@ -73,7 +87,7 @@ const App = () => {
   };
 
   // Function to fetch and parse data
-  const fetchData = () => {
+  useEffect (() => {
     // Fetch and read the input file
     fetch(text)
       .then(response => response.text())
@@ -107,33 +121,46 @@ const App = () => {
         // Parse the input file and set the state with the parsed data
         const parsedContents = ParseSaturnScoringFile(fileContent);
         setSaturnScoringData(parsedContents);
-        console.log("this is the saturning scoring file that was parsed", parsedContents);
+        console.log("this is the saturn scoring file that was parsed", parsedContents);
       })
       .catch(error => {
         console.error('Error reading file:', error);
       });
-  };
+  }, []);
 
   // Effect to parse input file on component mount
-  useEffect(() => {
-    const initialLoadDone = localStorage.getItem('initialLoadDone');
-    if (!initialLoadDone || performance.getEntriesByType("navigation")[0].type === "reload") { // Detect page reload
-      fetchData();
-      localStorage.setItem('initialLoadDone', 'true');
-    }
-  }, []);
+  // useEffect(() => {
+  //   const initialLoadDone = localStorage.getItem('initialLoadDone');
+  //   if (!initialLoadDone || performance.navigation.type === 1) { // Detect page reload
+  //     fetchData();
+  //     localStorage.setItem('initialLoadDone', 'true');
+  //   }
+  // }, []);
 
   const DynamicPageRenderer = () => {
     // Extract the page number from the route parameters
     const { pageNumber } = useParams();
     const [willGenerateLastPage, setWillGenerateLastPage] = useState(false);
-
+    const navigate = useNavigate();
+    console.log("pageNumber!!!!!!", parseInt(pageNumber));
+    const previousPageNumber = usePrevious(parseInt(pageNumber)); // Use the usePrevious hook to track the previous page number
+    // console.log("previous pagenumber!!!!", previousPageNumber)
     // Assuming pagesData is available here
     // Fetch the content for the specified page number
     const pageContent = pagesData[pageNumber];
     const nextPageNumber = parseInt(pageNumber) + 1;
 
     useEffect(() => {
+      const pageNum = parseInt(pageNumber);
+      console.log("pageNumber is!", pageNumber);
+      console.log("previousPageNumber is!", previousPageNumber);
+      if (pageNum > 0  && previousPageNumber !== pageNum - 1) {
+        console.log("why are we here")
+        console.log("pageNumber is", pageNumber);
+        console.log("previousPageNumber is", previousPageNumber);
+        navigate('/');
+      }
+
       if (pageNumber >= lastPageNumber) {
         setWillGenerateLastPage(true);
       } else {
@@ -141,10 +168,12 @@ const App = () => {
       }
 
       if (pageContent) {
+        console.log("previous pagenumber!!!!", previousPageNumber)
+
         setCorrectAnswer(pageContent['Correct Answer'][0]['content']);
         setCorrectRequirement(pageContent['Correct Requirement'][0]['content']);
       }
-    }, [pageNumber, pageContent, lastPageNumber]);
+    }, [pageNumber, pageContent, lastPageNumber, previousPageNumber]);
 
     // Check if pageContent is defined
     if (!pageContent) {

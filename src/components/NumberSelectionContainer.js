@@ -5,7 +5,7 @@ import './NumberSelectionContainer.css';
 const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, timeHandler, words, styledWords, pageNumber}) => {
   const [selectedNumbers, setSelectedNumbers] = useState('');
 
-  console.log(pageNumber);
+  // console.log(pageNumber);
   useEffect(() => {
     // Reset selected button index whenever the component is rendered
     console.log("resetting")

@@ -27,13 +27,13 @@ const FlashTextBoxes = ({ texts, nextPage }) => {
           // If it's the last text box in the cycle, increment completed cycles
           setCompletedCycles((prevCycles) => prevCycles + 1);
         }
-      }, 1000); // Display overlay for ` seconds after text box
+      }, 1000); // Display overlay for 1 seconds after text box
 
       if (completedCycles === totalCycles) {
         clearInterval(interval); // Stop the interval once all cycles are completed
         navigate(nextPageNumber); 
       }
-    }, 4000); // Repeat the cycle every 8 seconds (3 seconds for text box + 5 seconds for overlay)
+    }, 3000); // Repeat the cycle every 8 seconds (3 seconds for text box + 5 seconds for overlay)
 
     return () => clearInterval(interval);
   }, [texts, currentIndex, completedCycles, totalCycles]);

@@ -4,7 +4,7 @@ import ErrorMessage from './ErrorMessage'; // Import ErrorMessage component
 import './NextButton.css'; // Import CSS file for styling
 
 const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttempt, errorMessage, error, setError, pageNumber, children }) => {
-  console.log("error message is", errorMessage);
+  // console.log("error message is", errorMessage);
   let selectedAmount = 0;
   // if (errorMessage[0].props.children !== '') {
   //   // errorMessageArray = concatenatedErrorMessages.split(";");
@@ -14,7 +14,7 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttemp
   if (errorMessage.length > 1) {
     // errorMessageArray = concatenatedErrorMessages.split(";");
     selectedAmount = parseInt(errorMessage[0]);
-    console.log("selected amount is", selectedAmount);
+    // console.log("selected amount is", selectedAmount);
   }
   // console.log("concatenatedErrorMessage is", concatenatedErrorMessages);
   // console.log(errorMessageArray);
@@ -84,8 +84,8 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttemp
         // Optionally, you can add logic here to handle correct answer actions
       }
     } else if (selectedAnswer.toString() === correctAnswer.toString()) {
-      console.log(correctAnswer);
-      console.log(selectedAnswer);
+      // console.log(correctAnswer);
+      // console.log(selectedAnswer);
       console.log("Correct answer!");
     } else {
       if (realAttempt === true) {
