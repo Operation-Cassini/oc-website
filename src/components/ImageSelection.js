@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './ImageSelection.css';
 
 const ImageSelection = ({ images, rows, cols, onClick, pageNumber }) => {
@@ -42,7 +42,7 @@ const ImageSelection = ({ images, rows, cols, onClick, pageNumber }) => {
     gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
     gap: '5px', // Adjust the gap between images if needed
     justifyContent: 'flex-start', // Align images to the start to prevent extra space at the end
-    maxWidth: '100%', // Ensure the container doesn't overflow
+    maxWidth: '45%', // Ensure the container doesn't overflow
   };
 
   const generateImages = () => {
