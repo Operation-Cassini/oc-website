@@ -5,6 +5,8 @@ const ConnectTheBoxes = ({ characters, positions, onClick, pageNumber }) => {
   const [sequence, setSequence] = useState([]);
   const [incorrect, setIncorrect] = useState(null);
   const [numCorrect, setNumCorrect] = useState(0);
+  const [errorAttempts, setErrorAttempts] = useState(0);
+
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
 
@@ -67,10 +69,12 @@ const ConnectTheBoxes = ({ characters, positions, onClick, pageNumber }) => {
     if (sequence.length === index) {
       setSequence([...sequence, index]);
       setIncorrect(null);
-      onClick(numCorrect + 1);
+      onClick(numCorrect + 1, errorAttempts);
       setNumCorrect(numCorrect + 1);
     } else {
       setIncorrect(index);
+      setErrorAttempts(errorAttempts + 1);
+      console.log("error attempts is", errorAttempts);
     }
     console.log("num correct: " + numCorrect);
   };

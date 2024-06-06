@@ -21,6 +21,10 @@ const Home = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  
+  useEffect(() => {
+    sessionStorage.setItem('lastVisitedPage', -1);
+  }, []); // Run this effect only once when the component mounts
 
   return (
     <div className="container">

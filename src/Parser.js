@@ -104,8 +104,9 @@ const ParseMeanSDFile = (input) => {
   lines.forEach(line => {
     const [key, value] = line.split(' = ').map(item => item.trim());
     if (key && value) {
-      const task = key.split('_').slice(1, -1).join('_').toLowerCase();
-      const stat = key.split('_').pop().toLowerCase();
+      let parts = key.split('_');
+      let task = parts.slice(0, -1).map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '); // Capitalize each word and join
+      let stat = parts[parts.length - 1]; // The last part is the stat
 
       if (!data[task]) {
         data[task] = {};
