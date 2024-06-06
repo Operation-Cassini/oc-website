@@ -25,7 +25,7 @@ Page Number: 3
 Prompt: PICK THE CIRCLE.
 Error Pop Ups: NOT YET! \n TO CONTINUE, YOU HAVE TO PICK THE CIRCLE.\n\nTOUCH IT, AND IT WILL TURN BLUE.
 Type of Question: Image Selection Single
-File Path: [/ImageSelectionShapesJPGs/rectangle.png, /ImageSelectionShapesJPGs/circle.png]
+File Path: [/ImageSelectionShapesJPGs/rectangle.jpg, /ImageSelectionShapesJPGs/circle.jpg]
 Dimensions: 1x2
 Correct Answer: 1
 Correct Requirement: Yes
