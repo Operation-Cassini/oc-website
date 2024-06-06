@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { Route, BrowserRouter as Router, Routes, useParams, Navigate, useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { Navigate, Route, BrowserRouter as Router, Routes, useNavigate, useParams } from 'react-router-dom';
 
 import Page from './DumbPage';
 import End from './End';
@@ -14,8 +14,6 @@ import BlackBoarderTextBox from './components/BlackBoarderTextBox';
 
 
 // import TimerRedirect from './TimerRedirect'
-import NextButton from './components/NextButton';
-import TabcodeGenerator from './components/TabcodeGenerator';
 
 const TimerRedirect = ({ onTimerFinish }) => {
   const [timeLeft, setTimeLeft] = useState(6000);
@@ -154,14 +152,14 @@ const App = () => {
       const pageNum = parseInt(pageNumber);
       console.log("pageNumber is!", pageNumber);
       console.log("previousPageNumber is!", previousPageNumber);
-      if (pageNum > 0  && previousPageNumber !== pageNum - 1) {
+      if (pageNum > 0  && previousPageNumber !== pageNum - 1 || lastPageNumber === null) {
         console.log("why are we here")
         console.log("pageNumber is", pageNumber);
         console.log("previousPageNumber is", previousPageNumber);
         navigate('/');
       }
 
-      if (pageNumber >= lastPageNumber) {
+      if (pageNumber > lastPageNumber) {
         setWillGenerateLastPage(true);
       } else {
         setWillGenerateLastPage(false);
@@ -175,6 +173,11 @@ const App = () => {
       }
     }, [pageNumber, pageContent, lastPageNumber, previousPageNumber]);
 
+    useEffect(() => {
+      if (willGenerateLastPage) {
+        navigate('/last');
+      }
+    })
     // Check if pageContent is defined
     if (!pageContent) {
       return <BlackBoarderTextBox>Loading...</BlackBoarderTextBox>;
@@ -186,7 +189,7 @@ const App = () => {
           content={pageContent} 
           correctAnswer={correctAnswer} 
           correctRequirement={correctRequirement} 
-          to={willGenerateLastPage ? '/last' : `/page/${nextPageNumber}`} 
+          to={`/page/${nextPageNumber}`} 
         />
       </div>
     );
