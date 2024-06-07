@@ -231,7 +231,7 @@ Page Title: Instruction 7
 Page Number: 22
 Prompt 1: NEXT, YOU WILL SEE SOME DRAWINGS.
 Prompt 2: PICK THE SMALL DRAWINGS THAT MAKE UP THE BIG DRAWING.
-Prompt 3: drawing here somewhere for example
+Prompt 3: /InstructionImages/drawing.png
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -329,164 +329,14 @@ Correct Answer: GREEN
 Correct Requirement: Yes
 
 Application Name: SATURN
-Page Title: Stroop 4
-Page Number: 31
-Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
-Type of Question: STROOP
-Word: ~GREEN~
-Word Bank: [GREEN, RED, BLUE]
-Dimensions: 1x3
-Correct Answer: BLUE
-Correct Requirement: Yes
-
-Application Name: SATURN
-Page Title: Stroop 5
-Page Number: 32
-Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
-Type of Question: STROOP
-Word: +RED+
-Word Bank: [GREEN, RED, BLUE]
-Dimensions: 1x3
-Correct Answer: GREEN
-Correct Requirement: Yes
-
-Application Name: SATURN
-Page Title: Stroop 6
-Page Number: 33
-Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
-Type of Question: STROOP
-Word: {BLUE}
-Word Bank: [GREEN, RED, BLUE]
-Dimensions: 1x3
-Correct Answer: RED
-Correct Requirement: Yes
-
-Application Name: SATURN
-Page Title: Stroop 7
-Page Number: 34
-Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
-Type of Question: STROOP
-Word: ~RED~
-Word Bank: [GREEN, RED, BLUE]
-Dimensions: 1x3
-Correct Answer: BLUE
-Correct Requirement: Yes
-
-Application Name: SATURN
-Page Title: Stroop 8
-Page Number: 35
-Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
-Type of Question: STROOP
-Word: +BLUE+
-Word Bank: [GREEN, RED, BLUE]
-Dimensions: 1x3
-Correct Answer: GREEN
-Correct Requirement: Yes
-
-Application Name: SATURN
-Page Title: Stroop 9
-Page Number: 36
-Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
-Type of Question: STROOP
-Word: {GREEN}
-Word Bank: [GREEN, RED, BLUE]
-Dimensions: 1x3
-Correct Answer: RED
-Correct Requirement: Yes
-
-Application Name: SATURN
-Page Title: Stroop 10
-Page Number: 37
-Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
-Type of Question: STROOP
-Word: +RED+
-Word Bank: [GREEN, RED, BLUE]
-Dimensions: 1x3
-Correct Answer: GREEN
-Correct Requirement: Yes
-
-Application Name: SATURN
-Page Title: Stroop 11
-Page Number: 38
-Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
-Type of Question: STROOP
-Word: {BLUE}
-Word Bank: [GREEN, RED, BLUE]
-Dimensions: 1x3
-Correct Answer: RED
-Correct Requirement: Yes
-
-Application Name: SATURN
-Page Title: Stroop 12
-Page Number: 39
-Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
-Type of Question: STROOP
-Word: ~RED~
-Word Bank: [GREEN, RED, BLUE]
-Dimensions: 1x3
-Correct Answer: BLUE
-Correct Requirement: Yes
-
-Application Name: SATURN
-Page Title: Stroop 13
-Page Number: 40
-Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
-Type of Question: STROOP
-Word: {GREEN}
-Word Bank: [GREEN, RED, BLUE]
-Dimensions: 1x3
-Correct Answer: RED
-Correct Requirement: Yes
-
-Application Name: SATURN
-Page Title: Stroop 14
-Page Number: 41
-Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
-Type of Question: STROOP
-Word: +BLUE+
-Word Bank: [GREEN, RED, BLUE]
-Dimensions: 1x3
-Correct Answer: GREEN
-Correct Requirement: Yes
-
-Application Name: SATURN
-Page Title: Stroop 15
-Page Number: 42
-Error Pop Ups: 1;NOT YET!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.; TRY AGAIN!\n\nCHOOSE THE COLOR USED TO WRITE THIS WORD.
-Type of Question: STROOP
-Word: ~GREEN~
-Word Bank: [GREEN, RED, BLUE]
-Dimensions: 1x3
-Correct Answer: BLUE
-Correct Requirement: Yes
-
-Application Name: SATURN
-Page Title: Instruction 9
-Page Number: 43
-Prompt 1: YOU ARE ALMOST DONE!
-Prompt 2: FOR THE FINAL TASKS, YOU PLAY CONNECT-THE-DOTS.
-Type of Question: Instruction
-Correct Answer: -
-Correct Requirement: -
-Error Pop Ups: -
-
-Application Name: SATURN
-Page Title: Instruction 10
-Page Number: 44
-Prompt 1: DRAW LINES FROM ONE DOT TO THE NEXT.
-Prompt 2: NUMBERED DOTS GO FROM LOW TO HIGH (1, 2, 3,...)
-Prompt 3: DOTS WITH LETTERS GO IN ALPHABETICAL ORDER (A, B, C,...)
-Type of Question: Instruction
-Correct Answer: -
-Correct Requirement: -
-Error Pop Ups: -
-
-Application Name: SATURN
 Page Title: Instruction 11
 Page Number: 45
 Prompt 1: THE DOTS LOOK LIKE THIS:
-Prompt 2: … AND TURN GREEN WHEN YOU TOUCH THEM IN ORDER: 
-Prompt 3: … BUT FLICKER RED IF YOU GO OUT OF ORDER: 
+Prompt 2: /InstructionImages/connect.jpg
+Prompt 3: … AND TURN GREEN WHEN YOU TOUCH THEM IN ORDER:
+Prompt 4: /InstructionImages/connectPass.jpg
+Prompt 5: … BUT FLICKER RED IF YOU GO OUT OF ORDER: 
+Prompt 6: /InstructionImages/connectFail.jpg
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -

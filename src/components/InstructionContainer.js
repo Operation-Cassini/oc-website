@@ -20,6 +20,14 @@ function renderStyledContent(content) {
     };
 
     const styles = part.style ? part.style.split(' ').map(s => styleMap[s]).reduce((acc, cur) => ({ ...acc, ...cur }), {}) : {};
+    if (part.style === null) {
+      if (part.content.startsWith("/")) {
+        return (
+          <img key={index} src={part.content} style={{ backgroundColor: 'transparent' }} alt="Content image" />
+        );
+      }
+    }
+
     if (part.content.includes("\\n")) {
       // console.log("lol")
       // Split content by "\n" and render each line separately

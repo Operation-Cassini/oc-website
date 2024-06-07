@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BlackBoarderTextBox from './BlackBoarderTextBox';
 import './FlashTextBox.css';
@@ -14,26 +14,25 @@ const FlashTextBoxes = ({ texts, nextPage }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setShowOverlay(false); // Ensure overlay is hidden at the beginning of each cycle
+      setShowOverlay(false);
 
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1));
-        setShowOverlay(true); // Show overlay after 3 seconds
-      }, 1000); // Display each text box for 1 seconds
+        setShowOverlay(true);
+      }, 1000);
 
       setTimeout(() => {
-        setShowOverlay(false); // Hide overlay after 2 seconds
+        setShowOverlay(false);
         if (currentIndex === texts.length - 1) {
-          // If it's the last text box in the cycle, increment completed cycles
           setCompletedCycles((prevCycles) => prevCycles + 1);
         }
-      }, 1000); // Display overlay for 1 seconds after text box
+      }, 2000);
 
       if (completedCycles === totalCycles) {
         clearInterval(interval); // Stop the interval once all cycles are completed
         navigate(nextPageNumber); 
       }
-    }, 3000); // Repeat the cycle every 8 seconds (3 seconds for text box + 5 seconds for overlay)
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [texts, currentIndex, completedCycles, totalCycles]);
