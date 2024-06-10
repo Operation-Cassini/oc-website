@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import ErrorMessage from './ErrorMessage'; // Import ErrorMessage component
 import './NextButton.css'; // Import CSS file for styling
 
-const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttempt, errorMessage, error, setError, pageNumber, children }) => {
+const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttempt, startTime, onAnswerChecked, errorMessage, error, setError, pageNumber, children }) => {
   // console.log("error message is", errorMessage);
   let selectedAmount = 0;
+  let isError = false;
   // if (errorMessage[0].props.children !== '') {
   //   // errorMessageArray = concatenatedErrorMessages.split(";");
   //   selectedAmount = parseInt(errorMessageArray.shift()); // Extract and remove the first element
@@ -21,7 +22,7 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttemp
   
   const [finalErrorMessage, setFinalErrorMessage] = useState("");
   const [errorAttempts, setErrorAttempts] = useState(0);
-
+  // const [totalErrors, setTotalErrors] = useState(0);
   // Function to toggle the position of the next button
   const toggleNextButtonPosition = (pageNumber) => {
     const nextButtonContainer = document.querySelector('.next-flex');
@@ -42,6 +43,8 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttemp
   const handleClick = (event) => {
     // console.log("selected answer is", selectedAnswer);
     // console.log("correct answer is", correctAnswer);
+    let isItCorrect;
+    // let totalErrors = 0;
     if (pageNumber !== undefined) {
       timeHandler();
     }
@@ -65,8 +68,14 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttemp
       if (!isCorrect) {
         // Prevent default navigation behavior if the answer is incorrect
         if (realAttempt === true) {
+          isItCorrect = false;
+          setErrorAttempts(errorAttempts + 1);
+          console.log("error attempts is", errorAttempts);
           console.log("not correct but we move on anyways!");
         } else {
+          setErrorAttempts(errorAttempts + 1);
+          console.log("error attempts is", errorAttempts);
+          isItCorrect = false;
           console.log("Incorrect answer. Navigation prevented.");
           event.preventDefault();
           console.log(sortedSelectedWords.length + " " + selectedAmount);
@@ -76,21 +85,30 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttemp
             setFinalErrorMessage(errorMessage[1]);
           }
           setError(true);
+          isError = true;
         }
         // Optionally, you can add logic here to handle incorrect answer actions
       } else {
+        isItCorrect = true;
         console.log("made it!");
         console.log("Correct answer!");
         // Optionally, you can add logic here to handle correct answer actions
       }
     } else if (selectedAnswer.toString() === correctAnswer.toString()) {
+      isItCorrect = true;
       // console.log(correctAnswer);
       // console.log(selectedAnswer);
       console.log("Correct answer!");
     } else {
       if (realAttempt === true) {
+        setErrorAttempts(errorAttempts + 1);
+        console.log("error attempts is", errorAttempts);
+        isItCorrect = false;
         console.log("not correct but we move on anyways!");
       } else {
+        setErrorAttempts(errorAttempts + 1);
+        console.log("error attempts is", errorAttempts);
+        isItCorrect = false;
         console.log("Incorrect answer. Navigation prevented.");
         // For stroop test
         event.preventDefault();
@@ -100,14 +118,28 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttemp
           } else {
             setFinalErrorMessage(errorMessage[1]);
           }
-          setErrorAttempts(errorAttempts + 1);
+          // setErrorAttempts(errorAttempts + 1);
+          // console.log("error attempts is", errorAttempts);
           setError(true);
+          isError = true;
         } else {
           setFinalErrorMessage(errorMessage[0]);
           setError(true);
+          isError = true;
         }        
       }
     }
+    if (!isError && errorMessage.length >= 1 && correctAnswer !== "-") {
+      let totalErrors = errorAttempts;
+      if(!isItCorrect) {
+        totalErrors = errorAttempts + 1;
+      }
+      console.log("start time is", startTime);
+      console.log("current date.now() is", Date.now())
+      onAnswerChecked(isItCorrect, totalErrors, Date.now() - startTime);
+    }
+    console.log("the final error message is", finalErrorMessage);
+    // onAnswerChecked(isItCorrect);
   };
 
   return (

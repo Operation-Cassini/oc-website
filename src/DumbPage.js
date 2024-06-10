@@ -1,4 +1,4 @@
-import { default as React, useEffect } from 'react';
+import { default as React, useEffect, useRef } from 'react';
 import './App.css';
 import ConnectTheBoxes from './components/ConnectTheBoxes';
 import FlashTextBoxes from './components/FlashTextBox';
@@ -13,20 +13,22 @@ import NumberSelectionContainer from './components/NumberSelectionContainer';
 import StroopTextBox from './components/StroopTextBox';
 import WordSelectionContainer from './components/WordSelectionContainer';
 
-const Page = ({ content, correctAnswer, correctRequirement, to }) => {
+const Page = ({ content, correctAnswer, correctRequirement, onAnswerChecked, to }) => {
   const buttonDimensions = { width: '100px', height: '50px' };
   const [selectedAnswer, setSelectedAnswer] = React.useState("-");
   const [error, setError] = React.useState(false);
   const [realAttempt, setRealAttempt] = React.useState(false);
-
+  const [connectDotsError, setConnectDotsError] = React.useState(0);
   const [lastClickTime, setLastClickTime] = React.useState(Date.now());
+  const startTime = React.useRef(Date.now());
 
+  console.log("start time in page is", startTime)
+  console.log("last click time is", lastClickTime);
   useEffect(() => {
     // Reset selected button index whenever the component is rendered
     console.log("resetting real attempt");
     setRealAttempt(false);
   }, [content['Page Number']]);
-  
   const timerHandler = () => {
     const currentTime = Date.now();
     if (lastClickTime !== null) {
@@ -36,6 +38,68 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
     setLastClickTime(currentTime);
   }
 
+  const handleAnswerChecked = (isCorrect, totalErrors, totalTime) => {
+    let points = 0;
+    console.log("handling, we have selected answer as", selectedAnswer);
+    const task = content['Task'] ? content['Task'][0]['content'] : "";
+    const pageTitle = content['Page Title'][0]['content'];
+    if (task === "Simple Attention") {
+      if (totalErrors === 0) {
+        points = 2;
+      }
+    }
+    else if (task === "Executive Mini-trails B"  || task === "Visuospatial Mini-trails A") {
+      if (connectDotsError === 0) {
+        points = 1;
+      }
+    }
+    else if (task === "Visuospatial Image Combos") {
+      if (totalErrors === 0) {
+        points = 1;
+      }
+    }
+    else if (task === "Orientation" || task === "Memory Incidental") {
+      if (isCorrect) {
+        points = 1;
+      }
+    }
+    else if (task === "Math") {
+      if (pageTitle === "Math 1") {
+        if (isCorrect) {
+          points = 1;
+        }
+      }
+      else if (pageTitle === "Math 2") {
+        if (isCorrect) {
+          points = 2;
+        }
+      }
+    }
+    else if (task === "Memory Five Words") {
+      const sortedSelectedWords = selectedAnswer.join().split(',').map(word => word.trim()).sort();
+      const sortedCorrectAnswers = correctAnswer.split(',').map(word => word.trim()).sort();
+    
+      // Count the matching elements
+      let matchCount = 0;
+      sortedSelectedWords.forEach(word => {
+        if (sortedCorrectAnswers.includes(word)) {
+          matchCount++;
+        }
+      });
+      console.log("for the five words, we had", matchCount, "correct");
+      points = matchCount;
+    }
+    onAnswerChecked(task, pageTitle, isCorrect, totalErrors + connectDotsError, totalTime, points);
+  };
+
+  const handleClickConnectTheBox = (word, totalErrors) => {
+    timerHandler();
+    console.log('Selected word:', word);
+    console.log("total errors is", totalErrors);
+    setConnectDotsError(totalErrors);
+    setSelectedAnswer(word);
+    setError(false);
+  }
   const handleClick = (word) => {
     timerHandler();
     console.log('Selected word:', word);
@@ -235,6 +299,14 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
   // console.log("the rendered error messages are", renderedErrorMessages);
   // console.log("error MEssage array!!", errorMessageArray);
   // console.log("rendered style content of error pop ups", renderStyledContent(content['Error Pop Ups']));
+
+  // const [pageStatus, setPageStatus] = React.useState([]);
+    
+  // const handleAnswerStatus = (isCorrect) => {
+  //     const pageTitle = content['Page Title'][0]['content'];
+  //     setPageStatus([...pageStatus, { pageTitle, isCorrect }]);
+  // };
+  // console.log("page status is", pageStatus);
   return (
     <div>
       {/* <h1>Render Page</h1> */}
@@ -499,7 +571,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
             <ConnectTheBoxes 
               characters={characters}
               positions={positions}
-              onClick={handleClick}
+              onClick={handleClickConnectTheBox}
               pageNumber={content['Page Number'][0]['content']}
             /></>
             
@@ -516,6 +588,8 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
               selectedAnswer={selectedAnswer}
               timeHandler={timerHandler}
               realAttempt={realAttempt}
+              startTime={startTime.current}
+              onAnswerChecked={handleAnswerChecked}
               errorMessage={content['Error Pop Ups'] ? renderedErrorMessages : ""}
               error={error}
               setError={setError}
