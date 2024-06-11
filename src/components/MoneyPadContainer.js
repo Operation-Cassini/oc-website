@@ -11,7 +11,7 @@ const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, timeHandl
     setSelectedNumbers('');
   }, [pageNumber]);
   const handleDelete = () => {
-    timeHandler();
+    // timeHandler();
     console.log("here!")
     if (selectedNumbers.length > 0) {
         const updatedNumbers = selectedNumbers.slice(0, selectedNumbers.length - 1);
@@ -19,6 +19,9 @@ const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, timeHandl
         setSelectedNumbers(updatedNumbers);
         onClick(updatedNumbers);
       }
+    else {
+      timeHandler();
+    }
   };
   const handleButtonClick = (index) => {
       const selectedNumber = words[index];
@@ -29,6 +32,9 @@ const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, timeHandl
       if (updatedNumbers.length !== 3) {
         setSelectedNumbers(updatedNumbers);
         onClick(updatedNumbers);
+      }
+      else {
+        timeHandler();
       }
   };
   const containerStyle = {

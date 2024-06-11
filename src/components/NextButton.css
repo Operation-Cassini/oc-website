@@ -16,6 +16,7 @@
   font-weight: bold;
   bottom: 0;
   position: fixed;
+  /* z-index: 2; */
 }
 
 .error-flex {
@@ -25,6 +26,7 @@
   right: 1%;
   bottom: 0;
   z-index: 1;
+  margin-bottom: 50px;
 }
 
 .next-flex {

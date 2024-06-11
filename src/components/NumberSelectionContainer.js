@@ -12,7 +12,7 @@ const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, ti
     setSelectedNumbers('');
   }, [pageNumber]);
   const handleDelete = () => {
-    timeHandler();
+    // timeHandler();
     console.log("here!")
     if (selectedNumbers.length > 0) {
         const updatedNumbers = selectedNumbers.slice(0, selectedNumbers.length - 1);
@@ -20,6 +20,9 @@ const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, ti
         setSelectedNumbers(updatedNumbers);
         onClick(updatedNumbers);
       }
+    else {
+      timeHandler();
+    }
   };
   const handleButtonClick = (index) => {
       const selectedNumber = words[index];
@@ -30,6 +33,9 @@ const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, ti
       if (updatedNumbers.length !== 5) {
         setSelectedNumbers(updatedNumbers);
         onClick(updatedNumbers);
+      }
+      else {
+        timeHandler();
       }
   };
   const containerStyle = {
