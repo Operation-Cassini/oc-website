@@ -36,7 +36,7 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync",
-      "lastPushTimeStamp": "2024-06-11T04:26:33.057Z",
+      "lastPushTimeStamp": "2024-06-11T20:02:38.937Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-ocwebsite-staging-3f8f6-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiocwebsite"
