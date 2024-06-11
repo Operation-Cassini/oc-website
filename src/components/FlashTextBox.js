@@ -6,6 +6,7 @@ import './FlashTextBox.css';
 const FlashTextBoxes = ({ texts, nextPage }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showOverlay, setShowOverlay] = useState(false);
+  const [showText, setShowText] = useState(true);
   const [textBoxDimensions, setTextBoxDimensions] = useState({ width: 0, height: 0 });
   const [completedCycles, setCompletedCycles] = useState(0);
   const totalCycles = 1; // Set total cycles to 1 for one full round
@@ -14,30 +15,35 @@ const FlashTextBoxes = ({ texts, nextPage }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setShowOverlay(false); // Ensure overlay is hidden at the beginning of each cycle
+      setShowText(true);
+      setShowOverlay(false);
 
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1));
-        setShowOverlay(true); // Show overlay after 3 seconds
-      }, 1000); // Display each text box for 1 seconds
-
-      setTimeout(() => {
-        setShowOverlay(false); // Hide overlay after 2 seconds
-        if (currentIndex === texts.length - 1) {
-          // If it's the last text box in the cycle, increment completed cycles
-          setCompletedCycles((prevCycles) => prevCycles + 1);
-        }
-      }, 1000); // Display overlay for 1 seconds after text box
-
-      if (completedCycles === totalCycles) {
-        clearInterval(interval); // Stop the interval once all cycles are completed
-        navigate(nextPageNumber); 
+      if (currentIndex === texts.length - 1 && completedCycles + 1 === totalCycles) {
+        clearInterval(interval);
+        navigate(nextPageNumber);
       }
-    }, 3000); // Repeat the cycle every 8 seconds (3 seconds for text box + 5 seconds for overlay)
 
+      if (currentIndex === texts.length - 1) {
+        setCompletedCycles((prevCycles) => prevCycles + 1);
+      }
+
+      // Increment current index
+      setCurrentIndex((prevIndex) => (prevIndex + 1));
+  
+    }, 3000); // Repeat the cycle every 3 seconds
+  
+    // Clear interval on unmount
     return () => clearInterval(interval);
-  }, [texts, currentIndex, completedCycles, totalCycles]);
+  }, [texts, currentIndex, completedCycles, totalCycles, nextPageNumber, navigate]);
 
+  useEffect(() => {
+    // Hide text and overlay after 2 seconds
+    setTimeout(() => {
+      setShowText(false);
+      setShowOverlay(true);
+    }, 2000);
+  }, [currentIndex])
+  
   useEffect(() => {
     const updateTextBoxDimensions = () => {
       const textBox = document.querySelector('.flash-text-box');
@@ -55,7 +61,7 @@ const FlashTextBoxes = ({ texts, nextPage }) => {
     <div className="flash-text-boxes">
       {texts.map((text, index) => (
         <div key={index} className="flash-text-box">
-          <div className={index === currentIndex ? 'show' : 'hide'}>
+          <div className={index === currentIndex && showText ? 'show' : 'hide'}>
             <BlackBoarderTextBox id="box">{text}</BlackBoarderTextBox>
           </div>
           {index === currentIndex && showOverlay && (

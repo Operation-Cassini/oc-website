@@ -12,49 +12,76 @@ import NextButton from './components/NextButton';
 import NumberSelectionContainer from './components/NumberSelectionContainer';
 import StroopTextBox from './components/StroopTextBox';
 import WordSelectionContainer from './components/WordSelectionContainer';
+import TabcodeGenerator from './components/TabcodeGenerator';
 
-const Page = ({ content, correctAnswer, correctRequirement, onAnswerChecked, to }) => {
+const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChecked, handleTotalMoveForward, setMotorSpeedLog, to }) => {
+  console.log("looking at this content", content)
   const buttonDimensions = { width: '100px', height: '50px' };
   const [selectedAnswer, setSelectedAnswer] = React.useState("-");
   const [error, setError] = React.useState(false);
   const [realAttempt, setRealAttempt] = React.useState(false);
   const [connectDotsError, setConnectDotsError] = React.useState(0);
   const [lastClickTime, setLastClickTime] = React.useState(Date.now());
-  const startTime = React.useRef(Date.now());
+  // let startTime = Date.now();
+  const [startTime, setStartTime] = React.useState(Date.now());
+  let selectedAnswerRef = useRef(selectedAnswer);
+  // Create a ref to hold the latest content
+  // const contentRef = useRef(content);
+
+  // Update the ref whenever content changes
+  // useEffect(() => {
+  //   contentRef.current = content;
+  //   console.log("updating it to this", contentRef.current);
+  // }, [content]);
 
   console.log("start time in page is", startTime)
   console.log("last click time is", lastClickTime);
+
   useEffect(() => {
     // Reset selected button index whenever the component is rendered
     console.log("resetting real attempt");
     setRealAttempt(false);
+    setStartTime(Date.now());
+    // startTime = Date.now();
   }, [content['Page Number']]);
+
   const timerHandler = () => {
+    console.log("inside of timerHandler, content is", content);
     const currentTime = Date.now();
     if (lastClickTime !== null) {
       const timeDifference = currentTime - lastClickTime;
       console.log(`Time between clicks: ${timeDifference} ms`);
+      // STORE TIME DIFFERENCE IN ARRAY, THIS IS OUR MOTOR SPEED LOG.
+      const typeOfQuestion = content['Type of Question'] ? content['Type of Question'][0]['content'] : "";
+      console.log("the type of question is", typeOfQuestion);
+      console.log("the selectedAnswer is", selectedAnswer);
+      console.log("the selectedAnswerRef is", selectedAnswerRef);
+      if ((typeOfQuestion === "Number Pad" || typeOfQuestion === "Money Number Pad")) {
+        console.log("about to update motor speed log!")
+        setMotorSpeedLog(timeDifference);
+      }
     }
     setLastClickTime(currentTime);
   }
 
-  const handleAnswerChecked = (isCorrect, totalErrors, totalTime) => {
+  const handleAnswerChecked = (isCorrect, totalErrors, prematureError, totalTime) => {
     let points = 0;
     console.log("handling, we have selected answer as", selectedAnswer);
+    const numWords = content['Word Count'] ? parseInt(content['Word Count'][0]['content']) : 0;
     const task = content['Task'] ? content['Task'][0]['content'] : "";
     const pageTitle = content['Page Title'][0]['content'];
     if (task === "Simple Attention") {
-      if (totalErrors === 0) {
+      if (totalErrors === 0 && prematureError === 0) {
         points = 2;
       }
     }
     else if (task === "Executive Mini-trails B"  || task === "Visuospatial Mini-trails A") {
-      if (connectDotsError === 0) {
+      if (connectDotsError === 0 && isCorrect) {
         points = 1;
       }
     }
     else if (task === "Visuospatial Image Combos") {
-      if (totalErrors === 0) {
+      if (isCorrect) {
         points = 1;
       }
     }
@@ -76,32 +103,47 @@ const Page = ({ content, correctAnswer, correctRequirement, onAnswerChecked, to 
       }
     }
     else if (task === "Memory Five Words") {
-      const sortedSelectedWords = selectedAnswer.join().split(',').map(word => word.trim()).sort();
-      const sortedCorrectAnswers = correctAnswer.split(',').map(word => word.trim()).sort();
-    
-      // Count the matching elements
-      let matchCount = 0;
-      sortedSelectedWords.forEach(word => {
-        if (sortedCorrectAnswers.includes(word)) {
-          matchCount++;
+      if (selectedAnswer !== "-") {
+        const sortedSelectedWords = selectedAnswer.join().split(',').map(word => word.trim()).sort();
+        const sortedCorrectAnswers = correctAnswer.split(',').map(word => word.trim()).sort();
+      
+        // Count the matching elements
+        let matchCount = 0;
+        let notMatchCount = 0;
+        console.log("we have", sortedCorrectAnswers, sortedSelectedWords);
+        sortedSelectedWords.forEach(word => {
+          if (sortedCorrectAnswers.includes(word)) {
+            matchCount++;
+          }
+          else {
+            notMatchCount++;
+          }
+        });
+        console.log("for the five words, we had", matchCount, "correct");
+        console.log("for the five words, we had", notMatchCount, "incorrect");
+        points = 5 - notMatchCount;
+        if (points > matchCount) {
+          points = matchCount;
         }
-      });
-      console.log("for the five words, we had", matchCount, "correct");
-      points = matchCount;
+        else if (points < 0) {
+          points = 0;
+        }
+        // points = matchCount;
+      }
     }
-    onAnswerChecked(task, pageTitle, isCorrect, totalErrors + connectDotsError, totalTime, points);
+    onAnswerChecked(task, pageTitle, isCorrect, totalErrors + connectDotsError, prematureError, totalTime, points, numWords);
   };
 
   const handleClickConnectTheBox = (word, totalErrors) => {
-    timerHandler();
+    // timerHandler();
     console.log('Selected word:', word);
     console.log("total errors is", totalErrors);
     setConnectDotsError(totalErrors);
+    selectedAnswerRef.current = word;
     setSelectedAnswer(word);
     setError(false);
   }
   const handleClick = (word) => {
-    timerHandler();
     console.log('Selected word:', word);
     // Pass the selected word to the parent component
     if ((content['Type of Question'][0]['content'] === 'Word Selection') && correctRequirement === '-') {
@@ -140,8 +182,9 @@ const Page = ({ content, correctAnswer, correctRequirement, onAnswerChecked, to 
         console.log("real attempt setting to false");
       }
     }
-    
+    selectedAnswerRef.current = word;
     setSelectedAnswer(word);
+    timerHandler();
     setError(false);
   };
 
@@ -325,6 +368,15 @@ const Page = ({ content, correctAnswer, correctRequirement, onAnswerChecked, to 
           return (
             <><div className="top-padding"></div>
             <InstructionContainer instructions={prompts} /></>
+          );
+        })()
+      }
+      {content['Type of Question'][0]['content'] === 'Tabcode' &&
+        (() => {
+          return (
+            <div>
+              <TabcodeGenerator tabCode={tabCode}></TabcodeGenerator>
+            </div>
           );
         })()
       }
@@ -584,12 +636,14 @@ const Page = ({ content, correctAnswer, correctRequirement, onAnswerChecked, to 
           <div className="next-flex">
             <NextButton
               to={to}
+              content={content}
               correctAnswer={correctAnswer}
               selectedAnswer={selectedAnswer}
               timeHandler={timerHandler}
               realAttempt={realAttempt}
-              startTime={startTime.current}
+              startTime={startTime}
               onAnswerChecked={handleAnswerChecked}
+              handleTotalMoveForward={handleTotalMoveForward}
               errorMessage={content['Error Pop Ups'] ? renderedErrorMessages : ""}
               error={error}
               setError={setError}
