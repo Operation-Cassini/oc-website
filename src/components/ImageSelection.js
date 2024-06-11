@@ -42,7 +42,7 @@ const ImageSelection = ({ images, rows, cols, onClick, pageNumber }) => {
     gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
     gap: '2px', // Adjust the gap between images if needed
     justifyContent: 'flex-start', // Align images to the start to prevent extra space at the end
-    maxWidth: '30%', // Ensure the container doesn't overflow
+    maxWidth: '35%', // Ensure the container doesn't overflow
   };
 
   const generateImages = () => {

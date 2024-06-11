@@ -92,12 +92,13 @@ const ConnectTheBoxes = ({ characters, positions, onClick, pageNumber }) => {
               <button
                 key={index}
                 style={{
+                  borderWidth: '0.4vh',
                   position: 'absolute',
                   left: `${positions[index]?.x}%`,
                   top: `${positions[index]?.y}%`,
-                  width: '50px',
-                  height: '50px',
-                  fontSize: '18px',
+                  width: '3vw',
+                  height: '3vw',
+                  fontSize: '1.5vw',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',

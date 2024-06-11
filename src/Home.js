@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import saturn from './saturn.png';
 import Instruction from './components/Instruction';
-import TabcodeGenerator from './components/TabcodeGenerator';
+import saturn from './saturn.png';
 
 const Home = () => {
   const [showOverlay, setShowOverlay] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setShowOverlay(window.innerWidth < 800);
+      setShowOverlay((window.innerHeight > window.innerWidth) || (window.innerWidth < 800));
     };
 
     handleResize();
@@ -34,8 +33,8 @@ const Home = () => {
         </div>
       )}
 
-      <div className="SATURN-png">
-        <img src={saturn} alt="saturn logo" />
+      <div className="logo-container">
+        <img src={saturn} alt="saturn logo" className="saturn-image"/>
       </div>
       <div className="start-button-container">
         <Link to="/page/0">

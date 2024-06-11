@@ -103,7 +103,7 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
                 onClick={() => handleButtonClick(index)}
                 isSelected={selectedButtonIndex === index}
                 style={{
-                  width: longestWordWidth * 35 + 'px',
+                  width: longestWordWidth * 32 + 'px',
                   height: '50px',
                   ...styles
                 }}

@@ -10,12 +10,10 @@
   border: 2px solid black; 
   color: black; /* Set text color to black */
   padding: 3px 8px; /* Add padding */
-  font-size: 25px; /* Set font size */
+  font-size: 2vw; /* Set font size */
   cursor: pointer; /* Set cursor to pointer on hover */
   outline: none; /* Remove default focus outline */
   font-weight: bold;
-  margin-top: 10px;
-  margin-right: 10px;
   bottom: 0;
   position: fixed;
 }

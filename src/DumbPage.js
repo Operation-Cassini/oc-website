@@ -1,9 +1,9 @@
-import { default as React, useEffect, useRef } from 'react';
+import { default as React, useEffect } from 'react';
 import './App.css';
 import ConnectTheBoxes from './components/ConnectTheBoxes';
 import FlashTextBoxes from './components/FlashTextBox';
 import ImageSelection from './components/ImageSelection';
-import ImageSelectionSingle from './components/ImageSelectionSingle'
+import ImageSelectionSingle from './components/ImageSelectionSingle';
 import Instruction from './components/Instruction';
 import InstructionContainer from './components/InstructionContainer';
 import MoneyPadContainer from './components/MoneyPadContainer';
@@ -454,9 +454,9 @@ const Page = ({ content, correctAnswer, correctRequirement, onAnswerChecked, to 
                     margin: 'auto',    /* Center horizontally */
                     marginTop: 'auto', /* Center vertically */
                     marginBottom: 'auto',
-                    maxWidth: '220px',  /* Ensure the image fits within the container */
+                    maxWidth: '35vh',  /* Ensure the image fits within the container */
                     maxHeight: 'auto', 
-                    paddingBottom: '20px',
+                    paddingBottom: '10px',
                   }} 
                 />
               )}

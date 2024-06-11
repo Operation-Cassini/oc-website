@@ -38,7 +38,7 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
     display: 'grid',
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
     gridTemplateRows: `repeat(${rows}, auto)`,
-    gap: words.length > 21 ? '5px' : '5px',
+    gap: words.length > 21 ? '0.3vh' : '5px',
   };
   const styleMap = {
     underline: { textDecoration: 'underline' },
@@ -78,13 +78,14 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
                 onClick={() => handleButtonClick(index)}
                 isSelected = {selectedButtonIndices.includes(index)}
                 style={{
-                  width: '200px',
-                  height: '20px',
-                  fontSize: '22px',
-                  paddingTop: '12px',
-                  paddingBottom: '12px',
+                  width: '11vw',
+                  height: '0.4vh',
+                  fontSize: '1.7vw',
+                  paddingTop: '1.7vh',
+                  paddingBottom: '1.5vh',
                   paddingLeft: '0px',
                   paddingRight: '0px',
+                  borderWidth: '0.5vh',
                   ...styles
                 }}
               >

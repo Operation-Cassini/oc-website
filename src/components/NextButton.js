@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ErrorMessage from './ErrorMessage'; // Import ErrorMessage component
 import './NextButton.css'; // Import CSS file for styling
@@ -28,9 +28,9 @@ const NextButton = ({ to, correctAnswer, selectedAnswer, timeHandler, realAttemp
     const nextButtonContainer = document.querySelector('.next-flex');
     if (nextButtonContainer) {
       if (pageNumber % 2 === 1) {
-        nextButtonContainer.style.marginRight = '100px'; // Move slightly to the left
+        nextButtonContainer.style.marginRight = '120px'; // Move slightly to the left
       } else {
-        nextButtonContainer.style.marginRight = '200px'; // Default position
+        nextButtonContainer.style.marginRight = '220px'; // Default position
       }
     }
   };

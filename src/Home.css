@@ -1,44 +1,35 @@
-  body {
-    background-color: gray;
-    margin: 0; 
-    padding: 0; 
-    height: 100vh; 
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+.start-button-container {
+  position: absolute;
+  left: 55%;
+  top: 35%;
+}
 
-  .container2 {
-    display: flex;
-    justify-content: center; /* Align horizontally to the center */
-    align-items: center; /* Align vertically to the center */
-    height: 100vh;
-  }
+.logo-container {
+  position: absolute;
+  left: 40%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  height: 30vw; /* 30% of viewport width */
+}
 
-  .start-button-container {
-    position: absolute;
-    left: 63%;
-    top: 42%;
-  }
+.saturn-image {
+  width: auto; /* Make the image fill its container */
+  height: 100%; /* Maintain aspect ratio */
+}
 
-  .start-button{
-    background-color: white; /* Set background color to green */
-    border: 2px solid black; 
-    color: black; /* Set text color to black */
-    padding: 20px 20px; /* Add padding */
-    font-size: 40px; /* Set font size */
-    cursor: pointer; /* Set cursor to pointer on hover */
-    outline: none; /* Remove default focus outline */
-    font-weight: bold;
-    margin-top: 10px;
-    margin-right: 10px;
-    border-radius: 5px;
-  }
+
+.start-button {
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  padding: 2vh 2vw; /* Padding relative to viewport size */
+  font-size: 4vw; /* Font size relative to viewport height */
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+  border-radius: 5px;
+  aspect-ratio: 2/1;
+}
 
   .overlay {
     position: fixed;
@@ -52,7 +43,7 @@
     align-items: center;
     color: white;
     text-transform: uppercase;
-    font-size: 35px;
+    font-size: 4vw;
     font-weight: bold;
     z-index: 1000;
     text-align: center; /* Center text horizontally */
