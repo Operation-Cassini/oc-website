@@ -1,0 +1,220 @@
+type SaturnTestData @aws_iam @aws_api_key {
+  id: ID!
+  testScore: Int
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelSaturnTestDataConnection @aws_api_key @aws_iam {
+  items: [SaturnTestData]!
+  nextToken: String
+}
+
+input ModelSaturnTestDataFilterInput {
+  id: ModelIDInput
+  testScore: ModelIntInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelSaturnTestDataFilterInput]
+  or: [ModelSaturnTestDataFilterInput]
+  not: ModelSaturnTestDataFilterInput
+}
+
+type Query {
+  getSaturnTestData(id: ID!): SaturnTestData @aws_api_key @aws_iam
+  listSaturnTestData(filter: ModelSaturnTestDataFilterInput, limit: Int, nextToken: String): ModelSaturnTestDataConnection @aws_api_key @aws_iam
+}
+
+input ModelSaturnTestDataConditionInput {
+  testScore: ModelIntInput
+  and: [ModelSaturnTestDataConditionInput]
+  or: [ModelSaturnTestDataConditionInput]
+  not: ModelSaturnTestDataConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateSaturnTestDataInput {
+  id: ID
+  testScore: Int
+}
+
+input UpdateSaturnTestDataInput {
+  id: ID!
+  testScore: Int
+}
+
+input DeleteSaturnTestDataInput {
+  id: ID!
+}
+
+type Mutation {
+  createSaturnTestData(input: CreateSaturnTestDataInput!, condition: ModelSaturnTestDataConditionInput): SaturnTestData @aws_api_key @aws_iam
+  updateSaturnTestData(input: UpdateSaturnTestDataInput!, condition: ModelSaturnTestDataConditionInput): SaturnTestData @aws_api_key @aws_iam
+  deleteSaturnTestData(input: DeleteSaturnTestDataInput!, condition: ModelSaturnTestDataConditionInput): SaturnTestData @aws_api_key @aws_iam
+}
+
+input ModelSubscriptionSaturnTestDataFilterInput {
+  id: ModelSubscriptionIDInput
+  testScore: ModelSubscriptionIntInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionSaturnTestDataFilterInput]
+  or: [ModelSubscriptionSaturnTestDataFilterInput]
+}
+
+type Subscription {
+  onCreateSaturnTestData(filter: ModelSubscriptionSaturnTestDataFilterInput): SaturnTestData @aws_subscribe(mutations: ["createSaturnTestData"]) @aws_api_key @aws_iam
+  onUpdateSaturnTestData(filter: ModelSubscriptionSaturnTestDataFilterInput): SaturnTestData @aws_subscribe(mutations: ["updateSaturnTestData"]) @aws_api_key @aws_iam
+  onDeleteSaturnTestData(filter: ModelSubscriptionSaturnTestDataFilterInput): SaturnTestData @aws_subscribe(mutations: ["deleteSaturnTestData"]) @aws_api_key @aws_iam
+}

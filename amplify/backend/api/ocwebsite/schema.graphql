@@ -1,0 +1,4 @@
+type SaturnTestData @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  testScore: Int
+}
