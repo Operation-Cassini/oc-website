@@ -1,9 +1,9 @@
-import { default as React, useEffect } from 'react';
+import { default as React, useEffect, useRef } from 'react';
 import './App.css';
 import ConnectTheBoxes from './components/ConnectTheBoxes';
 import FlashTextBoxes from './components/FlashTextBox';
 import ImageSelection from './components/ImageSelection';
-import ImageSelectionSingle from './components/ImageSelectionSingle'
+import ImageSelectionSingle from './components/ImageSelectionSingle';
 import Instruction from './components/Instruction';
 import InstructionContainer from './components/InstructionContainer';
 import MoneyPadContainer from './components/MoneyPadContainer';
@@ -11,78 +11,145 @@ import MultiWordSelectionContainer from './components/MultiWordSelectionContaine
 import NextButton from './components/NextButton';
 import NumberSelectionContainer from './components/NumberSelectionContainer';
 import StroopTextBox from './components/StroopTextBox';
+import TabcodeGenerator from './components/TabcodeGenerator';
 import WordSelectionContainer from './components/WordSelectionContainer';
 
-const Page = ({ content, correctAnswer, correctRequirement, to }) => {
+const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChecked, handleTotalMoveForward, setMotorSpeedLog, to }) => {
   const buttonDimensions = { width: '100px', height: '50px' };
   const [selectedAnswer, setSelectedAnswer] = React.useState("-");
   const [error, setError] = React.useState(false);
   const [realAttempt, setRealAttempt] = React.useState(false);
-
+  const [connectDotsError, setConnectDotsError] = React.useState(0);
   const [lastClickTime, setLastClickTime] = React.useState(Date.now());
+  const [startTime, setStartTime] = React.useState(Date.now());
+  let selectedAnswerRef = useRef(selectedAnswer);
 
   useEffect(() => {
     // Reset selected button index whenever the component is rendered
-    console.log("resetting real attempt");
     setRealAttempt(false);
+    setStartTime(Date.now());
   }, [content['Page Number']]);
-  
+
   const timerHandler = () => {
     const currentTime = Date.now();
     if (lastClickTime !== null) {
       const timeDifference = currentTime - lastClickTime;
-      console.log(`Time between clicks: ${timeDifference} ms`);
+      const typeOfQuestion = content['Type of Question'] ? content['Type of Question'][0]['content'] : "";
+      if ((typeOfQuestion === "Number Pad" || typeOfQuestion === "Money Number Pad")) {
+        setMotorSpeedLog(timeDifference);
+      }
     }
     setLastClickTime(currentTime);
   }
 
+  const handleAnswerChecked = (isCorrect, totalErrors, prematureError, totalTime) => {
+    let points = 0;
+    const numWords = content['Word Count'] ? parseInt(content['Word Count'][0]['content']) : 0;
+    const task = content['Task'] ? content['Task'][0]['content'] : "";
+    const pageTitle = content['Page Title'][0]['content'];
+    if (task === "Simple Attention") {
+      if (totalErrors === 0 && prematureError === 0) {
+        points = 2;
+      }
+    }
+    else if (task === "Executive Mini-trails B"  || task === "Visuospatial Mini-trails A") {
+      if (connectDotsError === 0 && isCorrect) {
+        points = 1;
+      }
+    }
+    else if (task === "Visuospatial Image Combos") {
+      if (isCorrect) {
+        points = 1;
+      }
+    }
+    else if (task === "Orientation" || task === "Memory Incidental") {
+      if (isCorrect) {
+        points = 1;
+      }
+    }
+    else if (task === "Math") {
+      if (pageTitle === "Math 1") {
+        if (isCorrect) {
+          points = 1;
+        }
+      }
+      else if (pageTitle === "Math 2") {
+        if (isCorrect) {
+          points = 2;
+        }
+      }
+    }
+    else if (task === "Memory Five Words") {
+      if (selectedAnswer !== "-") {
+        const sortedSelectedWords = selectedAnswer.join().split(',').map(word => word.trim()).sort();
+        const sortedCorrectAnswers = correctAnswer.split(',').map(word => word.trim()).sort();
+      
+        // Count the matching elements
+        let matchCount = 0;
+        let notMatchCount = 0;
+        sortedSelectedWords.forEach(word => {
+          if (sortedCorrectAnswers.includes(word)) {
+            matchCount++;
+          }
+          else {
+            notMatchCount++;
+          }
+        });
+        points = 5 - notMatchCount;
+        if (points > matchCount) {
+          points = matchCount;
+        }
+        else if (points < 0) {
+          points = 0;
+        }
+      }
+    }
+    onAnswerChecked(task, pageTitle, isCorrect, totalErrors + connectDotsError, prematureError, totalTime, points, numWords);
+  };
+
+  const handleClickConnectTheBox = (word, totalErrors) => {
+    setConnectDotsError(totalErrors);
+    selectedAnswerRef.current = word;
+    setSelectedAnswer(word);
+    setError(false);
+  }
   const handleClick = (word) => {
-    timerHandler();
-    console.log('Selected word:', word);
     // Pass the selected word to the parent component
     if ((content['Type of Question'][0]['content'] === 'Word Selection') && correctRequirement === '-') {
       if(word !== "-") {
         setRealAttempt(true);
-        console.log("realattempt setting to true");
       }
       else {
         setRealAttempt(false);
-        console.log("realattempt setting to false");
       }
     }
     if ((content['Type of Question'][0]['content'] === 'Multi Word Selection' || content['Type of Question'][0]['content'] === 'Image Selection' || content['Type of Question'][0]['content'] === 'Image Selection Single') && correctRequirement === '-') {
       const correctAnswers = correctAnswer.split(',').map(word => word.trim());
-      // console.log("new correct answer is", correctAnswers);
-        // Sort both arrays to ensure the order doesn't matter
+      // Sort both arrays to ensure the order doesn't matter
       // Check if both arrays are equal
       if(word.length === correctAnswers.length) {
         setRealAttempt(true);
-        console.log("real attempt setting to true");
       }
       else {
         setRealAttempt(false);
-        console.log("real attempt setting to false");
       }
-    // }
 
     }
     if ((content['Type of Question'][0]['content'] === 'Number Pad' || content['Type of Question'][0]['content'] === 'Money Number Pad') && correctRequirement === '-') {
       if(word.length === correctAnswer.length) {
         setRealAttempt(true);
-        console.log("real attempt setting to true");
       }
       else {
         setRealAttempt(false);
-        console.log("real attempt setting to false");
       }
     }
-    
+    selectedAnswerRef.current = word;
     setSelectedAnswer(word);
+    timerHandler();
     setError(false);
   };
 
   function renderStyledContent(content) {
-    // console.log("the content is", content);
     if (!content || content.length === 0) return null;
   
     return content.map((part, index) => {
@@ -99,17 +166,14 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
       };
   
       const styles = part.style ? part.style.split(' ').map(s => styleMap[s]).reduce((acc, cur) => ({ ...acc, ...cur }), {}) : {};
-      // console.log("part.content is", part.content);
       if (part.content.includes("\\n")) {
         // Split content by "\n" and render each line separately
         const lines = part.content.split("\\n").map((line, lineIndex) => {
-          // console.log("line is", line);
           return (
           <React.Fragment key={lineIndex}>
             <span style={styles}>
               {line}
             </span>
-            {/* Add <br /> except for the last line */}
             {lineIndex !== part.content.split("\\n").length - 1 && <br />}
           </React.Fragment>
         );
@@ -214,16 +278,13 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
   let wordBank = flattenContent(content['Word Bank']);
   let wordsFlash = flattenContent(content['Words']);
   let numberSequence = flattenContent(content['Number Sequence'])
-  // console.log("content[error pop ups] is", content['Error Pop Ups']);
   let errorMessageArray = splitErrorMessages(content['Error Pop Ups']);
-  // console.log("error message array is", errorMessageArray);
   const renderedErrorMessages = [];
   errorMessageArray.forEach((error, index) => {
     // Skip rendering the first element if it contains the count of elements
     if (index !== 0) {
       const renderedError = renderStyledContent(error);
       renderedErrorMessages.push(renderedError);
-      // console.log("Rendered error message:", renderedError);
     }
     else if (errorMessageArray.length === 1){
       renderedErrorMessages.push(renderStyledContent(error));
@@ -232,18 +293,10 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
       renderedErrorMessages.push(error);
     }
   });
-  // console.log("the rendered error messages are", renderedErrorMessages);
-  // console.log("error MEssage array!!", errorMessageArray);
-  // console.log("rendered style content of error pop ups", renderStyledContent(content['Error Pop Ups']));
+
   return (
     <div>
-      {/* <h1>Render Page</h1> */}
-      {/* Render page title if it exists */}
-      {/* {renderStyledContent(content['Page Title']) && <h1>{renderStyledContent(content['Page Title'])}</h1>} */}
-
-      {/* Render paragraph if it exists */}
       {renderStyledContent(content['Prompt']) && <Instruction text={renderStyledContent(content['Prompt'])} className = "instruction-box" />}
-
       {content['Type of Question'][0]['content'] === 'Instruction' && 
         (() => {
           // Extract prompts based on keys
@@ -251,8 +304,17 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
           .filter(key => key.startsWith('Prompt'))
           .map(key => content[key]);
           return (
-            <><div className="top-padding"></div>
+            <><div className="extra-top-margin"></div>
             <InstructionContainer instructions={prompts} /></>
+          );
+        })()
+      }
+      {content['Type of Question'][0]['content'] === 'Tabcode' &&
+        (() => {
+          return (
+            <div>
+              <TabcodeGenerator tabCode={tabCode}></TabcodeGenerator>
+            </div>
           );
         })()
       }
@@ -284,7 +346,6 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
       }
       {content['Type of Question'][0]['content'] === 'Multi Word Selection' && 
         (() => {
-          // console.log(content['Error Pop Ups']);
           let s = wordBank
           let words = s.substring(1, s.length-1).split(",");
           words = words.map(str => str.trim());
@@ -382,9 +443,9 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
                     margin: 'auto',    /* Center horizontally */
                     marginTop: 'auto', /* Center vertically */
                     marginBottom: 'auto',
-                    maxWidth: '220px',  /* Ensure the image fits within the container */
+                    maxWidth: '35vh',  /* Ensure the image fits within the container */
                     maxHeight: 'auto', 
-                    paddingBottom: '20px',
+                    paddingBottom: '10px',
                   }} 
                 />
               )}
@@ -468,7 +529,6 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
           let s = wordsFlash;
           let words = s.substring(1, s.length-1).split(",");
           words = words.map(str => str.trim());
-          // console.log(content['Page Number'][0]['content']);
           return (
             <div>
               <FlashTextBoxes texts={words} nextPage={content['Page Number'][0]['content']}/>
@@ -499,7 +559,7 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
             <ConnectTheBoxes 
               characters={characters}
               positions={positions}
-              onClick={handleClick}
+              onClick={handleClickConnectTheBox}
               pageNumber={content['Page Number'][0]['content']}
             /></>
             
@@ -512,10 +572,14 @@ const Page = ({ content, correctAnswer, correctRequirement, to }) => {
           <div className="next-flex">
             <NextButton
               to={to}
+              content={content}
               correctAnswer={correctAnswer}
               selectedAnswer={selectedAnswer}
               timeHandler={timerHandler}
               realAttempt={realAttempt}
+              startTime={startTime}
+              onAnswerChecked={handleAnswerChecked}
+              handleTotalMoveForward={handleTotalMoveForward}
               errorMessage={content['Error Pop Ups'] ? renderedErrorMessages : ""}
               error={error}
               setError={setError}

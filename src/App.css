@@ -1,17 +1,16 @@
 body {
-    background-color: rgb(128, 128, 128);
-    margin: 0; 
-    padding: 0; 
-    height: 100vh; 
-  }
-  
-  .container {
-    display: flex;
-    justify-content: center; /* Align horizontally to the center */
-    align-items: center; /* Align vertically to the center */
-    height: 100vh;
-  }
+  background-color: rgb(128, 128, 128);
+  margin: 0; 
+  padding: 0; 
+}
 
-  .top-padding {
-    padding-top: 100px;
-  }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+}
+
+.extra-top-margin {
+  padding-top: 15vh;
+}

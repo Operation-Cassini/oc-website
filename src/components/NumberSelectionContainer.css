@@ -16,7 +16,6 @@
   padding: -100px;
 }
 
-
 .selected-numbers {
   position: absolute;
   display: flex;
@@ -35,14 +34,12 @@
 }
 
 .delete-button {
-  background-color: white; /* Set background color to white */
-  border: 2px solid black; /* Set border to black with 2px width */
-  color: #000000; /* Set text color to black */
-  font-size: 35px; /* Set font size */
-  cursor: pointer; /* Set cursor to pointer on hover */
-  outline: none; /* Remove default focus outline */
+  background-color: white; 
+  border: 0.15vw solid black; 
+  font-size: 35px; 
+  cursor: pointer; 
+  outline: none; 
   font-weight: bold;
-  border-radius: 10px;
   padding: 10px 80px;
   margin-left: 10px;
 }

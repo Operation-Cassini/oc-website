@@ -6,7 +6,6 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
   useEffect(() => {
     // Reset selected button index whenever the component is rendered
-    console.log("resetting")
     setSelectedButtonIndex(null);
   }, [pageNumber]);
 
@@ -22,24 +21,8 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
     }
   };
 
-  // const containerStyle = {
-  //   display: 'grid',
-  //   gridTemplateColumns: `repeat(${columns}, auto)`, 
-  //   gridTemplateRows: `repeat(${rows}, auto)`,
-  //   gap: '5px',
-  // };
   const longestWord = words.reduce((longest, current) => current.length > longest.length ? current : longest, "");
-  // console.log("longest word", longestWord);
   const longestWordWidth = longestWord.length;
-  // console.log("longest word width", longestWordWidth);
-
-  // const containerStyle = {
-  //   display: 'grid',
-  //   gridTemplateColumns: `repeat(auto-fit, minmax(${longestWordWidth}px, 1fr))`,
-  //   gridTemplateRows: `repeat(${rows}, auto)`,
-  //   gap: '5px',
-  // };
-
   const containerStyle = {
     display: 'grid',
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
@@ -103,7 +86,7 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
                 onClick={() => handleButtonClick(index)}
                 isSelected={selectedButtonIndex === index}
                 style={{
-                  width: longestWordWidth * 35 + 'px',
+                  width: longestWordWidth * 32 + 'px',
                   height: '50px',
                   ...styles
                 }}

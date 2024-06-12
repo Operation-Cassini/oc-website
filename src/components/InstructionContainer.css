@@ -1,5 +1,5 @@
 .instruction-container {
   display: flex;
-  flex-direction: column; /* Ensure instruction components stack vertically */
-  align-items: center; /* Center instruction components horizontally */
+  flex-direction: column;
+  align-items: center;
 }

@@ -1,20 +1,9 @@
 import './App.css';
 
-
 function parseStyledText(text) {
   const styledParts = [];
-  // const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|([^_*{}+~;]+))/g;
-  // const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|([^_*{}+~;]+)|([_*{}+~]))/g;
-  // const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|-([^-]+)-|([^_*{}+~;-]+)|([_*{}+~;-]))/g;
-  // const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|`([^`]+)`|([^_*{}+~;`]+)|([_*{}+~;`]))/g;
-  // const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|`([^`]+)`|@([^@]+)@|([^_*{}+~;`@]+)|([_*{}+~;`@]))/g;
-  // const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|`([^`]+)`|@([^@]+)@|(\\n)|([^_*{}+~;`@\\n]+)|([_*{}+~;`@\\n]))/g;
-  // const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|`([^`]+)`|@([^@]+)@|(\\n)|([^_*{}+~;`@\\n]+)|([_*{}+~;`@\\n]))/g;
   const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|`([^`]+)`|@([^@]+)@|([^_*{}+~;`@]+)|([_*{}+~;`@]))/g;
-  // const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|`([^`]+)`|(\^([^_^]+)\^)|([^_*{}+~;^]+)|([_*{}+~;^]))/g;
 
-
-  // Check if the text contains a semicolon
   if (text.includes(';')) {
     // Split the text by semicolon
     const parts = text.split(';');
@@ -32,7 +21,6 @@ function parseStyledText(text) {
         styledParts.push(...parsedParts); // Concatenate the parsed parts
       }
       // Add a marker for the end of the message
-      // styledParts.push({ boundary: 'end' });
     });
   } else {
     // Process the text using the regex pattern
@@ -93,7 +81,6 @@ function ParseInputFile(fileContent) {
   if (Object.keys(currentPageData).length > 0) {
     pages.push({ ...currentPageData });
   }
-  console.log("pages is", pages);
   return pages;
 }
 
@@ -104,8 +91,9 @@ const ParseMeanSDFile = (input) => {
   lines.forEach(line => {
     const [key, value] = line.split(' = ').map(item => item.trim());
     if (key && value) {
-      const task = key.split('_').slice(1, -1).join('_').toLowerCase();
-      const stat = key.split('_').pop().toLowerCase();
+      let parts = key.split('_');
+      let task = parts.slice(0, -1).map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '); // Capitalize each word and join
+      let stat = parts[parts.length - 1]; // The last part is the stat
 
       if (!data[task]) {
         data[task] = {};
@@ -114,7 +102,6 @@ const ParseMeanSDFile = (input) => {
       data[task][stat] = parseFloat(value);
     }
   });
-  console.log("the mean sd data", data);
   return data;
 };
 
@@ -143,8 +130,8 @@ const ParseSaturnScoringFile = (input) => {
   if (Object.keys(currentPoint).length > 0) {
     data.push(currentPoint); // Push last point to array
   }
-  console.log("saturn scoring file is", data);
   return data;
 };
 
 export { ParseInputFile, ParseMeanSDFile, ParseSaturnScoringFile };
+

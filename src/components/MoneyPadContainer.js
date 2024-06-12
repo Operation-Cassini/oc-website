@@ -7,28 +7,26 @@ const MoneyPadContainer = ({ rows, columns, buttonDimensions, onClick, timeHandl
 
   useEffect(() => {
     // Reset selected button index whenever the component is rendered
-    console.log("resetting")
     setSelectedNumbers('');
   }, [pageNumber]);
   const handleDelete = () => {
-    timeHandler();
-    console.log("here!")
     if (selectedNumbers.length > 0) {
         const updatedNumbers = selectedNumbers.slice(0, selectedNumbers.length - 1);
-        console.log(updatedNumbers);
         setSelectedNumbers(updatedNumbers);
         onClick(updatedNumbers);
       }
+    else {
+      timeHandler();
+    }
   };
   const handleButtonClick = (index) => {
       const selectedNumber = words[index];
-      console.log(selectedNumber);
-
       const updatedNumbers = selectedNumbers + selectedNumber;
-      console.log(updatedNumbers);
       if (updatedNumbers.length !== 3) {
         setSelectedNumbers(updatedNumbers);
         onClick(updatedNumbers);
+      } else {
+        timeHandler();
       }
   };
   const containerStyle = {

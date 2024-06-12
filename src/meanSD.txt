@@ -2,46 +2,49 @@
 ## <update for MAY-2020> <to 0-3-9>
 
 ## reading speed (ms per word)**
-PRIOR_read_speed_mean = 410
-PRIOR_read_speed_sd = 132
+Read_Speed_mean = 410
+Read_Speed_sd = 132
 
 ## motor speed (ms between button presses)**
-PRIOR_motor_speed_mean = 922
-PRIOR_motor_speed_sd = 296
+Motor_Speed_mean = 922
+Motor_Speed_sd = 296
 
 ## time on simple attention tasks (ms) [average of three]**
-PRIOR_ATTENTION_TIME_mean = 7311
-PRIOR_ATTENTION_TIME_sd = 2200
+Simple_Attention_mean = 7311
+Simple_Attention_sd = 2200
 
 ## time on stroop tasks (ms) [average of 12]**
-PRIOR_STROOP_TIME_mean = 3398
-PRIOR_STROOP_TIME_sd = 1233
+Executive_Stroop_mean = 3398
+Executive_Stroop_sd = 1233
 
 ## time on trails B (mini) (ms)**
-PRIOR_TRAILSB_TIME_mean = 24362
-PRIOR_TRAILSB_TIME_sd = 12653
+Executive_Mini-trails_B_mean = 24362
+Executive_Mini-trails_B_sd = 12653
 
 ## time on trails A (mini) (ms)**
-PRIOR_TRAILSA_TIME_mean = 10418
-PRIOR_TRAILSA_TIME_sd = 4186
+Visuospatial_Mini-trails_A_mean = 10418
+Visuospatial_Mini-trails_A_sd = 4186
 
 ## time on the four drawing tasks (note, this is with n=32)**
-PRIOR_VISUOSPATIAL_TIME_mean = 25102
-PRIOR_VISUOSPATIAL_TIME_sd = 12812
+Visuospatial_Image_Combos_mean = 25102
+Visuospatial_Image_Combos_sd = 12812
 
 ## sum of time on the math tasks (total over two tasks)**
 
-PRIOR_MATH_TIME_mean = 31401
-PRIOR_MATH_TIME_sd = 15527
+Math_mean = 31401
+Math_sd = 15527
 
 ## time on orientation tasks (ms) [average of 4]**
-PRIOR_ORIENTATION_TIME_mean = 5588
-PRIOR_ORIENTATION_TIME_sd = 2232
+Orientation_mean = 5588
+Orientation_sd = 2232
 
 ## time on incidental memory tasks (ms) [average of 3]**
-PRIOR_INCIDENTAL_TIME_mean = 10178
-PRIOR_INCIDENTAL_TIME_sd = 4860
+Memory_Incidental_mean = 10178
+Memory_Incidental_sd = 4860
 
 ## time on studied 5 words recall task (ms)**
-PRIOR_STUDIED_TIME_mean = 65966
-PRIOR_STUDIED_TIME_sd = 57959
+Memory_Five_Words_mean = 65966
+Memory_Five_Words_sd = 57959
+
+
+

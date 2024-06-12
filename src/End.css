@@ -1,18 +1,15 @@
 .end-message {
     background-color: white;
-    border: 5px solid black;
+    border: 0.5vw solid black;
     color: black;
-    width: 80%;
-    padding: 30px;
-    font-size: 60px;
-    cursor: pointer;
-    outline: none;
+    font-size: 4vw;
     font-weight: bold;
     text-align: center;
-    border-radius: 60px;
-
+    border-radius: 5vw;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 75%;
+    padding: 25px;
 }
