@@ -1,4 +1,18 @@
 type SaturnTestData @model @auth(rules: [{allow: public}]) {
   id: ID!
-  testScore: Int
+  totalPoints: Int
+  totalTime: Float
+  executiveMiniTrailsB: [Float]
+  executiveStroop: [Float]
+  math: [Float]
+  meanPredictiveZScores: [Float]
+  memoryFiveWords: [Float]
+  memoryIncidental: [Float]
+  motorSpeed: [Float]
+  orientation: [Float]
+  readingSpeed: [Float]
+  simpleAttention: [Float]
+  visuospatialImageCombos: [Float]
+  visuospatialMiniTrailsA: [Float]
 }
+ 

@@ -1,6 +1,19 @@
 type SaturnTestData @aws_iam @aws_api_key {
   id: ID!
-  testScore: Int
+  totalPoints: Int
+  totalTime: Float
+  executiveMiniTrailsB: [Float]
+  executiveStroop: [Float]
+  math: [Float]
+  meanPredictiveZScores: [Float]
+  memoryFiveWords: [Float]
+  memoryIncidental: [Float]
+  motorSpeed: [Float]
+  orientation: [Float]
+  readingSpeed: [Float]
+  simpleAttention: [Float]
+  visuospatialImageCombos: [Float]
+  visuospatialMiniTrailsA: [Float]
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
 }
@@ -162,7 +175,20 @@ type ModelSaturnTestDataConnection @aws_api_key @aws_iam {
 
 input ModelSaturnTestDataFilterInput {
   id: ModelIDInput
-  testScore: ModelIntInput
+  totalPoints: ModelIntInput
+  totalTime: ModelFloatInput
+  executiveMiniTrailsB: ModelFloatInput
+  executiveStroop: ModelFloatInput
+  math: ModelFloatInput
+  meanPredictiveZScores: ModelFloatInput
+  memoryFiveWords: ModelFloatInput
+  memoryIncidental: ModelFloatInput
+  motorSpeed: ModelFloatInput
+  orientation: ModelFloatInput
+  readingSpeed: ModelFloatInput
+  simpleAttention: ModelFloatInput
+  visuospatialImageCombos: ModelFloatInput
+  visuospatialMiniTrailsA: ModelFloatInput
   createdAt: ModelStringInput
   updatedAt: ModelStringInput
   and: [ModelSaturnTestDataFilterInput]
@@ -176,7 +202,20 @@ type Query {
 }
 
 input ModelSaturnTestDataConditionInput {
-  testScore: ModelIntInput
+  totalPoints: ModelIntInput
+  totalTime: ModelFloatInput
+  executiveMiniTrailsB: ModelFloatInput
+  executiveStroop: ModelFloatInput
+  math: ModelFloatInput
+  meanPredictiveZScores: ModelFloatInput
+  memoryFiveWords: ModelFloatInput
+  memoryIncidental: ModelFloatInput
+  motorSpeed: ModelFloatInput
+  orientation: ModelFloatInput
+  readingSpeed: ModelFloatInput
+  simpleAttention: ModelFloatInput
+  visuospatialImageCombos: ModelFloatInput
+  visuospatialMiniTrailsA: ModelFloatInput
   and: [ModelSaturnTestDataConditionInput]
   or: [ModelSaturnTestDataConditionInput]
   not: ModelSaturnTestDataConditionInput
@@ -186,12 +225,38 @@ input ModelSaturnTestDataConditionInput {
 
 input CreateSaturnTestDataInput {
   id: ID
-  testScore: Int
+  totalPoints: Int
+  totalTime: Float
+  executiveMiniTrailsB: [Float]
+  executiveStroop: [Float]
+  math: [Float]
+  meanPredictiveZScores: [Float]
+  memoryFiveWords: [Float]
+  memoryIncidental: [Float]
+  motorSpeed: [Float]
+  orientation: [Float]
+  readingSpeed: [Float]
+  simpleAttention: [Float]
+  visuospatialImageCombos: [Float]
+  visuospatialMiniTrailsA: [Float]
 }
 
 input UpdateSaturnTestDataInput {
   id: ID!
-  testScore: Int
+  totalPoints: Int
+  totalTime: Float
+  executiveMiniTrailsB: [Float]
+  executiveStroop: [Float]
+  math: [Float]
+  meanPredictiveZScores: [Float]
+  memoryFiveWords: [Float]
+  memoryIncidental: [Float]
+  motorSpeed: [Float]
+  orientation: [Float]
+  readingSpeed: [Float]
+  simpleAttention: [Float]
+  visuospatialImageCombos: [Float]
+  visuospatialMiniTrailsA: [Float]
 }
 
 input DeleteSaturnTestDataInput {
@@ -206,7 +271,20 @@ type Mutation {
 
 input ModelSubscriptionSaturnTestDataFilterInput {
   id: ModelSubscriptionIDInput
-  testScore: ModelSubscriptionIntInput
+  totalPoints: ModelSubscriptionIntInput
+  totalTime: ModelSubscriptionFloatInput
+  executiveMiniTrailsB: ModelSubscriptionFloatInput
+  executiveStroop: ModelSubscriptionFloatInput
+  math: ModelSubscriptionFloatInput
+  meanPredictiveZScores: ModelSubscriptionFloatInput
+  memoryFiveWords: ModelSubscriptionFloatInput
+  memoryIncidental: ModelSubscriptionFloatInput
+  motorSpeed: ModelSubscriptionFloatInput
+  orientation: ModelSubscriptionFloatInput
+  readingSpeed: ModelSubscriptionFloatInput
+  simpleAttention: ModelSubscriptionFloatInput
+  visuospatialImageCombos: ModelSubscriptionFloatInput
+  visuospatialMiniTrailsA: ModelSubscriptionFloatInput
   createdAt: ModelSubscriptionStringInput
   updatedAt: ModelSubscriptionStringInput
   and: [ModelSubscriptionSaturnTestDataFilterInput]

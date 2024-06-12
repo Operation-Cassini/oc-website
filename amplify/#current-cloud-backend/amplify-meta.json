@@ -14,34 +14,34 @@
   },
   "api": {
     "ocwebsite": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "output": {
         "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ],
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 30,
               "description": "api key description"
             }
-          },
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "AWS_IAM"
-            }
-          ]
+          }
         },
         "GraphQLAPIIdOutput": "tnex6bhoofd7leshuqqc54etu4",
         "GraphQLAPIEndpointOutput": "https://44hryy5gxjclxjekd5ay6mm7xu.appsync-api.us-east-2.amazonaws.com/graphql",
         "GraphQLAPIKeyOutput": "da2-ngy7argauzdp7plz7yu4ji2rai"
       },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync",
+      "lastPushTimeStamp": "2024-06-12T04:45:31.386Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-ocwebsite-staging-3f8f6-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiocwebsite"
       },
-      "lastPushTimeStamp": "2024-06-06T11:53:20.486Z",
-      "lastPushDirHash": "3kgMJdG8o4dDemE1wrdrIi3VySU="
+      "lastPushDirHash": "8Orc5To7V46Cfqb+PW5p2PMJ6c0="
     }
   }
 }
