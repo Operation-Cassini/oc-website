@@ -12,103 +12,20 @@ import BlackBoarderTextBox from './components/BlackBoarderTextBox';
 import LandingPage from './LandingPage';
 
 // AWS API for Database
-import { API, generateClient } from "aws-amplify/api";
+import { generateClient } from "aws-amplify/api";
 import { createSaturnTestData, updateSaturnTestData, deleteSaturnTestData} from './graphql/mutations';
+import { getSaturnTestData, listSaturnTestData } from './graphql/queries';
 
 const client = generateClient();
 
-// const newSaturnTestData = await client.graphql({
-//   query: createSaturnTestData,
-//   variables: {
-//       input: {
-//   "totalPoints": 1020,
-//   "totalTime": 123.45,
-//   "executiveMiniTrailsB": [],
-//   "executiveStroop": [],
-//   "math": [],
-//   "meanPredictiveZScores": [],
-//   "memoryFiveWords": [],
-//   "memoryIncidental": [],
-//   "motorSpeed": [],
-//   "orientation": [],
-//   "readingSpeed": [],
-//   "simpleAttention": [],
-//   "visuospatialImageCombos": [],
-//   "visuospatialMiniTrailsA": []
-// }
-//   }
-// });
-// function createDatabaseEntry(client, createSaturnTestData, finalScores) {
-//   const promise = client.graphql({
-//     query: createSaturnTestData,
-//     variables: {
-//       input: { finalScores }
-//     }
-//   });
-
-//   promise.then(() => {
-//     // Handle successful response
-//     console.log("Data sent successfully");
-//   }).catch(error => {
-//     console.log(error);
-//     // If the error is because the request was cancelled you can confirm here.
-//     if (client.isCancelError(error)) {
-//       console.log(error.message); // "my message for cancellation"
-//       // handle user cancellation logic
-//     }
-//   });
-
-//   return promise;
-// }
-
-// async function createDatabaseEntry(client, createSaturnTestData, finalScores) {
-//   const promise = client.graphql({
-//     query: createSaturnTestData,
-//     variables: {
-//       input: { finalScores }
-//     }
-//   });
-
-//   try {
-//     console.log("Starting send");
-//     await promise;
-//     console.log("Finish send");
-//   } catch (error) {
-//     console.log(error);
-//     // If the error is because the request was cancelled you can confirm here.
-//     if (client.isCancelError(error)) {
-//       console.log(error.message); // "my message for cancellation"
-//       // handle user cancellation logic
-//     }
-//   }
-// }
-
-async function createDatabaseEntry(client, createSaturnTestData, finalScores) {
-  const input = {
-    id: 123456,
-    totalPoints: 44,
-    totalTime: 12.8,
-    executiveMiniTrailsB: [],
-    executiveStroop: [],
-    math: [],
-    meanPredictiveZScores: [],
-    memoryFiveWords: [],
-    memoryIncidental: [],
-    motorSpeed: [],
-    orientation: [],
-    readingSpeed: [],
-    simpleAttention: [],
-    visuospatialImageCombos: [],
-    visuospatialMiniTrailsA: []
-  };
-
+async function createDatabaseEntry(client, createSaturnTestData, finalResults) {
   // Print the input object
-  console.log("GraphQL Input:", input);
+  console.log("GraphQL Input:", finalResults);
 
   const promise = client.graphql({
     query: createSaturnTestData,
     variables: {
-      input: input
+      input: finalResults
     }
   });
 
@@ -118,17 +35,53 @@ async function createDatabaseEntry(client, createSaturnTestData, finalScores) {
     console.log("Finish send");
   } catch (error) {
     console.log(error);
-    // If the error is because the request was cancelled you can confirm here.
     if (client.isCancelError(error)) {
-      console.log(error.message); // "my message for cancellation"
-      // handle user cancellation logic
+      console.log(error.message);
     }
   }
 }
 
+function debounce(fn, delay) {
+  let timeoutId;
+  return function (...args) {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => fn(...args), delay);
+  };
+}
 
 const generateRandomNumber = () => {
   return Math.floor(Math.random() * 900000) + 100000;
+};
+
+const checkIfNumberExists = async (number) => {
+  const response = await client.graphql({
+    query: listSaturnTestData,
+    variables: {
+      filter: {
+        id: {
+          eq: number
+        }
+      }
+    }
+  });
+  console.log(response);
+  //response.data.listSaturnTestData.items.length > 0
+  return false;
+};
+
+const generateUniqueSixDigitCode = async () => {
+  let uniqueCode;
+  let isUnique = false;
+
+  while (!isUnique) {
+    uniqueCode = generateRandomNumber();
+    isUnique = true;
+    // (await checkIfNumberExists(uniqueCode))
+  }
+
+  return uniqueCode;
 };
 
 const TimerRedirect = ({ onTimerFinish, startTime }) => {
@@ -199,7 +152,7 @@ const App = () => {
   const motorSpeedLog = useRef([]);
   const startTime = useRef(Date.now());
 
-  const tabCode = useRef(generateRandomNumber());
+  const tabCode = useRef(generateRandomNumber()); //generateUniqueSixDigitCode(client)
   const updateMotorSpeedLog = (entry) => {
     motorSpeedLog.current = [...motorSpeedLog.current, entry];
   }
@@ -416,11 +369,30 @@ const App = () => {
       zscore: totalPredictiveTaskZScore/totalPreditiveTasks
     }
     console.log("Results:", results);
-    let finalResults = {};
+    const finalResults = {
+      id: (tabCode.current).toString(),
+      totalPoints: results["Total Points"] ? results["Total Points"].points : 0,
+      totalTime: results["Total Time"] ? results["Total Time"].time : 0,
+      executiveMiniTrailsB: results["Executive Mini-trails B"] ? [JSON.stringify(results["Executive Mini-trails B"])] : [],
+      executiveStroop: results["Executive Stroop"] ? [JSON.stringify(results["Executive Stroop"])] : [],
+      math: results["Math"] ? [JSON.stringify(results["Math"])] : [],
+      meanPredictiveZScores: results["Mean of Predictive Z Scores"] ? [results["Mean of Predictive Z Scores"].zscore] : [],
+      memoryFiveWords: results["Memory Five Words"] ? [JSON.stringify(results["Memory Five Words"])] : [],
+      memoryIncidental: results["Memory Incidental"] ? [JSON.stringify(results["Memory Incidental"])] : [],
+      motorSpeed: results["Motor Speed"] ? [JSON.stringify(results["Motor Speed"])] : [],
+      orientation: results["Orientation"] ? [JSON.stringify(results["Orientation"])] : [],
+      readingSpeed: results["Reading Speed"] ? [JSON.stringify(results["Reading Speed"])] : [],
+      simpleAttention: results["Simple Attention"] ? [JSON.stringify(results["Simple Attention"])] : [],
+      visuospatialImageCombos: results["Visuospatial Image Combos"] ? [JSON.stringify(results["Visuospatial Image Combos"])] : [],
+      visuospatialMiniTrailsA: results["Visuospatial Mini-trails A"] ? [JSON.stringify(results["Visuospatial Mini-trails A"])] : []
+    };
     
-    finalResults[tabCode.current] = results;
+    // finalResults[tabCode.current] = results;
     console.log("Final results:", finalResults);
-    createDatabaseEntry(client, createSaturnTestData, finalResults);
+    
+    const debouncedCreateDatabaseEntry = debounce(createDatabaseEntry, 300);
+    debouncedCreateDatabaseEntry(client, createSaturnTestData, finalResults);
+    // createDatabaseEntry(client, createSaturnTestData, finalResults);
     return finalResults;    
   };
   

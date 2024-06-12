@@ -5,7 +5,7 @@ type SaturnTestData @model @auth(rules: [{allow: public}]) {
   executiveMiniTrailsB: [AWSJSON]
   executiveStroop: [AWSJSON]
   math: [AWSJSON]
-  meanPredictiveZScores: [AWSJSON]
+  meanPredictiveZScores: [Float]
   memoryFiveWords: [AWSJSON]
   memoryIncidental: [AWSJSON]
   motorSpeed: [AWSJSON]

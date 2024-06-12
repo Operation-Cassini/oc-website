@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './LandingPage.css';
+import ErrorMessage from './components/ErrorMessage'; 
 import logo from './saturn.png'; // Assuming logo is in the same directory
+import { getSaturnTestData } from './graphql/queries';
+import { generateClient } from "aws-amplify/api";
+
+const client = generateClient();
 
 const LandingPage = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [searchResult, setSearchResult] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
@@ -13,6 +20,50 @@ const LandingPage = () => {
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = async () => {
+    if (searchQuery.length !== 6 || isNaN(searchQuery)) {
+      setErrorMessage('Please enter a valid 6-digit code.');
+      return;
+    }
+
+    try {
+      const response = await client.graphql({
+        query: getSaturnTestData,
+        variables: {
+          id: searchQuery,
+        },
+      });
+
+      if (response.data.getSaturnTestData) {
+        setSearchResult(response.data.getSaturnTestData);
+        setErrorMessage('');
+      } else {
+        console.log(response.data);
+        setErrorMessage('No data found for the entered code.');
+      }
+    } catch (error) {
+      console.log(error);
+      setErrorMessage('An error occurred while fetching the data.');
+    }
+  };
+
+  const renderSearchResult = () => {
+    if (!searchResult) return null;
+
+    const { totalPoints, totalTime, meanPredictiveZScores } = searchResult;
+    const formattedTotalTime = totalTime.toFixed(2);
+    const formattedZScores = meanPredictiveZScores.map(score => score.toFixed(2)).join(', ');
+
+    return (
+      <div className="search-result">
+        <h3>Test Results:</h3>
+        <p><strong>Total Points:</strong> {totalPoints}</p>
+        <p><strong>Total Time:</strong> {formattedTotalTime} minutes</p>
+        <p><strong>Mean Predictive Z Scores:</strong> {formattedZScores}</p>
+      </div>
+    );
   };
 
   return (
@@ -42,7 +93,13 @@ const LandingPage = () => {
               onChange={handleSearchChange}
               className="search-bar"
             />
+            <button onClick={handleSearchSubmit} className="search-button">Search</button>
           </div>
+          <div className='error-message-container'>
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
+          </div>
+          
+          {renderSearchResult()}
         </div>
       </div>
       <h2>Please select your preferred language.</h2>

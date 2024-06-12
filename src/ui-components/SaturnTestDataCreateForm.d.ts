@@ -27,7 +27,7 @@ export declare type SaturnTestDataCreateFormInputValues = {
     executiveMiniTrailsB?: string[];
     executiveStroop?: string[];
     math?: string[];
-    meanPredictiveZScores?: string[];
+    meanPredictiveZScores?: number[];
     memoryFiveWords?: string[];
     memoryIncidental?: string[];
     motorSpeed?: string[];
@@ -43,7 +43,7 @@ export declare type SaturnTestDataCreateFormValidationValues = {
     executiveMiniTrailsB?: ValidationFunction<string>;
     executiveStroop?: ValidationFunction<string>;
     math?: ValidationFunction<string>;
-    meanPredictiveZScores?: ValidationFunction<string>;
+    meanPredictiveZScores?: ValidationFunction<number>;
     memoryFiveWords?: ValidationFunction<string>;
     memoryIncidental?: ValidationFunction<string>;
     motorSpeed?: ValidationFunction<string>;
@@ -61,7 +61,7 @@ export declare type SaturnTestDataCreateFormOverridesProps = {
     executiveMiniTrailsB?: PrimitiveOverrideProps<TextAreaFieldProps>;
     executiveStroop?: PrimitiveOverrideProps<TextAreaFieldProps>;
     math?: PrimitiveOverrideProps<TextAreaFieldProps>;
-    meanPredictiveZScores?: PrimitiveOverrideProps<TextAreaFieldProps>;
+    meanPredictiveZScores?: PrimitiveOverrideProps<TextFieldProps>;
     memoryFiveWords?: PrimitiveOverrideProps<TextAreaFieldProps>;
     memoryIncidental?: PrimitiveOverrideProps<TextAreaFieldProps>;
     motorSpeed?: PrimitiveOverrideProps<TextAreaFieldProps>;

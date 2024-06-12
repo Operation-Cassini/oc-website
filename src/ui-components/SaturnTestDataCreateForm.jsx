@@ -320,7 +320,7 @@ export default function SaturnTestDataCreateForm(props) {
     executiveMiniTrailsB: [{ type: "JSON" }],
     executiveStroop: [{ type: "JSON" }],
     math: [{ type: "JSON" }],
-    meanPredictiveZScores: [{ type: "JSON" }],
+    meanPredictiveZScores: [],
     memoryFiveWords: [{ type: "JSON" }],
     memoryIncidental: [{ type: "JSON" }],
     motorSpeed: [{ type: "JSON" }],
@@ -733,13 +733,17 @@ export default function SaturnTestDataCreateForm(props) {
         inputFieldRef={meanPredictiveZScoresRef}
         defaultFieldValue={""}
       >
-        <TextAreaField
+        <TextField
           label="Mean predictive z scores"
           isRequired={false}
           isReadOnly={false}
+          type="number"
+          step="any"
           value={currentMeanPredictiveZScoresValue}
           onChange={(e) => {
-            let { value } = e.target;
+            let value = isNaN(parseFloat(e.target.value))
+              ? e.target.value
+              : parseFloat(e.target.value);
             if (errors.meanPredictiveZScores?.hasError) {
               runValidationTasks("meanPredictiveZScores", value);
             }
@@ -756,7 +760,7 @@ export default function SaturnTestDataCreateForm(props) {
           ref={meanPredictiveZScoresRef}
           labelHidden={true}
           {...getOverrideProps(overrides, "meanPredictiveZScores")}
-        ></TextAreaField>
+        ></TextField>
       </ArrayField>
       <ArrayField
         onChange={async (items) => {
