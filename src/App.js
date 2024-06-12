@@ -19,9 +19,6 @@ import { getSaturnTestData, listSaturnTestData } from './graphql/queries';
 const client = generateClient();
 
 async function createDatabaseEntry(client, createSaturnTestData, finalResults) {
-  // Print the input object
-  console.log("GraphQL Input:", finalResults);
-
   const promise = client.graphql({
     query: createSaturnTestData,
     variables: {
@@ -61,14 +58,12 @@ const checkIfNumberExists = async (number) => {
     variables: {
       filter: {
         id: {
-          eq: number
+          eq: number.toString()
         }
       }
     }
   });
-  console.log(response);
-  //response.data.listSaturnTestData.items.length > 0
-  return false;
+  return response.data.listSaturnTestData.items.length > 0;
 };
 
 const generateUniqueSixDigitCode = async () => {
@@ -77,15 +72,14 @@ const generateUniqueSixDigitCode = async () => {
 
   while (!isUnique) {
     uniqueCode = generateRandomNumber();
-    isUnique = true;
-    // (await checkIfNumberExists(uniqueCode))
+    isUnique = !(await checkIfNumberExists(uniqueCode));
   }
 
   return uniqueCode;
 };
 
 const TimerRedirect = ({ onTimerFinish, startTime }) => {
-  const [timeLeft, setTimeLeft] = useState(1000);
+  const [timeLeft, setTimeLeft] = useState(900);
   const [redirected, setRedirected] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -120,7 +114,7 @@ const TimerRedirect = ({ onTimerFinish, startTime }) => {
   useEffect(() => {
     if (location.pathname === "/page/4") {
       startTime.current = Date.now();
-      setTimeLeft(1000);
+      setTimeLeft(900);
       setRedirected(false);
     }
   }, [location.pathname]);
@@ -152,7 +146,6 @@ const App = () => {
   const motorSpeedLog = useRef([]);
   const startTime = useRef(Date.now());
 
-  const tabCode = useRef(generateRandomNumber()); //generateUniqueSixDigitCode(client)
   const updateMotorSpeedLog = (entry) => {
     motorSpeedLog.current = [...motorSpeedLog.current, entry];
   }
@@ -198,44 +191,54 @@ const App = () => {
     setTimerFinished(true);
   };
 
-  // Function to fetch and parse data
-  useEffect (() => {
-    // Fetch and read the input file
-    fetch(text)
-      .then(response => response.text())
-      .then(fileContent => {
-        // Parse the input file and set the state with the parsed data
-        const parsedPagesData = ParseInputFile(fileContent);
-        setPagesData(parsedPagesData);
+  const [tabCode, setTabCode] = useState(null);
 
-        const lastPageNum = parsedPagesData.length - 1;
-        setLastPageNumber(lastPageNum);
-      })
-      .catch(error => {
-        console.error('Error reading file:', error);
-      });
+  useEffect(() => {
+    // Function to fetch and parse data
+    const fetchData = async () => {
+      // Fetch and read the input file
+      fetch(text)
+        .then(response => response.text())
+        .then(fileContent => {
+          // Parse the input file and set the state with the parsed data
+          const parsedPagesData = ParseInputFile(fileContent);
+          setPagesData(parsedPagesData);
 
-    fetch(meanSDtext)
-      .then(response => response.text())
-      .then(fileContent => {
-        // Parse the input file and set the state with the parsed data
-        const parsedContents = ParseMeanSDFile(fileContent);
-        setMeanSDData(parsedContents);
-      })
-      .catch(error => {
-        console.error('Error reading file:', error);
-      });
+          const lastPageNum = parsedPagesData.length - 1;
+          setLastPageNumber(lastPageNum);
+        })
+        .catch(error => {
+          console.error('Error reading file:', error);
+        });
 
-    fetch(saturnScoringtext)
-      .then(response => response.text())
-      .then(fileContent => {
-        // Parse the input file and set the state with the parsed data
-        const parsedContents = ParseSaturnScoringFile(fileContent);
-        setSaturnScoringData(parsedContents);
-      })
-      .catch(error => {
-        console.error('Error reading file:', error);
-      });
+      fetch(meanSDtext)
+        .then(response => response.text())
+        .then(fileContent => {
+          // Parse the input file and set the state with the parsed data
+          const parsedContents = ParseMeanSDFile(fileContent);
+          setMeanSDData(parsedContents);
+        })
+        .catch(error => {
+          console.error('Error reading file:', error);
+        });
+
+      fetch(saturnScoringtext)
+        .then(response => response.text())
+        .then(fileContent => {
+          // Parse the input file and set the state with the parsed data
+          const parsedContents = ParseSaturnScoringFile(fileContent);
+          setSaturnScoringData(parsedContents);
+        })
+        .catch(error => {
+          console.error('Error reading file:', error);
+        });
+
+      // Generate a unique tab code
+      const uniqueCode = await generateUniqueSixDigitCode();
+      setTabCode(uniqueCode);
+    };
+
+    fetchData();
   }, []);
 
   const calculateScores = () => {
@@ -364,13 +367,12 @@ const App = () => {
       time: totalTime / 60000
     }
     
-    
     results["Mean of Predictive Z Scores"] = {
       zscore: totalPredictiveTaskZScore/totalPreditiveTasks
     }
-    console.log("Results:", results);
+
     const finalResults = {
-      id: (tabCode.current).toString(),
+      id: (tabCode).toString(),
       totalPoints: results["Total Points"] ? results["Total Points"].points : 0,
       totalTime: results["Total Time"] ? results["Total Time"].time : 0,
       executiveMiniTrailsB: results["Executive Mini-trails B"] ? [JSON.stringify(results["Executive Mini-trails B"])] : [],
@@ -387,155 +389,13 @@ const App = () => {
       visuospatialMiniTrailsA: results["Visuospatial Mini-trails A"] ? [JSON.stringify(results["Visuospatial Mini-trails A"])] : []
     };
     
-    // finalResults[tabCode.current] = results;
     console.log("Final results:", finalResults);
     
     const debouncedCreateDatabaseEntry = debounce(createDatabaseEntry, 300);
     debouncedCreateDatabaseEntry(client, createSaturnTestData, finalResults);
-    // createDatabaseEntry(client, createSaturnTestData, finalResults);
     return finalResults;    
   };
   
-  /*
-  const calculateScores = () => {
-    const currentTime = Date.now();
-    const tasks = Object.keys(pageStatus);
-    const results = {};
-    let totalScore = 0;
-    const predictiveTasks = ["Simple Attention", "Executive Stroop", "Math", "Orientation", "Memory Incidental"]
-    let totalPreditiveTasks = 0;
-    let totalPredictiveTaskZScore = 0;
-    tasks.forEach(task => {
-      let totalErrors = 0;
-      const pageTitles = Object.keys(pageStatus[task]);
-      const totalTimes = pageTitles.map(pageTitle => pageStatus[task][pageTitle].totalTime);
-      const totalTime = totalTimes.reduce((acc, curr) => acc + curr, 0);
-      const totalPoints = pageTitles.map(pageTitle => pageStatus[task][pageTitle].points);
-      let totalPoint = totalPoints.reduce((acc, curr) => acc + curr, 0);
-
-      const totalWords = pageTitles.map(pageTitle => pageStatus[task][pageTitle].numWords);
-      const READING_SPEED_LOG = [];
-
-      for (let i = 0; i < totalTimes.length; i++) {
-        const timeInSeconds = totalTimes[i] / 1000;
-        const wordCount = totalWords[i];
-        const readingSpeed = parseFloat((wordCount / timeInSeconds).toFixed(3));
-        READING_SPEED_LOG.push(readingSpeed);
-      }
-
-      const sortedReadingSpeeds = READING_SPEED_LOG.slice().sort((a, b) => a - b);
-
-      // Step 2: Determine if the array length is odd or even
-      const isOddLength = sortedReadingSpeeds.length % 2 !== 0;
-      const middleIndex = Math.floor(sortedReadingSpeeds.length / 2);
-      
-      // Step 3: Calculate the median
-      let median;
-      if (isOddLength) {
-        median = sortedReadingSpeeds[middleIndex];
-      } else {
-        median = (sortedReadingSpeeds[middleIndex - 1] + sortedReadingSpeeds[middleIndex]) / 2;
-      }
-      
-      const meanTotalTime = totalTime / totalTimes.length;
-      let sdData = 0;
-      let zScore;
-      if (task !== "Instruction") {
-        sdData = meanSDData[task];
-        zScore = (meanTotalTime - sdData.mean) / sdData.sd;
-      }
-      else {
-        sdData = meanSDData["Read Speed"] // this is for instructions
-        zScore = (median - sdData.mean) / sdData.sd;
-      }
-
-      // Calculate z-score for each page title within the task
-      if (task === "Executive Stroop") {
-        pageTitles.forEach(pageTitle => {
-          const pageData = pageStatus[task][pageTitle];
-          if (pageData.totalErrors > 0) {
-            totalErrors = totalErrors + pageData.totalErrors;
-          }
-        });
-        totalPoint = 3 - totalErrors  - (12 - pageTitles.length);
-        if (totalPoint < 0) {
-          totalPoint = 0;
-        }
-      }
-
-      if (task === "Instruction") {
-        task = "Reading Speed"
-      }
-      if (median !== 0 && task === "Reading Speed") {
-        results[task] = {
-          zscore: zScore,
-          "reading speed": median
-        };
-      }
-      else if (median !== 0) {
-        results[task] = {
-          zscore: zScore,
-          totalTime: totalTime/1000,
-          points: totalPoint,
-          "reading speed": median
-        };
-      }
-      else {
-        results[task] = {
-          zscore: zScore,
-          totalTime: totalTime/1000,
-          points: totalPoint,
-        };
-      }
-      totalScore = totalScore + totalPoint;
-      if (predictiveTasks.includes(task)) {
-        totalPredictiveTaskZScore = totalPredictiveTaskZScore + zScore;
-        totalPreditiveTasks++;
-      }
-    });
-
-    const sortedMotorSpeedLog = motorSpeedLog.current.slice().sort((a, b) => a - b);
-
-    // Step 2: Determine if the array length is odd or even
-    const isOddLength = sortedMotorSpeedLog.length % 2 !== 0;
-    const middleIndex = Math.floor(sortedMotorSpeedLog.length / 2);
-    
-    // Step 3: Calculate the median
-    let median;
-    if (isOddLength) {
-      median = sortedMotorSpeedLog[middleIndex];
-    } else {
-      median = (sortedMotorSpeedLog[middleIndex - 1] + sortedMotorSpeedLog[middleIndex]) / 2;
-    }
-    
-    let sdData = meanSDData["Motor Speed"] // this is for instructions
-    let zScore = (median - sdData.mean) / sdData.sd;
-
-    results["Motor Speed"] = {
-      zscore: zScore,
-      "motor speed": median
-    };
-
-    results["Total Points"] = {
-      points: totalScore
-    }
-    const totalTime = currentTime - startTime.current;
-    results["Total Time"] = {
-      time: totalTime / 60000
-    }
-
-
-    results["Mean of Predictive Z Scores"] = {
-      zscore: totalPredictiveTaskZScore/totalPreditiveTasks
-    }
-    console.log("Results:", results);
-    let finalResults = {};
-
-    finalResults[tabCode.current] = results;
-    console.log("Final results:", finalResults);
-    return finalResults;
-  };
-  */
   const DynamicPageRenderer = () => {
     // Extract the page number from the route parameters
     const { pageNumber } = useParams();
@@ -571,24 +431,6 @@ const App = () => {
       if (willGenerateLastPage) {
         // Navigate to the last page when willGenerateLastPage is true
         calculateScores();
-        // const finalScoresTest = {
-        //   id: tabCode.current, // Include the generated code here
-        //   totalPoints: 21,
-        //   totalTime: 12.0, // Total time in seconds
-        //   meanPredictiveZScores: 2.4,
-        //   executiveMiniTrailsB: [],
-        //   executiveStroop: [],
-        //   math: [],
-        //   memoryFiveWords: [],
-        //   memoryIncidental: [],
-        //   motorSpeed: [],
-        //   orientation: [],
-        //   readingSpeed: [],
-        //   simpleAttention: [],
-        //   visuospatialImageCombos: [],
-        //   visuospatialMiniTrailsA: [],
-        // };
-        // createDatabaseEntry(client, createSaturnTestData, finalScoresTest);
         navigate('/last');
       }
     }, [willGenerateLastPage, navigate]);
@@ -601,7 +443,7 @@ const App = () => {
     return (
       <div>
         <Page
-          tabCode={tabCode.current} 
+          tabCode={tabCode} 
           content={pageContent} 
           correctAnswer={correctAnswer} 
           correctRequirement={correctRequirement}
