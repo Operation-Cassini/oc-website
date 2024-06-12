@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  padding: 20px;
+  padding: 3vw;
   box-sizing: border-box;
 }
 
@@ -18,9 +18,10 @@
 }
 
 .logo {
-  width: 600px;
+  width: 35vw;
   height: auto;
-  margin-right: 20px;
+  margin-left: 15vw;
+  margin-right: 1vw;
 }
 
 .welcome-text {
@@ -30,11 +31,12 @@
 .welcome-text h1,
 .welcome-text h2 {
   text-align: left;
+  margin-top: 0px
 }
 
-.blurb {
+.info-box {
   text-align: left;
-  max-width: 600px;
+  max-width: 30vw;
   background-color: white;
   padding: 20px;
   border-radius: 5px;
@@ -48,8 +50,9 @@
 }
 
 .search-bar-container {
-  width: 50%;
+  width: 20vw;
   display: flex;
+  justify-content: center;
   margin: 20px 0;
 }
 
@@ -92,31 +95,4 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-}
-
-.error-message-container {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.error-message {
-  background-color: rgba(255, 0, 0, 0.85);
-  color: black;
-  font-size: 16;
-  padding: 10px;
-  border-radius: 5px;
-  max-width: 250px;
-  margin: 10px auto;
-  text-align: center;
-  font-weight: bold;
-}
-
-.search-result {
-  text-align: left;
-  max-width: 400px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
 }
