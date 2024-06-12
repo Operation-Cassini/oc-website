@@ -2,17 +2,17 @@ type SaturnTestData @model @auth(rules: [{allow: public}]) {
   id: ID!
   totalPoints: Int
   totalTime: Float
-  executiveMiniTrailsB: [Float]
-  executiveStroop: [Float]
-  math: [Float]
-  meanPredictiveZScores: [Float]
-  memoryFiveWords: [Float]
-  memoryIncidental: [Float]
-  motorSpeed: [Float]
-  orientation: [Float]
-  readingSpeed: [Float]
-  simpleAttention: [Float]
-  visuospatialImageCombos: [Float]
-  visuospatialMiniTrailsA: [Float]
+  executiveMiniTrailsB: [AWSJSON]
+  executiveStroop: [AWSJSON]
+  math: [AWSJSON]
+  meanPredictiveZScores: [AWSJSON]
+  memoryFiveWords: [AWSJSON]
+  memoryIncidental: [AWSJSON]
+  motorSpeed: [AWSJSON]
+  orientation: [AWSJSON]
+  readingSpeed: [AWSJSON]
+  simpleAttention: [AWSJSON]
+  visuospatialImageCombos: [AWSJSON]
+  visuospatialMiniTrailsA: [AWSJSON]
 }
  

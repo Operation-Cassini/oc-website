@@ -11,6 +11,122 @@ import saturnScoringtext from './saturnScoring.txt';
 import BlackBoarderTextBox from './components/BlackBoarderTextBox';
 import LandingPage from './LandingPage';
 
+// AWS API for Database
+import { API, generateClient } from "aws-amplify/api";
+import { createSaturnTestData, updateSaturnTestData, deleteSaturnTestData} from './graphql/mutations';
+
+const client = generateClient();
+
+// const newSaturnTestData = await client.graphql({
+//   query: createSaturnTestData,
+//   variables: {
+//       input: {
+//   "totalPoints": 1020,
+//   "totalTime": 123.45,
+//   "executiveMiniTrailsB": [],
+//   "executiveStroop": [],
+//   "math": [],
+//   "meanPredictiveZScores": [],
+//   "memoryFiveWords": [],
+//   "memoryIncidental": [],
+//   "motorSpeed": [],
+//   "orientation": [],
+//   "readingSpeed": [],
+//   "simpleAttention": [],
+//   "visuospatialImageCombos": [],
+//   "visuospatialMiniTrailsA": []
+// }
+//   }
+// });
+// function createDatabaseEntry(client, createSaturnTestData, finalScores) {
+//   const promise = client.graphql({
+//     query: createSaturnTestData,
+//     variables: {
+//       input: { finalScores }
+//     }
+//   });
+
+//   promise.then(() => {
+//     // Handle successful response
+//     console.log("Data sent successfully");
+//   }).catch(error => {
+//     console.log(error);
+//     // If the error is because the request was cancelled you can confirm here.
+//     if (client.isCancelError(error)) {
+//       console.log(error.message); // "my message for cancellation"
+//       // handle user cancellation logic
+//     }
+//   });
+
+//   return promise;
+// }
+
+// async function createDatabaseEntry(client, createSaturnTestData, finalScores) {
+//   const promise = client.graphql({
+//     query: createSaturnTestData,
+//     variables: {
+//       input: { finalScores }
+//     }
+//   });
+
+//   try {
+//     console.log("Starting send");
+//     await promise;
+//     console.log("Finish send");
+//   } catch (error) {
+//     console.log(error);
+//     // If the error is because the request was cancelled you can confirm here.
+//     if (client.isCancelError(error)) {
+//       console.log(error.message); // "my message for cancellation"
+//       // handle user cancellation logic
+//     }
+//   }
+// }
+
+async function createDatabaseEntry(client, createSaturnTestData, finalScores) {
+  const input = {
+    id: 123456,
+    totalPoints: 44,
+    totalTime: 12.8,
+    executiveMiniTrailsB: [],
+    executiveStroop: [],
+    math: [],
+    meanPredictiveZScores: [],
+    memoryFiveWords: [],
+    memoryIncidental: [],
+    motorSpeed: [],
+    orientation: [],
+    readingSpeed: [],
+    simpleAttention: [],
+    visuospatialImageCombos: [],
+    visuospatialMiniTrailsA: []
+  };
+
+  // Print the input object
+  console.log("GraphQL Input:", input);
+
+  const promise = client.graphql({
+    query: createSaturnTestData,
+    variables: {
+      input: input
+    }
+  });
+
+  try {
+    console.log("Starting send");
+    await promise;
+    console.log("Finish send");
+  } catch (error) {
+    console.log(error);
+    // If the error is because the request was cancelled you can confirm here.
+    if (client.isCancelError(error)) {
+      console.log(error.message); // "my message for cancellation"
+      // handle user cancellation logic
+    }
+  }
+}
+
+
 const generateRandomNumber = () => {
   return Math.floor(Math.random() * 900000) + 100000;
 };
@@ -174,6 +290,146 @@ const App = () => {
     const tasks = Object.keys(pageStatus);
     const results = {};
     let totalScore = 0;
+    const predictiveTasks = ["Simple Attention", "Executive Stroop", "Math", "Orientation", "Memory Incidental"];
+    let totalPreditiveTasks = 0;
+    let totalPredictiveTaskZScore = 0;
+    tasks.forEach(task => {
+      let totalErrors = 0;
+      const pageTitles = Object.keys(pageStatus[task]);
+      const totalTimes = pageTitles.map(pageTitle => pageStatus[task][pageTitle].totalTime);
+      const totalTime = totalTimes.reduce((acc, curr) => acc + curr, 0);
+      const totalPoints = pageTitles.map(pageTitle => pageStatus[task][pageTitle].points);
+      let totalPoint = totalPoints.reduce((acc, curr) => acc + curr, 0);
+    
+      const totalWords = pageTitles.map(pageTitle => pageStatus[task][pageTitle].numWords);
+      const READING_SPEED_LOG = [];
+    
+      for (let i = 0; i < totalTimes.length; i++) {
+        const timeInSeconds = totalTimes[i] / 1000;
+        const wordCount = totalWords[i];
+        const readingSpeed = parseFloat((wordCount / timeInSeconds).toFixed(3));
+        READING_SPEED_LOG.push(readingSpeed);
+      }
+    
+      const sortedReadingSpeeds = READING_SPEED_LOG.slice().sort((a, b) => a - b);
+    
+      // Step 2: Determine if the array length is odd or even
+      const isOddLength = sortedReadingSpeeds.length % 2 !== 0;
+      const middleIndex = Math.floor(sortedReadingSpeeds.length / 2);
+      
+      // Step 3: Calculate the median
+      let median;
+      if (isOddLength) {
+        median = sortedReadingSpeeds[middleIndex];
+      } else {
+        median = (sortedReadingSpeeds[middleIndex - 1] + sortedReadingSpeeds[middleIndex]) / 2;
+      }
+      
+      const meanTotalTime = totalTime / totalTimes.length;
+      let sdData = 0;
+      let zScore;
+      if (task !== "Instruction") {
+        sdData = meanSDData[task];
+        zScore = (meanTotalTime - sdData.mean) / sdData.sd;
+      } else {
+        sdData = meanSDData["Read Speed"] // this is for instructions
+        zScore = (median - sdData.mean) / sdData.sd;
+      }
+    
+      // Calculate z-score for each page title within the task
+      if (task === "Executive Stroop") {
+        pageTitles.forEach(pageTitle => {
+          const pageData = pageStatus[task][pageTitle];
+          if (pageData.totalErrors > 0) {
+            totalErrors = totalErrors + pageData.totalErrors;
+          }
+        });
+        totalPoint = 3 - totalErrors  - (12 - pageTitles.length);
+        if (totalPoint < 0) {
+          totalPoint = 0;
+        }
+      }
+    
+      if (task === "Instruction") {
+        task = "Reading Speed"
+      }
+      if (median !== 0 && task === "Reading Speed") {
+        results[task] = {
+          zscore: zScore,
+          "reading speed": median
+        };
+      }
+      else if (median !== 0) {
+        results[task] = {
+          zscore: zScore,
+          totalTime: totalTime/1000,
+          points: totalPoint,
+          "reading speed": median
+        };
+      }
+      else {
+        results[task] = {
+          zscore: zScore,
+          totalTime: totalTime/1000,
+          points: totalPoint,
+        };
+      }
+      totalScore = totalScore + totalPoint;
+      if (predictiveTasks.includes(task)) {
+        totalPredictiveTaskZScore = totalPredictiveTaskZScore + zScore;
+        totalPreditiveTasks++;
+      }
+    });
+    
+    const sortedMotorSpeedLog = motorSpeedLog.current.slice().sort((a, b) => a - b);
+    
+    // Step 2: Determine if the array length is odd or even
+    const isOddLength = sortedMotorSpeedLog.length % 2 !== 0;
+    const middleIndex = Math.floor(sortedMotorSpeedLog.length / 2);
+    
+    // Step 3: Calculate the median
+    let median;
+    if (isOddLength) {
+      median = sortedMotorSpeedLog[middleIndex];
+    } else {
+      median = (sortedMotorSpeedLog[middleIndex - 1] + sortedMotorSpeedLog[middleIndex]) / 2;
+    }
+    
+    let sdData = meanSDData["Motor Speed"] // this is for instructions
+    let zScore = (median - sdData.mean) / sdData.sd;
+    
+    results["Motor Speed"] = {
+      zscore: zScore,
+      "motor speed": median
+    };
+    
+    results["Total Points"] = {
+      points: totalScore
+    }
+    const totalTime = currentTime - startTime.current;
+    results["Total Time"] = {
+      time: totalTime / 60000
+    }
+    
+    
+    results["Mean of Predictive Z Scores"] = {
+      zscore: totalPredictiveTaskZScore/totalPreditiveTasks
+    }
+    console.log("Results:", results);
+    let finalResults = {};
+    
+    finalResults[tabCode.current] = results;
+    console.log("Final results:", finalResults);
+    createDatabaseEntry(client, createSaturnTestData, finalResults);
+    return finalResults;    
+  };
+  
+  /*
+  const calculateScores = () => {
+    const currentTime = Date.now();
+    const tasks = Object.keys(pageStatus);
+    const results = {};
+    let totalScore = 0;
     const predictiveTasks = ["Simple Attention", "Executive Stroop", "Math", "Orientation", "Memory Incidental"]
     let totalPreditiveTasks = 0;
     let totalPredictiveTaskZScore = 0;
@@ -307,7 +563,7 @@ const App = () => {
     console.log("Final results:", finalResults);
     return finalResults;
   };
-  
+  */
   const DynamicPageRenderer = () => {
     // Extract the page number from the route parameters
     const { pageNumber } = useParams();
@@ -343,6 +599,24 @@ const App = () => {
       if (willGenerateLastPage) {
         // Navigate to the last page when willGenerateLastPage is true
         calculateScores();
+        // const finalScoresTest = {
+        //   id: tabCode.current, // Include the generated code here
+        //   totalPoints: 21,
+        //   totalTime: 12.0, // Total time in seconds
+        //   meanPredictiveZScores: 2.4,
+        //   executiveMiniTrailsB: [],
+        //   executiveStroop: [],
+        //   math: [],
+        //   memoryFiveWords: [],
+        //   memoryIncidental: [],
+        //   motorSpeed: [],
+        //   orientation: [],
+        //   readingSpeed: [],
+        //   simpleAttention: [],
+        //   visuospatialImageCombos: [],
+        //   visuospatialMiniTrailsA: [],
+        // };
+        // createDatabaseEntry(client, createSaturnTestData, finalScoresTest);
         navigate('/last');
       }
     }, [willGenerateLastPage, navigate]);
