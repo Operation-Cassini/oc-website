@@ -1,0 +1,96 @@
+/* LandingPage.css */
+
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.top-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.logo {
+  width: 600px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.welcome-text {
+  flex: 2;
+}
+
+.welcome-text h1,
+.welcome-text h2 {
+  text-align: left;
+}
+
+.blurb {
+  text-align: left;
+  max-width: 600px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.show-more {
+  color: blue;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.search-bar-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.landing-button-language-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.landing-button {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.landing-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.bottom-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}

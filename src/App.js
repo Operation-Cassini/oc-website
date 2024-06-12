@@ -11,6 +11,7 @@ import saturnScoringtext from './saturnScoring.txt';
 
 import Screen1 from './Screen1';
 import BlackBoarderTextBox from './components/BlackBoarderTextBox';
+import LandingPage from './LandingPage';
 
 
 // import TimerRedirect from './TimerRedirect'
@@ -199,7 +200,8 @@ const App = () => {
     <Router>
       <TimerRedirect onTimerFinish={handleTimerFinish} />
       <Routes>
-        <Route path="/" element={<Home />} />
+      <Route path="/" element={<LandingPage />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/page/:pageNumber" element={<DynamicPageRenderer />} />
         <Route path="/last" element={<End />} />
         {timerFinished && <Route path="/screen1" element={<Screen1 />} />}
