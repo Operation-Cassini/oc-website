@@ -1,10 +1,9 @@
+import { generateClient } from "aws-amplify/api";
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './LandingPage.css';
-import ErrorMessage from './components/ErrorMessage'; 
-import logo from './saturn.png'; // Assuming logo is in the same directory
 import { getSaturnTestData } from './graphql/queries';
-import { generateClient } from "aws-amplify/api";
+import logo from './saturn.png'; // Assuming logo is in the same directory
 
 const client = generateClient();
 
@@ -72,7 +71,7 @@ const LandingPage = () => {
         <img src={logo} alt="Saturn Logo" className="logo" />
         <div className="welcome-text">
           <h1>WELCOME TO SATURN</h1>
-          <div className="blurb">
+          <div className="info-box">
             <p>
               SATURN is a free, public-domain cognitive screening test designed to uncover the risk of neurodegeneration. 
               {isExpanded && (
