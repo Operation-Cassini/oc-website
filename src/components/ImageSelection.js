@@ -4,17 +4,6 @@ import './ImageSelection.css';
 const ImageSelection = ({ images, rows, cols, onClick, pageNumber }) => {
   const [selectedImageIndices, setSelectedImageIndices] = useState([]);
 
-  // useEffect(() => {
-  //   // Reset selected image indices when the page number changes
-  //   setSelectedImageIndices([]);
-  // }, [pageNumber]);
-
-  // useEffect(() => {
-  //   // Call onClick with the updated selectedImageIndices
-  //   console.log("updated selectedImageIndices: ", selectedImageIndices);
-  //   onClick(selectedImageIndices);
-  // }, [selectedImageIndices, onClick]);
-
   const handleImageClick = (index) => {
     console.log("clicked on index", index);
     // Toggle the selection of the clicked image index
@@ -23,16 +12,11 @@ const ImageSelection = ({ images, rows, cols, onClick, pageNumber }) => {
         // If the index is already selected, remove it
         onClick(prevIndices.filter((idx) => idx !== index));
         return prevIndices.filter((idx) => idx !== index);
-      } 
-      else {
+      } else {
         // If the index is not selected, add it
         onClick([...prevIndices, index]);
         return [...prevIndices, index];
       } 
-      // else {
-      //   onClick([selectedImageIndices]);
-      //   return selectedImageIndices;
-      // }
     });
   };
 

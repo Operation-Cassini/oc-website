@@ -1,21 +1,13 @@
-/* Instruction.css */
-
 .instruction-box {
-  /* display: flex; */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content: center;
+  align-items: center;
   background-color: #ffffff;
   border-radius: 10px;
   margin: auto 90px 3.5vh 90px;
-  padding: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
-  box-sizing: border-box;
-  flex-direction: column; /* Stack children vertically */
-  text-transform: uppercase;
+  padding: 5px 10px 5px 10px;
   font-size: 2.8vw;
   font-weight: bold;
   color: #000000;
-  text-align: center; /* Center text horizontally */
-  word-wrap: break-word; /* Ensure long words break and wrap to the next line */
+  text-align: center; 
+  word-wrap: break-word; 
 }

@@ -1,13 +1,12 @@
 .multi-selection-container {
-  display: grid; /* Use grid layout */
-  grid-gap: 5px; /* Space between grid items */
-  justify-content: center; /* Center items horizontally */
-  width: 50%; /* Allow container to take full width of its parent */
+  display: grid; 
+  grid-gap: 5px; 
+  justify-content: center; 
+  width: 50%; 
 }
 
-/* Additional styles for responsiveness */
 @media (max-width: 768px) {
   .multi-selection-container {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust columns based on screen size */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
   }
 }

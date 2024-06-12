@@ -15,49 +15,27 @@ import TabcodeGenerator from './components/TabcodeGenerator';
 import WordSelectionContainer from './components/WordSelectionContainer';
 
 const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChecked, handleTotalMoveForward, setMotorSpeedLog, to }) => {
-  console.log("looking at this content", content)
   const buttonDimensions = { width: '100px', height: '50px' };
   const [selectedAnswer, setSelectedAnswer] = React.useState("-");
   const [error, setError] = React.useState(false);
   const [realAttempt, setRealAttempt] = React.useState(false);
   const [connectDotsError, setConnectDotsError] = React.useState(0);
   const [lastClickTime, setLastClickTime] = React.useState(Date.now());
-  // let startTime = Date.now();
   const [startTime, setStartTime] = React.useState(Date.now());
   let selectedAnswerRef = useRef(selectedAnswer);
-  // Create a ref to hold the latest content
-  // const contentRef = useRef(content);
-
-  // Update the ref whenever content changes
-  // useEffect(() => {
-  //   contentRef.current = content;
-  //   console.log("updating it to this", contentRef.current);
-  // }, [content]);
-
-  console.log("start time in page is", startTime)
-  console.log("last click time is", lastClickTime);
 
   useEffect(() => {
     // Reset selected button index whenever the component is rendered
-    console.log("resetting real attempt");
     setRealAttempt(false);
     setStartTime(Date.now());
-    // startTime = Date.now();
   }, [content['Page Number']]);
 
   const timerHandler = () => {
-    console.log("inside of timerHandler, content is", content);
     const currentTime = Date.now();
     if (lastClickTime !== null) {
       const timeDifference = currentTime - lastClickTime;
-      console.log(`Time between clicks: ${timeDifference} ms`);
-      // STORE TIME DIFFERENCE IN ARRAY, THIS IS OUR MOTOR SPEED LOG.
       const typeOfQuestion = content['Type of Question'] ? content['Type of Question'][0]['content'] : "";
-      console.log("the type of question is", typeOfQuestion);
-      console.log("the selectedAnswer is", selectedAnswer);
-      console.log("the selectedAnswerRef is", selectedAnswerRef);
       if ((typeOfQuestion === "Number Pad" || typeOfQuestion === "Money Number Pad")) {
-        console.log("about to update motor speed log!")
         setMotorSpeedLog(timeDifference);
       }
     }
@@ -66,7 +44,6 @@ const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChe
 
   const handleAnswerChecked = (isCorrect, totalErrors, prematureError, totalTime) => {
     let points = 0;
-    console.log("handling, we have selected answer as", selectedAnswer);
     const numWords = content['Word Count'] ? parseInt(content['Word Count'][0]['content']) : 0;
     const task = content['Task'] ? content['Task'][0]['content'] : "";
     const pageTitle = content['Page Title'][0]['content'];
@@ -110,7 +87,6 @@ const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChe
         // Count the matching elements
         let matchCount = 0;
         let notMatchCount = 0;
-        console.log("we have", sortedCorrectAnswers, sortedSelectedWords);
         sortedSelectedWords.forEach(word => {
           if (sortedCorrectAnswers.includes(word)) {
             matchCount++;
@@ -119,8 +95,6 @@ const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChe
             notMatchCount++;
           }
         });
-        console.log("for the five words, we had", matchCount, "correct");
-        console.log("for the five words, we had", notMatchCount, "incorrect");
         points = 5 - notMatchCount;
         if (points > matchCount) {
           points = matchCount;
@@ -128,58 +102,45 @@ const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChe
         else if (points < 0) {
           points = 0;
         }
-        // points = matchCount;
       }
     }
     onAnswerChecked(task, pageTitle, isCorrect, totalErrors + connectDotsError, prematureError, totalTime, points, numWords);
   };
 
   const handleClickConnectTheBox = (word, totalErrors) => {
-    // timerHandler();
-    console.log('Selected word:', word);
-    console.log("total errors is", totalErrors);
     setConnectDotsError(totalErrors);
     selectedAnswerRef.current = word;
     setSelectedAnswer(word);
     setError(false);
   }
   const handleClick = (word) => {
-    console.log('Selected word:', word);
     // Pass the selected word to the parent component
     if ((content['Type of Question'][0]['content'] === 'Word Selection') && correctRequirement === '-') {
       if(word !== "-") {
         setRealAttempt(true);
-        console.log("realattempt setting to true");
       }
       else {
         setRealAttempt(false);
-        console.log("realattempt setting to false");
       }
     }
     if ((content['Type of Question'][0]['content'] === 'Multi Word Selection' || content['Type of Question'][0]['content'] === 'Image Selection' || content['Type of Question'][0]['content'] === 'Image Selection Single') && correctRequirement === '-') {
       const correctAnswers = correctAnswer.split(',').map(word => word.trim());
-      // console.log("new correct answer is", correctAnswers);
-        // Sort both arrays to ensure the order doesn't matter
+      // Sort both arrays to ensure the order doesn't matter
       // Check if both arrays are equal
       if(word.length === correctAnswers.length) {
         setRealAttempt(true);
-        console.log("real attempt setting to true");
       }
       else {
         setRealAttempt(false);
-        console.log("real attempt setting to false");
       }
-    // }
 
     }
     if ((content['Type of Question'][0]['content'] === 'Number Pad' || content['Type of Question'][0]['content'] === 'Money Number Pad') && correctRequirement === '-') {
       if(word.length === correctAnswer.length) {
         setRealAttempt(true);
-        console.log("real attempt setting to true");
       }
       else {
         setRealAttempt(false);
-        console.log("real attempt setting to false");
       }
     }
     selectedAnswerRef.current = word;
@@ -189,7 +150,6 @@ const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChe
   };
 
   function renderStyledContent(content) {
-    // console.log("the content is", content);
     if (!content || content.length === 0) return null;
   
     return content.map((part, index) => {
@@ -206,17 +166,14 @@ const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChe
       };
   
       const styles = part.style ? part.style.split(' ').map(s => styleMap[s]).reduce((acc, cur) => ({ ...acc, ...cur }), {}) : {};
-      // console.log("part.content is", part.content);
       if (part.content.includes("\\n")) {
         // Split content by "\n" and render each line separately
         const lines = part.content.split("\\n").map((line, lineIndex) => {
-          // console.log("line is", line);
           return (
           <React.Fragment key={lineIndex}>
             <span style={styles}>
               {line}
             </span>
-            {/* Add <br /> except for the last line */}
             {lineIndex !== part.content.split("\\n").length - 1 && <br />}
           </React.Fragment>
         );
@@ -321,16 +278,13 @@ const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChe
   let wordBank = flattenContent(content['Word Bank']);
   let wordsFlash = flattenContent(content['Words']);
   let numberSequence = flattenContent(content['Number Sequence'])
-  // console.log("content[error pop ups] is", content['Error Pop Ups']);
   let errorMessageArray = splitErrorMessages(content['Error Pop Ups']);
-  // console.log("error message array is", errorMessageArray);
   const renderedErrorMessages = [];
   errorMessageArray.forEach((error, index) => {
     // Skip rendering the first element if it contains the count of elements
     if (index !== 0) {
       const renderedError = renderStyledContent(error);
       renderedErrorMessages.push(renderedError);
-      // console.log("Rendered error message:", renderedError);
     }
     else if (errorMessageArray.length === 1){
       renderedErrorMessages.push(renderStyledContent(error));
@@ -339,26 +293,10 @@ const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChe
       renderedErrorMessages.push(error);
     }
   });
-  // console.log("the rendered error messages are", renderedErrorMessages);
-  // console.log("error MEssage array!!", errorMessageArray);
-  // console.log("rendered style content of error pop ups", renderStyledContent(content['Error Pop Ups']));
 
-  // const [pageStatus, setPageStatus] = React.useState([]);
-    
-  // const handleAnswerStatus = (isCorrect) => {
-  //     const pageTitle = content['Page Title'][0]['content'];
-  //     setPageStatus([...pageStatus, { pageTitle, isCorrect }]);
-  // };
-  // console.log("page status is", pageStatus);
   return (
     <div>
-      {/* <h1>Render Page</h1> */}
-      {/* Render page title if it exists */}
-      {/* {renderStyledContent(content['Page Title']) && <h1>{renderStyledContent(content['Page Title'])}</h1>} */}
-
-      {/* Render paragraph if it exists */}
       {renderStyledContent(content['Prompt']) && <Instruction text={renderStyledContent(content['Prompt'])} className = "instruction-box" />}
-
       {content['Type of Question'][0]['content'] === 'Instruction' && 
         (() => {
           // Extract prompts based on keys
@@ -366,7 +304,7 @@ const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChe
           .filter(key => key.startsWith('Prompt'))
           .map(key => content[key]);
           return (
-            <><div className="top-padding"></div>
+            <><div className="extra-top-margin"></div>
             <InstructionContainer instructions={prompts} /></>
           );
         })()
@@ -408,7 +346,6 @@ const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChe
       }
       {content['Type of Question'][0]['content'] === 'Multi Word Selection' && 
         (() => {
-          // console.log(content['Error Pop Ups']);
           let s = wordBank
           let words = s.substring(1, s.length-1).split(",");
           words = words.map(str => str.trim());
@@ -592,7 +529,6 @@ const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChe
           let s = wordsFlash;
           let words = s.substring(1, s.length-1).split(",");
           words = words.map(str => str.trim());
-          // console.log(content['Page Number'][0]['content']);
           return (
             <div>
               <FlashTextBoxes texts={words} nextPage={content['Page Number'][0]['content']}/>

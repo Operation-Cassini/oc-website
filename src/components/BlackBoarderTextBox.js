@@ -1,5 +1,3 @@
-// BlackBoarderTextBox.js
-
 import React from 'react';
 import './BlackBoarderTextBox.css';
 

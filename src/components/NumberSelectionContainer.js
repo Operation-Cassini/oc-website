@@ -5,18 +5,13 @@ import './NumberSelectionContainer.css';
 const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, timeHandler, words, styledWords, pageNumber}) => {
   const [selectedNumbers, setSelectedNumbers] = useState('');
 
-  // console.log(pageNumber);
   useEffect(() => {
     // Reset selected button index whenever the component is rendered
-    console.log("resetting")
     setSelectedNumbers('');
   }, [pageNumber]);
   const handleDelete = () => {
-    // timeHandler();
-    console.log("here!")
     if (selectedNumbers.length > 0) {
         const updatedNumbers = selectedNumbers.slice(0, selectedNumbers.length - 1);
-        console.log("this is the new number",updatedNumbers);
         setSelectedNumbers(updatedNumbers);
         onClick(updatedNumbers);
       }
@@ -26,10 +21,7 @@ const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, ti
   };
   const handleButtonClick = (index) => {
       const selectedNumber = words[index];
-      console.log(selectedNumber);
-
       const updatedNumbers = selectedNumbers + selectedNumber;
-      console.log(updatedNumbers);
       if (updatedNumbers.length !== 5) {
         setSelectedNumbers(updatedNumbers);
         onClick(updatedNumbers);
@@ -84,7 +76,7 @@ const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, ti
               {word}
             </NumberSelectionButton>
           );
-      }
+        }
       }
     }
     return buttons;
@@ -109,7 +101,6 @@ const NumberSelectionContainer = ({ rows, columns, buttonDimensions, onClick, ti
       </div>
   </div>
   );
-  
 };
 
 export default NumberSelectionContainer;
