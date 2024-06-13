@@ -105,8 +105,8 @@ const LandingPage = () => {
       <div className="bottom-section">
         <div className="landing-button-language-container">
           <Link to="/Home" className="landing-button">English</Link>
-          <Link to="/Home" className="landing-button">Chinese</Link>
-          <Link to="/Home" className="landing-button">Vietnamese</Link>
+          <Link to="/Home" className="landing-button">Chinese (Coming soon)</Link>
+          <Link to="/Home" className="landing-button">Vietnamese (Coming soon)</Link>
         </div>
       </div>
     </div>
