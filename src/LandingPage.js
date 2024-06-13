@@ -18,6 +18,7 @@ const LandingPage = () => {
   };
 
   const handleSearchChange = (e) => {
+    setSearchResult(false);
     setSearchQuery(e.target.value);
   };
 
@@ -97,7 +98,6 @@ const LandingPage = () => {
           <div className='error-message-container'>
             {errorMessage && <p className="error-message">{errorMessage}</p>}
           </div>
-          
           {renderSearchResult()}
         </div>
       </div>

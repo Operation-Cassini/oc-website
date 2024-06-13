@@ -1,4 +1,17 @@
 {
+  "crissie": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ocwebsite-crissie-4fafb-authRole",
+      "UnauthRoleArn": "arn:aws:iam::058264342657:role/amplify-ocwebsite-crissie-4fafb-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::058264342657:role/amplify-ocwebsite-crissie-4fafb-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-ocwebsite-crissie-4fafb-deployment",
+      "UnauthRoleName": "amplify-ocwebsite-crissie-4fafb-unauthRole",
+      "StackName": "amplify-ocwebsite-crissie-4fafb",
+      "StackId": "arn:aws:cloudformation:us-east-2:058264342657:stack/amplify-ocwebsite-crissie-4fafb/47d69640-288d-11ef-96d3-06b754a4eae7",
+      "AmplifyAppId": "d1ab8cwyyn9rmr"
+    }
+  },
   "staging": {
     "awscloudformation": {
       "AuthRoleName": "amplify-ocwebsite-staging-3f8f6-authRole",
