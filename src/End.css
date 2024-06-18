@@ -2,14 +2,17 @@
     background-color: white;
     border: 0.5vw solid black;
     color: black;
-    font-size: 4vw;
+    font-size: 40px;
     font-weight: bold;
     text-align: center;
     border-radius: 5vw;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 75%;
-    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.end-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
