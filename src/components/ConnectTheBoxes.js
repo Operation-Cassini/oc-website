@@ -74,9 +74,7 @@ const ConnectTheBoxes = ({ characters, positions, onClick, pageNumber }) => {
     } else {
       setIncorrect(index);
       setErrorAttempts(errorAttempts + 1);
-      console.log("error attempts is", errorAttempts);
     }
-    console.log("num correct: " + numCorrect);
   };
 
   return (
