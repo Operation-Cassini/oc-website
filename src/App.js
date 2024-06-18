@@ -93,7 +93,6 @@ const TimerRedirect = ({ onTimerFinish, startTime }) => {
             setRedirected(true);
             return 0;
           } else {
-            console.log("Redirecting in", prevTimeLeft, "seconds");
             return prevTimeLeft - 1;
           }
         });
@@ -389,7 +388,6 @@ const App = () => {
       visuospatialMiniTrailsA: results["Visuospatial Mini-trails A"] ? [JSON.stringify(results["Visuospatial Mini-trails A"])] : []
     };
     
-    console.log("Final results:", finalResults);
     
     const debouncedCreateDatabaseEntry = debounce(createDatabaseEntry, 300);
     debouncedCreateDatabaseEntry(client, createSaturnTestData, finalResults);
@@ -463,7 +461,7 @@ const App = () => {
       <Route path="/" element={<LandingPage />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/page/:pageNumber" element={<DynamicPageRenderer />} />
-        <Route path="/last" element={<End />} />
+        <Route path="/last" element={<End tabCode={tabCode} />} />
         {timerFinished && <Route path="/last" element={<End />} />}
         {!timerFinished && <Route path="/last" element={<Navigate to="/" />} />}
       </Routes>
