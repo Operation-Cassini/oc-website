@@ -1,13 +1,24 @@
 import React from 'react';
 import './End.css';
 
-const End = () => {
+const End = ({ tabCode }) => {
+
   return (
-    <div className="end-message">
+    <div className="end-container">
+      <div className="end-message">
         <p>
-        YOU’RE DONE WITH THE TESTS!<br/><br/>
-        THANK YOU FOR YOUR TIME.
+          YOU’RE DONE WITH THE TESTS!<br/><br/>
+          THANK YOU FOR YOUR TIME.
         </p>
+      </div>
+
+      <div className="end-message">
+        <p>
+          SAVE THIS TABCODE TO VIEW YOUR RESULTS<br/>
+          {tabCode} <br/>
+          YOU CAN VIEW YOUR RESULTS ON <a href="https://www.saturn-test.com">saturn-test.com</a>.
+        </p>
+      </div>
     </div>
   );
 };
