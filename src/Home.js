@@ -9,7 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setShowOverlay((window.innerHeight > window.innerWidth) || (window.innerWidth < 800));
+      setShowOverlay((window.innerHeight > window.innerWidth) || (window.innerWidth < 900));
     };
 
     handleResize();

@@ -49,7 +49,7 @@ function debounce(fn, delay) {
 }
 
 const generateRandomNumber = () => {
-  return Math.floor(Math.random() * 900000) + 100000;
+  return Math.floor(Math.random() * 9000000) + 1000000;
 };
 
 const checkIfNumberExists = async (number) => {

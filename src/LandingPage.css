@@ -31,7 +31,7 @@
 .welcome-text h1,
 .welcome-text h2 {
   text-align: left;
-  margin-top: 0px
+  margin-top: 0px;
 }
 
 .info-box {
@@ -108,7 +108,7 @@
 .error-message {
   background-color: rgba(255, 0, 0, 0.85);
   color: black;
-  font-size: 16;
+  font-size: 16px;
   padding: 10px;
   border-radius: 5px;
   max-width: 250px;
@@ -122,7 +122,14 @@
   max-width: 400px;
   background-color: white;
   padding: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
   border-radius: 5px;
+}
+
+.scrollable-box {
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.category-data {
+  padding-left: 20px;
 }

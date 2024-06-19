@@ -23,8 +23,8 @@ const LandingPage = () => {
   };
 
   const handleSearchSubmit = async () => {
-    if (searchQuery.length !== 6 || isNaN(searchQuery)) {
-      setErrorMessage('Please enter a valid 6-digit code.');
+    if (searchQuery.length !== 7 || isNaN(searchQuery)) {
+      setErrorMessage('Please enter a valid 7-digit code.');
       return;
     }
 
@@ -40,28 +40,68 @@ const LandingPage = () => {
         setSearchResult(response.data.getSaturnTestData);
         setErrorMessage('');
       } else {
-        console.log(response.data);
         setErrorMessage('No data found for the entered code.');
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
       setErrorMessage('An error occurred while fetching the data.');
     }
+  };
+
+  const renderCategoryData = (categoryData) => {
+    return categoryData.map((item, index) => {
+      const parsedItem = JSON.parse(item);
+      return (
+        <div key={index} className="category-data">
+          {parsedItem.totalTime !== undefined && <p>Total Time: {parsedItem.totalTime}</p>}
+          {parsedItem.zscore !== undefined && <p>Z-Score: {parsedItem.zscore}</p>}
+          {parsedItem.points !== undefined && <p>Points: {parsedItem.points}</p>}
+          {parsedItem["motor speed"] && <p>Motor Speed: {parsedItem["motor speed"]}</p>}
+          {parsedItem["reading speed"] && <p>Reading Speed: {parsedItem["reading speed"]}</p>}
+        </div>
+      );
+    });
   };
 
   const renderSearchResult = () => {
     if (!searchResult) return null;
 
-    const { totalPoints, totalTime, meanPredictiveZScores } = searchResult;
-    const formattedTotalTime = totalTime.toFixed(2);
-    const formattedZScores = meanPredictiveZScores.map(score => score.toFixed(2)).join(', ');
+    const {
+      totalPoints,
+      totalTime,
+      createdAt,
+      executiveMiniTrailsB,
+      executiveStroop,
+      math,
+      meanPredictiveZScores,
+      memoryFiveWords,
+      memoryIncidental,
+      motorSpeed,
+      orientation,
+      readingSpeed,
+      simpleAttention,
+      visuospatialImageCombos,
+      visuospatialMiniTrailsA,
+    } = searchResult;
 
     return (
-      <div className="search-result">
+      <div className="search-result scrollable-box">
         <h3>Test Results:</h3>
-        <p><strong>Total Points:</strong> {totalPoints}</p>
-        <p><strong>Total Time:</strong> {formattedTotalTime} minutes</p>
-        <p><strong>Mean Predictive Z Scores:</strong> {formattedZScores}</p>
+        <p><strong>Total Points:</strong> {totalPoints} / 29</p>
+        <p><strong>Total Time:</strong> {totalTime.toFixed(2)} minutes</p>
+        <p><strong>Time Test Taken:</strong> {new Date(createdAt).toLocaleString()}</p>
+        <p><strong>Mean Predictive Z Scores:</strong> {meanPredictiveZScores.map(score => score.toFixed(2)).join(', ')}</p>
+        <div><strong>Executive Mini Trails B:</strong> {renderCategoryData(executiveMiniTrailsB)}</div>
+        <div><strong>Executive Stroop:</strong> {renderCategoryData(executiveStroop)}</div>
+        <div><strong>Math:</strong> {renderCategoryData(math)}</div>
+        <div><strong>Memory Five Words:</strong> {renderCategoryData(memoryFiveWords)}</div>
+        <div><strong>Memory Incidental:</strong> {renderCategoryData(memoryIncidental)}</div>
+        <div><strong>Motor Speed:</strong> {renderCategoryData(motorSpeed)}</div>
+        <div><strong>Orientation:</strong> {renderCategoryData(orientation)}</div>
+        <div><strong>Reading Speed:</strong> {renderCategoryData(readingSpeed)}</div>
+        <div><strong>Simple Attention:</strong> {renderCategoryData(simpleAttention)}</div>
+        <div><strong>Visuospatial Image Combos:</strong> {renderCategoryData(visuospatialImageCombos)}</div>
+        <div><strong>Visuospatial Mini Trails A:</strong> {renderCategoryData(visuospatialMiniTrailsA)}</div>
       </div>
     );
   };
@@ -88,7 +128,7 @@ const LandingPage = () => {
           <div className="search-bar-container">
             <input
               type="text"
-              placeholder="Enter Tabcode..."
+              placeholder="Enter 7-Digit Tabcode..."
               value={searchQuery}
               onChange={handleSearchChange}
               className="search-bar"
