@@ -88,20 +88,18 @@ const LandingPage = () => {
       <div className="search-result scrollable-box">
         <h3>Test Results:</h3>
         <p><strong>Total Points:</strong> {totalPoints} / 29</p>
-        <p><strong>Total Time:</strong> {totalTime.toFixed(2)} minutes</p>
-        <p><strong>Time Test Taken:</strong> {new Date(createdAt).toLocaleString()}</p>
-        <p><strong>Mean Predictive Z Scores:</strong> {meanPredictiveZScores.map(score => score.toFixed(2)).join(', ')}</p>
-        <div><strong>Executive Mini Trails B:</strong> {renderCategoryData(executiveMiniTrailsB)}</div>
-        <div><strong>Executive Stroop:</strong> {renderCategoryData(executiveStroop)}</div>
-        <div><strong>Math:</strong> {renderCategoryData(math)}</div>
+        <p><strong>Total Time:</strong> {totalTime.toFixed(1)} minutes</p>
+        <div><strong>Simple Attention:</strong> {renderCategoryData(simpleAttention)}</div>
+        <div><strong>Orientation:</strong> {renderCategoryData(orientation)}</div>
         <div><strong>Memory Five Words:</strong> {renderCategoryData(memoryFiveWords)}</div>
         <div><strong>Memory Incidental:</strong> {renderCategoryData(memoryIncidental)}</div>
-        <div><strong>Motor Speed:</strong> {renderCategoryData(motorSpeed)}</div>
-        <div><strong>Orientation:</strong> {renderCategoryData(orientation)}</div>
+        <div><strong>Math:</strong> {renderCategoryData(math)}</div>
+        <div><strong>Image Matching:</strong> {renderCategoryData(visuospatialImageCombos)}</div>
+        <div><strong>Stroop:</strong> {renderCategoryData(executiveStroop)}</div>
+        <div><strong>Mini Trails A:</strong> {renderCategoryData(visuospatialMiniTrailsA)}</div>
+        <div><strong>Mini Trails B:</strong> {renderCategoryData(executiveMiniTrailsB)}</div>
+        <p><strong>Time Test Taken:</strong> {new Date(createdAt).toLocaleString()}</p>
         <div><strong>Reading Speed:</strong> {renderCategoryData(readingSpeed)}</div>
-        <div><strong>Simple Attention:</strong> {renderCategoryData(simpleAttention)}</div>
-        <div><strong>Visuospatial Image Combos:</strong> {renderCategoryData(visuospatialImageCombos)}</div>
-        <div><strong>Visuospatial Mini Trails A:</strong> {renderCategoryData(visuospatialMiniTrailsA)}</div>
       </div>
     );
   };
@@ -114,7 +112,7 @@ const LandingPage = () => {
           <h1>WELCOME TO SATURN</h1>
           <div className="info-box">
             <p>
-              SATURN is a free, public-domain cognitive screening test designed to uncover the risk of neurodegeneration. 
+              SATURN is a free, public-domain cognitive screening test.
               {isExpanded && (
                 <span>
                   {' '}It is self-administered, automatically scored, and can be taken on inexpensive tablets. SATURN includes various tasks that assess orientation, memory, visuospatial function, and other cognitive abilities, making it an accessible tool for early detection of cognitive decline. For optimal results, it is recommended to take the test on a large screen, preferably a computer, and it is not recommended to take it on a phone.
