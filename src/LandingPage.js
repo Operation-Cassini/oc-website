@@ -69,19 +69,17 @@ const LandingPage = () => {
     const {
       totalPoints,
       totalTime,
-      createdAt,
-      executiveMiniTrailsB,
-      executiveStroop,
-      math,
-      meanPredictiveZScores,
+      simpleAttention,
+      orientation,
       memoryFiveWords,
       memoryIncidental,
-      motorSpeed,
-      orientation,
-      readingSpeed,
-      simpleAttention,
+      math,
       visuospatialImageCombos,
+      executiveStroop,
       visuospatialMiniTrailsA,
+      executiveMiniTrailsB,
+      createdAt,
+      readingSpeed,
     } = searchResult;
 
     return (
@@ -109,24 +107,32 @@ const LandingPage = () => {
       <div className="top-section">
         <img src={logo} alt="Saturn Logo" className="logo" />
         <div className="welcome-text">
-          <h1>WELCOME TO SATURN</h1>
+        <h1>A THINKING/MEMORY TEST</h1>
           <div className="info-box">
-            <p>
-              SATURN is a free, public-domain cognitive screening test.
+          <p>
+              Take this test on a tablet, desktop, or laptop computer. <br /><br />Select your language at the bottom of the screen. <br />
               {isExpanded && (
                 <span>
-                  {' '}It is self-administered, automatically scored, and can be taken on inexpensive tablets. SATURN includes various tasks that assess orientation, memory, visuospatial function, and other cognitive abilities, making it an accessible tool for early detection of cognitive decline. For optimal results, it is recommended to take the test on a large screen, preferably a computer, and it is not recommended to take it on a phone.
+                  {' '}
+                  <br />The original program is fully in the public domain, 
+                  and validated against the Montreal Cognitive Assessment (MoCA) (PMC7771179) 
+                  and the Mini Mental State Exam (MMSE) (DOI: 10.1212/WNL.0000000000203221). <br />
+                  <br />
+                  This version was inspired by Dr. Assecondi's browser-based version on the Prolific platform (PMC10533744), 
+                  and developed by Kayla Rose Hom, Eric Kho, Emily Loh, and Amanda Tu as a capstone project for ECS193AB @ University of California - Davis. 
+                  The developers, along with David Bissig, "defer to UC Davis on copyright matters because this was developed as part of a class assignment" (2024-JUN-12 ~5pm PST).  
+                  <br />This version does not ask what state someone is in, and simply awards that one point (out of 30).  <br />
                 </span>
               )}
             </p>
             <span className="show-more" onClick={toggleExpand}>
-              {isExpanded ? 'Show Less' : 'Show More'}
+              {isExpanded ? 'Show Less' : 'Show Techincal Info'}
             </span>
           </div>
           <div className="search-bar-container">
             <input
               type="text"
-              placeholder="Enter 7-Digit Tabcode..."
+              placeholder="Have a 7-Digit Code? Enter it here..."
               value={searchQuery}
               onChange={handleSearchChange}
               className="search-bar"
