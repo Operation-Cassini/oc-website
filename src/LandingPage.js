@@ -54,7 +54,6 @@ const LandingPage = () => {
       return (
         <div key={index} className="category-data">
           {parsedItem.totalTime !== undefined && <p>Total Time: {parsedItem.totalTime}</p>}
-          {parsedItem.zscore !== undefined && <p>Z-Score: {parsedItem.zscore}</p>}
           {parsedItem.points !== undefined && <p>Points: {parsedItem.points}</p>}
           {parsedItem["motor speed"] && <p>Motor Speed: {parsedItem["motor speed"]}</p>}
           {parsedItem["reading speed"] && <p>Reading Speed: {parsedItem["reading speed"]}</p>}
@@ -85,7 +84,7 @@ const LandingPage = () => {
     return (
       <div className="search-result scrollable-box">
         <h3>Test Results:</h3>
-        <p><strong>Total Points:</strong> {totalPoints} / 29</p>
+        <p><strong>Total Points:</strong> {totalPoints} +1 / 30</p>
         <p><strong>Total Time:</strong> {totalTime.toFixed(1)} minutes</p>
         <div><strong>Simple Attention:</strong> {renderCategoryData(simpleAttention)}</div>
         <div><strong>Orientation:</strong> {renderCategoryData(orientation)}</div>

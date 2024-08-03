@@ -281,7 +281,7 @@ Type of Question: Image Selection
 Answer Img: /ImageSelectionShapesJPGs/shapes-answer.webp
 File Path: [/ImageSelectionShapesJPGs/shapes1.webp, /ImageSelectionShapesJPGs/shapes2.webp, /ImageSelectionShapesJPGs/shapes3.webp, /ImageSelectionShapesJPGs/shapes4.webp, /ImageSelectionShapesJPGs/shapes5.webp, /ImageSelectionShapesJPGs/shapes6.webp]
 Dimensions: 2x3
-Correct Answer: 2, 4
+Correct Answer: 0, 4
 Correct Requirement: -
 
 Application Name: SATURN
