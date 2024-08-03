@@ -157,9 +157,9 @@ Task: Memory Incidental
 Prompt: EARLIER, WHAT SHAPE WERE YOU ASKED TO SELECT?
 Error Pop Ups: NOT YET!\nTO CONTINUE, YOU MUST PICK A SHAPE.\n\nIF YOU DON’T KNOW, MAKE A GUESS!
 Type of Question: Word Selection
-Word Bank: [{CIRCLE}, {RECTANGLE}, {SQUARE}, {TRIANGLE}]
+Word Bank: [CIRCLE, RECTANGLE, SQUARE, TRIANGLE]
 Dimensions: 4x1
-Correct Answer: {CIRCLE}
+Correct Answer: CIRCLE
 Correct Requirement: -
 
 Application Name: SATURN
