@@ -107,10 +107,10 @@ const LandingPage = () => {
       <div className="top-section">
         <img src={logo} alt="Saturn Logo" className="logo" />
         <div className="welcome-text">
-        <h1>A THINKING/MEMORY TEST</h1>
+        
           <div className="info-box">
           <p>
-              Take this test on a tablet, desktop, or laptop computer. <br /><br />Select your language at the bottom of the screen. <br />
+          Take this test on a tablet, desktop, or laptop computer. <br />
               {isExpanded && (
                 <span>
                   {' '}
@@ -122,14 +122,26 @@ const LandingPage = () => {
                   and developed by Kayla Rose Hom, Eric Kho, Emily Loh, and Amanda Tu as a capstone project for ECS193AB @ University of California - Davis. 
                   The developers, along with David Bissig, "defer to UC Davis on copyright matters because this was developed as part of a class assignment" (2024-JUN-12 ~5pm PST).  
                   <br />This version does not ask what state someone is in, and simply awards that one point (out of 30).  <br />
+                  
                 </span>
               )}
             </p>
             <span className="show-more" onClick={toggleExpand}>
-              {isExpanded ? 'Show Less' : 'Show Techincal Info'}
+              {isExpanded ? 'Show Less' : 'Show Technical Info'}
             </span>
           </div>
-          <div className="search-bar-container">
+          <h1>SELECT YOUR LANGUAGE</h1>
+          <div className="landing-button-language-container">
+          <Link to="/Home" className="landing-button">English</Link>
+          <Link to="/Home" className="landing-button">Chinese <br /> (Coming soon)</Link>
+          <Link to="/Home" className="landing-button">Vietnamese <br /> (Coming soon)</Link>
+          
+        </div>
+      </div>
+    </div>
+      
+      <div className="bottom-section">
+      <div className="search-bar-container">
             <input
               type="text"
               placeholder="Have a 7-Digit Code? Enter it here..."
@@ -145,15 +157,7 @@ const LandingPage = () => {
           {renderSearchResult()}
         </div>
       </div>
-      <h2>Please select your preferred language.</h2>
-      <div className="bottom-section">
-        <div className="landing-button-language-container">
-          <Link to="/Home" className="landing-button">English</Link>
-          <Link to="/Home" className="landing-button">Chinese (Coming soon)</Link>
-          <Link to="/Home" className="landing-button">Vietnamese (Coming soon)</Link>
-        </div>
-      </div>
-    </div>
+    
   );
 };
 
