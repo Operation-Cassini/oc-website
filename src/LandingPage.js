@@ -114,12 +114,12 @@ const LandingPage = () => {
                 <span>
                   {' '}
                   <br />
-                  This version does not ask what state someone is in, simply awards that point. <b>A perfect score is "29+1 / 30".</b>  <br />
+                  This version does not ask what state someone is in, simply awards that point (+1). <b>A perfect score is "29+1 / 30".</b>  <br />
                   <br />The original program is fully in the public domain, and validated against the Montreal Cognitive Assessment (MoCA) (PMC7771179). <br />
                   <br />
                   This version was inspired by Dr. Assecondi's browser-based version on the Prolific platform (PMC10533744), 
                   and developed by Kayla Rose Hom, Eric Kho, Emily Loh, & Amanda Tu as a capstone project for ECS193AB @ University of California - Davis. 
-                  The developers, along with David Bissig, "defer to UC Davis on copyright matters because this was developed as part of a class assignment" (2024-JUN-12 ~5pm PST).<br />  
+                  The developers, along with David Bissig, defer to UC Davis on copyright matters because this was developed as part of a class assignment.<br />  
                   
                 </span>
               )}
