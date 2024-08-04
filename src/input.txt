@@ -576,11 +576,3 @@ Position: [(50, 60), (70, 15), (85, 60), (65, 40), (75, 80), (25, 80), (20, 15),
 Correct Answer: 8
 Correct Requirement: Yes
 Error Pop Ups: NOT YET!\n\nYOU HAVE TO CONNECT ALL OF THE DOTS.
-
-Application Name: SATURN
-Page Title: Tabcode
-Page Number: 49
-Type of Question: Tabcode
-Correct Answer: -
-Correct Requirement: -
-Error Pop Ups: -

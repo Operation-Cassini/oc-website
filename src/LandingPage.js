@@ -132,7 +132,7 @@ const LandingPage = () => {
           <div className="landing-button-language-container">
           <Link to="/Home" className="landing-button">English</Link>
           <Link to="/Home" className="landing-button">Chinese <br /> (Coming soon)</Link>
-          <Link to="/Home" className="landing-button">Vietnamese <br /> (Coming soon)</Link>
+          <Link to="/Home" className="landing-button">Spanish <br /> (Coming soon)</Link>
           
         </div>
       </div>
