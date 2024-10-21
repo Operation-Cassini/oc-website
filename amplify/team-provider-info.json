@@ -1,4 +1,17 @@
 {
+  "allyson": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-saturnwebsite-allyson-d3654-authRole",
+      "UnauthRoleArn": "arn:aws:iam::058264342657:role/amplify-saturnwebsite-allyson-d3654-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::058264342657:role/amplify-saturnwebsite-allyson-d3654-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-saturnwebsite-allyson-d3654-deployment",
+      "UnauthRoleName": "amplify-saturnwebsite-allyson-d3654-unauthRole",
+      "StackName": "amplify-saturnwebsite-allyson-d3654",
+      "StackId": "arn:aws:cloudformation:us-east-2:058264342657:stack/amplify-saturnwebsite-allyson-d3654/7f06bda0-8fdc-11ef-85da-069b9ad6032f",
+      "AmplifyAppId": "d1ab8cwyyn9rmr"
+    }
+  },
   "crissie": {
     "awscloudformation": {
       "AuthRoleName": "amplify-ocwebsite-crissie-4fafb-authRole",
