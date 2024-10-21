@@ -19,7 +19,7 @@ const NextButton = ({ to, content, correctAnswer, selectedAnswer, timeHandler, r
     const nextButtonContainer = document.querySelector('.next-flex');
     if (nextButtonContainer) {
       if (pageNumber % 2 === 1) {
-        nextButtonContainer.style.marginRight = '120px'; // Move slightly to the left
+        nextButtonContainer.style.marginRight = '125px'; // Move slightly to the left
       } else {
         nextButtonContainer.style.marginRight = '220px'; // Default position
       }

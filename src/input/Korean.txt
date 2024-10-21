@@ -1,0 +1,576 @@
+Application Name: SATURN
+Page Title: Tabcode
+Page Number: 1
+Type of Question: Tabcode
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+
+Application Name: SATURN
+Page Title: Pick The Shape
+Page Number: 2
+Prompt: 동그라미를 선택하고 "다음"을 클릭하세요.
+Error Pop Ups: 아직 안됩니다!\n 계속하려면 동그라미를 선택해야 합니다.\n\n선택하면 파란색으로 변합니다.
+Type of Question: Image Selection Single
+File Path: [/ImageSelectionShapesJPGs/square.jpg, /ImageSelectionShapesJPGs/circle.jpg]
+Dimensions: 1x2
+Correct Answer: 1
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Instruction 1
+Page Number: 3
+Prompt 1: 앞으로 나오는 주문들 중 어느 건 쉽습니다. 다른 어느 건 어려울 수도 있습니다.
+Prompt 2: 하지만 반드시 앞으로 나오는 주문을 도움없이 혼자 이행 하세요.
+Prompt 3: 준비 되시면 다음으로 넘기세요.
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+
+Application Name: SATURN
+Page Title: Instruction 2
+Page Number: 4
+Task: Instruction
+Prompt 1: 주문 중 목록에서 단어를 선택 하셔야 합니다.
+Prompt 2: 선택 하시려면 화면에 나오는 해당 단어를 살짝 만지세요. 선택 하신 단어가 `파란색` 으로 변합니다.
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 18
+
+
+Application Name: SATURN
+Page Title: Pick J Word
+Page Number: 5
+Task: Simple Attention
+Prompt: {ㅃ}로 시작하는 단어를 선택하세요
+Error Pop Ups: 아직 안 끝나셨습니다! \n 다음 화면으로 가시려면 "ㅃ”로 시작 하는 단어를 선택 하세요.
+Type of Question: Word Selection
+Word Bank: [개미, 구름, 노래, 도로, 빵집, 사진, 연필, 우유, 파도, 학교]
+Dimensions: 5x2
+Correct Answer: 빵집
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Instruction 3
+Page Number: 6
+Task: Instruction
+Prompt 1: 때로는 여러 단어를 선택 하셔야 합니다.
+Prompt 2: 선택 하시려면 화면에 나오는 해당 단어를 살짝 만지세요. 선택 하신 단어가 `파란색` 으로 변합니다.
+Prompt 3: _도움말_- 만약 다른 단어로 바꾸고 싶으시면 선택하신 단어를 다시 살짝 만지세요.
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 30
+
+Application Name: SATURN
+Page Title: Pick Fruit Word
+Page Number: 7
+Task: Simple Attention
+Prompt: 다음 중 과일 인 단어들을 선택하세요
+Error Pop Ups: 2;아직 안 끝나셨습니다!\n\n과일인 단어 두개를 선택하셔야 합니다.;아직 안 끝나셨습니다!\n과일인 +단어들만+ 선택 하셔야 합니다.\n\n다른 단어로 바꾸려면 선택하신 단어를 다시 살짝 만지세요.
+Type of Question: Multi Word Selection
+Word Bank: [딸기, 바다, 사과, 전화]
+Dimensions: 4x1
+Correct Answer: 딸기, 사과
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Instructions 4
+Page Number: 8
+Task: Instruction
+Prompt 1: 때로는 번호들을 선택 하셔야 합니다.
+Prompt 2: 화면 속 키보드로 선택 하세요.
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 14
+
+Application Name: SATURN
+Page Title: Number 1239
+Page Number: 9
+Task: Simple Attention
+Prompt: {1239}를 선택하세요
+Error Pop Ups: 아직 안 끝나셨습니다!\n올바른 번호를 선택하세요.
+Type of Question: Number Pad
+Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+Dimensions: 4x3
+Correct Answer: 1239
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Instruction
+Page Number: 10
+Task: Instruction
+Prompt 1: 다음은 기억력을 테스트합니다.
+Prompt 2: 총 5개의 단어가 화면 에 하나씩 나옵니다.
+Prompt 3: 꼭 집중 하세요!
+Prompt 4: 한 개의 단어가 2초씩 나옵니다.
+Prompt 5: 나오는 _단어들을 잘 외워 두세요_!
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 37
+
+Application Name: SATURN
+Page Title: Instruction
+Page Number: 11
+Prompt 1: 이제 단어들이 화면에 나옵니다.
+Prompt 2: 모두 잘 외워 두세요!
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+
+Application Name: SATURN
+Page Title: Flash Words
+Page Number: 12
+Words: [나무, 가방, 바지, 신문, 침대]
+Type of Question: Flashing Words
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+
+Application Name: SATURN
+Page Title: Instruction 6
+Page Number: 13
+Task: Instruction
+Prompt 1: 방금 본 5개의 단어는 곧 기억해야 합니다.
+Prompt 2: 그전에 주문 몇가지를 먼저 이행하세요.
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 14
+
+Application Name: SATURN
+Page Title: Recall Shape
+Page Number: 14
+Task: Memory Incidental
+Prompt: 이전에 어떤 모양를 선택하라고 요청하셨나요?
+Error Pop Ups: 아직 안 끝나셨습니다!\n계속하려면 모양를 선택해야 합니다.\n\n모르신 다면 추측 하여 누르셔도 괜찮습니다!
+Type of Question: Word Selection
+Word Bank: [동그라미, 직사각형, 정사각형, 삼각형]
+Dimensions: 4x1
+Correct Answer: 동그라미
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Pick J Word Again
+Page Number: 15
+Task: Memory Incidental
+Prompt: 처음에 자음을 토대로 단어를 선택하는 주문이 있었습니다.\n그때 선택한 단어를 다시 선택하세요.
+Error Pop Ups: 아직 안 끝나셨습니다!\n올바른 단어를 선택 하세요.\n\n모르신 다면 추측 하여 누르셔도 괜찮습니다!
+Type of Question: Word Selection
+Word Bank: [개미, 구름, 노래, 도로, 모래, 빵집, 연필, 우유, 파도, 학교]
+Dimensions: 5x2
+Correct Answer: 빵집
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Number 1239 Again
+Page Number: 16
+Task: Memory Incidental
+Prompt: 얼마전에 선택한 4개의번호를 다시 선택하세요.
+Error Pop Ups: 아직 안 끝나셨습니다!\n올바른 번호들을 선택 하세요.\n\n모르신 다면 추측 하여 누르셔도 괜찮습니다!
+Type of Question: Number Pad
+Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+Dimensions: 4x3
+Correct Answer: 1239
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Month
+Page Number: 17
+Task: Orientation
+Prompt: 지금은 몇 월 입니까?
+Error Pop Ups: 아직 안 끝나셨습니다!\n올바른 개월을 선택 하세요.\n\n모르신 다면 추측 하여 누르셔도 괜찮습니다!
+Type of Question: Word Selection
+Word Bank: [1월, 2월, 3월, 4월, 5월, 6월, 7월, 8월, 9월, 10월, 11월, 12월]
+Dimensions: 6x2
+Correct Answer: JUNE
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Year
+Page Number: 18
+Task: Orientation
+Prompt: 올해는 몇 년도입니까?
+Error Pop Ups: 아직 안 끝나셨습니다!\n올바른 년도를 선택 하세요.\n\n모르신 다면 추측 하여 누르셔도 괜찮습니다!
+Type of Question: Number Pad
+Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+Dimensions: 4x3
+Correct Answer: -
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Day of the Week
+Page Number: 19
+Task: Orientation
+Prompt: 오늘은 무슨 요일입니까?
+Error Pop Ups: 아직 안 끝나셨습니다!\n다음 중 오늘의 요일을 누르세요. \n\n모르신 다면 추측 하여 누르셔도 괜찮습니다.
+Type of Question: Word Selection
+Word Bank: [일요일, 월요일, 화요일, 수요일, 목요일, 금요일, 토요일]
+Dimensions: 7x1
+Correct Answer: -
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Pick Five Words
+Page Number: 20
+Task: Memory Five Words
+Prompt: 얼마전 5개의 단어를 외우셨습니다. 이중 그 5개의 단어를 고르세요.
+Error Pop Ups: 6;아직 안 끝나셨습니다!\n 5게의 단어를 고르세요.\n\n모르신 다면 추측 하여 누르셔도 괜찮습니다.;아직 안끝나셨습니다!\n5개의 +단어+를 고르세요.\n\n단어를 바꾸려면 원하지않는 단어를 한번 더 살짝 만지세요.
+Type of Question: Multi Word Selection
+Word Bank: [가면, 가발, 가방, 가수, 간장, 개미, 고무, 고추, 공원, 공장, 교실, 교회, 구름, 귀신, 그릇, 기름, 기침, 나무, 나방, 날개, 노랑, 노래, 노선, 늑대, 달걀, 당근, 도로, 도시, 딸기, 뚜껑, 마당, 머리, 메뉴, 모래, 물개, 바늘, 바다, 바람, 바지, 버스, 벌레, 베개, 분수, 빨강, 빵집, 사과, 사람, 사진, 선물, 선생, 설탕, 소금, 소파, 수면, 수박, 시장, 식물, 식탁, 신문, 신발, 심장, 야구, 양말, 어깨, 연필, 열차, 영화, 우산, 우유, 우표, 음악, 의사, 인형, 일기, 일몰, 전화, 점심, 종이, 지붕, 축구, 치마, 침대, 커피, 코치, 쿠키, 택시, 토끼, 트럭, 파도, 파랑, 파티, 편지, 하늘, 하마, 학교, 형사, 호텔, 화살, 후드, 후식]
+Dimensions: 17x6
+Correct Answer: 나무, 가방, 바지, 신문, 침대
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Math 1
+Page Number: 21
+Task: Math
+Prompt: {$100}를 가지고 마켈에 갑니다. {$7}어치의 사과, 그리고 {$60}짜리 자전거를 삽니다.\n총 얼마의 돈을 쓰셨습니까?
+Error Pop Ups: 아직 안 끝나셨습니다!\n총 사용 하신 금액을 입력하세요.\n모르신다면 추측하여 입력하셔도 괜찮습니다.
+Type of Question: Money Number Pad
+Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+Dimensions: 4x3
+Correct Answer: 67
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Math 2
+Page Number: 22
+Task: Math
+Prompt: 쓰고 남은 돈은 얼마입니까?
+Error Pop Ups: 아직 안 끝나셨습니다!\n쓰고 남은 금액을 입력하세요.\n\n모르신다면 추측하여 입력하셔도 괜찮습니다.
+Type of Question: Money Number Pad
+Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+Dimensions: 4x3
+Correct Answer: 33
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Instruction 7
+Page Number: 23
+Task: Instruction
+Prompt 1: 다음에 그림들이 나옵니다.
+Prompt 2: 작은 그림을 합하여 큰 그림을 만듭니다.
+Prompt 3: /InstructionImages/drawing.png
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 18
+
+Application Name: SATURN
+Page Title: Drawing 1
+Page Number: 24
+Task: Visuospatial Image Combos
+Prompt: 이중 어떤것들을 합하면 위에 처럼 됩니까?
+Error Pop Ups: 2;아직 안 끝나셨습니다!\n2게의 그림을 선택하세요.\n\n모르신다면 추측하여 고르셔도 괜찮습니다.;아직 안 끝나셨습니다!\n+2게만+ 선택 하셔야 합니다.\n\n그림을 바꾸려면 원하지 않는 그림을 한번 더 살짝 만지세요.
+Type of Question: Image Selection
+Answer Img: /ImageSelectionShapesJPGs/shapes-answer.webp
+File Path: [/ImageSelectionShapesJPGs/shapes1.webp, /ImageSelectionShapesJPGs/shapes2.webp, /ImageSelectionShapesJPGs/shapes3.webp, /ImageSelectionShapesJPGs/shapes4.webp, /ImageSelectionShapesJPGs/shapes5.webp, /ImageSelectionShapesJPGs/shapes6.webp]
+Dimensions: 2x3
+Correct Answer: 0, 4
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Drawing 2
+Page Number: 25
+Task: Visuospatial Image Combos
+Prompt: 이중 어떤것들을 합하면 위에 처럼 됩니까?
+Error Pop Ups: 2;아직 안 끝나셨습니다!\n2게의 그림을 선택하세요.\n\n모르신다면 추측하여 고르셔도 괜찮습니다.;아직 안 끝나셨습니다!\n+2게만+ 선택 하셔야 합니다.\n\n그림을 바꾸려면 원하지 않는 그림을 한번 더 살짝 만지세요.
+Type of Question: Image Selection
+Answer Img: /ImageSelectionFaceJPGs/face-answer.webp
+File Path: [/ImageSelectionFaceJPGs/face1.webp, /ImageSelectionFaceJPGs/face2.webp, /ImageSelectionFaceJPGs/face3.webp, /ImageSelectionFaceJPGs/face4.webp, /ImageSelectionFaceJPGs/face5.webp, /ImageSelectionFaceJPGs/face6.webp]
+Dimensions: 2x3
+Correct Answer: 1, 5
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Drawing 3
+Page Number: 26
+Task: Visuospatial Image Combos
+Prompt: 이중 어떤것들을 합하면 위에 처럼 됩니까?
+Error Pop Ups: 2;아직 안 끝나셨습니다!\n2게의 그림을 선택하세요.\n\n모르신다면 추측하여 고르셔도 괜찮습니다.;아직 안 끝나셨습니다!\n+2게만+ 선택 하셔야 합니다.\n\n그림을 바꾸려면 원하지 않는 그림을 한번 더 살짝 만지세요.
+Type of Question: Image Selection
+Answer Img: /ImageSelectionDiagonalLinesJPGs/diagonal-line-answer.webp
+File Path: [/ImageSelectionDiagonalLinesJPGs/diagonal-line1.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line2.webp,/ImageSelectionDiagonalLinesJPGs/diagonal-line3.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line4.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line5.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line6.webp]
+Dimensions: 2x3
+Correct Answer: 2, 5
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Drawing 4
+Page Number: 27
+Task: Visuospatial Image Combos
+Prompt: 이중 어떤것들을 합하면 위에 처럼 됩니까?
+Error Pop Ups: 2;아직 안 끝나셨습니다!\n2게의 그림을 선택하세요.\n\n모르신다면 추측하여 고르셔도 괜찮습니다.;아직 안 끝나셨습니다!\n+2게만+ 선택 하셔야 합니다.\n\n그림을 바꾸려면 원하지 않는 그림을 한번 더 살짝 만지세요.
+Type of Question: Image Selection
+Answer Img: /ImageSelectionCubeJPGs/cube-answer.webp
+File Path: [/ImageSelectionCubeJPGs/cube1.webp, /ImageSelectionCubeJPGs/cube2.webp, /ImageSelectionCubeJPGs/cube3.webp, /ImageSelectionCubeJPGs/cube4.webp, /ImageSelectionCubeJPGs/cube5.webp, /ImageSelectionCubeJPGs/cube6.webp]
+Dimensions: 2x3
+Correct Answer: 2, 3
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Instruction 8
+Page Number: 28
+Task: Instruction
+Prompt 1: 다음에는 몇개의 단어들이 나옵니다.
+Prompt 2: 써있는 단어의 ~색~{깔}^을^ 고르세요.
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 14
+
+Application Name: SATURN
+Page Title: Stroop 1
+Page Number: 29
+Error Pop Ups: 1;아직 안됩니다!\n\n이 단어의 색갈을 고르세요.; 다시 시도하세요!\n\n이 단어의 색갈을 고르세요.
+Type of Question: STROOP
+Word: ~손~
+Word Bank: [노랑, 빨강, 파랑]
+Dimensions: 1x3
+Correct Answer: 파랑
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 2
+Page Number: 30
+Error Pop Ups: 1;아직 안됩니다!\n\n이 단어의 색갈을 고르세요.; 다시 시도하세요!\n\n이 단어의 색갈을 고르세요.
+Type of Question: STROOP
+Word: {책}
+Word Bank: [노랑, 빨강, 파랑]
+Dimensions: 1x3
+Correct Answer: 빨강
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 3
+Page Number: 31
+Error Pop Ups: 1;아직 안됩니다!\n\n이 단어의 색갈을 고르세요.; 다시 시도하세요!\n\n이 단어의 색갈을 고르세요.
+Type of Question: STROOP
+Word: ^식탁^
+Word Bank: [노랑, 빨강, 파랑]
+Dimensions: 1x3
+Correct Answer: 노랑
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 4
+Page Number: 32
+Task: Executive Stroop
+Error Pop Ups: 1;아직 안됩니다!\n\n이 단어의 색갈을 고르세요.; 다시 시도하세요!\n\n이 단어의 색갈을 고르세요.
+Type of Question: STROOP
+Word: ~노랑~
+Word Bank: [노랑, 빨강, 파랑]
+Dimensions: 1x3
+Correct Answer: 파랑
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 5
+Page Number: 33
+Task: Executive Stroop
+Error Pop Ups: 1;아직 안됩니다!\n\n이 단어의 색갈을 고르세요.; 다시 시도하세요!\n\n이 단어의 색갈을 고르세요.
+Type of Question: STROOP
+Word: ^빨강^
+Word Bank: [노랑, 빨강, 파랑]
+Dimensions: 1x3
+Correct Answer: 노랑
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 6
+Page Number: 34
+Task: Executive Stroop
+Error Pop Ups: 1;아직 안됩니다!\n\n이 단어의 색갈을 고르세요.; 다시 시도하세요!\n\n이 단어의 색갈을 고르세요.
+Type of Question: STROOP
+Word: {파랑}
+Word Bank: [노랑, 빨강, 파랑]
+Dimensions: 1x3
+Correct Answer: 빨강
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 7
+Page Number: 35
+Task: Executive Stroop
+Error Pop Ups: 1;아직 안됩니다!\n\n이 단어의 색갈을 고르세요.; 다시 시도하세요!\n\n이 단어의 색갈을 고르세요.
+Type of Question: STROOP
+Word: ~빨강~
+Word Bank: [노랑, 빨강, 파랑]
+Dimensions: 1x3
+Correct Answer: 파랑
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 8
+Page Number: 36
+Task: Executive Stroop
+Error Pop Ups: 1;아직 안됩니다!\n\n이 단어의 색갈을 고르세요.; 다시 시도하세요!\n\n이 단어의 색갈을 고르세요.
+Type of Question: STROOP
+Word: ^파랑^
+Word Bank: [노랑, 빨강, 파랑]
+Dimensions: 1x3
+Correct Answer: 노랑
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 9
+Page Number: 37
+Task: Executive Stroop
+Error Pop Ups: 1;아직 안됩니다!\n\n이 단어의 색갈을 고르세요.; 다시 시도하세요!\n\n이 단어의 색갈을 고르세요.
+Type of Question: STROOP
+Word: {노랑}
+Word Bank: [노랑, 빨강, 파랑]
+Dimensions: 1x3
+Correct Answer: 빨강
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 10
+Page Number: 38
+Task: Executive Stroop
+Error Pop Ups: 1;아직 안됩니다!\n\n이 단어의 색갈을 고르세요.; 다시 시도하세요!\n\n이 단어의 색갈을 고르세요.
+Type of Question: STROOP
+Word: ^빨강^
+Word Bank: [노랑, 빨강, 파랑]
+Dimensions: 1x3
+Correct Answer: 노랑
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 11
+Page Number: 39
+Task: Executive Stroop
+Error Pop Ups: 1;아직 안됩니다!\n\n이 단어의 색갈을 고르세요.; 다시 시도하세요!\n\n이 단어의 색갈을 고르세요.
+Type of Question: STROOP
+Word: {파랑}
+Word Bank: [노랑, 빨강, 파랑]
+Dimensions: 1x3
+Correct Answer: 빨강
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 12
+Page Number: 40
+Task: Executive Stroop
+Error Pop Ups: 1;아직 안됩니다!\n\n이 단어의 색갈을 고르세요.; 다시 시도하세요!\n\n이 단어의 색갈을 고르세요.
+Type of Question: STROOP
+Word: ~빨강~
+Word Bank: [노랑, 빨강, 파랑]
+Dimensions: 1x3
+Correct Answer: 파랑
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 13
+Page Number: 41
+Task: Executive Stroop
+Error Pop Ups: 1;아직 안됩니다!\n\n이 단어의 색갈을 고르세요.; 다시 시도하세요!\n\n이 단어의 색갈을 고르세요.
+Type of Question: STROOP
+Word: {노랑}
+Word Bank: [노랑, 빨강, 파랑]
+Dimensions: 1x3
+Correct Answer: 빨강
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 14
+Page Number: 42
+Task: Executive Stroop
+Error Pop Ups: 1;아직 안됩니다!\n\n이 단어의 색갈을 고르세요.; 다시 시도하세요!\n\n이 단어의 색갈을 고르세요.
+Type of Question: STROOP
+Word: ^파랑^
+Word Bank: [노랑, 빨강, 파랑]
+Dimensions: 1x3
+Correct Answer: 노랑
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 15
+Page Number: 43
+Task: Executive Stroop
+Error Pop Ups: 1;아직 안됩니다!\n\n이 단어의 색갈을 고르세요.; 다시 시도하세요!\n\n이 단어의 색갈을 고르세요.
+Type of Question: STROOP
+Word: ~노랑~
+Word Bank: [노랑, 빨강, 파랑]
+Dimensions: 1x3
+Correct Answer: 파랑
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Instruction 9
+Page Number: 44
+Task: Instruction
+Prompt 1: 거의 끝났습니다!
+Prompt 2: 마지막은 점 연결하기 입니다.
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 11
+
+Application Name: SATURN
+Page Title: Instruction 10
+Page Number: 45
+Task: Instruction
+Prompt 1: 옳바른 순서로 점을 연결 하세요.
+Prompt 2: 낮은 숫자부터 높은 숫자로 선택하되... (1, 2, 3, ...)
+Prompt 3: 반듯이 점 색깔을 하얀색과 검정색 으로 번갈아 가며 선택하셔야 합니다.
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 22
+
+Application Name: SATURN
+Page Title: Instruction 11
+Page Number: 46
+Task: Instruction
+Prompt 1: 올바른 순서로 선택하시면 점이 녹색 으로 변합니다:
+Prompt 2: /InstructionImages/connect.jpg
+Prompt 3: 번호 순서가 옳지 않으면 점이 빨갛게 깜박입니다:
+Prompt 4: /InstructionImages/connectPass.jpg
+Prompt 5: 하얀색과 검정색으로 번갈아 선택하지 않을경우 에도 점이 빨갛게 깜박입니다 :
+Prompt 6: /InstructionImages/connectFail.jpg
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 25
+
+Page Title: CONNECT
+Page Number: 47
+Type of Question: Connect the Box
+Task: Visuospatial Mini-trails A
+Characters: [1, 2, 3, 4, 5]
+Prompt 1: 점을 연결 하세요
+Prompt 2: 1번부터 올바른 순서로 끝가지 선택하세요. 하얀색과 검정색으로 번갈아 선택 하는것을 잊지 마세요.
+Position: [(25, 50), (55, 15), (80, 55), (50, 40), (60, 80)]
+Correct Answer: 5
+Correct Requirement: Yes
+Error Pop Ups: 아직 안 끝나셨습니다!\n\n점을 끝가지 연결하세요.
+
+Page Title: CONNECT
+Page Number: 48
+Type of Question: Connect the Box
+Task: Executive Mini-trails B
+Prompt 1: 점을 연결 하세요
+Prompt 2: 1번부터 올바른 순서로 끝가지 선택하세요. 하얀색과 검정색으로 번갈아 선택 하시기 때문에 몇게의 점들은 무시하셔야 합니다.
+Characters: [1, 가, 2, 나, 3, 다, 4, 라]
+Position: [(50, 60), (70, 15), (85, 60), (65, 40), (75, 80), (25, 80), (20, 15), (40, 25)]
+Correct Answer: 8
+Correct Requirement: Yes
+Error Pop Ups: 아직 안 끝나셨습니다!\n\n점을 끝가지 연결하세요.

@@ -35,12 +35,14 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
     underline: { textDecoration: 'underline' },
     italic: { fontStyle: 'italic' },
     red: { color: 'red' },
-    green: { color: 'green' },
+    green: { color: '#00b500' },
     blue: { color: 'blue' },
     blueHighlight: { backgroundColor: '#85c7ff'},
     fadingBlueHighlight: {
       background: 'linear-gradient(to right, #0000ff, #0077ff, #00ccff, #66ffff)',
-    }
+    },
+    yellow: { color: '#d0bc2a' },
+    brown: {color: '#964B00' }
   };
   const generateButtons = () => {
     let buttons = [];
@@ -69,9 +71,9 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
                 style={{
                   width: '11vw',
                   height: '0.4vh',
-                  fontSize: '1.7vw',
-                  paddingTop: '1.7vh',
-                  paddingBottom: '1.5vh',
+                  fontSize: '1.6vw',
+                  paddingTop: '1.6vh',
+                  paddingBottom: '1.8vh',
                   paddingLeft: '0px',
                   paddingRight: '0px',
                   borderWidth: '0.5vh',
@@ -88,8 +90,8 @@ const MultiWordSelectionContainer = ({ rows, columns, buttonDimensions, onClick,
                 onClick={() => handleButtonClick(index)}
                 isSelected = {selectedButtonIndices.includes(index)}
                 style={{
-                  width: '120px',
-                  height: '50px',
+                  width: '18vw',
+                  height: '10vh',
                   ...styles
                 }}
               >

@@ -1,21 +1,23 @@
 import React from 'react';
 import './End.css';
+import { useTranslation } from 'react-i18next';
 
 const End = ({ tabCode }) => {
+  const { t } = useTranslation();
 
   return (
     <div className="end-container">
       <div className="end-message">
         <p>
-          YOU’RE DONE WITH THE TEST!<br/><br/>
+          {t('end.done_with_test')}<br/><br/>
         </p>
       </div>
 
       <div className="end-message">
         <p>
-          SAVE THIS NUMBER TO VIEW YOUR RESULTS<br/>
+          {t('end.save_number_to_view_results')}<br/>
           {tabCode} <br/>
-          YOU CAN VIEW YOUR RESULTS ON <a href="https://www.saturn-test.com">saturn-test.com</a>.
+          {t('end.view_results_on')} <a href="https://www.saturn-test.com">saturn-test.com</a>.
         </p>
       </div>
     </div>

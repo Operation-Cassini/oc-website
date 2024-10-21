@@ -2,7 +2,7 @@ import './App.css';
 
 function parseStyledText(text) {
   const styledParts = [];
-  const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|`([^`]+)`|@([^@]+)@|([^_*{}+~;`@]+)|([_*{}+~;`@]))/g;
+  const regex = /(_([^_]+)_|\*([^*]+)\*|{([^}]+)}|\+([^+]+)\+|~([^~]+)~|`([^`]+)`|@([^@]+)@|\^([^^]+)\^|%([^%]+)%|([^_*{}+~;`@^%]+)|([_*{}+~;`@^%]))/g;
 
   if (text.includes(';')) {
     // Split the text by semicolon
@@ -48,9 +48,15 @@ function parseStyledText(text) {
         const nestedParts = parseStyledText(match[8]);
         styledParts.push({ style: 'fadingBlueHighlight', content: nestedParts });
       } else if (match[9]) {
-        styledParts.push({ style: null, content: match[9] });
+        const nestedParts = parseStyledText(match[9]);
+        styledParts.push({ style: 'yellow', content: nestedParts });
       } else if (match[10]) {
-        styledParts.push({ style: null, content: match[10] });
+        const nestedParts = parseStyledText(match[10]);
+        styledParts.push({ style: 'brown', content: nestedParts });
+      } else if (match[11]) {
+        styledParts.push({ style: null, content: match[11] });
+      } else if (match[12]) {
+        styledParts.push({ style: null, content: match[12] });
       }
     }
   }
@@ -134,4 +140,3 @@ const ParseSaturnScoringFile = (input) => {
 };
 
 export { ParseInputFile, ParseMeanSDFile, ParseSaturnScoringFile };
-

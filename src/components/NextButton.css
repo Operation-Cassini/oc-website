@@ -2,13 +2,13 @@
   background-color: #39FF14; 
   border: 2px solid black; 
   color: black; 
-  padding: 3px 8px; 
   font-size: 2vw; 
   cursor: pointer; 
   outline: none; 
   font-weight: bold;
   bottom: 0;
   position: fixed;
+  white-space: nowrap;
 }
 
 .error-flex {

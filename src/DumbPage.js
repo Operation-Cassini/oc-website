@@ -13,6 +13,7 @@ import NumberSelectionContainer from './components/NumberSelectionContainer';
 import StroopTextBox from './components/StroopTextBox';
 import TabcodeGenerator from './components/TabcodeGenerator';
 import WordSelectionContainer from './components/WordSelectionContainer';
+import { useTranslation } from 'react-i18next';
 
 const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChecked, handleTotalMoveForward, setMotorSpeedLog, to }) => {
   const buttonDimensions = { width: '100px', height: '50px' };
@@ -23,6 +24,7 @@ const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChe
   const [lastClickTime, setLastClickTime] = React.useState(Date.now());
   const [startTime, setStartTime] = React.useState(Date.now());
   let selectedAnswerRef = useRef(selectedAnswer);
+  const { t } = useTranslation();
 
   useEffect(() => {
     // Reset selected button index whenever the component is rendered
@@ -157,12 +159,14 @@ const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChe
         underline: { textDecoration: 'underline' },
         italic: { fontStyle: 'italic' },
         red: { color: 'red' },
-        green: { color: 'green' },
+        green: { color: '#00b500' },
         blue: { color: 'blue' },
         blueHighlight: { backgroundColor: '#85c7ff'},
         fadingBlueHighlight: {
           background: 'linear-gradient(to right, #85c7ff, #ffffff)',
-        }
+        },
+        yellow: { color: '#d0bc2a' },
+        brown: {color: '#964B00' }
       };
   
       const styles = part.style ? part.style.split(' ').map(s => styleMap[s]).reduce((acc, cur) => ({ ...acc, ...cur }), {}) : {};
@@ -585,7 +589,7 @@ const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChe
               setError={setError}
               pageNumber={content['Page Number'][0]['content']}
             >
-              NEXT
+              {t('next')}
             </NextButton>
           </div>
         ))()

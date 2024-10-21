@@ -34,12 +34,14 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
     underline: { textDecoration: 'underline' },
     italic: { fontStyle: 'italic' },
     red: { color: 'red' },
-    green: { color: 'green' },
+    green: { color: '#00b500' },
     blue: { color: 'blue' },
     blueHighlight: { backgroundColor: '#85c7ff'},
     fadingBlueHighlight: {
       background: 'linear-gradient(to right, #0000ff, #0077ff, #00ccff, #66ffff)',
-    }
+    },
+    yellow: { color: '#d0bc2a' },
+    brown: {color: '#964B00' }
   };
   const generateButtons = () => {
     let buttons = [];

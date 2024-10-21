@@ -1,5 +1,9 @@
 import { generateClient } from "aws-amplify/api";
 import React, { useState } from 'react';
+import { languageSignal } from './signal';
+import { useNavigate } from 'react-router-dom';
+import i18n from './i18n';
+
 import { Link } from 'react-router-dom';
 import './LandingPage.css';
 import { getSaturnTestData } from './graphql/queries';
@@ -12,6 +16,15 @@ const LandingPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResult, setSearchResult] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
+
+  const handleLanguageSelection = (language) => {
+    i18n.changeLanguage(language);
+    sessionStorage.setItem('selectedLanguage', language);
+    languageSignal.value = language; 
+
+    navigate('/Home');
+  };
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
@@ -130,10 +143,23 @@ const LandingPage = () => {
           </div>
           <h1>SELECT YOUR LANGUAGE</h1>
           <div className="landing-button-language-container">
-          <Link to="/Home" className="landing-button">English</Link>
-          <Link to="/Home" className="landing-button">Chinese <br /> (Coming soon)</Link>
-          <Link to="/Home" className="landing-button">Spanish <br /> (Coming soon)</Link>
-          
+          <div>
+            <button onClick={() => handleLanguageSelection('en')} className="landing-button">
+              English
+            </button>
+            <button onClick={() => handleLanguageSelection('szh')} className="landing-button">
+              中文 (简体)
+            </button>
+            <button onClick={() => handleLanguageSelection('tzh')} className="landing-button">
+              中文 (繁體)
+            </button>
+            <button onClick={() => handleLanguageSelection('es')} className="landing-button">
+              Español
+            </button>
+            <button onClick={() => handleLanguageSelection('kor')} className="landing-button">
+              한국어
+            </button>
+          </div>
         </div>
       </div>
     </div>
