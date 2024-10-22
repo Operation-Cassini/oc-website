@@ -9,7 +9,7 @@ const End = ({ tabCode }) => {
     <div className="end-container">
       <div className="end-message">
         <p>
-          {t('end.done_with_test')}<br/><br/>
+          {t('end.done_with_test')}
         </p>
       </div>
 

@@ -25,7 +25,7 @@ i18n.use(initReactI18next).init({
         end: {
             done_with_test: "YOU’RE DONE WITH THE TEST!",
             save_number_to_view_results: "SAVE THIS NUMBER TO VIEW YOUR RESULTS",
-            view_results_on: "YOU CAN VIEW YOUR RESULTS ON"
+            view_results_on: "YOU CAN VIEW YOUR RESULTS ON "
         },
         tabcode: {
             save_this_number: "SAVE THIS NUMBER"
@@ -54,7 +54,7 @@ i18n.use(initReactI18next).init({
         end: {
             done_with_test: "¡HAS TERMINADO EL TEST!",
             save_number_to_view_results: "GUARDA ESTE NÚMERO PARA VER TUS RESULTADOS",
-            view_results_on: "PUEDES VER TUS RESULTADOS EN"
+            view_results_on: "PUEDES VER TUS RESULTADOS EN "
         },
         tabcode: {
             save_this_number: "GUARDA ESTE NÚMERO"
@@ -83,7 +83,7 @@ i18n.use(initReactI18next).init({
         end: {
             done_with_test: "你已经完成测试！",
             save_number_to_view_results: "保存此号码以查看您的结果",
-            view_results_on: "您可以在 saturn-test.com 查看您的结果"
+            view_results_on: "您可以查看您的结果，网址是 "
         },
         tabcode: {
             save_this_number: "保存此号码"
@@ -112,7 +112,7 @@ i18n.use(initReactI18next).init({
         end: {
             done_with_test: "你已經完成測驗！",
             save_number_to_view_results: "儲存此號碼以查看您的結果",
-            view_results_on: "您可以在 saturn-test.com 上查看您的結果"
+            view_results_on: "您可以查看您的結果，網址是 "
         },
         tabcode: {
             save_this_number: "儲存此號碼"
@@ -141,7 +141,7 @@ i18n.use(initReactI18next).init({
         end: {
             done_with_test: "모두 끝났습니다!",
             save_number_to_view_results: "결과를 보려면 이 번호를 저장하세요.",
-            view_results_on: "saturn-test.com에서 결과를 볼 수 있습니다."
+            view_results_on: "결과를 볼 수 있습니다: "
         },
         tabcode: {
             save_this_number: "이 번호를 저장하세요"
