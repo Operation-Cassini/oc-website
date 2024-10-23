@@ -3,7 +3,7 @@
   justify-content: center; 
   align-items: center; 
   justify-self: center;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   background-color: white;
   border: 5px solid black;
   color: #000000;

@@ -35,29 +35,29 @@ i18n.use(initReactI18next).init({
     es: {
       translation: {
         start: "COMENZAR",
-        next: "SIGA",
+        next: "Siga",
         delete: "SUPRIMIR",
         months: [
-            "Enero", "Febrero", "Marzo", "Abril", "Mayo",
-            "Junio", "Julio", "Agosto", "Septiembre", "Octubre",
-            "Noviembre", "Diciembre"
+            "enero", "febrero", "marzo", "abril", "mayo",
+            "junio", "julio", "agosto", "septiembre", "octubre",
+            "noviembre", "diciembre"
         ],
         days: {
-            sunday: "DOMINGO",
-            monday: "LUNES",
-            tuesday: "MARTES",
-            wednesday: "MIÉRCOLES",
-            thursday: "JUEVES",
-            friday: "VIERNES",
-            saturday: "SÁBADO"
+            sunday: "domingo",
+            monday: "lunes",
+            tuesday: "martes",
+            wednesday: "miércoles",
+            thursday: "jueves",
+            friday: "viernes",
+            saturday: "sábado"
         },
         end: {
-            done_with_test: "¡HAS TERMINADO EL TEST!",
-            save_number_to_view_results: "GUARDA ESTE NÚMERO PARA VER TUS RESULTADOS",
-            view_results_on: "PUEDES VER TUS RESULTADOS EN "
+            done_with_test: "¡Terminaste con la prueba!",
+            save_number_to_view_results: "Guarda este número para ver tus resultados",
+            view_results_on: "Puedes ver tus resultados en "
         },
         tabcode: {
-            save_this_number: "GUARDA ESTE NÚMERO"
+            save_this_number: "Guarda este número"
         }
       }
     },
