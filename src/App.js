@@ -12,6 +12,7 @@ import SpanishText from './input/Spanish.txt';
 import SimplifiedChineseText from './input/SimplifiedChinese.txt';
 import TraditionalChineseText from './input/TraditionalChinese.txt';
 import KoreanText from './input/Korean.txt';
+import VietnameseText from './input/Vietnamese.txt'
 import meanSDtext from './meanSD.txt';
 import saturnScoringtext from './saturnScoring.txt';
 import BlackBoarderTextBox from './components/BlackBoarderTextBox';
@@ -206,6 +207,7 @@ const App = () => {
     szh: SimplifiedChineseText,
     tzh: TraditionalChineseText,
     kor: KoreanText,
+    viet: VietnameseText,
   };
   
   const getTextFile = () => {

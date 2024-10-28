@@ -147,7 +147,36 @@ i18n.use(initReactI18next).init({
             save_this_number: "이 번호를 저장하세요"
         }
       }
-    }
+    },
+    viet: {
+      translation: {
+        start: "BẮT ĐẦU",
+        next: "Tiếp",
+        delete: "\u00A0\u00A0\u00A0\u00A0Xóa\u00A0\u00A0\u00A0\u00A0",
+        months: [
+          "Tháng một", "Tháng hai", "Tháng ba", "Tháng tư", "Tháng năm", 
+          "Tháng sáu", "Tháng bẚy", "Tháng tám", "Tháng chín", "Tháng mười", 
+          "Tháng mười một", "Tháng mười hai"
+        ],
+        days: {
+            sunday: "Chủ Nhật",
+            monday: "Thứ Hai",
+            tuesday: "Thứ Ba",
+            wednesday: "Thứ Tư",
+            thursday: "Thứ Năm",
+            friday: "Thứ Sáu",
+            saturday: "Thứ Bảy"
+        },
+        end: {
+            done_with_test: "Bạn đã hoàn thành bài kiểm tra!",
+            save_number_to_view_results: "Lưu số này để xem kết quả của bạn",
+            view_results_on: "Bạn có thể xem kết quả của mình trên "
+        },
+        tabcode: {
+            save_this_number: "Lưu số này"
+        }
+      }
+    },
   },
   lng: 'en', // default language
   fallbackLng: 'en',

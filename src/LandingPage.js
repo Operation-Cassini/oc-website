@@ -159,6 +159,9 @@ const LandingPage = () => {
             <button onClick={() => handleLanguageSelection('kor')} className="landing-button">
               한국어
             </button>
+            <button onClick={() => handleLanguageSelection('viet')} className="landing-button">
+              Tiếng Việt
+            </button>
           </div>
         </div>
       </div>

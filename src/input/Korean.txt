@@ -262,7 +262,7 @@ Page Number: 23
 Task: Instruction
 Prompt 1: 다음에 그림들이 나옵니다.
 Prompt 2: 작은 그림을 합하여 큰 그림을 만듭니다.
-Prompt 3: /InstructionImages/drawing.png
+Prompt 3: /InstructionImages/drawingKOREAN.png
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
