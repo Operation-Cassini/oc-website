@@ -1,11 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Navigate, Route, BrowserRouter as Router, Routes, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { ParseInputFile, ParseMeanSDFile, ParseSaturnScoringFile } from './Parser';
+import { languageSignal } from './signal'; // Import the signal
+import { useTranslation } from 'react-i18next';
 
 import Page from './DumbPage';
 import End from './End';
 import Home from './Home';
-import text from './input.txt';
+import EnglishText from './input/English.txt';
+import SpanishText from './input/Spanish.txt';
+import SimplifiedChineseText from './input/SimplifiedChinese.txt';
+import TraditionalChineseText from './input/TraditionalChinese.txt';
+import KoreanText from './input/Korean.txt';
+import VietnameseText from './input/Vietnamese.txt'
 import meanSDtext from './meanSD.txt';
 import saturnScoringtext from './saturnScoring.txt';
 import BlackBoarderTextBox from './components/BlackBoarderTextBox';
@@ -144,6 +151,8 @@ const App = () => {
   const [saturnScoringData, setSaturnScoringData] = useState([]);
   const motorSpeedLog = useRef([]);
   const startTime = useRef(Date.now());
+  const [language, setLanguage] = useState(localStorage.getItem('language') || 'en'); // State for language
+
 
   const updateMotorSpeedLog = (entry) => {
     motorSpeedLog.current = [...motorSpeedLog.current, entry];
@@ -192,24 +201,45 @@ const App = () => {
 
   const [tabCode, setTabCode] = useState(null);
 
+  const languageMapping = {
+    en: EnglishText,
+    es: SpanishText,
+    szh: SimplifiedChineseText,
+    tzh: TraditionalChineseText,
+    kor: KoreanText,
+    viet: VietnameseText,
+  };
+  
+  const getTextFile = () => {
+    return languageMapping[languageSignal] || EnglishText; // Return the text file based on current language
+  };
+
   useEffect(() => {
-    // Function to fetch and parse data
-    const fetchData = async () => {
-      // Fetch and read the input file
-      fetch(text)
+    const fetchTextFile = () => {
+      const textFile = getTextFile();
+      console.log(textFile);
+      console.log(languageSignal);
+      // Fetch and read the input file // Get the appropriate text file
+      fetch(textFile)
         .then(response => response.text())
         .then(fileContent => {
           // Parse the input file and set the state with the parsed data
           const parsedPagesData = ParseInputFile(fileContent);
           setPagesData(parsedPagesData);
-
           const lastPageNum = parsedPagesData.length - 1;
           setLastPageNumber(lastPageNum);
         })
         .catch(error => {
           console.error('Error reading file:', error);
         });
+    };
 
+    const unsubscribe = languageSignal.subscribe(() => {
+      fetchTextFile(); // Fetch the text file when the language changes
+    });
+    fetchTextFile();
+
+    const fetchData = async () => {
       fetch(meanSDtext)
         .then(response => response.text())
         .then(fileContent => {
@@ -238,6 +268,12 @@ const App = () => {
     };
 
     fetchData();
+    fetchTextFile();
+
+    // Cleanup subscription on unmount
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   const calculateScores = () => {
@@ -394,8 +430,9 @@ const App = () => {
     console.log(finalResults);
     return finalResults;    
   };
-  
+
   const DynamicPageRenderer = () => {
+    const { t } = useTranslation();
     // Extract the page number from the route parameters
     const { pageNumber } = useParams();
     const navigate = useNavigate();
@@ -404,6 +441,30 @@ const App = () => {
     // Fetch the content for the specified page number
     const pageContent = pagesData[pageNumber];
     const nextPageNumber = parseInt(pageNumber) + 1;
+
+    const getCurrentDay = () => {
+      const days = [
+        t('days.sunday'),
+        t('days.monday'),
+        t('days.tuesday'),
+        t('days.wednesday'),
+        t('days.thursday'),
+        t('days.friday'),
+        t('days.saturday')
+      ];
+      const currentDayIndex = new Date().getDay(); // 0 (Sunday) to 6 (Saturday)
+      return days[currentDayIndex]; // Returns the current day in uppercase
+    };
+  
+    const getCurrentMonth = () => {
+      const months = t('months', { returnObjects: true });
+      const currentMonthIndex = new Date().getMonth(); // 0 (January) to 11 (December)
+      return months[currentMonthIndex]; // Returns the current month in uppercase
+    };
+    
+    const getCurrentYear = () => {
+      return new Date().getFullYear().toString(); // Returns the current year as a string
+    };
 
     useEffect(() => {
       const pageNum = parseInt(pageNumber);
@@ -421,7 +482,18 @@ const App = () => {
       }
 
       if (pageContent) {
-        setCorrectAnswer(pageContent['Correct Answer'][0]['content']);
+        if (pageContent['Page Title'][0]['content'] === 'Day of the Week') {
+          setCorrectAnswer(getCurrentDay());
+          console.log(getCurrentDay());
+        } else if (pageContent['Page Title'][0]['content'] === 'Year'){
+          setCorrectAnswer(getCurrentYear());
+          console.log(getCurrentYear());
+        } else if (pageContent['Page Title'][0]['content'] === 'Month'){
+          setCorrectAnswer(getCurrentMonth());
+          console.log(getCurrentMonth());
+        } else {
+          setCorrectAnswer(pageContent['Correct Answer'][0]['content']);
+        }
         setCorrectRequirement(pageContent['Correct Requirement'][0]['content']);
       }
     }, [pageNumber, pageContent, lastPageNumber, previousPageNumber]);
@@ -456,7 +528,7 @@ const App = () => {
   };
 
   return (
-    <Router>
+    <>
       <TimerRedirect onTimerFinish={handleTimerFinish} startTime={startTime} />
       <Routes>
       <Route path="/" element={<LandingPage />} />
@@ -466,7 +538,7 @@ const App = () => {
         {timerFinished && <Route path="/last" element={<End />} />}
         {!timerFinished && <Route path="/last" element={<Navigate to="/" />} />}
       </Routes>
-    </Router>
+    </>
   );
 };
 

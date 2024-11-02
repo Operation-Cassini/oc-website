@@ -1,0 +1,577 @@
+Application Name: SATURN
+Page Title: Tabcode
+Page Number: 1
+Type of Question: Tabcode
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+
+Application Name: SATURN
+Page Title: Pick The Shape
+Page Number: 2
+Prompt: 选择圆圈，然后按“下一页”
+Error Pop Ups: 还没好！ \n 要继续, 你必须选择圆圈。 \n\n选择的形状会变成蓝色。
+Type of Question: Image Selection Single
+File Path: [/ImageSelectionShapesJPGs/square.jpg, /ImageSelectionShapesJPGs/circle.jpg]
+Dimensions: 1x2
+Correct Answer: 1
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Instruction 1
+Page Number: 3
+Prompt 1: 有些题目很简单。有些很困难。
+Prompt 2: 请独力完成这些题目。
+Prompt 3: 当你准备好,请按下这个按钮。
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+
+Application Name: SATURN
+Page Title: Instruction 2
+Page Number: 4
+Task: Instruction
+Prompt 1: 有时你会被要求选取一个词。
+Prompt 2: 点选你要选的词,被选择的词会呈现`蓝色`。
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 18
+
+Application Name: SATURN
+Page Title: Pick J Word
+Page Number: 5
+Prompt: 請選擇有“{衤} ” 偏旁的詞。
+Error Pop Ups: 還沒開始! \n 這一頁是練習。\n你必須選取有+“补"+字旁的詞才能繼續下一步。  
+Type of Question: Word Selection
+Word Bank: [玻璃, 蛋糕, 房子, 火车, 裤子, 篮球, 苹果, 铅笔, 微笑, 新闻]
+Dimensions: 5x2
+Correct Answer: 裤子
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Instruction 3
+Page Number: 6
+Task: Instruction
+Prompt 1: 有时你会从列表中选择好多词语。
+Prompt 2: 要选一个词语，请按那个词语。
+Prompt 3: 选择的词语会变成蓝色。
+Prompt 4: _提示_- 你想改变你选的词语，请再按那个词语，选择就取消了。
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 30
+
+Application Name: SATURN
+Page Title: Pick Fruit Word
+Page Number: 7
+Task: Simple Attention
+Prompt: 请选择水果名字的词语。
+Error Pop Ups: 2;还没好！\n\n请选择两个水果才能继续下一步。;还没好！\n+只能+选择水果名字的词语才能继续下一步。\n\n按一个词语两次会`取消选择`。
+Type of Question: Multi Word Selection
+Word Bank: [窗口, 桔子, 香蕉, 椅子]
+Dimensions: 4x1
+Correct Answer: 桔子, 香蕉
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Instructions 4
+Page Number: 8
+Task: Instruction
+Prompt 1: 有时你需要选择一个号码。
+Prompt 2: 在这些页面上，我们会给你一个数字键盘。
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 14
+
+Application Name: SATURN
+Page Title: Number 1239
+Page Number: 9
+Task: Simple Attention
+Prompt: 输入数字  {1239}
+Error Pop Ups: 还没好！\n你需要选择正确的号码才能继续下一步。
+Type of Question: Number Pad
+Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+Dimensions: 4x3
+Correct Answer: 1239
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Instruction
+Page Number: 10
+Task: Instruction
+Prompt 1: 下一个是一个记忆的项目。
+Prompt 2: 你会学五个词语。
+Prompt 3: 词语会自动地出现在下一页。
+Prompt 4: 请注意！
+Prompt 5: 你只会看到每个词语几秒钟。
+Prompt 6: 你的任务是_记住每个词语_。
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 37
+
+Application Name: SATURN
+Page Title: Instruction
+Page Number: 11
+Prompt 1: 请记住每个词语! 
+Prompt 2: 词语要来了!
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+
+Application Name: SATURN
+Page Title: Flash Words
+Page Number: 12
+Words: [动物,背包,教会,柠檬,围巾]
+Type of Question: Flashing Words
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+
+Application Name: SATURN
+Page Title: Instruction 6
+Page Number: 13
+Task: Instruction
+Prompt 1: 请记住这五个词语。
+Prompt 2: 现在请回答几个问题。
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 14
+
+Application Name: SATURN
+Page Title: Recall Shape
+Page Number: 14
+Task: Memory Incidental
+Prompt: 之前，你被要求选择什么形状？
+Error Pop Ups: 还没好! \n要继续，你需要选择一个形状。\n\n如果你不知道,请猜一猜。
+Type of Question: Word Selection
+Word Bank: [圆圈, 矩形, 方形, 三角形]
+Dimensions: 4x1
+Correct Answer: 圆圈
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Pick J Word Again
+Page Number: 15
+Task: Memory Incidental
+Prompt: 你记不记得你拿到这台电脑后的第一个操作？你选了一个有某一个偏旁部首的词语。\n请选择相同的词语。
+Error Pop Ups: 还没好! \n你必须选择一个词语 才能继续下一步。\n\n如果你不知道,请猜一猜。
+Type of Question: Word Selection
+Word Bank: [玻璃, 蛋糕, 房子, 火车, 剪刀, 裤子, 篮球, 新闻, 微笑, 铅笔]
+Dimensions: 5x2
+Correct Answer: 裤子
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Number 1239 Again
+Page Number: 16
+Task: Memory Incidental
+Prompt: 你第一次看见数字键盘,输入特定四位数: \n请再输入相同的号码。
+Error Pop Ups: 还没好! \n你必须输入四位数 才能继续下一步。\n\n如果你不知道, 请猜一猜。
+Type of Question: Number Pad
+Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+Dimensions: 4x3
+Correct Answer: 1239
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Month
+Page Number: 17
+Task: Orientation
+Prompt: 现在是几月?
+Error Pop Ups: 还没好!\n你必须选择 一个月份。\n\n如果你不知道, 请猜一猜。
+Type of Question: Word Selection
+Word Bank: [一月, 二月, 三月, 四月, 五月, 六月, 七月, 八月, 九月, 十月, 十一月, 十二月]
+Dimensions: 6x2
+Correct Answer: JUNE
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Year
+Page Number: 18
+Task: Orientation
+Prompt: 现在是哪一年?
+Error Pop Ups: 还没好!\n 你必须输入四位数。 \n\n如果你不知道哪年, 请猜一猜。
+Type of Question: Number Pad
+Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+Dimensions: 4x3
+Correct Answer: -
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Day of the Week
+Page Number: 19
+Task: Orientation
+Prompt: 今天是星期几?
+Error Pop Ups: 还没好! \n你必须选择一个日子。\n\n如果你不知道哪天, 请猜一猜。
+Type of Question: Word Selection
+Word Bank: [星期日, 星期一, 星期二, 星期三, 星期四, 星期五, 星期六]
+Dimensions: 7x1
+Correct Answer: -
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Pick Five Words
+Page Number: 20
+Task: Memory Five Words
+Prompt: 刚才我们要你记住五个词语。 请从列表中选出这五个词语。
+Error Pop Ups: 6;还没好!\n你必须选择 五个词语。\n\n如果你不知道, 请猜一猜。;还没好!\n你+只能+选择五个词语。\n\n按一个词语两次会`取消选择`。
+Type of Question: Multi Word Selection
+Word Bank: [阿姨, 白云, 背包, 被子, 鼻子, 玻璃, 测试, 产品, 窗口, 衬衫, 厨师, 锤子, 春天, 词语, 电视, 电脑, 带子, 动物, 大学, 蛋糕, 耳朵, 房间, 房子, 飞机, 粉色, 分钟, 钢琴, 公司, 公园, 国家, 果汁, 海洋, 红色, 猴子, 蝴蝶, 黃瓜, 火车, 吉他, 教会, 剪刀, 警察, 酒店, 卡车, 孔雀, 裤子, 筷子, 蓝色, 篮球, 老师, 梨子, 萝卜, 楼梯, 玫瑰, 美国, 美元, 墨镜, 木头, 男孩, 柠檬, 牛奶, 农民, 女孩, 盘子, 朋友, 苹果, 铅笔, 钱包, 汽车, 旗帜, 太阳, 毯子, 天鹅, 同学, 土豆, 软件, 沙发, 商店, 身体, 世界, 手表, 网页, 围巾, 围裙, 微笑, 学校, 学生, 香蕉, 新闻, 熊猫, 牙齿, 眼睛, 洋葱, 医院, 音乐, 油画, 雨伞, 月亮, 枕头, 作业, 足球]
+Dimensions: 17x6
+Correct Answer: 动物,背包,教会,柠檬,围巾
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Math 1
+Page Number: 21
+Task: Math
+Prompt: 你带着刚好一百美元去商店。你花了七美元买一打苹果, 花了六十美元买了一个三轮车。\n你花了多少钱?
+Error Pop Ups: 还没好!\n你必须输入钱数。\n\n如果你不知道, 请猜一猜。
+Type of Question: Money Number Pad
+Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+Dimensions: 4x3
+Correct Answer: 67
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Math 2
+Page Number: 22
+Task: Math
+Prompt: 你还剩下多少钱?
+Error Pop Ups: 还没好!\n你必须输入钱数。 \n\n如果你不知道, 请猜一猜。
+Type of Question: Money Number Pad
+Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+Dimensions: 4x3
+Correct Answer: 33
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Instruction 7
+Page Number: 23
+Task: Instruction
+Prompt 1: 下一页,你会看见几个图画。
+Prompt 2: 请选择组成大图的小图。
+Prompt 3: /InstructionImages/drawingCHINESE.png
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 18
+
+Application Name: SATURN
+Page Title: Drawing 1
+Page Number: 24
+Task: Visuospatial Image Combos
+Prompt: 那两个小图能形成大图?
+Error Pop Ups: 2;还没好!\n你必须选择 两个图画。\n\n如果你不知道, 请猜一猜。;还没好!\n你+只能+选择 两个图画。\n\n按一个图画两次 会`取消选择`。
+Type of Question: Image Selection
+Answer Img: /ImageSelectionShapesJPGs/shapes-answer.webp
+File Path: [/ImageSelectionShapesJPGs/shapes1.webp, /ImageSelectionShapesJPGs/shapes2.webp, /ImageSelectionShapesJPGs/shapes3.webp, /ImageSelectionShapesJPGs/shapes4.webp, /ImageSelectionShapesJPGs/shapes5.webp, /ImageSelectionShapesJPGs/shapes6.webp]
+Dimensions: 2x3
+Correct Answer: 0, 4
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Drawing 2
+Page Number: 25
+Task: Visuospatial Image Combos
+Prompt: 那两个小图能形成大图?
+Error Pop Ups: 2;还没好!\n你必须选择 两个图画。\n\n如果你不知道, 请猜一猜。;还没好!\n你+只能+选择 两个图画。\n\n按一个图画两次 会`取消选择`。
+Type of Question: Image Selection
+Answer Img: /ImageSelectionFaceJPGs/face-answer.webp
+File Path: [/ImageSelectionFaceJPGs/face1.webp, /ImageSelectionFaceJPGs/face2.webp, /ImageSelectionFaceJPGs/face3.webp, /ImageSelectionFaceJPGs/face4.webp, /ImageSelectionFaceJPGs/face5.webp, /ImageSelectionFaceJPGs/face6.webp]
+Dimensions: 2x3
+Correct Answer: 1, 5
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Drawing 3
+Page Number: 26
+Task: Visuospatial Image Combos
+Prompt: 那两个小图能形成大图?
+Error Pop Ups: 2;还没好!\n你必须选择 两个图画。\n\n如果你不知道, 请猜一猜。;还没好!\n你+只能+选择 两个图画。\n\n按一个图画两次 会`取消选择`。
+Type of Question: Image Selection
+Answer Img: /ImageSelectionDiagonalLinesJPGs/diagonal-line-answer.webp
+File Path: [/ImageSelectionDiagonalLinesJPGs/diagonal-line1.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line2.webp,/ImageSelectionDiagonalLinesJPGs/diagonal-line3.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line4.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line5.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line6.webp]
+Dimensions: 2x3
+Correct Answer: 2, 5
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Drawing 4
+Page Number: 27
+Task: Visuospatial Image Combos
+Prompt: 那两个小图能形成大图?
+Error Pop Ups: 2;还没好!\n你必须选择 两个图画。\n\n如果你不知道, 请猜一猜。;还没好!\n你+只能+选择 两个图画。\n\n按一个图画两次 会`取消选择`。
+Type of Question: Image Selection
+Answer Img: /ImageSelectionCubeJPGs/cube-answer.webp
+File Path: [/ImageSelectionCubeJPGs/cube1.webp, /ImageSelectionCubeJPGs/cube2.webp, /ImageSelectionCubeJPGs/cube3.webp, /ImageSelectionCubeJPGs/cube4.webp, /ImageSelectionCubeJPGs/cube5.webp, /ImageSelectionCubeJPGs/cube6.webp]
+Dimensions: 2x3
+Correct Answer: 2, 3
+Correct Requirement: -
+
+Application Name: SATURN
+Page Title: Instruction 8
+Page Number: 28
+Task: Instruction
+Prompt 1: 下面您会看到几个字。
+Prompt 2: 请指出字是用什么~字~{颜}^色^写的。
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 14
+
+Application Name: SATURN
+Page Title: Stroop 1
+Page Number: 29
+Error Pop Ups: 1;还没好!\n\n请选择写这个词语用的颜色。; 再试一次!\n\n请选择写 这个 词语用的颜色。
+Type of Question: STROOP
+Word: ~朋友~
+Word Bank: [黄, 红, 蓝]
+Dimensions: 1x3
+Correct Answer: 蓝
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 2
+Page Number: 30
+Error Pop Ups: 1;还没好!\n\n请选择写这个词语用的颜色。; 再试一次!\n\n请选择写 这个 词语用的颜色。
+Type of Question: STROOP
+Word: {微笑}
+Word Bank: [黄, 红, 蓝]
+Dimensions: 1x3
+Correct Answer: 红
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 3
+Page Number: 31
+Error Pop Ups: 1;还没好!\n\n请选择写这个词语用的颜色。; 再试一次!\n\n请选择写 这个 词语用的颜色。
+Type of Question: STROOP
+Word: ^音乐^
+Word Bank: [黄, 红, 蓝]
+Dimensions: 1x3
+Correct Answer: 黄
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 4
+Page Number: 32
+Task: Executive Stroop
+Error Pop Ups: 1;还没好!\n\n请选择写这个词语用的颜色。; 再试一次!\n\n请选择写 这个 词语用的颜色。
+Type of Question: STROOP
+Word: ~黄~
+Word Bank: [黄, 红, 蓝]
+Dimensions: 1x3
+Correct Answer: 蓝
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 5
+Page Number: 33
+Task: Executive Stroop
+Error Pop Ups: 1;还没好!\n\n请选择写这个词语用的颜色。; 再试一次!\n\n请选择写 这个 词语用的颜色。
+Type of Question: STROOP
+Word: ^红^
+Word Bank: [黄, 红, 蓝]
+Dimensions: 1x3
+Correct Answer: 黄
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 6
+Page Number: 34
+Task: Executive Stroop
+Error Pop Ups: 1;还没好!\n\n请选择写这个词语用的颜色。; 再试一次!\n\n请选择写 这个 词语用的颜色。
+Type of Question: STROOP
+Word: {蓝}
+Word Bank: [黄, 红, 蓝]
+Dimensions: 1x3
+Correct Answer: 红
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 7
+Page Number: 35
+Task: Executive Stroop
+Error Pop Ups: 1;还没好!\n\n请选择写这个词语用的颜色。; 再试一次!\n\n请选择写 这个 词语用的颜色。
+Type of Question: STROOP
+Word: ~红~
+Word Bank: [黄, 红, 蓝]
+Dimensions: 1x3
+Correct Answer: 蓝
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 8
+Page Number: 36
+Task: Executive Stroop
+Error Pop Ups: 1;还没好!\n\n请选择写这个词语用的颜色。; 再试一次!\n\n请选择写 这个 词语用的颜色。
+Type of Question: STROOP
+Word: ^蓝^
+Word Bank: [黄, 红, 蓝]
+Dimensions: 1x3
+Correct Answer: 黄
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 9
+Page Number: 37
+Task: Executive Stroop
+Error Pop Ups: 1;还没好!\n\n请选择写这个词语用的颜色。; 再试一次!\n\n请选择写 这个 词语用的颜色。
+Type of Question: STROOP
+Word: {黄}
+Word Bank: [黄, 红, 蓝]
+Dimensions: 1x3
+Correct Answer: 红
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 10
+Page Number: 38
+Task: Executive Stroop
+Error Pop Ups: 1;还没好!\n\n请选择写这个词语用的颜色。; 再试一次!\n\n请选择写 这个 词语用的颜色。
+Type of Question: STROOP
+Word: ^红^
+Word Bank: [黄, 红, 蓝]
+Dimensions: 1x3
+Correct Answer: 黄
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 11
+Page Number: 39
+Task: Executive Stroop
+Error Pop Ups: 1;还没好!\n\n请选择写这个词语用的颜色。; 再试一次!\n\n请选择写 这个 词语用的颜色。
+Type of Question: STROOP
+Word: {蓝}
+Word Bank: [黄, 红, 蓝]
+Dimensions: 1x3
+Correct Answer: 红
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 12
+Page Number: 40
+Task: Executive Stroop
+Error Pop Ups: 1;还没好!\n\n请选择写这个词语用的颜色。; 再试一次!\n\n请选择写 这个 词语用的颜色。
+Type of Question: STROOP
+Word: ~红~
+Word Bank: [黄, 红, 蓝]
+Dimensions: 1x3
+Correct Answer: 蓝
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 13
+Page Number: 41
+Task: Executive Stroop
+Error Pop Ups: 1;还没好!\n\n请选择写这个词语用的颜色。; 再试一次!\n\n请选择写 这个 词语用的颜色。
+Type of Question: STROOP
+Word: {黄}
+Word Bank: [黄, 红, 蓝]
+Dimensions: 1x3
+Correct Answer: 红
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 14
+Page Number: 42
+Task: Executive Stroop
+Error Pop Ups: 1;还没好!\n\n请选择写这个词语用的颜色。; 再试一次!\n\n请选择写 这个 词语用的颜色。
+Type of Question: STROOP
+Word: ^蓝^
+Word Bank: [黄, 红, 蓝]
+Dimensions: 1x3
+Correct Answer: 黄
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Stroop 15
+Page Number: 43
+Task: Executive Stroop
+Error Pop Ups: 1;还没好!\n\n请选择写这个词语用的颜色。; 再试一次!\n\n请选择写 这个 词语用的颜色。
+Type of Question: STROOP
+Word: ~黄~
+Word Bank: [黄, 红, 蓝]
+Dimensions: 1x3
+Correct Answer: 蓝
+Correct Requirement: Yes
+
+Application Name: SATURN
+Page Title: Instruction 9
+Page Number: 44
+Task: Instruction
+Prompt 1: 快完成了!
+Prompt 2: 最后一项你要把每个点点连起来。
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 11
+
+Application Name: SATURN
+Page Title: Instruction 10
+Page Number: 45
+Task: Instruction
+Prompt 1: 从一个点到下个点要画一个线。
+Prompt 2: 每个点有一个数。 请从小到大把点点连起来。(1, 2, 3)
+Prompt 3: 每个点有一个生肖动物。 请按顺序连起来。(鼠,牛,虎)
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 22
+
+Application Name: SATURN
+Page Title: Instruction 11
+Page Number: 46
+Task: Instruction
+Prompt 1: 看起来点点像这样:
+Prompt 2: /InstructionImages/connect.jpg
+Prompt 3: 如果点击正确的顺序点点会变成绿色
+Prompt 4: /InstructionImages/connectPass.jpg
+Prompt 5: 如果顺序不对点点变成红色。 
+Prompt 6: /InstructionImages/connectFail.jpg
+Type of Question: Instruction
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -
+Word Count: 25
+
+Page Title: CONNECT
+Page Number: 47
+Type of Question: Connect the Box
+Task: Visuospatial Mini-trails A
+Characters: [1, 2, 3, 4, 5]
+Prompt 1: 请把每个点点连起来 
+Prompt 2: 从第一开始,然后按顺序。继续,直到结束。
+Position: [(25, 50), (55, 15), (80, 55), (50, 40), (60, 80)]
+Correct Answer: 5
+Correct Requirement: Yes
+Error Pop Ups: 还没好!\n\n你必须连起来 所有点。
+
+Page Title: CONNECT
+Page Number: 48
+Type of Question: Connect the Box
+Task: Executive Mini-trails B
+Prompt 1: 请把每个点点连起来
+Prompt 2: {交替数字和生肖动物。}从“一”开始, 然后跟第一属性连起来。第一属性是“鼠”。 然后连“鼠”和“二”。从“二”要跟第二属性连起来…
+Prompt 3: 继续,直到结束。
+Characters: [1, 鼠, 2, 牛, 3, 虎, 4, 兔]
+Position: [(50, 60), (70, 15), (85, 60), (65, 40), (75, 80), (25, 80), (20, 15), (40, 25)]
+Correct Answer: 8
+Correct Requirement: Yes
+Error Pop Ups: 还没好!\n\n你必须连起来 所有点。

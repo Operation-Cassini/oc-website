@@ -10,12 +10,14 @@ function renderStyledContent(content) {
       underline: { textDecoration: 'underline' },
       italic: { fontStyle: 'italic' },
       red: { color: 'red' },
-      green: { color: 'green' },
+      green: { color: '#00b500' },
       blue: { color: 'blue' },
       blueHighlight: { backgroundColor: '#85c7ff'},
       fadingBlueHighlight: {
         background: 'linear-gradient(to right, #85c7ff, #AEDAFF, #C8E6FF, #FFFFFF)',
-      }
+      },
+      yellow: { color: '#d0bc2a' },
+      brown: {color: '#964B00' }
     };
 
     const styles = part.style ? part.style.split(' ').map(s => styleMap[s]).reduce((acc, cur) => ({ ...acc, ...cur }), {}) : {};
