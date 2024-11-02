@@ -67,9 +67,9 @@ const LandingPage = () => {
       return (
         <div key={index} className="category-data">
           {parsedItem.totalTime !== undefined && <p>Total Time: {parsedItem.totalTime}</p>}
-          {parsedItem.points !== undefined && <p>Points: {parsedItem.points}</p>}
+          {/* {parsedItem.points !== undefined && <p>Points: {parsedItem.points}</p>}
           {parsedItem["motor speed"] && <p>Motor Speed: {parsedItem["motor speed"]}</p>}
-          {parsedItem["reading speed"] && <p>Reading Speed: {parsedItem["reading speed"]}</p>}
+          {parsedItem["reading speed"] && <p>Reading Speed: {parsedItem["reading speed"]}</p>} */}
         </div>
       );
     });
@@ -168,15 +168,17 @@ const LandingPage = () => {
     </div>
       
       <div className="bottom-section">
-      <div className="search-bar-container">
+      <div className="container">
+          <div className="search-bar-container">
             <input
-              type="text"
-              placeholder="Have a 7-Digit Code? Enter it here..."
-              value={searchQuery}
-              onChange={handleSearchChange}
-              className="search-bar"
-            />
-            <button onClick={handleSearchSubmit} className="search-button">Search</button>
+                  type="text"
+                  placeholder="Have a 7-Digit Code? Enter it here..."
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  className="search-bar"
+                />
+                <button onClick={handleSearchSubmit} className="search-button">Search</button>
+          </div>
           </div>
           <div className='error-message-container'>
             {errorMessage && <p className="error-message">{errorMessage}</p>}
