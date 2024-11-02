@@ -101,7 +101,7 @@ const LandingPage = () => {
         <p><strong>Total Time:</strong> {totalTime.toFixed(1)} minutes</p>
         <div><strong>Simple Attention:</strong> {renderCategoryData(simpleAttention)}</div>
         <div><strong>Orientation:</strong> {renderCategoryData(orientation)}</div>
-        <div><strong>Memory Five Words:</strong> {renderCategoryData(memoryFiveWords)}</div>
+        {/* <div><strong>Memory Five Words:</strong> {renderCategoryData(memoryFiveWords)}</div>
         <div><strong>Memory Incidental:</strong> {renderCategoryData(memoryIncidental)}</div>
         <div><strong>Math:</strong> {renderCategoryData(math)}</div>
         <div><strong>Image Matching:</strong> {renderCategoryData(visuospatialImageCombos)}</div>
@@ -109,7 +109,7 @@ const LandingPage = () => {
         <div><strong>Mini Trails A:</strong> {renderCategoryData(visuospatialMiniTrailsA)}</div>
         <div><strong>Mini Trails B:</strong> {renderCategoryData(executiveMiniTrailsB)}</div>
         <p><strong>Time Test Taken:</strong> {new Date(createdAt).toLocaleString()}</p>
-        <div><strong>Reading Speed:</strong> {renderCategoryData(readingSpeed)}</div>
+        <div><strong>Reading Speed:</strong> {renderCategoryData(readingSpeed)}</div> */}
       </div>
     );
   };

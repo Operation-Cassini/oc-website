@@ -73,7 +73,7 @@ const checkIfNumberExists = async (number) => {
   return response.data.listSaturnTestData.items.length > 0;
 };
 
-const generateUniqueSixDigitCode = async () => {
+const generateUniqueSevenDigitCode = async () => {
   let uniqueCode;
   let isUnique = false;
 
@@ -263,7 +263,7 @@ const App = () => {
         });
 
       // Generate a unique tab code
-      const uniqueCode = await generateUniqueSixDigitCode();
+      const uniqueCode = await generateUniqueSevenDigitCode();
       setTabCode(uniqueCode);
     };
 
@@ -410,18 +410,18 @@ const App = () => {
       id: (tabCode).toString(),
       totalPoints: results["Total Points"] ? results["Total Points"].points : 0,
       totalTime: results["Total Time"] ? results["Total Time"].time : 0,
-      // executiveMiniTrailsB: results["Executive Mini-trails B"] ? [JSON.stringify(results["Executive Mini-trails B"])] : [],
-      // executiveStroop: results["Executive Stroop"] ? [JSON.stringify(results["Executive Stroop"])] : [],
-      // math: results["Math"] ? [JSON.stringify(results["Math"])] : [],
-      // meanPredictiveZScores: results["Mean of Predictive Z Scores"] ? [results["Mean of Predictive Z Scores"].zscore] : [],
-      // memoryFiveWords: results["Memory Five Words"] ? [JSON.stringify(results["Memory Five Words"])] : [],
-      // memoryIncidental: results["Memory Incidental"] ? [JSON.stringify(results["Memory Incidental"])] : [],
-      // motorSpeed: results["Motor Speed"] ? [JSON.stringify(results["Motor Speed"])] : [],
+      executiveMiniTrailsB: results["Executive Mini-trails B"] ? [JSON.stringify(results["Executive Mini-trails B"])] : [],
+      executiveStroop: results["Executive Stroop"] ? [JSON.stringify(results["Executive Stroop"])] : [],
+      math: results["Math"] ? [JSON.stringify(results["Math"])] : [],
+      meanPredictiveZScores: results["Mean of Predictive Z Scores"] ? [results["Mean of Predictive Z Scores"].zscore] : [],
+      memoryFiveWords: results["Memory Five Words"] ? [JSON.stringify(results["Memory Five Words"])] : [],
+      memoryIncidental: results["Memory Incidental"] ? [JSON.stringify(results["Memory Incidental"])] : [],
+      motorSpeed: results["Motor Speed"] ? [JSON.stringify(results["Motor Speed"])] : [],
       orientation: results["Orientation"] ? [JSON.stringify(results["Orientation"])] : [],
-      // readingSpeed: results["Reading Speed"] ? [JSON.stringify(results["Reading Speed"])] : [],
+      readingSpeed: results["Reading Speed"] ? [JSON.stringify(results["Reading Speed"])] : [],
       simpleAttention: results["Simple Attention"] ? [JSON.stringify(results["Simple Attention"])] : [],
-      // visuospatialImageCombos: results["Visuospatial Image Combos"] ? [JSON.stringify(results["Visuospatial Image Combos"])] : [],
-      // visuospatialMiniTrailsA: results["Visuospatial Mini-trails A"] ? [JSON.stringify(results["Visuospatial Mini-trails A"])] : []
+      visuospatialImageCombos: results["Visuospatial Image Combos"] ? [JSON.stringify(results["Visuospatial Image Combos"])] : [],
+      visuospatialMiniTrailsA: results["Visuospatial Mini-trails A"] ? [JSON.stringify(results["Visuospatial Mini-trails A"])] : []
     };
     
     
