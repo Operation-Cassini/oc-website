@@ -1,6 +1,6 @@
 projects:
-  ocwebsite:
-    schemaPath: amplify/backend/api/ocwebsite/build/schema.graphql
+  Codegen Project:
+    schemaPath: schema.json
     includes:
       - src/graphql/**/*.js
     excludes:
@@ -12,7 +12,6 @@ projects:
         docsFilePath: src/graphql
         region: us-east-2
         apiId: hsoocohnr5c2bmu6fo4l6dy4se
-        maxDepth: 3
-extensions:
-  amplify:
-    version: 3
+        frontend: javascript
+        framework: react
+        maxDepth: 2
