@@ -66,9 +66,9 @@ const LandingPage = () => {
       const parsedItem = JSON.parse(item);
       return (
         <div key={index} className="category-data">
-          {parsedItem.totalTime !== undefined && <p>Total Time: {parsedItem.totalTime}</p>}
-          {/* {parsedItem.points !== undefined && <p>Points: {parsedItem.points}</p>}
-          {parsedItem["motor speed"] && <p>Motor Speed: {parsedItem["motor speed"]}</p>}
+          {/*{parsedItem.totalTime !== undefined && <p>Total Time: {parsedItem.totalTime}</p>}*/}
+          {parsedItem.points !== undefined && <p>Points: {parsedItem.points}</p>}
+          {/* {parsedItem["motor speed"] && <p>Motor Speed: {parsedItem["motor speed"]}</p>}
           {parsedItem["reading speed"] && <p>Reading Speed: {parsedItem["reading speed"]}</p>} */}
         </div>
       );
@@ -101,14 +101,14 @@ const LandingPage = () => {
         <p><strong>Total Time:</strong> {totalTime.toFixed(1)} minutes</p>
         <div><strong>Simple Attention:</strong> {renderCategoryData(simpleAttention)}</div>
         <div><strong>Orientation:</strong> {renderCategoryData(orientation)}</div>
-        {/* <div><strong>Memory Five Words:</strong> {renderCategoryData(memoryFiveWords)}</div>
+        <div><strong>Memory Five Words:</strong> {renderCategoryData(memoryFiveWords)}</div>
         <div><strong>Memory Incidental:</strong> {renderCategoryData(memoryIncidental)}</div>
         <div><strong>Math:</strong> {renderCategoryData(math)}</div>
         <div><strong>Image Matching:</strong> {renderCategoryData(visuospatialImageCombos)}</div>
         <div><strong>Stroop:</strong> {renderCategoryData(executiveStroop)}</div>
         <div><strong>Mini Trails A:</strong> {renderCategoryData(visuospatialMiniTrailsA)}</div>
         <div><strong>Mini Trails B:</strong> {renderCategoryData(executiveMiniTrailsB)}</div>
-        <p><strong>Time Test Taken:</strong> {new Date(createdAt).toLocaleString()}</p>
+        {/*<p><strong>Time Test Taken:</strong> {new Date(createdAt).toLocaleString()}</p>
         <div><strong>Reading Speed:</strong> {renderCategoryData(readingSpeed)}</div> */}
       </div>
     );
