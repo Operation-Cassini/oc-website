@@ -574,13 +574,3 @@ Position: [(50, 60), (70, 15), (85, 60), (65, 40), (75, 80), (25, 80), (20, 15),
 Correct Answer: 8
 Correct Requirement: Yes
 Error Pop Ups: ¡Todavía no!\n\nTiene que conectar todos los puntos.
-
-Application Name: SATURN
-Page Title: End
-Page Number: 20
-Task: End
-Prompt: ¡Ha terminado!
-Type of Question: End
-Correct Answer: -
-Correct Requirement: -
-Error Pop Ups: -"

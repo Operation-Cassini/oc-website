@@ -52,7 +52,7 @@ i18n.use(initReactI18next).init({
             saturday: "sábado"
         },
         end: {
-            done_with_test: "¡Terminaste con la prueba!",
+            done_with_test: "¡Ha terminado!",
             save_number_to_view_results: "Guarda este número para ver tus resultados",
             view_results_on: "Puedes ver tus resultados en "
         },
