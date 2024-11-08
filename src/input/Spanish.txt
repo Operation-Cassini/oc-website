@@ -117,6 +117,8 @@ Correct Requirement: -
 Error Pop Ups: -
 Word Count: 32
 
+Application Name: SATURN
+Page Title: Instruction
 Page Number: 11
 Prompt 1: Recuerde las palabras.
 Prompt 2: ...¡Aquí vienen!...
