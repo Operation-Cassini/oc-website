@@ -9,8 +9,8 @@ Error Pop Ups: -
 Application Name: SATURN
 Page Title: Pick The Shape
 Page Number: 2
-Prompt: Seleccione el círculo, luego toca el botón "Siga"
-Error Pop Ups: ¡Aun no!\nPara continuar tienes que elegir el círculo.\n\nTócala y el círculo se volverá azul.
+Prompt: Seleccione el círculo, luego toque el botón "Siguiente"
+Error Pop Ups: ¡Todavía no!\nPara continuar tiene que elegir el círculo.\n\nTóquelo y el círculo se volverá azul.
 Type of Question: Image Selection Single
 File Path: [/ImageSelectionShapesJPGs/square.jpg, /ImageSelectionShapesJPGs/circle.jpg]
 Dimensions: 1x2
@@ -21,8 +21,8 @@ Application Name: SATURN
 Page Title: Instruction 1
 Page Number: 3
 Prompt 1: Algunas de las tareas en esta prueba son fáciles y otras son difíciles.
-Prompt 2: Completa las tareas sin ninguna ayuda de las personas en el cuarto.
-Prompt 3: Cuando estés listo, toca acá para ir a la siguiente página.
+Prompt 2: Complete los ejercicios sin ninguna ayuda de las personas en el cuarto.
+Prompt 3: Cuando esté listo, toque el botón “siguiente” para ir a la siguiente página.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -32,21 +32,20 @@ Application Name: SATURN
 Page Title: Instruction 2
 Page Number: 4
 Task: Instruction
-Prompt 1: A veces, tú eliges una palabra de la lista.
-Prompt 2: Para seleccionar la palabra tócala y se volverá `azul`.
+Prompt 1: A continuación, va a tener que elegir una palabra de la lista.
+Prompt 2: Para seleccionar la palabra tóquela y se volverá `azul`.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
 Error Pop Ups: -
 Word Count: 18
 
-
 Application Name: SATURN
 Page Title: Pick J Word
 Page Number: 5
 Task: Simple Attention
-Prompt: Selecciona la palabra que empiece con {*j*}
-Error Pop Ups: ¡Aun no! \n Para continuar, tienes que elegir la palabra con “j”.\n\nTócala y la palabra se volverá azul.
+Prompt: Seleccione la palabra que empiece con {*j*}
+Error Pop Ups: ¡Todavía no! \n Para continuar, tiene que elegir la palabra con "j".\n\nTóquela y la palabra se volverá azul.
 Type of Question: Word Selection
 Word Bank: [aire, cine, dedo, flor, jefe, kiwi, lago, nube, piso, taxi]
 Dimensions: 5x2
@@ -57,9 +56,9 @@ Application Name: SATURN
 Page Title: Instruction 3
 Page Number: 6
 Task: Instruction
-Prompt 1: A veces eliges varias palabras de la lista.
-Prompt 2: Para seleccionar la palabra tócala y se volverá `azul`.
-Prompt 3: _consejo_- Si cambias de parecer, toca la palabra de nuevo y esto hará que la palabra sea @deseleccion@ada.
+Prompt 1: A continuación, va a tener que elegir una palabra de la lista.
+Prompt 2: Para seleccionar la palabra tóquela y se volverá `azul`.
+Prompt 3: _Consejo_- Si cambia de parecer, toque la palabra de nuevo para @des@hacer.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -70,32 +69,32 @@ Application Name: SATURN
 Page Title: Pick Fruit Word
 Page Number: 7
 Task: Simple Attention
-Prompt: Selecciona las palabras que sean frutas
-Error Pop Ups: 2;¡Aun no!\n\nPara continuar, tienes que elegir ambas palabras de frutas.;¡Aun no!\nPara continuar, tienes que elegir +solo+ palabras de frutas.\n\nPara deseleccionar toca la palabra de nuevo.
+Prompt: Seleccione todas las palabras que sean frutas.
+Error Pop Ups: ¡Todavía no! \nPara continuar, tiene que elegir todas las frutas.;¡Todavía no!\nPara continuar, tiene que elegir +solo+ palabras de frutas.\n\nPara deshacer una palabra, tóquela de nuevo.
 Type of Question: Multi Word Selection
-Word Bank: [fresa, hogar, lima, reloj]
+Word Bank: [fresa, hogar, limón, reloj]  
 Dimensions: 4x1
-Correct Answer: lima, fresa
+Correct Answer: fresa, limón 
 Correct Requirement: Yes
 
 Application Name: SATURN
-Page Title: Instructions 4
+Page Title: Instruction 4
 Page Number: 8
 Task: Instruction
-Prompt 1: A veces, necesitas un numero.
-Prompt 2: En esas páginas te enseñamos un teclado numérico.
+Prompt 1: A continuación, necesita un número.
+Prompt 2: En las siguientes páginas le enseñamos un teclado numérico.
+Prompt 3: Escriba el número {1239}
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
 Error Pop Ups: -
-Word Count: 13
 
 Application Name: SATURN
 Page Title: Number 1239
 Page Number: 9
 Task: Simple Attention
-Prompt: Escribe el número {1239}
-Error Pop Ups: ¡Aun no!\n Para continuar, tienes que digitar los números correctos.
+Prompt: Escriba el número {1239}
+Error Pop Ups: ¡Todavía no!\n Para continuar, tiene que digitar los números correctos.
 Type of Question: Number Pad
 Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 Dimensions: 4x3
@@ -106,22 +105,20 @@ Application Name: SATURN
 Page Title: Instruction
 Page Number: 10
 Task: Instruction
-Prompt 1: El siguiente es una tarea de memoria.
-Prompt 2: Estudiaras cinco palabras.
-Prompt 3: Ellas aparecen automáticamente en la siguiente página.
-Prompt 4: ¡Presta atención!
-Prompt 5: Solo veras la palabra por unos segundos.
-Prompt 6: Tu tarea será _recordar estas palabras_.
+Prompt 1: Lo siguiente es un ejercicio de memoria.
+Prompt 2: Memoriza cinco palabras.
+Prompt 3: Estas aparecerán automáticamente en la siguiente página.
+Prompt 4: ¡Preste atención!
+Prompt 5: Solo verá la palabra por unos segundos.
+Prompt 6: Su tarea será recordar estas palabras.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
 Error Pop Ups: -
 Word Count: 32
 
-Application Name: SATURN
-Page Title: Instruction
 Page Number: 11
-Prompt 1: Recuerda las palabras.
+Prompt 1: Recuerde las palabras.
 Prompt 2: ...¡Aquí vienen!...
 Type of Question: Instruction
 Correct Answer: -
@@ -141,8 +138,8 @@ Application Name: SATURN
 Page Title: Instruction 6
 Page Number: 13
 Task: Instruction
-Prompt 1: Recuerda estas cinco palabras para después.
-Prompt 2: Por ahora, por favor responde unas cuantas preguntas.
+Prompt 1: Recuerde estas cinco palabras.
+Prompt 2: Mientras tanto, por favor responda unas cuantas preguntas.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -154,7 +151,7 @@ Page Title: Recall Shape
 Page Number: 14
 Task: Memory Incidental
 Prompt: ¿Qué forma seleccionó al comienzo de la prueba?
-Error Pop Ups: ¡Todavía no!\nPara continuar tienes que elegir una forma.\n\nSi no lo sabes, ¡adivina!
+Error Pop Ups: ¡Todavía no!\nPara continuar tiene que elegir una forma.\n\nSi no lo sabe, ¡adivine!
 Type of Question: Word Selection
 Word Bank: [círculo, rectángulo, cuadrado, triangulo]
 Dimensions: 4x1
@@ -165,8 +162,8 @@ Application Name: SATURN
 Page Title: Pick J Word Again
 Page Number: 15
 Task: Memory Incidental
-Prompt: ¿Recuerdas tu primera tarea cuando empezaste esta prueba? Tuviste que elegir una sola palabra que comience con una {letra} determinada. \nElige esa misma palabra
-Error Pop Ups: ¡Todavía no!\nPara continuar tienes que elegir una palabra.\n\nSi no lo sabes, ¡adivina!
+Prompt: ¿Recuerda el primer ejercicio cuando empezó esta prueba? Tuvo que elegir una sola palabra que comience con una {letra} determinada. \nElija esa misma palabra.
+Error Pop Ups: ¡Todavía no!\nPara continuar tiene que elegir una palabra.\n\nSi no lo sabe, ¡adivine!
 Type of Question: Word Selection
 Word Bank: [aire, cine, dedo, flor, gato, jefe, lago, nube, piso, taxi]
 Dimensions: 5x2
@@ -177,8 +174,8 @@ Application Name: SATURN
 Page Title: Number 1239 Again
 Page Number: 16
 Task: Memory Incidental
-Prompt: Cuando vio por primera vez este teclado numérico, tuvo que ingresar un número específico de quatro dígitos.\nIngrese el mismo número, nuevamente.
-Error Pop Ups: ¡Todavía no!\nPara continuar tienes que ingresar el número de cuatro dígitos.\n\nSi no lo sabes, ¡adivina!
+Prompt: Cuando vio por primera vez este teclado numérico, tuvo que ingresar un número específico de cuatro dígitos.\nIngrese el mismo número nuevamente.
+Error Pop Ups: ¡Todavía no!\nPara continuar tiene que ingresar el número de cuatro dígitos.\n\nSi no lo sabe, ¡adivine!
 Type of Question: Number Pad
 Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 Dimensions: 4x3
@@ -189,20 +186,20 @@ Application Name: SATURN
 Page Title: Month
 Page Number: 17
 Task: Orientation
-Prompt: ¿Qué mes es?
-Error Pop Ups: ¡Todavía no!\nPara continuar tienes que elegir un mes.\n\nSi no sabes el mes, ¡adivina!
+Prompt: ¿En qué mes estamos?
+Error Pop Ups: ¡Todavía no!\nPara continuar tiene que elegir un mes.\n\nSi no lo sabe, ¡adivine!
 Type of Question: Word Selection
 Word Bank: [enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre]
 Dimensions: 6x2
-Correct Answer: JUNE
+Correct Answer: JUNIO
 Correct Requirement: -
 
 Application Name: SATURN
 Page Title: Year
 Page Number: 18
 Task: Orientation
-Prompt: ¿Qué año es?
-Error Pop Ups: ¡Todavía no!\nPara continuar tienes que ingresar los cuatro dígitos.\n\nSi no sabes el año, ¡adivina!
+Prompt: ¿En qué año estamos?
+Error Pop Ups: ¡Todavía no!\nPara continuar tiene que ingresar los cuatro dígitos.\n\nSi no lo sabe, ¡adivine!
 Type of Question: Number Pad
 Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 Dimensions: 4x3
@@ -214,19 +211,19 @@ Page Title: Day of the Week
 Page Number: 19
 Task: Orientation
 Prompt: ¿Qué día de la semana es hoy?
-Error Pop Ups: ¡Todavía no!\nPara continuar tienes que ingresar un día.\n\nSi no sabes el día, ¡adivina!
+Error Pop Ups: ¡Todavía no!\nPara continuar tiene que ingresar un día.\n\nSi no lo sabe, ¡adivine!
 Type of Question: Word Selection
 Word Bank: [domingo, lunes, martes, miércoles, jueves, viernes, sábado]
 Dimensions: 7x1
-Correct Answer: TUESDAY
+Correct Answer: JUEVES
 Correct Requirement: -
 
 Application Name: SATURN
 Page Title: Pick Five Words
 Page Number: 20
 Task: Memory Five Words
-Prompt: Antes, memorizaste cinco palabras. Elige esas palabras de esta lista:
-Error Pop Ups: 6;¡Todavía no!\nTienes que elegir cinco palabras.\n\nSi no lo sabes, ¡adivina!;¡Todavía no!\nSólo puedes elegir +cinco+ palabras. \n\nPara anular la selección de una palabra, tóquela de nuevo.
+Prompt: Antes, memorizó cinco palabras. Elija esas palabras de esta lista:
+Error Pop Ups: 6;¡Todavía no!\nTiene que elegir cinco palabras.\n\nSi no lo sabe, ¡adivine!;¡Todavía no!\nSólo puede elegir +cinco+ palabras. \n\nPara deshacer la selección de una palabra, tóquela de nuevo.
 Type of Question: Multi Word Selection
 Word Bank: [aceite, actor, agua, aguja, aire, alma, animal, autor, ayuda, banco, boca, bosque, brazo, cabeza, canal, cara, carne, carta, casa, cereza, charco, cheque, chicle, cielo, cine, coche, coco, conejo, cuidad, dedo, diario, dibujo, diente, dinero, disco, doctor, equipo, error, espejo, esposa, examen, fiesta, flor, foto, fresa, fruto, fuego, gallo, gato, granja, grano, grasa, guante, hielo, hogar, hombre, horno, hotel, hueso, huevo, imagen, isla, jefe, jugo, kiwi, lago, leche, libro, lima, llave, madera, mango, mano, mesa, museo, nariz, nieve, nube, nuez, oliva, oveja, papel, parque, pera, pierna, piso, playa, puerta, queso, radio, reloj, selva, sonido, taxi, tierra, tren, urna, valle, vaso, zorro]
 Dimensions: 17x6
@@ -237,8 +234,8 @@ Application Name: SATURN
 Page Title: Math 1
 Page Number: 21
 Task: Math
-Prompt: Vas a la tienda con exactamente $100. Compras una docena de manzanas por $7 y un triciclo por $60.\n¿Cuánto gastaste?
-Error Pop Ups: ¡Todavía no!\nTienes que ingresar la cantidad en dólares.\n\nSi no lo sabes, ¡adivina!
+Prompt: Va a la tienda con exactamente $100. Usted compra una docena de manzanas por $7 y un triciclo por $60.\n¿Cuánto gastó?
+Error Pop Ups: ¡Todavía no!\nTiene que ingresar la cantidad en dólares.\n\nSi no lo sabe, ¡adivine!
 Type of Question: Money Number Pad
 Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 Dimensions: 4x3
@@ -249,8 +246,8 @@ Application Name: SATURN
 Page Title: Math 2
 Page Number: 22
 Task: Math
-Prompt: Después de esa compra, ¿Cuánto te queda?
-Error Pop Ups: ¡Todavía no!\nTienes que ingresar la cantidad en dólares.\n\nSi no lo sabes, ¡adivina!
+Prompt: Después de esa compra, ¿Cuánto le sobró?
+Error Pop Ups: ¡Todavía no!\nTiene que ingresar la cantidad en dólares.\n\nSi no lo sabe, ¡adivine!
 Type of Question: Money Number Pad
 Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 Dimensions: 4x3
@@ -262,7 +259,7 @@ Page Title: Instruction 7
 Page Number: 23
 Task: Instruction
 Prompt 1: A continuación, verá algunos dibujos.
-Prompt 2: Elige el dibujo pequeño que forma el dibujo grande.
+Prompt 2: Elija el dibujo pequeño que forma el dibujo grande.
 Prompt 3: /InstructionImages/drawingSPANISH.png
 Type of Question: Instruction
 Correct Answer: -
@@ -274,8 +271,8 @@ Application Name: SATURN
 Page Title: Drawing 1
 Page Number: 24
 Task: Visuospatial Image Combos
-Prompt: ¿Qué pequeños dibujos hacen este?
-Error Pop Ups: 2;¡Todavía no!\nTienes que elegir dos dibujos.\n\nSi no lo sabes, ¡adivina!;¡Todavía no!\nSolo puedes elegir +dos+ dibujos.\n\nPara deseleccionar un dibujo, tócalo de nuevo.
+Prompt: ¿Qué figuras forman este dibujo?
+Error Pop Ups: 2;¡Todavía no!\nTiene que elegir dos dibujos.\n\nSi no lo sabe, ¡adivine!;¡Todavía no!\nSolo puede elegir +dos+ dibujos.\n\nPara deshacer un dibujo, tóquelo de nuevo.
 Type of Question: Image Selection
 Answer Img: /ImageSelectionShapesJPGs/shapes-answer.webp
 File Path: [/ImageSelectionShapesJPGs/shapes1.webp, /ImageSelectionShapesJPGs/shapes2.webp, /ImageSelectionShapesJPGs/shapes3.webp, /ImageSelectionShapesJPGs/shapes4.webp, /ImageSelectionShapesJPGs/shapes5.webp, /ImageSelectionShapesJPGs/shapes6.webp]
@@ -287,8 +284,8 @@ Application Name: SATURN
 Page Title: Drawing 2
 Page Number: 25
 Task: Visuospatial Image Combos
-Prompt: ¿Qué pequeños dibujos hacen este?
-Error Pop Ups: 2;¡Todavía no!\nTienes que elegir dos dibujos.\n\nSi no lo sabes, ¡adivina!;¡Todavía no!\nSolo puedes elegir +dos+ dibujos.\n\nPara deseleccionar un dibujo, tócalo de nuevo.
+Prompt: ¿Qué figuras forman este dibujo?
+Error Pop Ups: 2;¡Todavía no!\nTiene que elegir dos formas.\n\nSi no lo sabe, ¡adivine!;¡Todavía no!\nSolo puede elegir +dos+ dibujos.\n\nPara deshacer un dibujo, tóquelo de nuevo.
 Type of Question: Image Selection
 Answer Img: /ImageSelectionFaceJPGs/face-answer.webp
 File Path: [/ImageSelectionFaceJPGs/face1.webp, /ImageSelectionFaceJPGs/face2.webp, /ImageSelectionFaceJPGs/face3.webp, /ImageSelectionFaceJPGs/face4.webp, /ImageSelectionFaceJPGs/face5.webp, /ImageSelectionFaceJPGs/face6.webp]
@@ -300,8 +297,8 @@ Application Name: SATURN
 Page Title: Drawing 3
 Page Number: 26
 Task: Visuospatial Image Combos
-Prompt: ¿Qué pequeños dibujos hacen este?
-Error Pop Ups: 2;¡Todavía no!\nTienes que elegir dos dibujos.\n\nSi no lo sabes, ¡adivina!;¡Todavía no!\nSolo puedes elegir +dos+ dibujos.\n\nPara deseleccionar un dibujo, tócalo de nuevo.
+Prompt: ¿Qué figuras forman este dibujo?
+Error Pop Ups: 2;¡Todavía no!\nTiene que elegir dos dibujos.\n\nSi no lo sabe, ¡adivine!;¡Todavía no!\nSolo puede elegir +dos+ dibujos.\n\nPara deshacer un dibujo, tóquelo de nuevo.
 Type of Question: Image Selection
 Answer Img: /ImageSelectionDiagonalLinesJPGs/diagonal-line-answer.webp
 File Path: [/ImageSelectionDiagonalLinesJPGs/diagonal-line1.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line2.webp,/ImageSelectionDiagonalLinesJPGs/diagonal-line3.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line4.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line5.webp, /ImageSelectionDiagonalLinesJPGs/diagonal-line6.webp]
@@ -313,8 +310,8 @@ Application Name: SATURN
 Page Title: Drawing 4
 Page Number: 27
 Task: Visuospatial Image Combos
-Prompt: ¿Qué pequeños dibujos hacen este?
-Error Pop Ups: 2;¡Todavía no!\nTienes que elegir dos dibujos.\n\nSi no lo sabes, ¡adivina!;¡Todavía no!\nSolo puedes elegir +dos+ dibujos.\n\nPara deseleccionar un dibujo, tócalo de nuevo.
+Prompt: ¿Qué figuras forman este dibujo?
+Error Pop Ups: 2;¡Todavía no!\nTiene que elegir dos dibujos.\n\nSi no lo sabe, ¡adivine!;¡Todavía no!\nSolo puede elegir +dos+ dibujos.\n\nPara dehacer un dibujo, tóquelo de nuevo.
 Type of Question: Image Selection
 Answer Img: /ImageSelectionCubeJPGs/cube-answer.webp
 File Path: [/ImageSelectionCubeJPGs/cube1.webp, /ImageSelectionCubeJPGs/cube2.webp, /ImageSelectionCubeJPGs/cube3.webp, /ImageSelectionCubeJPGs/cube4.webp, /ImageSelectionCubeJPGs/cube5.webp, /ImageSelectionCubeJPGs/cube6.webp]
@@ -327,7 +324,7 @@ Page Title: Instruction 8
 Page Number: 28
 Task: Instruction
 Prompt 1: A continuación, verá algunas palabras.
-Prompt 2: Elige el ~C~{O}~L~+O+{R} que se usa para escribir cada palabra.
+Prompt 2: Elija el ~C~{O}~L~+O+{R} que se usa para escribir cada palabra.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -337,7 +334,7 @@ Word Count: 15
 Application Name: SATURN
 Page Title: Stroop 1
 Page Number: 29
-Error Pop Ups: 1;¡Todavía no!\n\nElige el color usado para escribir esta palabra.; ¡Prueba de nuevo!\n\nElige el color usado para escribir esta palabra.
+Error Pop Ups: 1;¡Todavía no!\n\nElija el color usado para escribir esta palabra.; ¡Todavía no!\n\nElija el color usado para escribir esta palabra.
 Type of Question: STROOP
 Word: ~ayuda~
 Word Bank: [verde, rojo, azul]
@@ -348,7 +345,7 @@ Correct Requirement: Yes
 Application Name: SATURN
 Page Title: Stroop 2
 Page Number: 30
-Error Pop Ups: 1;¡Todavía no!\n\nElige el color usado para escribir esta palabra.; ¡Prueba de nuevo!\n\nElige el color usado para escribir esta palabra.
+Error Pop Ups: 1;¡Todavía no!\n\nElija el color usado para escribir esta palabra.; ¡Intente de nuevo!\n\nElija el color usado para escribir esta palabra.
 Type of Question: STROOP
 Word: {sonido}
 Word Bank: [verde, rojo, azul]
@@ -359,7 +356,7 @@ Correct Requirement: Yes
 Application Name: SATURN
 Page Title: Stroop 3
 Page Number: 31
-Error Pop Ups: 1;¡Todavía no!\n\nElige el color usado para escribir esta palabra.; ¡Prueba de nuevo!\n\nElige el color usado para escribir esta palabra.
+Error Pop Ups: 1;¡Todavía no!\n\nElija el color usado para escribir esta palabra.; ¡Intente de nuevo!\n\nElija el color usado para escribir esta palabra.
 Type of Question: STROOP
 Word: +fiesta+
 Word Bank: [verde, rojo, azul]
@@ -371,7 +368,7 @@ Application Name: SATURN
 Page Title: Stroop 4
 Page Number: 32
 Task: Executive Stroop
-Error Pop Ups: 1;¡Todavía no!\n\nElige el color usado para escribir esta palabra.; ¡Prueba de nuevo!\n\nElige el color usado para escribir esta palabra.
+Error Pop Ups: 1;¡Todavía no!\n\nElija el color usado para escribir esta palabra.; ¡Intente de nuevo!\n\nElija el color usado para escribir esta palabra.
 Type of Question: STROOP
 Word: ~verde~
 Word Bank: [verde, rojo, azul]
@@ -383,7 +380,7 @@ Application Name: SATURN
 Page Title: Stroop 5
 Page Number: 33
 Task: Executive Stroop
-Error Pop Ups: 1;¡Todavía no!\n\nElige el color usado para escribir esta palabra.; ¡Prueba de nuevo!\n\nElige el color usado para escribir esta palabra.
+Error Pop Ups: 1;¡Todavía no!\n\nElija el color usado para escribir esta palabra.; ¡Intente de nuevo!\n\nElija el color usado para escribir esta palabra.
 Type of Question: STROOP
 Word: +rojo+
 Word Bank: [verde, rojo, azul]
@@ -395,7 +392,7 @@ Application Name: SATURN
 Page Title: Stroop 6
 Page Number: 34
 Task: Executive Stroop
-Error Pop Ups: 1;¡Todavía no!\n\nElige el color usado para escribir esta palabra.; ¡Prueba de nuevo!\n\nElige el color usado para escribir esta palabra.
+Error Pop Ups: 1;¡Todavía no!\n\nElija el color usado para escribir esta palabra.; ¡Intente de nuevo!\n\nElija el color usado para escribir esta palabra.
 Type of Question: STROOP
 Word: {azul}
 Word Bank: [verde, rojo, azul]
@@ -407,7 +404,7 @@ Application Name: SATURN
 Page Title: Stroop 7
 Page Number: 35
 Task: Executive Stroop
-Error Pop Ups: 1;¡Todavía no!\n\nElige el color usado para escribir esta palabra.; ¡Prueba de nuevo!\n\nElige el color usado para escribir esta palabra.
+Error Pop Ups: 1;¡Todavía no!\n\nElija el color usado para escribir esta palabra.; ¡Intente de nuevo!\n\nElija el color usado para escribir esta palabra.
 Type of Question: STROOP
 Word: ~rojo~
 Word Bank: [verde, rojo, azul]
@@ -419,7 +416,7 @@ Application Name: SATURN
 Page Title: Stroop 8
 Page Number: 36
 Task: Executive Stroop
-Error Pop Ups: 1;¡Todavía no!\n\nElige el color usado para escribir esta palabra.; ¡Prueba de nuevo!\n\nElige el color usado para escribir esta palabra.
+Error Pop Ups: 1;¡Todavía no!\n\nElija el color usado para escribir esta palabra.; ¡Intente de nuevo!\n\nElija el color usado para escribir esta palabra.
 Type of Question: STROOP
 Word: +azul+
 Word Bank: [verde, rojo, azul]
@@ -431,7 +428,7 @@ Application Name: SATURN
 Page Title: Stroop 9
 Page Number: 37
 Task: Executive Stroop
-Error Pop Ups: 1;¡Todavía no!\n\nElige el color usado para escribir esta palabra.; ¡Prueba de nuevo!\n\nElige el color usado para escribir esta palabra.
+Error Pop Ups: 1;¡Todavía no!\n\nElija el color usado para escribir esta palabra.; ¡Intente de nuevo!\n\nElija el color usado para escribir esta palabra.
 Type of Question: STROOP
 Word: {verde}
 Word Bank: [verde, rojo, azul]
@@ -443,7 +440,7 @@ Application Name: SATURN
 Page Title: Stroop 10
 Page Number: 38
 Task: Executive Stroop
-Error Pop Ups: 1;¡Todavía no!\n\nElige el color usado para escribir esta palabra.; ¡Prueba de nuevo!\n\nElige el color usado para escribir esta palabra.
+Error Pop Ups: 1;¡Todavía no!\n\nElija el color usado para escribir esta palabra.; ¡Intente de nuevo!\n\nElija el color usado para escribir esta palabra.
 Type of Question: STROOP
 Word: +rojo+
 Word Bank: [verde, rojo, azul]
@@ -455,7 +452,7 @@ Application Name: SATURN
 Page Title: Stroop 11
 Page Number: 39
 Task: Executive Stroop
-Error Pop Ups: 1;¡Todavía no!\n\nElige el color usado para escribir esta palabra.; ¡Prueba de nuevo!\n\nElige el color usado para escribir esta palabra.
+Error Pop Ups: 1;¡Todavía no!\n\nElija el color usado para escribir esta palabra.; ¡Intente de nuevo!\n\nElija el color usado para escribir esta palabra.
 Type of Question: STROOP
 Word: {azul}
 Word Bank: [verde, rojo, azul]
@@ -467,7 +464,7 @@ Application Name: SATURN
 Page Title: Stroop 12
 Page Number: 40
 Task: Executive Stroop
-Error Pop Ups: 1;¡Todavía no!\n\nElige el color usado para escribir esta palabra.; ¡Prueba de nuevo!\n\nElige el color usado para escribir esta palabra.
+Error Pop Ups: 1;¡Todavía no!\n\nElija el color usado para escribir esta palabra.; ¡Intente de nuevo!\n\nElija el color usado para escribir esta palabra.
 Type of Question: STROOP
 Word: ~rojo~
 Word Bank: [verde, rojo, azul]
@@ -479,7 +476,7 @@ Application Name: SATURN
 Page Title: Stroop 13
 Page Number: 41
 Task: Executive Stroop
-Error Pop Ups: 1;¡Todavía no!\n\nElige el color usado para escribir esta palabra.; ¡Prueba de nuevo!\n\nElige el color usado para escribir esta palabra.
+Error Pop Ups: 1;¡Todavía no!\n\nElija el color usado para escribir esta palabra.; ¡Intente de nuevo!\n\nElija el color usado para escribir esta palabra.
 Type of Question: STROOP
 Word: {verde}
 Word Bank: [verde, rojo, azul]
@@ -491,7 +488,7 @@ Application Name: SATURN
 Page Title: Stroop 14
 Page Number: 42
 Task: Executive Stroop
-Error Pop Ups: 1;¡Todavía no!\n\nElige el color usado para escribir esta palabra.; ¡Prueba de nuevo!\n\nElige el color usado para escribir esta palabra.
+Error Pop Ups: 1;¡Todavía no!\n\nElija el color usado para escribir esta palabra.; ¡Intente de nuevo!\n\nElija el color usado para escribir esta palabra.
 Type of Question: STROOP
 Word: +azul+
 Word Bank: [verde, rojo, azul]
@@ -503,7 +500,7 @@ Application Name: SATURN
 Page Title: Stroop 15
 Page Number: 43
 Task: Executive Stroop
-Error Pop Ups: 1;¡Todavía no!\n\nElige el color usado para escribir esta palabra.; ¡Prueba de nuevo!\n\nElige el color usado para escribir esta palabra.
+Error Pop Ups: 1;¡Todavía no!\n\nElija el color usado para escribir esta palabra.; ¡Intente de nuevo!\n\nElija el color usado para escribir esta palabra.
 Type of Question: STROOP
 Word: ~verde~
 Word Bank: [verde, rojo, azul]
@@ -515,8 +512,8 @@ Application Name: SATURN
 Page Title: Instruction 9
 Page Number: 44
 Task: Instruction
-Prompt 1: ¡Ya casi has terminado!
-Prompt 2: Para las tareas finales, juegas a conectar los puntos.
+Prompt 1: ¡Ya casi ha terminado!
+Prompt 2: Para  los ejercicios finales, conecte los puntos.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -527,7 +524,7 @@ Application Name: SATURN
 Page Title: Instruction 10
 Page Number: 45
 Task: Instruction
-Prompt 1: Dibuja líneas de un punto al siguiente.
+Prompt 1: Dibuje líneas de un punto al siguiente.
 Prompt 2: Los puntos numerados van de menor a mayor (1, 2, 3,...)
 Prompt 3: Los puntos con letras van en orden alfabético (A, B, C,...)
 Type of Question: Instruction
@@ -542,9 +539,9 @@ Page Number: 46
 Task: Instruction
 Prompt 1: Los puntos se ven así:
 Prompt 2: /InstructionImages/connect.jpg
-Prompt 3: ... y se vuelven verdes cuando los tocas en orden:
+Prompt 3: ... y se vuelven verdes cuando los toca en orden:
 Prompt 4: /InstructionImages/connectPass.jpg
-Prompt 5: ... pero parpadea en rojo si no funciona: 
+Prompt 5: ... pero se ponen rojos si no funciona: 
 Prompt 6: /InstructionImages/connectFail.jpg
 Type of Question: Instruction
 Correct Answer: -
@@ -557,22 +554,31 @@ Page Number: 47
 Type of Question: Connect the Box
 Task: Visuospatial Mini-trails A
 Characters: [1, 2, 3, 4, 5]
-Prompt 1: Conecta los puntos.
-Prompt 2: Comienza en el número 1 y sigue en orden. Sigue adelante hasta que llegues al final.
+Prompt 1: Conecte los puntos.
+Prompt 2: Comience en el número 1 y siga en orden. Siga adelante hasta que llegue al final.
 Position: [(25, 50), (55, 15), (80, 55), (50, 40), (60, 80)]
 Correct Answer: 5
 Correct Requirement: Yes
-Error Pop Ups: ¡Todavía no!\n\nTienes que conectar todos los puntos.
+Error Pop Ups: ¡Todavía no!\n\nTiene que conectar todos los puntos.
 
 Page Title: CONNECT
 Page Number: 48
 Type of Question: Connect the Box
 Task: Executive Mini-trails B
-Prompt 1: Conecta los puntos.
-Prompt 2: {Números y letras alternos.} Comience en 1, conéctelo a la primera letra, A. Luego conéctese a 2 y 2 a la siguiente letra. Sigue adelante hasta llegar al final. 
+Prompt 1: Conecte los puntos.
+Prompt 2: {Números y letras alternos.} Comience en 1, conéctelo a la primera letra, A. Luego conecte la letra A con el número 2 y 2 a la siguiente letra. Siga adelante hasta llegar al final. 
 Characters: [1, A, 2, B, 3, C, 4, D]
 Position: [(50, 60), (70, 15), (85, 60), (65, 40), (75, 80), (25, 80), (20, 15), (40, 25)]
 Correct Answer: 8
 Correct Requirement: Yes
-Error Pop Ups: ¡Todavía no!\n\nTienes que conectar todos los puntos.
+Error Pop Ups: ¡Todavía no!\n\nTiene que conectar todos los puntos.
 
+Application Name: SATURN
+Page Title: End
+Page Number: 20
+Task: End
+Prompt: ¡Ha terminado!
+Type of Question: End
+Correct Answer: -
+Correct Requirement: -
+Error Pop Ups: -"
