@@ -41,7 +41,7 @@ const WordSelectionContainer = ({ rows, columns, buttonDimensions, onClick, word
       background: 'linear-gradient(to right, #0000ff, #0077ff, #00ccff, #66ffff)',
     },
     yellow: { color: '#d0bc2a' },
-    brown: {color: '#964B00' }
+    brown: {color: '#7d3e00' }
   };
   const generateButtons = () => {
     let buttons = [];

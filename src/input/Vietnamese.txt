@@ -9,7 +9,7 @@ Error Pop Ups: -
 Application Name: SATURN
 Page Title: Pick The Shape
 Page Number: 2
-Prompt: Chọn cái vòng tròn, sau đói nhấn "tiếp."
+Prompt: Chọn cái vòng tròn, sau đó nhấn "+tiếp+."
 Error Pop Ups: Chưa được!\n\nÐể tiếp tục bạn phải chọn cái vòng tròn.\n\nChạm vào nó.\nNó sẽ chuyển sang màu xanh dương.
 Type of Question: Image Selection Single
 File Path: [/ImageSelectionShapesJPGs/square.jpg, /ImageSelectionShapesJPGs/circle.jpg]
@@ -22,7 +22,7 @@ Page Title: Instruction 1
 Page Number: 3
 Prompt 1: Trong những việc sau, có việc dễ. Có việc khó.
 Prompt 2: Hãy làm những việc này một mình.
-Prompt 3: Khi bạn sẵn sàng, nhấn ở đây đễ qua trang sau.
+Prompt 3: Khi bạn sẵn sàng, nhấn +tiếp+ đễ qua trang sau.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -83,7 +83,7 @@ Page Title: Instructions 4
 Page Number: 8
 Task: Instruction
 Prompt 1: Trong vài trường hợp, bạn cần một chữ số.
-Prompt 2: Trong những trang dó, bạn sẽ có bàn phím số.
+Prompt 2: Trong những trang đó, bạn sẽ có bàn phím số.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -165,7 +165,7 @@ Application Name: SATURN
 Page Title: Pick J Word Again
 Page Number: 15
 Task: Memory Incidental
-Prompt: Bạn có con nhớ việc đầu tiên bạn được hỏi lằm khi nhân máy này? Bạn đã phẚi chọn một từ bắt đầu từ {một chữ nào đó}.\nHãy chọn lại chữ đó.
+Prompt: Bạn có con nhớ việc đầu tiên bạn được hỏi lằm khi nhận máy này? Bạn đã phải chọn một từ bắt đầu từ {một chữ nào đó}.\nHãy chọn lại chữ đó.
 Error Pop Ups: Chưa được!\n\n Ðể tiếp tục bạn phải chọn một chữ.\n\nNếu bạn không biết hãy cứ đoán!
 Type of Question: Word Selection
 Word Bank: [bão, cây, đầm, ghế, hoa, khỉ, núi, rau, trà, vài]
@@ -177,7 +177,7 @@ Application Name: SATURN
 Page Title: Number 1239 Again
 Page Number: 16
 Task: Memory Incidental
-Prompt: Khi bạn mới thấy phìm số hồi nãy, bạn đã phẚi nhấn 4 số.\nHảy nhấn lại 4 số đó.
+Prompt: Khi bạn mới thấy phím số hồi nãy, bạn đã phải nhấn 4 số.\nHảy nhấn lại 4 số đó.
 Error Pop Ups: Chưa được!\n\nÐể tiếp tục bạn phải chọn 4 chữ số.\n\nNếu bạn không biết hãy cứ đoán!.
 Type of Question: Number Pad
 Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]

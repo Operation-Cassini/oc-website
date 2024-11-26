@@ -166,7 +166,7 @@ const Page = ({ tabCode, content, correctAnswer, correctRequirement, onAnswerChe
           background: 'linear-gradient(to right, #85c7ff, #ffffff)',
         },
         yellow: { color: '#d0bc2a' },
-        brown: {color: '#964B00' }
+        brown: {color: '#7d3e00' }
       };
   
       const styles = part.style ? part.style.split(' ').map(s => styleMap[s]).reduce((acc, cur) => ({ ...acc, ...cur }), {}) : {};

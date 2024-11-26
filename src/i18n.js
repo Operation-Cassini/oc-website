@@ -173,7 +173,7 @@ i18n.use(initReactI18next).init({
             view_results_on: "Bạn có thể xem kết quả của mình trên "
         },
         tabcode: {
-            save_this_number: "Lưu số này"
+            save_this_number: "Lưu ý số này"
         }
       }
     },
