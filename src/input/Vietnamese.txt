@@ -1,3 +1,4 @@
+
 Application Name: SATURN
 Page Title: Tabcode
 Page Number: 1
@@ -9,7 +10,7 @@ Error Pop Ups: -
 Application Name: SATURN
 Page Title: Pick The Shape
 Page Number: 2
-Prompt: Chọn cái vòng tròn, sau đó nhấn "+tiếp+."
+Prompt: Chọn cái vòng tròn, sau đó nhấn "tiếp."
 Error Pop Ups: Chưa được!\n\nÐể tiếp tục bạn phải chọn cái vòng tròn.\n\nChạm vào nó.\nNó sẽ chuyển sang màu xanh dương.
 Type of Question: Image Selection Single
 File Path: [/ImageSelectionShapesJPGs/square.jpg, /ImageSelectionShapesJPGs/circle.jpg]
@@ -22,7 +23,7 @@ Page Title: Instruction 1
 Page Number: 3
 Prompt 1: Trong những việc sau, có việc dễ. Có việc khó.
 Prompt 2: Hãy làm những việc này một mình.
-Prompt 3: Khi bạn sẵn sàng, nhấn +tiếp+ đễ qua trang sau.
+Prompt 3: Khi bạn sẵn sàng, nhấn tiếp đễ qua trang sau.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -33,7 +34,7 @@ Page Title: Instruction 2
 Page Number: 4
 Task: Instruction
 Prompt 1: Trong vài việc bạn sẽ chọn một chữ từ danh sách. 
-Prompt 2: Ðể chọn một chữ nào đó, hãy nhấn vào nó, nó sẽ thành màu `xanh`.
+Prompt 2: Ðể chọn một chữ nào đó, hãy nhấn vào nó, nó sẽ thành màu xanh.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -45,7 +46,7 @@ Application Name: SATURN
 Page Title: Pick J Word
 Page Number: 5
 Task: Simple Attention
-Prompt: Trong những từ sau đây, hãy chọn từ bắt đầu bằng chữ "{k}".
+Prompt: Trong những từ sau đây, hãy chọn từ bắt đầu bằng chữ "k."
 Error Pop Ups: Chưa được!\n\nÐể tiếp tục bạn phải chọn chữ "k."\n\nChạm vào nó.\nNó sẽ chuyển sang màu xanh dương. 
 Type of Question: Word Selection
 Word Bank: [bão, cây, đầm, ghế, khỉ, mắt, núi, rau, trà, vải]
@@ -59,7 +60,7 @@ Page Number: 6
 Task: Instruction
 Prompt 1: Trong vài trường hợp bạn sẽ chọn nhiều chữ.
 Prompt 2: Ðể chọn một chữ nào, nhấn vào nó. Nó sẽ thành màu xanh.
-Prompt 3: _Lưu ý_ - Nếu bạn muốn đổi ý, nhấn vào chữ đó @để xoá chữ đó@.
+Prompt 3: _Lưu ý_: Nếu bạn muốn đổi ý, nhấn vào chữ đó @để xoá chữ đó.@
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -67,7 +68,7 @@ Error Pop Ups: -
 Word Count: 30
 
 Application Name: SATURN
-Page Title: Pick Fruit Word
+Page Title: PICK THE FRUIT WORDS.
 Page Number: 7
 Task: Simple Attention
 Prompt: Chọn những chữ nói về trái cây
@@ -142,7 +143,7 @@ Page Title: Instruction 6
 Page Number: 13
 Task: Instruction
 Prompt 1: Hãy nhớ 5 chữ đó cho lát nữa.
-Prompt 2: Còn bây giờ, xin hãy trẚ lời vài câu hơi.
+Prompt 2: Còn bây giờ, xin hãy trả lời vài câu hơi.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -206,7 +207,7 @@ Error Pop Ups: Chưa được!\n\n Bạn phải nhấn 4 chữ số.\n\nNếu b�
 Type of Question: Number Pad
 Number Sequence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 Dimensions: 4x3
-Correct Answer: -
+Correct Answer: 2024
 Correct Requirement: -
 
 Application Name: SATURN
@@ -263,7 +264,7 @@ Page Number: 23
 Task: Instruction
 Prompt 1: Tiếp theo, bạn sẽ thấy vài bản vẽ.
 Prompt 2: Hãy chọn những bẚn vẽ đế gộp lại thành một bẚn đầy đủ.
-Prompt 3: /InstructionImages/drawingVIETNAMESE.png
+Prompt 3: /InstructionImages/drawing.png
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -287,7 +288,7 @@ Application Name: SATURN
 Page Title: Drawing 2
 Page Number: 25
 Task: Visuospatial Image Combos
-Prompt:  Bẚn vẽ nào ơ dưới làm bản vẽ ơ trên?
+Prompt: Bẚn vẽ nào ơ dưới làm bản vẽ ơ trên?
 Error Pop Ups: 2;Chưa được!\n\nBạn phải chọn hai bản vẽ.\n\nNếu bạn không biết hãy cứ đoán!;Chưa được!\nBạn +chỉ có thể chọn+ hai bản vẽ.\n\nÐể không chọn bản vẽ nào đã chọn, bạn hãy nhấn vào nó.
 Type of Question: Image Selection
 Answer Img: /ImageSelectionFaceJPGs/face-answer.webp
@@ -300,7 +301,7 @@ Application Name: SATURN
 Page Title: Drawing 3
 Page Number: 26
 Task: Visuospatial Image Combos
-Prompt:  Bẚn vẽ nào ơ dưới làm bản vẽ ơ trên?
+Prompt: Bẚn vẽ nào ơ dưới làm bản vẽ ơ trên?
 Error Pop Ups: 2;Chưa được!\n\nBạn phải chọn hai bản vẽ.\n\nNếu bạn không biết hãy cứ đoán!;Chưa được!\nBạn +chỉ có thể chọn+ hai bản vẽ.\n\nÐể không chọn bản vẽ nào đã chọn, bạn hãy nhấn vào nó.
 Type of Question: Image Selection
 Answer Img: /ImageSelectionDiagonalLinesJPGs/diagonal-line-answer.webp
@@ -313,8 +314,8 @@ Application Name: SATURN
 Page Title: Drawing 4
 Page Number: 27
 Task: Visuospatial Image Combos
-Prompt:  Bẚn vẽ nào ơ dưới làm bản vẽ ơ trên?
-Error Pop Ups: 2;Chưa được!\n\nBạn phải chọn hai bản vẽ.\n\nNếu bạn không biết hãy cứ đoán!;Chưa được!\nBạn +chỉ có thể chọn+ hai bản vẽ.\n\nÐể không chọn bản vẽ nào đã chọn, bạn hãy nhấn vào nó.
+Prompt: Bẚn vẽ nào ơ dưới làm bản vẽ ơ trên?
+Error Pop Ups: 2;Chưa được!\n\n Bạn phải chọn hai bản vẽ.\n\n Nếu bạn không biết hãy cứ đoán!;Chưa được!\nBạn +chỉ có thể chọn+ hai bản vẽ.\n\nÐể không chọn bản vẽ nào đã chọn, bạn hãy nhấn vào nó.
 Type of Question: Image Selection
 Answer Img: /ImageSelectionCubeJPGs/cube-answer.webp
 File Path: [/ImageSelectionCubeJPGs/cube1.webp, /ImageSelectionCubeJPGs/cube2.webp, /ImageSelectionCubeJPGs/cube3.webp, /ImageSelectionCubeJPGs/cube4.webp, /ImageSelectionCubeJPGs/cube5.webp, /ImageSelectionCubeJPGs/cube6.webp]
@@ -327,7 +328,7 @@ Page Title: Instruction 8
 Page Number: 28
 Task: Instruction
 Prompt 1: Tiếp theo đây bạn sẽ thấy vài chữ.
-Prompt 2: Chọn những ^m^{à}~u~ dùng để viết những chữ này.
+Prompt 2: Chọn những +m+{à}~u~ dùng để viết những chữ này.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -361,7 +362,7 @@ Page Title: Stroop 3
 Page Number: 31
 Error Pop Ups: 1;Chưa được!\n\n Hãy chọn cái màu viết chữ này.;Hãy làm lại!\n\nHãy chọn cái màu viết chữ này.
 Type of Question: STROOP
-Word: ^điện^
+Word: +điện+
 Word Bank: [nâu, đỏ, xanh]
 Dimensions: 1x3
 Correct Answer: nâu
@@ -385,7 +386,7 @@ Page Number: 33
 Task: Executive Stroop
 Error Pop Ups: 1;Chưa được!\n\n Hãy chọn cái màu viết chữ này.;Hãy làm lại!\n\nHãy chọn cái màu viết chữ này.
 Type of Question: STROOP
-Word: ^đỏ^
+Word: +đỏ+
 Word Bank: [nâu, đỏ, xanh]
 Dimensions: 1x3
 Correct Answer: nâu
@@ -397,7 +398,7 @@ Page Number: 34
 Task: Executive Stroop
 Error Pop Ups: 1;Chưa được!\n\nHãy chọn cái màu viết chữ này.;Hãy làm lại!\n\nHãy chọn cái màu viết chữ này..
 Type of Question: STROOP
-Word: {xanh}
+Word: {Xanh}
 Word Bank: [nâu, đỏ, xanh]
 Dimensions: 1x3
 Correct Answer: đỏ
@@ -408,7 +409,6 @@ Page Title: Stroop 7
 Page Number: 35
 Task: Executive Stroop
 Error Pop Ups: 1;Chưa được!\n\nHãy chọn cái màu viết chữ này.;Hãy làm lại!\n\nHãy chọn cái màu viết chữ này.
-Type of Question: STROOP
 Word: ~đỏ~
 Word Bank: [nâu, đỏ, xanh]
 Dimensions: 1x3
@@ -421,7 +421,7 @@ Page Number: 36
 Task: Executive Stroop
 Error Pop Ups: 1;Chưa được!\n\n Hãy chọn cái màu viết chữ này.;Hãy làm lại!\n\nHãy chọn cái màu viết chữ này.
 Type of Question: STROOP
-Word: ^xanh^
+Word: +xanh+
 Word Bank: [nâu, đỏ, xanh]
 Dimensions: 1x3
 Correct Answer: nâu
@@ -445,7 +445,7 @@ Page Number: 38
 Task: Executive Stroop
 Error Pop Ups: 1;Chưa được!\n\n Hãy chọn cái màu viết chữ này.;Hãy làm lại!\n\nHãy chọn cái màu viết chữ này.
 Type of Question: STROOP
-Word: ^đỏ^
+Word: +đỏ+
 Word Bank: [nâu, đỏ, xanh]
 Dimensions: 1x3
 Correct Answer: nâu
@@ -493,7 +493,7 @@ Page Number: 42
 Task: Executive Stroop
 Error Pop Ups: 1;Chưa được!\n\nHãy chọn cái màu viết chữ này.;Hãy làm lại!\n\nHãy chọn cái màu viết chữ này.
 Type of Question: STROOP
-Word: ^xanh^
+Word: +xanh+
 Word Bank: [nâu, đỏ, xanh]
 Dimensions: 1x3
 Correct Answer: nâu
@@ -528,8 +528,8 @@ Page Title: Instruction 10
 Page Number: 45
 Task: Instruction
 Prompt 1: Vẽ đường nối từ mỗi chấm tới chấm tiếp theo.
-Prompt 2: Chấm có số sẽ theo thứ tự từ nhỏ tới lớn...(1, 2, 3,...)
-Prompt 3: Hãy luôn thay phiên chấm trắng và đen (A, B, C,...)
+Prompt 2: 
+Chấm có số sẽ theo thứ tự từ nhỏ tới lớn...(1, 2, 3,...)
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -542,9 +542,9 @@ Page Number: 46
 Task: Instruction
 Prompt 1: Những chấm sẽ nhìn giống như thế này...và sẽ đổi màu xanh lá khi bạn nhấn theo thứ tự đúng:
 Prompt 2: /InstructionImages/connect.jpg
-Prompt 3: …và sẽ chớp đỏ khi bạn nhấn thứ tự sai:
+Prompt 3: và sẽ đổi màu xanh lá khi bạn nhấn theo thứ tự đúng:
 Prompt 4: /InstructionImages/connectPass.jpg
-Prompt 5: …Bạn phải luôn phiên chấm trắng và đen: 
+Prompt 5: …và sẽ chớp đỏ khi bạn nhấn thứ tự sai:
 Prompt 6: /InstructionImages/connectFail.jpg
 Type of Question: Instruction
 Correct Answer: -
@@ -558,7 +558,7 @@ Type of Question: Connect the Box
 Task: Visuospatial Mini-trails A
 Characters: [1, 2, 3, 4, 5]
 Prompt 1: Hãy nối những chấm.
-Prompt 2: Bắt đầu từ số 1, và đi theo thứ tự. Hãy tiếp tục tới khi cuối cùng. Bạn phải luôn thay phiên chấm trắng và đen.
+Prompt 2: Bắt đầu từ số 1, và đi theo thứ tự. Hãy tiếp tục tới khi cuối cùng. 
 Position: [(25, 50), (55, 15), (80, 55), (50, 40), (60, 80)]
 Correct Answer: 5
 Correct Requirement: Yes
@@ -569,9 +569,17 @@ Page Number: 48
 Type of Question: Connect the Box
 Task: Executive Mini-trails B
 Prompt 1: Hãy nối những chấm.
-Prompt 2: Bắt đầu từ số 1, và đi theo thứ tự. Hãy tiếp tục tới khi cuối cùng. Vì bạn thay phiên chấm trắng và đen bạn phải bỏ qua một vài số trong số đó
+Prompt 2: Bắt đầu từ số 1 và nối với chữ cái đầu tiên, A. Sau đó nối A với 2 và 2 với chữ cái tiếp theo thứ tự. Bạn phải luôn thay phiên số và chữ cái. Hãy tiếp tục tới khi cuối cùng. 
 Characters: [1, A, 2, B, 3, C, 4, D]
 Position: [(50, 60), (70, 15), (85, 60), (65, 40), (75, 80), (25, 80), (20, 15), (40, 25)]
 Correct Answer: 8
 Correct Requirement: Yes
 Error Pop Ups: Chưa được!\n\nBạn phải nối hết tất cả cái chấm.
+
+#Application Name: SATURN
+#Page Title: Tabcode
+#Page Number: 49
+#Type of Question: Tabcode
+#Correct Answer: -
+#Correct Requirement: -
+#Error Pop Ups: -
