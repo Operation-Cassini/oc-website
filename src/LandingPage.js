@@ -135,7 +135,7 @@ const LandingPage = () => {
                   Those developers, along with David Bissig, defer to UC Davis on copyright matters because this was developed as part of a class assignment. 
                   Kayla and Emily further refined this site, resulting in the latest version.<br />
                   <br />
-                  Main contributors to <b>draft</b> non-English versions: Anna Troung (Vietnamese), Dr. Gabriel Moreno (Spanish), Dr. Jihey Yuk (Korean), Dr. Clarice Zhou (Smplified Chinese), Dr. Chao-Yi Wu (Traditional Chinese).
+                  Main contributors to <b>draft</b> non-English versions: Anna Troung (Vietnamese), Dr. Gabriel Moreno (Spanish), Dr. Jihey Yuk (Korean), Dr. Clarice Zhou (Simplified Chinese), Dr. Chao-Yi Wu (Traditional Chinese).
                   
                 </span>
               )}
