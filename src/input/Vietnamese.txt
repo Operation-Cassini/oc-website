@@ -328,7 +328,7 @@ Page Title: Instruction 8
 Page Number: 28
 Task: Instruction
 Prompt 1: Tiếp theo đây bạn sẽ thấy vài chữ.
-Prompt 2: Chọn những +m+{à}~u~ dùng để viết những chữ này.
+Prompt 2: Chọn những %m%{à}~u~ dùng để viết những chữ này.
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -409,6 +409,7 @@ Page Title: Stroop 7
 Page Number: 35
 Task: Executive Stroop
 Error Pop Ups: 1;Chưa được!\n\nHãy chọn cái màu viết chữ này.;Hãy làm lại!\n\nHãy chọn cái màu viết chữ này.
+Type of Question: STROOP
 Word: ~đỏ~
 Word Bank: [nâu, đỏ, xanh]
 Dimensions: 1x3
