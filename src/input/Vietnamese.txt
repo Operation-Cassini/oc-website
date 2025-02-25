@@ -264,7 +264,7 @@ Page Number: 23
 Task: Instruction
 Prompt 1: Tiếp theo, bạn sẽ thấy vài bản vẽ.
 Prompt 2: Hãy chọn những bẚn vẽ đế gộp lại thành một bẚn đầy đủ.
-Prompt 3: /InstructionImages/drawing.png
+Prompt 3: /InstructionImages/drawingVIETNAMESE.png
 Type of Question: Instruction
 Correct Answer: -
 Correct Requirement: -
@@ -362,7 +362,7 @@ Page Title: Stroop 3
 Page Number: 31
 Error Pop Ups: 1;Chưa được!\n\n Hãy chọn cái màu viết chữ này.;Hãy làm lại!\n\nHãy chọn cái màu viết chữ này.
 Type of Question: STROOP
-Word: +điện+
+Word: %điện%
 Word Bank: [nâu, đỏ, xanh]
 Dimensions: 1x3
 Correct Answer: nâu
@@ -386,7 +386,7 @@ Page Number: 33
 Task: Executive Stroop
 Error Pop Ups: 1;Chưa được!\n\n Hãy chọn cái màu viết chữ này.;Hãy làm lại!\n\nHãy chọn cái màu viết chữ này.
 Type of Question: STROOP
-Word: +đỏ+
+Word: %đỏ%
 Word Bank: [nâu, đỏ, xanh]
 Dimensions: 1x3
 Correct Answer: nâu
@@ -398,7 +398,7 @@ Page Number: 34
 Task: Executive Stroop
 Error Pop Ups: 1;Chưa được!\n\nHãy chọn cái màu viết chữ này.;Hãy làm lại!\n\nHãy chọn cái màu viết chữ này..
 Type of Question: STROOP
-Word: {Xanh}
+Word: {xanh}
 Word Bank: [nâu, đỏ, xanh]
 Dimensions: 1x3
 Correct Answer: đỏ
@@ -421,7 +421,7 @@ Page Number: 36
 Task: Executive Stroop
 Error Pop Ups: 1;Chưa được!\n\n Hãy chọn cái màu viết chữ này.;Hãy làm lại!\n\nHãy chọn cái màu viết chữ này.
 Type of Question: STROOP
-Word: +xanh+
+Word: %xanh%
 Word Bank: [nâu, đỏ, xanh]
 Dimensions: 1x3
 Correct Answer: nâu
@@ -445,7 +445,7 @@ Page Number: 38
 Task: Executive Stroop
 Error Pop Ups: 1;Chưa được!\n\n Hãy chọn cái màu viết chữ này.;Hãy làm lại!\n\nHãy chọn cái màu viết chữ này.
 Type of Question: STROOP
-Word: +đỏ+
+Word: %đỏ%
 Word Bank: [nâu, đỏ, xanh]
 Dimensions: 1x3
 Correct Answer: nâu
@@ -493,7 +493,7 @@ Page Number: 42
 Task: Executive Stroop
 Error Pop Ups: 1;Chưa được!\n\nHãy chọn cái màu viết chữ này.;Hãy làm lại!\n\nHãy chọn cái màu viết chữ này.
 Type of Question: STROOP
-Word: +xanh+
+Word: %xanh%
 Word Bank: [nâu, đỏ, xanh]
 Dimensions: 1x3
 Correct Answer: nâu
