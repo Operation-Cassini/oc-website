@@ -85,7 +85,7 @@ const generateUniqueSevenDigitCode = async () => {
   return uniqueCode;
 };
 
-const TimerRedirect = ({ onTimerFinish, startTime }) => {
+const TimerRedirect = ({ onTimerFinish, startTime, calculateScores }) => {
   const [timeLeft, setTimeLeft] = useState(900);
   const [redirected, setRedirected] = useState(false);
   const navigate = useNavigate();
@@ -112,6 +112,7 @@ const TimerRedirect = ({ onTimerFinish, startTime }) => {
   // Move the navigate call here, outside of useEffect
   useEffect(() => {
     if (redirected) {
+      calculateScores(); // FIX
       navigate('/last');
       onTimerFinish(); // Call the onTimerFinish function passed from the App component
     }
@@ -529,7 +530,7 @@ const App = () => {
 
   return (
     <>
-      <TimerRedirect onTimerFinish={handleTimerFinish} startTime={startTime} />
+      <TimerRedirect onTimerFinish={handleTimerFinish} startTime={startTime} calculateScores={calculateScores} />
       <Routes>
       <Route path="/" element={<LandingPage />} />
         <Route path="/Home" element={<Home />} />
