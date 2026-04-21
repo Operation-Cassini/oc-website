@@ -17,6 +17,7 @@ import meanSDtext from './meanSD.txt';
 import saturnScoringtext from './saturnScoring.txt';
 import BlackBoarderTextBox from './components/BlackBoarderTextBox';
 import LandingPage from './LandingPage';
+import IcareParentBridge from './IcareParentBridge';
 
 // AWS API for Database
 import { generateClient } from "aws-amplify/api";
@@ -530,6 +531,7 @@ const App = () => {
 
   return (
     <>
+      <IcareParentBridge tabCode={tabCode} />
       <TimerRedirect onTimerFinish={handleTimerFinish} startTime={startTime} calculateScores={calculateScores} />
       <Routes>
       <Route path="/" element={<LandingPage />} />
